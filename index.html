@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Macro Brief — Economic Intelligence</title>
+    <style>
+
+        /* ═══════════════════════════════════════════
+           VARIABLES & RESET
+        ═══════════════════════════════════════════ */
+        :root {
+            --cream:        #F6F1E7;
+            --cream-dark:   #EDE8DB;
+            --cream-border: #D4CCBA;
+            --ink:          #1A1A1A;
+            --ink-mid:      #444444;
+            --ink-light:    #666666;
+            --rule:         #C8C0AA;
+            --red:          #B22222;
+            --red-bright:   #C41E3A;
+            --green:        #1B5E20;
+            --amber:        #7B5000;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ═══════════════════════════════════════════
+           TICKER STRIP
+        ═══════════════════════════════════════════ */
+        .ticker-bar {
+            background: var(--red-bright);
+            color: #fff;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ticker-label {
+            background: var(--ink);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 0 16px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            border-right: 1px solid #333;
+        }
+
+        .ticker-track {
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .ticker-move {
+            display: inline-block;
+            white-space: nowrap;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.08em;
+            animation: marquee 42s linear infinite;
+        }
+
+        .ticker-move:hover { animation-play-state: paused; }
+
+        .ticker-item { margin: 0 22px; }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════════════════
+           INFO BAR
+        ═══════════════════════════════════════════ */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ═══════════════════════════════════════════
+           MASTHEAD
+        ═══════════════════════════════════════════ */
+        .masthead {
+            padding: 38px 0 22px;
+            text-align: center;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .masthead-super {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 12px;
+        }
+
+        .masthead-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(50px, 9vw, 108px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 0.92;
+            letter-spacing: -2px;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .masthead-title .red { color: var(--red-bright); }
+
+        .masthead-tagline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 20px;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ornament-line {
+            height: 1px;
+            background: var(--ink);
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .ornament-sym {
+            color: var(--red-bright);
+            font-size: 14px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        /* ═══════════════════════════════════════════
+           EDITION BAR
+        ═══════════════════════════════════════════ */
+        .edition-bar {
+            border-bottom: 1px solid var(--ink);
+            padding: 8px 0;
+        }
+
+        .edition-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ed-item {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.07em;
+            color: var(--ink-mid);
+        }
+
+        .ed-center {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--red-bright);
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION HEADERS
+        ═══════════════════════════════════════════ */
+        .section-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 36px 0 18px;
+        }
+
+        .section-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .section-date {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            color: var(--ink-light);
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+        }
+
+        /* ═══════════════════════════════════════════
+           INDICATOR GRID
+        ═══════════════════════════════════════════ */
+        .indicators-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 2px solid var(--ink);
+            border-left: 1px solid var(--ink);
+            margin-bottom: 32px;
+        }
+
+        .ind-card {
+            padding: 22px 20px 20px;
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.15s ease;
+        }
+
+        .ind-card:hover { background: #EDE8DB; }
+
+        /* Top color stripe */
+        .ind-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .ind-card.pos::before { background: var(--green); }
+        .ind-card.neg::before { background: var(--red-bright); }
+        .ind-card.neu::before { background: var(--amber); }
+
+        /* 7th card spans 2 columns */
+        .ind-card:last-child {
+            grid-column: span 2;
+        }
+
+        .card-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 5px;
+        }
+
+        .watch-badge {
+            display: inline-block;
+            background: var(--red-bright);
+            color: #fff;
+            font-size: 7.5px;
+            letter-spacing: 0.12em;
+            padding: 1px 5px;
+            margin-left: 5px;
+            vertical-align: middle;
+            font-weight: 700;
+        }
+
+        .card-name {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink-mid);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .card-val {
+            font-size: 46px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            margin-bottom: 10px;
+        }
+
+        .pos .card-val { color: var(--green); }
+        .neg .card-val { color: var(--red-bright); }
+        .neu .card-val { color: var(--ink); }
+
+        .card-sig {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+            margin-bottom: 13px;
+        }
+
+        .sig-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .pos .sig-dot { background: var(--green); }
+        .neg .sig-dot { background: var(--red-bright); }
+        .neu .sig-dot { background: var(--amber); }
+
+        .card-desc {
+            font-size: 12px;
+            color: var(--ink-light);
+            line-height: 1.6;
+            font-style: italic;
+            border-top: 1px solid var(--rule);
+            padding-top: 11px;
+        }
+
+        /* ═══════════════════════════════════════════
+           ANALYSIS
+        ═══════════════════════════════════════════ */
+        .analysis-box {
+            border: 1px solid var(--ink);
+            padding: 36px 36px 32px;
+            background: var(--cream-dark);
+            margin-bottom: 32px;
+        }
+
+        .analysis-hed {
+            font-size: clamp(20px, 2.8vw, 33px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .analysis-hed .red { color: var(--red-bright); }
+
+        .analysis-byline {
+            font-size: 12.5px;
+            color: var(--ink-light);
+            font-style: italic;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .analysis-cols {
+            column-count: 3;
+            column-gap: 34px;
+            column-rule: 1px solid var(--rule);
+        }
+
+        .analysis-cols p {
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: var(--ink-mid);
+            text-align: justify;
+        }
+
+        .analysis-cols p + p { text-indent: 1.6em; }
+
+        .pull-quote {
+            break-inside: avoid;
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 16px 0;
+            margin: 20px 0;
+        }
+
+        /* ═══════════════════════════════════════════
+           SENTIMENT GAUGE
+        ═══════════════════════════════════════════ */
+        .sentiment-box {
+            border: 1px solid var(--ink);
+            padding: 28px 32px;
+            background: var(--cream);
+            margin-bottom: 36px;
+            display: flex;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .sent-left { flex-shrink: 0; min-width: 170px; }
+
+        .sent-lbl {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 6px;
+        }
+
+        .sent-val {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--amber);
+            letter-spacing: 0.02em;
+        }
+
+        .sent-score {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            margin-top: 5px;
+        }
+
+        .sent-right { flex: 1; }
+
+        .gauge-track {
+            height: 18px;
+            background: linear-gradient(to right,
+                #1B5E20 0%,
+                #4CAF50 22%,
+                #FFC107 45%,
+                #FF7043 68%,
+                #B22222 100%
+            );
+            border: 1px solid var(--ink);
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .gauge-needle {
+            position: absolute;
+            width: 2px;
+            top: -8px;
+            height: 34px;
+            background: var(--ink);
+            transform: translateX(-50%);
+        }
+
+        .gauge-needle::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 7px solid var(--ink);
+        }
+
+        .gauge-lbls {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        /* ═══════════════════════════════════════════
+           SNAPSHOT ROW (mini stats)
+        ═══════════════════════════════════════════ */
+        .snapshot-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--ink);
+            margin-bottom: 36px;
+            border-right: none;
+        }
+
+        .snap-item {
+            padding: 18px 22px;
+            border-right: 1px solid var(--ink);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .snap-icon {
+            font-size: 24px;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .snap-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 3px;
+        }
+
+        .snap-val {
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--ink);
+        }
+
+        .snap-ctx {
+            font-size: 11.5px;
+            color: var(--ink-light);
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        /* ═══════════════════════════════════════════
+           NEWSLETTER
+        ═══════════════════════════════════════════ */
+        .newsletter-wrap {
+            margin-bottom: 44px;
+        }
+
+        .newsletter-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        .nl-left {
+            padding: 50px 44px;
+            border-right: 1px solid #333;
+        }
+
+        .nl-eyebrow {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 14px;
+        }
+
+        .nl-hed {
+            font-size: clamp(26px, 3.5vw, 44px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .nl-desc {
+            font-size: 14px;
+            color: #9A9A8A;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .nl-features {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nl-feat {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.04em;
+            color: #777766;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nl-feat::before {
+            content: '→';
+            color: var(--red-bright);
+            flex-shrink: 0;
+        }
+
+        .nl-right {
+            padding: 50px 44px;
+        }
+
+        .nl-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nl-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .nl-input {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--cream);
+            padding: 11px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .nl-input:focus { border-color: var(--red-bright); }
+        .nl-input::placeholder { color: #484840; }
+
+        .nl-btn {
+            background: var(--red-bright);
+            color: #fff;
+            border: none;
+            padding: 13px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .nl-btn:hover { background: #8B0000; }
+
+        .nl-legal {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            color: #444;
+            line-height: 1.55;
+        }
+
+        .nl-success {
+            display: none;
+            background: #1B5E20;
+            color: #fff;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════ */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-sources {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            text-align: right;
+        }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════════ */
+        @media (max-width: 1080px) {
+            .indicators-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ind-card:last-child {
+                grid-column: span 2;
+            }
+            .analysis-cols {
+                column-count: 2;
+            }
+            .snapshot-row {
+                grid-template-columns: 1fr;
+                border-right: 1px solid var(--ink);
+            }
+        }
+
+        @media (max-width: 780px) {
+            .newsletter-inner {
+                grid-template-columns: 1fr;
+            }
+            .nl-left {
+                border-right: none;
+                border-bottom: 1px solid #2A2A2A;
+                padding-bottom: 36px;
+            }
+            .sentiment-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .footer-top {
+                flex-direction: column;
+            }
+            .footer-sources { text-align: left; }
+            .info-bar .container span:last-child { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .indicators-grid {
+                grid-template-columns: 1fr;
+            }
+            .ind-card:last-child {
+                grid-column: span 1;
+            }
+            .analysis-cols { column-count: 1; }
+            .nl-row { grid-template-columns: 1fr; }
+            .ed-item:first-child { display: none; }
+            .masthead-title { letter-spacing: -1px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     TICKER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="ticker-bar">
+    <div class="ticker-label">Markets</div>
+    <div class="ticker-track">
+        <div class="ticker-move" id="tickerMove">
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;4.33%</span>
+            <span class="ticker-item">◆ CPI (YoY) &nbsp;2.4% ↓</span>
+            <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.2%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;−0.3% ▼</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.17%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.6% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;3.9%</span>
+            <span class="ticker-item" style="margin-right: 80px;">&nbsp;</span>
+        </div>
+    </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     INFO BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>DATA AS OF APRIL 2025</span>
+        <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
+    </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     MASTHEAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-super">★ &nbsp; Independent Economic Analysis &nbsp; ★</div>
+        <h1 class="masthead-title"><span class="red">The</span> Macro <span class="red">Brief</span></h1>
+        <div class="masthead-tagline">Economic Intelligence for the Informed Investor</div>
+        <div class="ornament">
+            <div class="ornament-line"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width: 60px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width: 60px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+    <div class="container">
+        <span class="ed-item">BY CONNOR LEARY · APRIL 29, 2025</span>
+        <span class="ed-center">✦ &nbsp; Q2 2025 MACRO OUTLOOK &nbsp; ✦</span>
+        <span class="ed-item">VOL. I, NO. 4 · UNITED STATES</span>
+    </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     MAIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<main>
+<div class="container">
+
+    <!-- INDICATORS -->
+    <div class="section-hd">
+        <span class="section-tag">Key Economic Indicators</span>
+        <div class="section-rule"></div>
+        <span class="section-date">APR. 2025</span>
+    </div>
+
+    <div class="indicators-grid">
+
+        <!-- 1 ─ Fed Funds Rate -->
+        <div class="ind-card neu">
+            <div class="card-cat">Monetary Policy</div>
+            <div class="card-name">Federal Funds Rate</div>
+            <div class="card-val">4.33%</div>
+            <div class="card-sig"><div class="sig-dot"></div>HOLDING STEADY</div>
+            <div class="card-desc">Fed maintains restrictive stance following December 2024 cut. FOMC on pause; market pricing implies two additional reductions before year-end.</div>
+        </div>
+
+        <!-- 2 ─ CPI -->
+        <div class="ind-card pos">
+            <div class="card-cat">Inflation</div>
+            <div class="card-name">Consumer Price Index (YoY)</div>
+            <div class="card-val">2.4%</div>
+            <div class="card-sig"><div class="sig-dot"></div>COOLING ↓</div>
+            <div class="card-desc">Lowest reading since February 2021. Disinflation trend intact, with shelter costs finally showing meaningful deceleration across major metropolitan areas.</div>
+        </div>
+
+        <!-- 3 ─ Unemployment -->
+        <div class="ind-card neu">
+            <div class="card-cat">Labor Market</div>
+            <div class="card-name">Unemployment Rate</div>
+            <div class="card-val">4.2%</div>
+            <div class="card-sig"><div class="sig-dot"></div>SOFTENING ↗</div>
+            <div class="card-desc">Labor market loosening gradually from sub-4% lows. Wage growth moderating; job openings elevated but trending lower as employers grow cautious.</div>
+        </div>
+
+        <!-- 4 ─ GDP Growth -->
+        <div class="ind-card neg">
+            <div class="card-cat">Economic Output <span class="watch-badge">⚠ WATCH</span></div>
+            <div class="card-name">GDP Growth Rate (Q1 2025)</div>
+            <div class="card-val">−0.3%</div>
+            <div class="card-sig"><div class="sig-dot"></div>CONTRACTION ▼</div>
+            <div class="card-desc">First negative print since Q1 2022. Import surge ahead of tariff escalations distorts headline; domestic final sales remained modestly positive. Recession risk elevated.</div>
+        </div>
+
+        <!-- 5 ─ 10-Year Treasury -->
+        <div class="ind-card neu">
+            <div class="card-cat">Fixed Income</div>
+            <div class="card-name">10-Year Treasury Yield</div>
+            <div class="card-val">4.17%</div>
+            <div class="card-sig"><div class="sig-dot"></div>RANGE-BOUND →</div>
+            <div class="card-desc">Long-end yields anchored as growth fears counterbalance lingering inflation risk. Yield curve steepening modestly from historic inversion levels recorded in 2023.</div>
+        </div>
+
+        <!-- 6 ─ Retail Sales -->
+        <div class="ind-card pos">
+            <div class="card-cat">Consumer Activity</div>
+            <div class="card-name">Retail Sales Growth (YoY)</div>
+            <div class="card-val">4.6%</div>
+            <div class="card-sig"><div class="sig-dot"></div>ROBUST ↑</div>
+            <div class="card-desc">Consumer spending remains the economy's primary growth engine. Real wage gains and healthy household balance sheets sustain the expansion in discretionary outlays.</div>
+        </div>
+
+        <!-- 7 ─ M2 Growth (spans 2 cols) -->
+        <div class="ind-card neu">
+            <div class="card-cat">Money Supply</div>
+            <div class="card-name">M2 Money Supply Growth (YoY)</div>
+            <div class="card-val">3.9%</div>
+            <div class="card-sig"><div class="sig-dot"></div>NORMALIZING →</div>
+            <div class="card-desc">M2 rebounds from the 2023 historic contraction — an unprecedented postwar event — and resumes moderate growth. The pace is consistent with supporting nominal economic activity without reigniting inflationary pressure, representing a quiet but meaningful policy success for the Federal Reserve.</div>
+        </div>
+
+    </div>
+
+    <!-- SNAPSHOT ROW -->
+    <div class="section-hd">
+        <span class="section-tag">At a Glance</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <div class="snapshot-row">
+        <div class="snap-item">
+            <div class="snap-icon">📉</div>
+            <div>
+                <div class="snap-label">Recession Probability</div>
+                <div class="snap-val">Elevated</div>
+                <div class="snap-ctx">GDP contraction + import distortion = ambiguous signal. Two consecutive negative quarters would confirm.</div>
+            </div>
+        </div>
+        <div class="snap-item">
+            <div class="snap-icon">🎯</div>
+            <div>
+                <div class="snap-label">Fed Target Gap</div>
+                <div class="snap-val">+40 bps</div>
+                <div class="snap-ctx">CPI at 2.4% is 40 basis points above the 2.0% inflation target. Progress is clear; the finish line is close.</div>
+            </div>
+        </div>
+        <div class="snap-item">
+            <div class="snap-icon">💪</div>
+            <div>
+                <div class="snap-label">Consumer Resilience</div>
+                <div class="snap-val">Strong</div>
+                <div class="snap-ctx">Retail sales up 4.6% YoY is the standout positive in an otherwise cautious macro landscape.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANALYSIS -->
+    <div class="section-hd">
+        <span class="section-tag">Editor's Analysis</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <div class="analysis-box">
+        <h2 class="analysis-hed">U.S. Economy Flashes Contraction as <span class="red">Trade Disruption</span> Obscures the True Picture</h2>
+        <div class="analysis-byline">A split-screen economy: resilient consumers and cooling inflation set against a contracting GDP print and persistent policy uncertainty — By Connor Leary, April 29, 2025</div>
+        <div class="analysis-cols">
+            <p>The first quarter of 2025 produced a headline number that will dominate financial conversations for months to come: a negative GDP print of −0.3%, the first contraction in three years. Yet beneath that alarming figure lies a more complicated story — one of genuine economic resilience colliding head-on with policy-induced statistical noise.</p>
+            <p>The contraction is not a simple demand collapse. Much of the Q1 drag originated from a massive surge in imports as businesses aggressively front-ran anticipated tariff escalations, a mechanical accounting effect that reduces GDP without reflecting any deterioration in underlying conditions. Domestic final sales — a far cleaner window into real economic momentum — remained modestly positive throughout the quarter.</p>
+            <div class="pull-quote">"The consumer remains the last line of defense. Retail sales up 4.6% year-over-year signal that the spending engine has not yet stalled — and may be the most important data point of the quarter."</div>
+            <p>Inflation, for its part, continues its gradual convergence toward the Federal Reserve's 2% target. At 2.4%, CPI records its lowest print since early 2021. The disinflation trend is intact, and shelter inflation — long the most stubborn component of the index — is finally showing meaningful deceleration in major metros. The last mile to target remains treacherous, but the path is visible.</p>
+            <p>This backdrop gives Fed Chair Powell cover to maintain the current pause in the rate cycle. The FOMC faces a genuine bind: growth is wobbling, but inflation has not yet reached target. Cutting prematurely risks reigniting price pressures that proved remarkably difficult to extinguish; holding too long threatens to amplify any demand slowdown into something more durable.</p>
+            <p>The 10-Year Treasury yield at 4.17% reflects this tension precisely. Fixed income markets remain undecided — unable to commit to either a growth-fear rally or an inflation-persistence sell-off. The yield curve has steepened slightly from its historic inversion, a tentative signal of normalization, though hardly a confident one. Bond investors are watching the same data everyone else is, and reaching similarly inconclusive judgements.</p>
+            <p>M2 money supply growing at 3.9% is among the more quietly encouraging data points in this edition. After contracting through much of 2023 — an unprecedented event in postwar American economic history — the money supply is now expanding again at a pace that supports nominal growth without threatening to reflate the economy. It represents a narrow but real success for the central bank's long and painful tightening campaign.</p>
+        </div>
+    </div>
+
+    <!-- SENTIMENT -->
+    <div class="section-hd">
+        <span class="section-tag">Macro Sentiment Index</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <div class="sentiment-box">
+        <div class="sent-left">
+            <div class="sent-lbl">Current Reading</div>
+            <div class="sent-val">CAUTIOUS</div>
+            <div class="sent-score">Composite Score: 41 / 100</div>
+        </div>
+        <div class="sent-right">
+            <div class="gauge-track">
+                <div class="gauge-needle" style="left: 41%;"></div>
+            </div>
+            <div class="gauge-lbls">
+                <span>Contraction</span>
+                <span>Caution</span>
+                <span>Neutral</span>
+                <span>Expansion</span>
+                <span>Overheated</span>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     NEWSLETTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="newsletter-wrap">
+    <div class="container">
+        <div class="section-hd">
+            <span class="section-tag">Stay Informed</span>
+            <div class="section-rule"></div>
+        </div>
+        <div class="newsletter-inner">
+            <div class="nl-left">
+                <div class="nl-eyebrow">★ Subscribe to The Macro Brief ★</div>
+                <h2 class="nl-hed">Get the Brief.<br>Stay Ahead.</h2>
+                <p class="nl-desc">Every edition distills the Fed, inflation, labor data, and growth figures into clear, actionable analysis. No noise. No filler. Just signal.</p>
+                <div class="nl-features">
+                    <div class="nl-feat">Monthly indicator deep-dives</div>
+                    <div class="nl-feat">Fed meeting previews &amp; reviews</div>
+                    <div class="nl-feat">Recession &amp; recovery tracking</div>
+                    <div class="nl-feat">Plain-English economic context</div>
+                </div>
+            </div>
+            <div class="nl-right">
+                <form class="nl-form" id="nl-form">
+                    <div class="nl-row">
+                        <input class="nl-input" type="text" placeholder="First Name" required>
+                        <input class="nl-input" type="text" placeholder="Last Name">
+                    </div>
+                    <input class="nl-input" type="email" placeholder="Email Address" required>
+                    <button class="nl-btn" type="submit">Subscribe — It's Free &nbsp;→</button>
+                    <p class="nl-legal">By subscribing you agree to receive periodic economic analysis from The Macro Brief. Unsubscribe at any time. Your data will never be sold or shared.</p>
+                </form>
+                <div class="nl-success" id="nl-success">
+                    ✓ &nbsp;You're subscribed to The Macro Brief.<br>Watch for the next edition in your inbox shortly.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2025 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-sources">
+                Data: Federal Reserve (H.15, H.6 Statistical Releases)<br>
+                Bureau of Labor Statistics (CPI, Employment Situation)<br>
+                Bureau of Economic Analysis (GDP Advance Estimate)<br>
+                U.S. Census Bureau (Advance Retail Trade Survey)<br>
+                All data as of April 2025
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Economic indicators are subject to revision by their respective source agencies. Past economic conditions are not indicative of future performance or trends. Readers should consult a qualified financial advisor before making any investment or financial decisions based on information presented herein.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Seamless ticker loop — duplicate content so translateX(-50%) loops perfectly
+    const tm = document.getElementById('tickerMove');
+    tm.innerHTML += tm.innerHTML;
+
+    // Newsletter form
+    document.getElementById('nl-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        this.style.display = 'none';
+        document.getElementById('nl-success').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
