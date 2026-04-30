@@ -1090,11 +1090,6 @@
     const tm = document.getElementById('tickerMove');
     tm.innerHTML += tm.innerHTML;
 
-    // ─── Beehiiv config ───────────────────────────────────────────────────────
-    const BEEHIIV_PUB_ID  = 'pub_7c236eb8-9009-4da1-bf40-903fee0558bf';
-    const BEEHIIV_API_KEY = 'LXFs0k6gMhxJYTyISBgIucfx0hSW5o2afaTviNyQShjamro9r86z7POro09ORhwd';
-    // ─────────────────────────────────────────────────────────────────────────
-
     document.getElementById('nl-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -1118,13 +1113,10 @@
             if (lastName)  body.last_name  = lastName;
 
             const res = await fetch(
-                `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
+                'https://beehiiv-proxy.cleary0720.workers.dev',
                 {
                     method: 'POST',
-                    headers: {
-                        'Content-Type':  'application/json',
-                        'Authorization': `Bearer ${BEEHIIV_API_KEY}`
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(body)
                 }
             );
