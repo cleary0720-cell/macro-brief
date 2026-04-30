@@ -672,6 +672,47 @@
             line-height: 1.55;
         }
 
+        .nl-share {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid #2A2A2A;
+        }
+
+        .nl-share-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .nl-share-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .nl-share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 7px 14px;
+            border: 1px solid #3A3A3A;
+            color: #BBBBAA;
+            background: transparent;
+            cursor: pointer;
+            transition: border-color 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nl-share-btn:hover { border-color: var(--red-bright); color: var(--red-bright); }
+        .nl-share-btn.copied { border-color: #1B5E20; color: #4CAF50; }
+
         .nl-success {
             display: none;
             background: #1B5E20;
@@ -1057,6 +1098,14 @@
                     <div class="nl-feat">Recession &amp; recovery tracking</div>
                     <div class="nl-feat">Plain-English economic context</div>
                 </div>
+                <div class="nl-share">
+                    <div class="nl-share-label">★ &nbsp; Share The Macro Brief &nbsp; ★</div>
+                    <div class="nl-share-btns">
+                        <a class="nl-share-btn" href="https://twitter.com/intent/tweet?text=Check%20out%20The%20Macro%20Brief%20by%20Connor%20Leary%20%E2%80%94%20economic%20intelligence%20for%20the%20informed%20investor&url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief" target="_blank" rel="noopener">Post on X</a>
+                        <a class="nl-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief" target="_blank" rel="noopener">LinkedIn</a>
+                        <button class="nl-share-btn" id="nl-copy-btn" onclick="copyDashLink()">Copy Link</button>
+                    </div>
+                </div>
             </div>
             <div class="nl-right">
                 <form class="nl-form" id="nl-form">
@@ -1111,6 +1160,19 @@
     // Seamless ticker loop
     const tm = document.getElementById('tickerMove');
     tm.innerHTML += tm.innerHTML;
+
+    function copyDashLink() {
+        navigator.clipboard.writeText('https://cleary0720-cell.github.io/macro-brief').then(function() {
+            const btn = document.getElementById('nl-copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
 
     document.getElementById('nl-form').addEventListener('submit', async function (e) {
         e.preventDefault();
