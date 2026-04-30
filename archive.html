@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+        .nav-links a.active { color: var(--ink); font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+        /* ── MASTHEAD ── */
+        .masthead {
+            padding: 32px 0 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .masthead-super {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 10px;
+        }
+
+        .masthead-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(38px, 7vw, 80px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+
+        .masthead-title .red { color: var(--red-bright); }
+
+        .masthead-sub {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 18px;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ornament-line {
+            height: 1px;
+            background: var(--ink);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .ornament-sym {
+            color: var(--red-bright);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ── EDITION BAR ── */
+        .edition-bar {
+            border-bottom: 1px solid var(--ink);
+            padding: 8px 0;
+        }
+
+        .edition-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ed-item {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.07em;
+            color: var(--ink-mid);
+        }
+
+        .ed-center {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--red-bright);
+            font-weight: 700;
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 36px 0 24px;
+        }
+
+        .section-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .section-count {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        /* ── ARTICLE GRID ── */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+            margin-bottom: 48px;
+        }
+
+        .article-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            background: var(--cream);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+            position: relative;
+        }
+
+        .article-card:hover { background: var(--cream-dark); }
+
+        .article-card:hover .card-title { color: var(--red-bright); }
+
+        /* Placeholder card (no article yet) */
+        .article-card.placeholder {
+            cursor: default;
+            opacity: 0.45;
+        }
+
+        .article-card.placeholder:hover {
+            background: var(--cream);
+        }
+
+        .article-card.placeholder:hover .card-title {
+            color: var(--ink);
+        }
+
+        /* Thumbnail */
+        .card-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .card-thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Placeholder thumb pattern */
+        .card-thumb-placeholder {
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #222 0px,
+                    #222 1px,
+                    #1A1A1A 1px,
+                    #1A1A1A 12px
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-thumb-placeholder span {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #444;
+        }
+
+        /* Category stripe */
+        .card-cat-stripe {
+            height: 3px;
+            background: var(--red-bright);
+            flex-shrink: 0;
+        }
+
+        .article-card.placeholder .card-cat-stripe {
+            background: var(--rule);
+        }
+
+        /* Card body */
+        .card-body {
+            padding: 16px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .card-category {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+        }
+
+        .article-card.placeholder .card-category {
+            color: var(--ink-light);
+        }
+
+        .card-date {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 10px;
+            transition: color 0.15s;
+        }
+
+        .card-excerpt {
+            font-size: 12px;
+            color: var(--ink-light);
+            line-height: 1.6;
+            font-style: italic;
+            flex: 1;
+        }
+
+        .card-read-more {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ── EMPTY STATE ── */
+        .empty-notice {
+            border: 1px dashed var(--rule);
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 48px;
+            display: none;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a {
+            color: var(--ink-light);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .article-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .article-grid { grid-template-columns: 1fr; }
+            .footer-top { flex-direction: column; }
+            .footer-links { text-align: left; }
+            .ed-item:first-child { display: none; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="archive.html" class="active">Archive</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-super">★ &nbsp; Article Archive &nbsp; ★</div>
+        <h1 class="masthead-title"><span class="red">The</span> Macro Brief</h1>
+        <div class="masthead-sub">Complete Edition Archive · All Past Issues</div>
+        <div class="ornament">
+            <div class="ornament-line"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+    <div class="container">
+        <span class="ed-item">BY CONNOR LEARY · 2025</span>
+        <span class="ed-center">✦ &nbsp; ALL EDITIONS &nbsp; ✦</span>
+        <span class="ed-item">VOL. I · UNITED STATES</span>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main>
+<div class="container">
+
+    <div class="section-hd">
+        <span class="section-tag">All Articles</span>
+        <div class="section-rule"></div>
+        <span class="section-count" id="article-count">0 EDITIONS PUBLISHED</span>
+    </div>
+
+    <div class="article-grid" id="article-grid">
+
+        <!-- ─────────────────────────────────────────────
+             ADD NEW ARTICLES ABOVE THIS LINE
+             Copy one of the blocks below and fill in:
+               - href: path to your article HTML file
+               - card-category: topic label
+               - card-date: publication date
+               - card-title: article headline
+               - card-excerpt: 1-2 sentence summary
+               - card-thumb: add <img class="card-thumb-img"> inside .card-thumb
+                             or leave .card-thumb-placeholder for no image
+        ────────────────────────────────────────────── -->
+
+        <!-- PLACEHOLDER 1 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Macro Analysis</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 2 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Federal Reserve</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 3 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Inflation</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 4 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Labor Market</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 5 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Fixed Income</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 6 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb">
+                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+            </div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta">
+                    <span class="card-category">Consumer</span>
+                    <span class="card-date">— —, 2025</span>
+                </div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+            </div>
+        </div>
+
+    </div><!-- /#article-grid -->
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2025 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">← Back to Dashboard</a><br>
+                <a href="archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Count live (non-placeholder) articles and update the counter
+    const cards = document.querySelectorAll('.article-card:not(.placeholder)');
+    const count = cards.length;
+    document.getElementById('article-count').textContent =
+        count === 0 ? '0 EDITIONS PUBLISHED' :
+        count === 1 ? '1 EDITION PUBLISHED' :
+        count + ' EDITIONS PUBLISHED';
+</script>
+
+</body>
+</html>
