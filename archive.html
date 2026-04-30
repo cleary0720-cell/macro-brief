@@ -344,9 +344,30 @@
 
         .card-date {
             font-family: 'Courier New', monospace;
-            font-size: 8.5px;
+            font-size: 9.5px;
             letter-spacing: 0.06em;
             color: var(--ink-light);
+            font-weight: 600;
+        }
+
+        .card-published {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--rule);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-published-label {
+            font-size: 8px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--rule);
         }
 
         .card-title {
@@ -531,99 +552,84 @@
                              or leave .card-thumb-placeholder for no image
         ────────────────────────────────────────────── -->
 
-        <!-- PLACEHOLDER 1 -->
-        <div class="article-card placeholder">
+        <!-- ARTICLE 1 — Oil Prices -->
+        <a class="article-card" href="articles/2025-04-oil-prices.html">
             <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
+                <div style="width:100%;height:100%;background:linear-gradient(160deg,#0A0A0A 0%,#1C0800 50%,#0D0D0D 100%);display:flex;align-items:center;justify-content:center;">
+                    <span style="font-family:'Didot','Bodoni 72',Georgia,serif;font-size:36px;font-weight:900;font-style:italic;color:#F6F1E7;letter-spacing:-1px;">Oil<span style="color:#C41E3A;">'s</span> Surge</span>
+                </div>
             </div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
                 <div class="card-meta">
-                    <span class="card-category">Macro Analysis</span>
-                    <span class="card-date">— —, 2025</span>
+                    <span class="card-category">Energy &amp; Commodities</span>
                 </div>
-                <div class="card-title">Your Next Article Title Goes Here</div>
-                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-title">The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation</div>
+                <div class="card-excerpt">A confluence of supply restraint, geopolitical friction, and fragile demand has crude oil back at the center of the macroeconomic debate.</div>
+                <div class="card-published">
+                    <span class="card-published-label">Published</span>
+                    <span>April 30, 2025</span>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- PLACEHOLDER 2 -->
         <div class="article-card placeholder">
-            <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
-            </div>
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Federal Reserve</span>
-                    <span class="card-date">— —, 2025</span>
-                </div>
+                <div class="card-meta"><span class="card-category">Federal Reserve</span></div>
                 <div class="card-title">Your Next Article Title Goes Here</div>
                 <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
             </div>
         </div>
 
         <!-- PLACEHOLDER 3 -->
         <div class="article-card placeholder">
-            <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
-            </div>
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Inflation</span>
-                    <span class="card-date">— —, 2025</span>
-                </div>
+                <div class="card-meta"><span class="card-category">Inflation</span></div>
                 <div class="card-title">Your Next Article Title Goes Here</div>
                 <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
             </div>
         </div>
 
         <!-- PLACEHOLDER 4 -->
         <div class="article-card placeholder">
-            <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
-            </div>
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Labor Market</span>
-                    <span class="card-date">— —, 2025</span>
-                </div>
+                <div class="card-meta"><span class="card-category">Labor Market</span></div>
                 <div class="card-title">Your Next Article Title Goes Here</div>
                 <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
             </div>
         </div>
 
         <!-- PLACEHOLDER 5 -->
         <div class="article-card placeholder">
-            <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
-            </div>
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Fixed Income</span>
-                    <span class="card-date">— —, 2025</span>
-                </div>
+                <div class="card-meta"><span class="card-category">Fixed Income</span></div>
                 <div class="card-title">Your Next Article Title Goes Here</div>
                 <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
             </div>
         </div>
 
         <!-- PLACEHOLDER 6 -->
         <div class="article-card placeholder">
-            <div class="card-thumb">
-                <div class="card-thumb-placeholder"><span>Coming Soon</span></div>
-            </div>
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Consumer</span>
-                    <span class="card-date">— —, 2025</span>
-                </div>
+                <div class="card-meta"><span class="card-category">Consumer</span></div>
                 <div class="card-title">Your Next Article Title Goes Here</div>
                 <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
             </div>
         </div>
 
