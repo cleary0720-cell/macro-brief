@@ -672,6 +672,22 @@
             line-height: 1.6;
         }
 
+        .nl-error {
+            display: none;
+            background: #3D0000;
+            color: #FFB3B3;
+            padding: 16px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11.5px;
+            line-height: 1.55;
+            margin-top: 4px;
+        }
+
+        .nl-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         /* ═══════════════════════════════════════════
            FOOTER
         ═══════════════════════════════════════════ */
@@ -1023,16 +1039,17 @@
             <div class="nl-right">
                 <form class="nl-form" id="nl-form">
                     <div class="nl-row">
-                        <input class="nl-input" type="text" placeholder="First Name" required>
-                        <input class="nl-input" type="text" placeholder="Last Name">
+                        <input class="nl-input" id="nl-fname" type="text" placeholder="First Name">
+                        <input class="nl-input" id="nl-lname" type="text" placeholder="Last Name">
                     </div>
-                    <input class="nl-input" type="email" placeholder="Email Address" required>
-                    <button class="nl-btn" type="submit">Subscribe — It's Free &nbsp;→</button>
+                    <input class="nl-input" id="nl-email" type="email" placeholder="Email Address" required>
+                    <button class="nl-btn" id="nl-btn" type="submit">Subscribe — It's Free &nbsp;→</button>
                     <p class="nl-legal">By subscribing you agree to receive periodic economic analysis from The Macro Brief. Unsubscribe at any time. Your data will never be sold or shared.</p>
                 </form>
                 <div class="nl-success" id="nl-success">
                     ✓ &nbsp;You're subscribed to The Macro Brief.<br>Watch for the next edition in your inbox shortly.
                 </div>
+                <div class="nl-error" id="nl-error"></div>
             </div>
         </div>
     </div>
@@ -1069,15 +1086,63 @@
 </footer>
 
 <script>
-    // Seamless ticker loop — duplicate content so translateX(-50%) loops perfectly
+    // Seamless ticker loop
     const tm = document.getElementById('tickerMove');
     tm.innerHTML += tm.innerHTML;
 
-    // Newsletter form
-    document.getElementById('nl-form').addEventListener('submit', function(e) {
+    // ─── Beehiiv config ───────────────────────────────────────────────────────
+    const BEEHIIV_PUB_ID  = 'pub_7c236eb8-9009-4da1-bf40-903fee0558bf';
+    const BEEHIIV_API_KEY = 'LXFs0k6gMhxJYTyISBgIucfx0hSW5o2afaTviNyQShjamro9r86z7POro09ORhwd';
+    // ─────────────────────────────────────────────────────────────────────────
+
+    document.getElementById('nl-form').addEventListener('submit', async function (e) {
         e.preventDefault();
-        this.style.display = 'none';
-        document.getElementById('nl-success').style.display = 'block';
+
+        const email     = document.getElementById('nl-email').value.trim();
+        const firstName = document.getElementById('nl-fname').value.trim();
+        const lastName  = document.getElementById('nl-lname').value.trim();
+        const btn       = document.getElementById('nl-btn');
+        const errEl     = document.getElementById('nl-error');
+
+        btn.textContent = 'Subscribing…';
+        btn.disabled    = true;
+        errEl.style.display = 'none';
+
+        try {
+            const body = {
+                email,
+                reactivate_existing: false,
+                send_welcome_email:  true
+            };
+            if (firstName) body.first_name = firstName;
+            if (lastName)  body.last_name  = lastName;
+
+            const res = await fetch(
+                `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type':  'application/json',
+                        'Authorization': `Bearer ${BEEHIIV_API_KEY}`
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.message || `Request failed (${res.status})`);
+            }
+
+            this.style.display = 'none';
+            document.getElementById('nl-success').style.display = 'block';
+
+        } catch (err) {
+            btn.textContent = "Subscribe — It's Free →";
+            btn.disabled    = false;
+            errEl.textContent = '⚠ ' + (err.message || 'Something went wrong. Please try again.');
+            errEl.style.display = 'block';
+        }
     });
 </script>
 
