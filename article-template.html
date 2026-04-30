@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTICLE TITLE — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.svg">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <!-- EDIT: Change category label -->
+            <span class="article-category">Macro Analysis</span>
+            <div class="article-category-rule"></div>
+            <!-- EDIT: Change issue number -->
+            <span class="article-issue">Vol. I, No. 1</span>
+        </div>
+
+        <!-- EDIT: Replace with your article headline -->
+        <h1 class="article-headline">Your Article Headline Goes <span class="red">Here</span></h1>
+
+        <!-- EDIT: Replace with your article subheadline/deck -->
+        <p class="article-subhead">A one or two sentence subheadline that summarises the key argument or finding of this edition. Write it here before publishing.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">By <strong>Connor Leary</strong> · The Macro Brief</span>
+            <!-- EDIT: Replace with publication date -->
+            <span class="article-date">Month DD, YYYY</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE (optional — delete this block if no image) -->
+<div class="container">
+    <div class="article-hero">
+        <!-- EDIT: Replace src with your image path, or delete this whole block -->
+        <img src="your-image.jpg" alt="Article image description">
+        <!-- EDIT: Replace caption text -->
+        <div class="article-hero-caption">Image caption goes here — source or credit if applicable.</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <!-- ══════════════════════════════════════════
+             WRITE YOUR ARTICLE BELOW
+             Available elements:
+               <p> — body paragraph (auto-indents after first)
+               <h2> — section heading
+               <h3> — sub-heading
+               <div class="pull-quote"> — featured quote
+               <div class="article-callout"> — callout box
+               <div class="data-table-wrap"><table class="data-table"> — data table
+        ══════════════════════════════════════════ -->
+
+        <p>Start your article here. The first paragraph sets the scene — write your lede, the most important sentence or two that draws the reader in and tells them why this edition matters right now.</p>
+
+        <p>Subsequent paragraphs auto-indent to create a classic newspaper text flow. Keep paragraphs focused: one idea per paragraph. The reader should be able to skim the first sentence of each paragraph and understand the argument.</p>
+
+        <div class="pull-quote">"Pull quotes draw attention to the most important line in your article. Use them sparingly — once or twice per piece."</div>
+
+        <h2>Section Heading</h2>
+
+        <p>Use section headings to break a longer piece into digestible parts. Each section should advance the argument or add a new dimension to the analysis.</p>
+
+        <p>Continue writing here. Add as many paragraphs as you need. Delete any example elements you are not using.</p>
+
+        <div class="article-callout">
+            Use a callout box to highlight a key data point, definition, or supporting fact that enriches the main text without interrupting the narrative flow.
+        </div>
+
+        <h2>Data at a Glance</h2>
+
+        <p>Use the table below to present key indicators relevant to this article. Delete it if not needed.</p>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Current</th>
+                        <th>Previous</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Indicator Name</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td class="td-pos">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Indicator Name</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td class="td-neg">−0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Indicator Name</td>
+                        <td>0.0%</td>
+                        <td>0.0%</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Conclusion</h2>
+
+        <p>Close with your key takeaway. What should the reader remember from this edition? What does the data mean for investors, policymakers, or the broader economy? End with a forward-looking sentence.</p>
+
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <!-- EDIT: Add relevant topic tags -->
+        <div class="article-tags">
+            <span class="article-tag">Macro</span>
+            <span class="article-tag">Federal Reserve</span>
+            <span class="article-tag">Inflation</span>
+            <span class="article-tag">Add Your Tags</span>
+        </div>
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2025 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
