@@ -367,6 +367,52 @@
             color: var(--cream);
         }
 
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
         /* ── FOOTER ── */
         footer {
             border-top: 2px solid var(--ink);
@@ -571,6 +617,18 @@
             <span class="article-tag">Inflation</span>
             <span class="article-tag">Add Your Tags</span>
         </div>
+
+        <!-- SHARE — update the tweet text and URL to match this article -->
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=ARTICLE+TITLE+HERE&url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief%2Farticles%2FYOUR-FILE-NAME.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief%2Farticles%2FYOUR-FILE-NAME.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
         <a href="../archive.html" class="back-link">← Back to Archive</a>
     </div>
 
@@ -599,5 +657,31 @@
     </div>
 </footer>
 
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 </body>
 </html>
