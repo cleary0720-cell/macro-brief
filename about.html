@@ -441,9 +441,34 @@
             .footer-links { text-align: left; }
             .profile-box { flex-direction: column; }
         }
+        /* TICKER */
+        .ticker-bar { background: var(--red-bright); color: #fff; height: 28px; display: flex; align-items: center; overflow: hidden; }
+        .ticker-label { background: var(--ink); color: #fff; font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 16px; height: 100%; display: flex; align-items: center; flex-shrink: 0; border-right: 1px solid #333; }
+        .ticker-track { overflow: hidden; flex: 1; }
+        .ticker-move { display: inline-block; white-space: nowrap; font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 0.08em; animation: marquee 42s linear infinite; }
+        .ticker-move:hover { animation-play-state: paused; }
+        .ticker-item { margin: 0 22px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 </head>
 <body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+    <div class="ticker-label">Markets</div>
+    <div class="ticker-track">
+        <div class="ticker-move" id="tickerMove">
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.58%</span>
+            <span class="ticker-item">◆ CPI (YoY) &nbsp;3.8% ↑</span>
+            <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.3%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+2.0% ▲</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.46%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.2% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.6%</span>
+            <span class="ticker-item" style="margin-right:80px;">&nbsp;</span>
+        </div>
+    </div>
+</div>
 
 <!-- INFO BAR -->
 <div class="info-bar">
@@ -615,6 +640,10 @@
 </footer>
 
 <script>
+    // Seamless ticker loop
+    const tm = document.getElementById('tickerMove');
+    tm.innerHTML += tm.innerHTML;
+
     document.getElementById('ab-form').addEventListener('submit', async function (e) {
         e.preventDefault();
         const email     = document.getElementById('ab-email').value.trim();
