@@ -807,6 +807,99 @@
         }
 
         /* ═══════════════════════════════════════════
+           WHAT TO WATCH
+        ═══════════════════════════════════════════ */
+        .watch-grid {
+            border-top: 2px solid var(--ink);
+            border-left: 1px solid var(--ink);
+            margin-bottom: 32px;
+        }
+
+        .watch-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 70px;
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            align-items: stretch;
+        }
+
+        .watch-date-col {
+            padding: 14px 10px;
+            border-right: 1px solid var(--ink);
+            background: var(--ink);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .watch-month {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #BBBBAA;
+        }
+
+        .watch-day {
+            font-size: 30px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .watch-info {
+            padding: 14px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .watch-event {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+
+        .watch-agency {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .watch-note {
+            font-size: 12px;
+            color: var(--ink-light);
+            font-style: italic;
+            line-height: 1.55;
+        }
+
+        .watch-tag-col {
+            padding: 14px 10px;
+            border-left: 1px solid var(--rule);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .watch-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* ═══════════════════════════════════════════
            RESPONSIVE
         ═══════════════════════════════════════════ */
         @media (max-width: 1080px) {
@@ -1043,6 +1136,64 @@
                 <div class="snap-val">Holding</div>
                 <div class="snap-ctx">Retail sales up 4.2% YoY remains the economy's anchor. E-commerce leads the way, though inflation is quietly eroding real purchasing power.</div>
             </div>
+        </div>
+    </div>
+
+    <!-- WHAT TO WATCH -->
+    <div class="section-hd">
+        <span class="section-tag">What to Watch</span>
+        <div class="section-rule"></div>
+        <span class="section-date">UPCOMING RELEASES</span>
+    </div>
+
+    <div class="watch-grid">
+        <div class="watch-row">
+            <div class="watch-date-col">
+                <div class="watch-month">Jun</div>
+                <div class="watch-day">5</div>
+            </div>
+            <div class="watch-info">
+                <div class="watch-event">Employment Situation — May 2026</div>
+                <div class="watch-agency">Bureau of Labor Statistics · 8:30am ET</div>
+                <div class="watch-note">Previous: 4.3% unemployment, 115K payrolls added. Watch for any acceleration in hiring or further softening in the labor market ahead of the June FOMC decision.</div>
+            </div>
+            <div class="watch-tag-col"><div class="watch-cat">Labor</div></div>
+        </div>
+        <div class="watch-row">
+            <div class="watch-date-col">
+                <div class="watch-month">Jun</div>
+                <div class="watch-day">10</div>
+            </div>
+            <div class="watch-info">
+                <div class="watch-event">Consumer Price Index — May 2026</div>
+                <div class="watch-agency">Bureau of Labor Statistics · 8:30am ET</div>
+                <div class="watch-note">Previous: 3.8% YoY. The key question is whether April's energy-driven spike persists or begins to moderate — a print above 4% would materially complicate the Fed's path.</div>
+            </div>
+            <div class="watch-tag-col"><div class="watch-cat">Inflation</div></div>
+        </div>
+        <div class="watch-row">
+            <div class="watch-date-col">
+                <div class="watch-month">Jun</div>
+                <div class="watch-day">16</div>
+            </div>
+            <div class="watch-info">
+                <div class="watch-event">FOMC Meeting — Rate Decision</div>
+                <div class="watch-agency">Federal Reserve · Decision Jun 17, 2:00pm ET</div>
+                <div class="watch-note">Fed holding at 3.50–3.75%. With inflation at 3.8%, another pause is widely expected. Watch the statement and press conference for any shift in forward guidance.</div>
+            </div>
+            <div class="watch-tag-col"><div class="watch-cat">Fed Policy</div></div>
+        </div>
+        <div class="watch-row">
+            <div class="watch-date-col">
+                <div class="watch-month">Jun</div>
+                <div class="watch-day">17</div>
+            </div>
+            <div class="watch-info">
+                <div class="watch-event">Advance Retail Sales — May 2026</div>
+                <div class="watch-agency">U.S. Census Bureau · 8:30am ET</div>
+                <div class="watch-note">Previous: +4.2% YoY. Consumer spending has been the economy's anchor — any meaningful deceleration would be a key warning sign for Q2 growth.</div>
+            </div>
+            <div class="watch-tag-col"><div class="watch-cat">Consumer</div></div>
         </div>
     </div>
 
