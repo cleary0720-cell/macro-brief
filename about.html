@@ -286,11 +286,10 @@
         /* CTA BOX */
         .cta-box {
             border: 2px solid var(--ink);
-            padding: 32px 36px;
+            padding: 36px 40px;
             background: var(--ink);
             color: var(--cream);
             margin: 44px 0 56px;
-            text-align: center;
         }
 
         .cta-eyebrow {
@@ -307,7 +306,7 @@
             font-weight: 900;
             font-style: italic;
             line-height: 1.1;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .cta-desc {
@@ -315,24 +314,75 @@
             color: #9A9A8A;
             line-height: 1.7;
             font-style: italic;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid #2A2A2A;
+            padding-bottom: 22px;
         }
 
-        .cta-btn {
-            display: inline-block;
+        .ab-form { display: flex; flex-direction: column; gap: 10px; }
+
+        .ab-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .ab-input {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--cream);
+            padding: 11px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .ab-input:focus { border-color: var(--red-bright); }
+        .ab-input::placeholder { color: #484840; }
+
+        .ab-btn {
             background: var(--red-bright);
             color: #fff;
+            border: none;
+            padding: 13px 20px;
             font-family: 'Courier New', monospace;
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            text-decoration: none;
-            padding: 14px 28px;
+            cursor: pointer;
             transition: background 0.2s;
         }
 
-        .cta-btn:hover { background: #8B0000; }
+        .ab-btn:hover { background: #8B0000; }
+        .ab-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .ab-legal {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            color: #444;
+            line-height: 1.55;
+        }
+
+        .ab-success {
+            display: none;
+            background: #1B5E20;
+            color: #fff;
+            padding: 18px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .ab-error {
+            display: none;
+            background: #3D0000;
+            color: #FFB3B3;
+            padding: 14px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 11.5px;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 500px) { .ab-row { grid-template-columns: 1fr; } }
 
         /* FOOTER */
         footer {
@@ -525,7 +575,17 @@
         <div class="cta-eyebrow">★ &nbsp; Stay Informed &nbsp; ★</div>
         <h2 class="cta-hed">Get the Brief in Your Inbox.</h2>
         <p class="cta-desc">Weekly economic analysis, delivered every Sunday morning. No noise. Just signal.</p>
-        <a href="index.html#newsletter" class="cta-btn">Subscribe Free &nbsp;→</a>
+        <form class="ab-form" id="ab-form">
+            <div class="ab-row">
+                <input class="ab-input" id="ab-fname" type="text" placeholder="First Name">
+                <input class="ab-input" id="ab-lname" type="text" placeholder="Last Name">
+            </div>
+            <input class="ab-input" id="ab-email" type="email" placeholder="Email Address" required>
+            <button class="ab-btn" id="ab-btn" type="submit">Subscribe — It's Free &nbsp;→</button>
+            <p class="ab-legal">By subscribing you agree to receive periodic economic analysis from The Macro Brief. Unsubscribe at any time. Your data will never be sold or shared.</p>
+        </form>
+        <div class="ab-success" id="ab-success">✓ &nbsp;You're subscribed to The Macro Brief.<br>Watch for the next edition in your inbox shortly.</div>
+        <div class="ab-error" id="ab-error"></div>
     </div>
 
 </div>
@@ -554,5 +614,45 @@
     </div>
 </footer>
 
+<script>
+    document.getElementById('ab-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email     = document.getElementById('ab-email').value.trim();
+        const firstName = document.getElementById('ab-fname').value.trim();
+        const lastName  = document.getElementById('ab-lname').value.trim();
+        const btn       = document.getElementById('ab-btn');
+        const errEl     = document.getElementById('ab-error');
+
+        btn.textContent = 'Subscribing…';
+        btn.disabled    = true;
+        errEl.style.display = 'none';
+
+        try {
+            const body = { email, reactivate_existing: false, send_welcome_email: true };
+            if (firstName) body.first_name = firstName;
+            if (lastName)  body.last_name  = lastName;
+
+            const res = await fetch('https://beehiiv-proxy.cleary0720.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.message || `Request failed (${res.status})`);
+            }
+
+            document.getElementById('ab-form').style.display = 'none';
+            document.getElementById('ab-success').style.display = 'block';
+
+        } catch (err) {
+            btn.textContent = "Subscribe — It's Free →";
+            btn.disabled    = false;
+            errEl.textContent = '⚠ ' + (err.message || 'Something went wrong. Please try again.');
+            errEl.style.display = 'block';
+        }
+    });
+</script>
 </body>
 </html>
