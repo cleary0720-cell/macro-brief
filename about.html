@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://themacrobrief.net/about.html">
+    <meta property="og:title" content="About — The Macro Brief">
+    <meta property="og:description" content="The Macro Brief is independent economic analysis written for the average reader — no jargon, no Wall Street filter.">
+    <meta property="og:image" content="https://themacrobrief.net/og-image.png">
+    <meta name="description" content="The Macro Brief is independent economic analysis written for the average reader — no jargon, no Wall Street filter.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* INFO BAR */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* NAV */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+        .nav-links a.active { color: var(--ink); font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 48px;
+        }
+
+        .page-eyebrow {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 14px;
+        }
+
+        .page-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .page-title .red { color: var(--red-bright); }
+
+        .page-deck {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.6;
+            font-style: italic;
+            max-width: 600px;
+        }
+
+        /* BODY */
+        .about-body {
+            margin-bottom: 56px;
+        }
+
+        .about-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .about-body p + p {
+            text-indent: 2em;
+        }
+
+        .about-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 44px 0 16px;
+            padding-top: 32px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 36px 0;
+        }
+
+        /* INDICATOR TABLE */
+        .indicator-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .indicator-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 11.5px;
+        }
+
+        .indicator-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9px;
+        }
+
+        .indicator-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+            vertical-align: top;
+            line-height: 1.55;
+        }
+
+        .indicator-table tr:last-child td { border-bottom: none; }
+        .indicator-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .ind-name { font-weight: 700; color: var(--ink); }
+
+        /* PROFILE BOX */
+        .profile-box {
+            border: 1px solid var(--ink);
+            padding: 28px 32px;
+            background: var(--cream-dark);
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            margin: 44px 0;
+        }
+
+        .profile-initial {
+            width: 72px;
+            height: 72px;
+            background: var(--ink);
+            color: var(--cream);
+            font-size: 32px;
+            font-weight: 900;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 2px solid var(--red-bright);
+        }
+
+        .profile-info { flex: 1; }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--ink);
+            margin-bottom: 3px;
+        }
+
+        .profile-title {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 12px;
+        }
+
+        .profile-bio {
+            font-size: 13.5px;
+            color: var(--ink-mid);
+            line-height: 1.7;
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            border: 2px solid var(--ink);
+            padding: 32px 36px;
+            background: var(--ink);
+            color: var(--cream);
+            margin: 44px 0 56px;
+            text-align: center;
+        }
+
+        .cta-eyebrow {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 12px;
+        }
+
+        .cta-hed {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .cta-desc {
+            font-size: 14px;
+            color: #9A9A8A;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--red-bright);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 14px 28px;
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover { background: #8B0000; }
+
+        /* FOOTER */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+            .profile-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME II</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="article-container">
+    <header class="page-header">
+        <div class="page-eyebrow">★ &nbsp; About The Macro Brief &nbsp; ★</div>
+        <h1 class="page-title">Economic Intelligence.<br>Without the <span class="red">Wall Street Filter.</span></h1>
+        <p class="page-deck">Independent macro analysis written for the average reader — no jargon, no institutional bias, no agenda beyond understanding what's actually happening in the economy.</p>
+    </header>
+</div>
+
+<!-- BODY -->
+<div class="article-container">
+    <div class="about-body">
+
+        <p>Most economic analysis isn't written for you. It's written for portfolio managers, institutional traders, and policy wonks who already speak the language — people who know what an inverted yield curve means before they've had their morning coffee. The rest of us are left to piece it together from headlines that either catastrophize or oversimplify, neither of which is particularly useful.</p>
+
+        <p>The Macro Brief exists to close that gap. Each week, the dashboard tracks the seven indicators that matter most — Fed policy, inflation, employment, growth, yields, consumer spending, and money supply — and the analysis explains not just what the numbers say, but what they mean for the economy you actually live in. No filler. No noise. Just signal.</p>
+
+        <div class="pull-quote">"You don't need a Bloomberg terminal to understand what the Federal Reserve is doing. You just need someone willing to explain it plainly."</div>
+
+        <p>What makes this publication different is also what some might consider an unlikely credential: the author isn't a Wall Street veteran or a tenured economist. That's the point. There are no positions to protect here, no fund performance to justify, no institutional narrative to uphold. The analysis is driven by genuine curiosity — the same curiosity that led a business student from Georgia to start tracking macroeconomic indicators and realized that the conversation around them was far less accessible than it needed to be.</p>
+
+        <h2>Who This Is For</h2>
+
+        <p>The Macro Brief is written for anyone who wants to understand the broader economic forces shaping their world — without needing a finance degree to follow along. If you've ever wondered why the Fed raising interest rates affects your mortgage, why a GDP contraction makes headlines, or what it actually means when inflation "cools," this publication is for you.</p>
+
+        <p>The target reader isn't a day trader watching tick-by-tick data. It's someone who wants context — a clear, honest read on where the economy stands and where it might be headed, delivered once a week without demanding hours of their time.</p>
+
+        <h2>Methodology</h2>
+
+        <p>Every indicator tracked by The Macro Brief is sourced exclusively from official U.S. government agencies and the Federal Reserve. No estimates, no projections from third-party forecasters, no data of uncertain provenance. If a number appears on this dashboard, it was published by one of the sources below.</p>
+
+        <div class="indicator-table-wrap">
+            <table class="indicator-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Source</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ind-name">Federal Funds Rate</span></td>
+                        <td>Federal Reserve (H.15)</td>
+                        <td>The price of money. Sets the tone for every borrowing rate in the economy.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">CPI (YoY)</span></td>
+                        <td>Bureau of Labor Statistics</td>
+                        <td>The broadest measure of inflation — how fast prices are rising for everyday consumers.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">Unemployment Rate</span></td>
+                        <td>Bureau of Labor Statistics</td>
+                        <td>The health of the labor market. One of the Fed's two primary mandates.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">GDP Growth Rate</span></td>
+                        <td>Bureau of Economic Analysis</td>
+                        <td>The economy's overall output. Two consecutive negative quarters define a recession.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">10-Year Treasury Yield</span></td>
+                        <td>U.S. Department of the Treasury</td>
+                        <td>The benchmark for long-term borrowing costs. Reflects market expectations for growth and inflation.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">Retail Sales (YoY)</span></td>
+                        <td>U.S. Census Bureau</td>
+                        <td>Consumer spending drives roughly 70% of U.S. GDP. This is the pulse of the American consumer.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ind-name">M2 Money Supply</span></td>
+                        <td>Federal Reserve (H.6)</td>
+                        <td>The total stock of money in circulation. A leading indicator of inflationary pressure.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>The Macro Sentiment Index is a composite score derived from all seven indicators, weighted by their current directional signals. It is a qualitative synthesis, not a quantitative formula — designed to give readers an at-a-glance read on the overall economic temperature, not a precise prediction.</p>
+
+        <h2>About the Author</h2>
+
+        <div class="profile-box">
+            <div class="profile-initial">CL</div>
+            <div class="profile-info">
+                <div class="profile-name">Connor Leary</div>
+                <div class="profile-title">Founder &amp; Editor · The Macro Brief</div>
+                <div class="profile-bio">Connor is a Junior Business student at the University of Georgia, originally from Georgia. He started The Macro Brief to deepen his own understanding of macroeconomics while making that knowledge accessible to readers who deserve better than jargon-heavy financial media. He believes that economic literacy is not a privilege reserved for professionals — it's something every informed citizen should have access to.</div>
+            </div>
+        </div>
+
+        <h2>A Note on Independence</h2>
+
+        <p>The Macro Brief is entirely independent. It has no investors, no advertisers, no institutional affiliations, and no financial positions in any of the assets or markets it covers. The only interest here is accuracy and clarity. Readers are encouraged to consult a qualified financial advisor before making any investment or financial decisions based on information presented in this publication.</p>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+        <div class="cta-eyebrow">★ &nbsp; Stay Informed &nbsp; ★</div>
+        <h2 class="cta-hed">Get the Brief in Your Inbox.</h2>
+        <p class="cta-desc">Weekly economic analysis, delivered every Sunday morning. No noise. Just signal.</p>
+        <a href="index.html#newsletter" class="cta-btn">Subscribe Free &nbsp;→</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume II · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">← Dashboard</a><br>
+                <a href="archive.html">Article Archive</a><br>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
