@@ -900,6 +900,109 @@
         }
 
         /* ═══════════════════════════════════════════
+           TREND MODAL
+        ═══════════════════════════════════════════ */
+        .ind-card[data-ind] { cursor: pointer; }
+
+        .ind-card[data-ind]::after {
+            content: 'VIEW TREND \2197';
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 7.5px;
+            letter-spacing: 0.18em;
+            color: var(--red-bright);
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+
+        .ind-card[data-ind]:hover::after { opacity: 1; }
+
+        #ind-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.78);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        #ind-modal.open { display: flex; }
+
+        .modal-box {
+            background: var(--cream);
+            max-width: 580px;
+            width: 100%;
+            border: 1px solid var(--ink);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+        }
+
+        .modal-hd {
+            background: var(--ink);
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .modal-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #BBBBAA;
+            margin-bottom: 3px;
+        }
+
+        .modal-name {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--cream);
+            line-height: 1.2;
+        }
+
+        .modal-close {
+            background: none;
+            border: 1px solid #444;
+            color: #BBBBAA;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .modal-close:hover { border-color: var(--red-bright); color: var(--red-bright); }
+
+        .modal-body { padding: 22px 24px 26px; }
+
+        .modal-chart-lbl {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 10px;
+        }
+
+        .modal-note {
+            font-size: 12.5px;
+            color: var(--ink-light);
+            font-style: italic;
+            line-height: 1.65;
+            border-top: 1px solid var(--rule);
+            padding-top: 14px;
+            margin-top: 14px;
+        }
+
+        /* ═══════════════════════════════════════════
            RESPONSIVE
         ═══════════════════════════════════════════ */
         @media (max-width: 1080px) {
@@ -1043,7 +1146,7 @@
     <div class="indicators-grid">
 
         <!-- 1 ─ Fed Funds Rate -->
-        <div class="ind-card neu">
+        <div class="ind-card neu" data-ind="fed-rate">
             <div class="card-cat">Monetary Policy</div>
             <div class="card-name">Federal Funds Rate</div>
             <div class="card-val">3.58%</div>
@@ -1052,7 +1155,7 @@
         </div>
 
         <!-- 2 ─ CPI -->
-        <div class="ind-card neg">
+        <div class="ind-card neg" data-ind="cpi">
             <div class="card-cat">Inflation <span class="watch-badge">⚠ WATCH</span></div>
             <div class="card-name">Consumer Price Index (YoY)</div>
             <div class="card-val">3.8%</div>
@@ -1061,7 +1164,7 @@
         </div>
 
         <!-- 3 ─ Unemployment -->
-        <div class="ind-card neu">
+        <div class="ind-card neu" data-ind="unemployment">
             <div class="card-cat">Labor Market</div>
             <div class="card-name">Unemployment Rate</div>
             <div class="card-val">4.3%</div>
@@ -1070,7 +1173,7 @@
         </div>
 
         <!-- 4 ─ GDP Growth -->
-        <div class="ind-card pos">
+        <div class="ind-card pos" data-ind="gdp">
             <div class="card-cat">Economic Output</div>
             <div class="card-name">GDP Growth Rate (Q1 2026)</div>
             <div class="card-val">+2.0%</div>
@@ -1079,7 +1182,7 @@
         </div>
 
         <!-- 5 ─ 10-Year Treasury -->
-        <div class="ind-card neu">
+        <div class="ind-card neu" data-ind="treasury">
             <div class="card-cat">Fixed Income</div>
             <div class="card-name">10-Year Treasury Yield</div>
             <div class="card-val">4.46%</div>
@@ -1088,7 +1191,7 @@
         </div>
 
         <!-- 6 ─ Retail Sales -->
-        <div class="ind-card pos">
+        <div class="ind-card pos" data-ind="retail">
             <div class="card-cat">Consumer Activity</div>
             <div class="card-name">Retail Sales Growth (YoY)</div>
             <div class="card-val">4.2%</div>
@@ -1097,7 +1200,7 @@
         </div>
 
         <!-- 7 ─ M2 Growth (spans 2 cols) -->
-        <div class="ind-card neu">
+        <div class="ind-card neu" data-ind="m2">
             <div class="card-cat">Money Supply</div>
             <div class="card-name">M2 Money Supply Growth (YoY)</div>
             <div class="card-val">4.6%</div>
@@ -1105,6 +1208,24 @@
             <div class="card-desc">M2 expanded 4.6% year-over-year in March 2026, its fastest pace in several years, with total money supply now exceeding $22.4 trillion. The acceleration is a double-edged signal: it supports nominal economic activity and the GDP rebound, but it also helps explain why inflation is proving so difficult to extinguish — money is flowing faster than the Fed's rate stance alone can contain.</div>
         </div>
 
+    </div>
+
+    <!-- TREND MODAL -->
+    <div id="ind-modal">
+        <div class="modal-box">
+            <div class="modal-hd">
+                <div>
+                    <div class="modal-cat" id="modal-cat"></div>
+                    <div class="modal-name" id="modal-name"></div>
+                </div>
+                <button class="modal-close" onclick="closeIndModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-chart-lbl">12-Month Trend</div>
+                <div id="modal-chart"></div>
+                <div class="modal-note" id="modal-note"></div>
+            </div>
+        </div>
     </div>
 
     <!-- SNAPSHOT ROW -->
@@ -1341,6 +1462,114 @@
             }, 2000);
         });
     }
+
+    // ── INDICATOR TREND CHARTS ──────────────────────────
+    const indData = {
+        'fed-rate': {
+            name: 'Federal Funds Rate', cat: 'Monetary Policy', color: '#7B5000',
+            note: 'The Fed cut rates three times through 2025, lowering the target range from 4.25–4.50% to 3.50–3.75%. The rate has held steady since November 2025 as inflation re-accelerated and the FOMC split over next steps.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [4.33,4.33,4.33,4.08,3.83,3.83,3.58,3.58,3.58,3.58,3.58,3.58]
+        },
+        'cpi': {
+            name: 'Consumer Price Index (YoY)', cat: 'Inflation', color: '#C41E3A', target: 2.0,
+            note: 'After reaching a cycle low of 2.4% in mid-2025, inflation reversed and climbed to 3.8% by April 2026 — driven by energy prices and persistent shelter costs. The green dashed line marks the Fed\'s 2% target.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [2.4,2.6,2.7,2.5,2.4,2.6,2.8,2.9,3.1,3.3,3.6,3.8]
+        },
+        'unemployment': {
+            name: 'Unemployment Rate', cat: 'Labor Market', color: '#7B5000',
+            note: 'The labor market has been remarkably stable over the past year, holding near 4.2% throughout. The slight uptick to 4.3% in April 2026 reflects modest softening — below recessionary levels, but a trend worth watching.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.1,4.2,4.2,4.3]
+        },
+        'gdp': {
+            name: 'GDP Growth Rate', cat: 'Economic Output', color: '#1B5E20',
+            note: 'GDP growth slowed sharply through 2025 before rebounding to +2.0% in Q1 2026. The Q4 2025 print of +0.5% was the weakest of the cycle. The Q1 rebound — driven by investment, exports, and consumer spending — suggests the slowdown was temporary.',
+            months: ["Q2 '25","Q3 '25","Q4 '25","Q1 '26","","","","","","","",""],
+            values: [2.8,1.9,0.5,2.0]
+        },
+        'treasury': {
+            name: '10-Year Treasury Yield', cat: 'Fixed Income', color: '#7B5000',
+            note: 'Yields dipped in mid-2025 as rate cut expectations built, then steadily climbed as inflation re-accelerated and the Fed signaled a pause. At 4.46%, the 10-year reflects markets repricing the path of easing.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [4.17,4.30,4.25,4.15,4.20,4.25,4.30,4.35,4.38,4.40,4.42,4.46]
+        },
+        'retail': {
+            name: 'Retail Sales Growth (YoY)', cat: 'Consumer Activity', color: '#1B5E20',
+            note: 'Consumer spending has been the economy\'s most consistent bright spot, holding above 4% year-over-year throughout the period. The holiday season bump in late 2025 and sustained 4.2% readings in 2026 confirm the consumer remains resilient.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [4.6,4.4,4.3,4.2,4.1,4.0,4.2,4.5,4.3,4.2,4.2,4.2]
+        },
+        'm2': {
+            name: 'M2 Money Supply (YoY)', cat: 'Money Supply', color: '#7B5000',
+            note: 'M2 growth has steadily accelerated from 3.9% in mid-2025 to 4.6% by early 2026. The expansion supports economic activity but also helps explain why inflation has proved so difficult to bring to heel.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [3.9,4.0,4.0,4.1,4.2,4.2,4.3,4.4,4.5,4.6,4.6,4.6]
+        }
+    };
+
+    function buildSparkline(d) {
+        const W=520,H=180,PL=46,PR=18,PT=18,PB=38;
+        const iW=W-PL-PR, iH=H-PT-PB;
+        const vals=d.values.filter(v=>v!==null&&v!==undefined&&v!=='');
+        const n=vals.length;
+        const mn=Math.min(...vals), mx=Math.max(...vals);
+        const pad=(mx-mn)*0.12||0.1;
+        const lo=mn-pad, hi=mx+pad, rng=hi-lo;
+        const px=i=>PL+(n===1?iW/2:(i/(n-1))*iW);
+        const py=v=>PT+iH-((v-lo)/rng)*iH;
+        const pts=vals.map((v,i)=>`${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+        const area=`${px(0).toFixed(1)},${(PT+iH).toFixed(1)} ${pts} ${px(n-1).toFixed(1)},${(PT+iH).toFixed(1)}`;
+        let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">`;
+        s+=`<defs><linearGradient id="mg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${d.color}" stop-opacity="0.2"/><stop offset="100%" stop-color="${d.color}" stop-opacity="0"/></linearGradient></defs>`;
+        for(let i=0;i<=3;i++){
+            const gy=(PT+(i/3)*iH).toFixed(1);
+            const gv=(hi-(i/3)*rng).toFixed(2).replace(/0+$/,'').replace(/\.$/,'');
+            s+=`<line x1="${PL}" y1="${gy}" x2="${W-PR}" y2="${gy}" stroke="#C8C0AA" stroke-width="0.5"/>`;
+            s+=`<text x="${PL-5}" y="${(parseFloat(gy)+3.5).toFixed(1)}" text-anchor="end" font-family="Courier New" font-size="9" fill="#888">${gv}%</text>`;
+        }
+        if(d.target){
+            const ty=py(d.target).toFixed(1);
+            s+=`<line x1="${PL}" y1="${ty}" x2="${W-PR}" y2="${ty}" stroke="#1B5E20" stroke-width="1.5" stroke-dasharray="5,3"/>`;
+            s+=`<text x="${W-PR+3}" y="${(parseFloat(ty)+3.5).toFixed(1)}" font-family="Courier New" font-size="8" fill="#1B5E20">2% target</text>`;
+        }
+        s+=`<polygon points="${area}" fill="url(#mg)"/>`;
+        s+=`<polyline points="${pts}" fill="none" stroke="${d.color}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+        const lblAt=n<=4?[...Array(n).keys()]:[0,Math.round(n/3),Math.round(2*n/3),n-1];
+        vals.forEach((v,i)=>{
+            const cx=px(i).toFixed(1),cy=py(v).toFixed(1);
+            const isL=lblAt.includes(i);
+            s+=`<circle cx="${cx}" cy="${cy}" r="${isL?3.5:2}" fill="${d.color}" stroke="white" stroke-width="1.5"/>`;
+            if(isL&&d.months[i]){
+                s+=`<text x="${cx}" y="${H-6}" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">${d.months[i]}</text>`;
+            }
+        });
+        s+='</svg>';
+        return s;
+    }
+
+    function openIndModal(key) {
+        const d=indData[key];
+        document.getElementById('modal-cat').textContent=d.cat;
+        document.getElementById('modal-name').textContent=d.name;
+        document.getElementById('modal-chart').innerHTML=buildSparkline(d);
+        document.getElementById('modal-note').textContent=d.note;
+        document.getElementById('ind-modal').classList.add('open');
+        document.body.style.overflow='hidden';
+    }
+
+    function closeIndModal() {
+        document.getElementById('ind-modal').classList.remove('open');
+        document.body.style.overflow='';
+    }
+
+    document.getElementById('ind-modal').addEventListener('click',function(e){if(e.target===this)closeIndModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeIndModal();});
+    document.querySelectorAll('.ind-card[data-ind]').forEach(card=>{
+        card.addEventListener('click',()=>openIndModal(card.dataset.ind));
+    });
+    // ── END TREND CHARTS ────────────────────────────────
 
     document.getElementById('nl-form').addEventListener('submit', async function (e) {
         e.preventDefault();
