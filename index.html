@@ -6,6 +6,8 @@
     <title>The Macro Brief — Economic Intelligence</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="The Macro Brief" href="https://themacrobrief.net/rss.xml">
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://themacrobrief.net/">
@@ -900,6 +902,86 @@
         }
 
         /* ═══════════════════════════════════════════
+           LATEST FROM ARCHIVE
+        ═══════════════════════════════════════════ */
+        .featured-card {
+            border: 1px solid var(--ink);
+            padding: 28px 32px;
+            background: var(--cream-dark);
+            margin-bottom: 36px;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .featured-card-left { flex: 1; }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .featured-cat {
+            background: var(--red-bright);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+        }
+
+        .featured-dateline {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            color: var(--ink-light);
+            letter-spacing: 0.04em;
+        }
+
+        .featured-hed {
+            font-family: 'Didot', 'Bodoni 72', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(17px, 2.2vw, 24px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+
+        .featured-excerpt {
+            font-size: 13px;
+            color: var(--ink-light);
+            font-style: italic;
+            line-height: 1.65;
+        }
+
+        .featured-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 18px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background 0.15s;
+        }
+
+        .featured-btn:hover { background: var(--red-bright); }
+
+        @media (max-width: 600px) {
+            .featured-card { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* ═══════════════════════════════════════════
            TREND MODAL
         ═══════════════════════════════════════════ */
         .ind-card[data-ind] { cursor: pointer; }
@@ -1364,6 +1446,27 @@
             </div>
         </div>
     </div>
+
+    <!-- LATEST FROM ARCHIVE -->
+    <div class="section-hd">
+        <span class="section-tag">Latest from the Archive</span>
+        <div class="section-rule"></div>
+        <a href="archive.html" style="font-family:'Courier New',monospace; font-size:9.5px; letter-spacing:0.1em; color:var(--ink-light); text-decoration:none; white-space:nowrap;">View All →</a>
+    </div>
+
+    <!-- LATEST-ARTICLE-START -->
+    <div class="featured-card">
+        <div class="featured-card-left">
+            <div class="featured-meta">
+                <span class="featured-cat">Energy &amp; Commodities</span>
+                <span class="featured-dateline">April 30, 2025 · Vol. I, No. 1</span>
+            </div>
+            <div class="featured-hed">The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation</div>
+            <div class="featured-excerpt">A confluence of supply restraint, geopolitical friction, and fragile demand has crude oil back at the center of the macroeconomic debate — complicating an already delicate moment for the Federal Reserve and American households alike.</div>
+        </div>
+        <a href="articles/2025-04-oil-prices.html" class="featured-btn">Read Article &nbsp;→</a>
+    </div>
+    <!-- LATEST-ARTICLE-END -->
 
 </div><!-- /.container -->
 
