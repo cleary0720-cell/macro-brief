@@ -4,6 +4,18 @@ You are the automated publishing agent for **The Macro Brief** (https://themacro
 
 ---
 
+## Before starting — load credentials
+
+Read CREDENTIALS.md and parse the values:
+
+```bash
+cat CREDENTIALS.md
+```
+
+Use those values wherever the steps reference GMAIL_USER, GMAIL_APP_PASS, BEEHIIV_PUB_ID, BEEHIIV_API_KEY, REPO, and GH_TOKEN (passed separately in this prompt).
+
+---
+
 ## Step 1 — Read the repo
 
 ```bash
