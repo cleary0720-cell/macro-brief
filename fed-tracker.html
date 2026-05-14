@@ -134,6 +134,41 @@
         @media (max-width: 900px) { .hero { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .footer-top { flex-direction: column; } .footer-links { text-align: left; } .history-table th:nth-child(4), .history-table td:nth-child(4) { display: none; } }
         @media (max-width: 430px) { .container { padding: 0 16px; } .hero-card { padding: 20px 18px; } }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: block; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -169,6 +204,7 @@
     <div class="container">
         <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
         <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776;</button>
         <ul class="nav-links">
             <li><a href="index.html">Dashboard</a></li>
             <li><a href="archive.html">Archive</a></li>
@@ -472,6 +508,14 @@ function stickySubmit(e){
     fetch('https://beehiiv-proxy.cleary0720.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,utm_source:'sticky-bar'})})
     .then(function(){localStorage.setItem('tmb-subscribed','1');document.getElementById('sticky-form').style.display='none';document.getElementById('sticky-success').style.display='block';setTimeout(dismissBar,3000);})
     .catch(function(){document.getElementById('sticky-form').style.display='none';document.getElementById('sticky-success').style.display='block';setTimeout(dismissBar,3000);});
+}
+</script>
+
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
 }
 </script>
 
