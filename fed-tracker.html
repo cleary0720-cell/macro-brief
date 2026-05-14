@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fed Tracker — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+    <link rel="shortcut icon" href="favicon.svg?v=2">
+    <link rel="alternate" type="application/rss+xml" title="The Macro Brief" href="https://themacrobrief.net/rss.xml">
+    <meta name="description" content="Live Federal Reserve rate tracker. Current Fed Funds Rate, FOMC meeting history, vote breakdowns, and next meeting countdown.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--cream); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+
+        /* TICKER */
+        .ticker-bar { background: var(--red-bright); color: #fff; height: 28px; display: flex; align-items: center; overflow: hidden; }
+        .ticker-label { background: var(--ink); color: #fff; font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 16px; height: 100%; display: flex; align-items: center; flex-shrink: 0; border-right: 1px solid #333; }
+        .ticker-track { overflow: hidden; flex: 1; }
+        .ticker-move { display: inline-block; white-space: nowrap; font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 0.08em; animation: marquee 42s linear infinite; }
+        .ticker-move:hover { animation-play-state: paused; }
+        .ticker-item { margin: 0 22px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* INFO BAR */
+        .info-bar { background: var(--ink); color: #BBBBAA; padding: 6px 0; font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.08em; }
+        .info-bar .container { display: flex; justify-content: space-between; align-items: center; }
+
+        /* NAV */
+        .site-nav { border-bottom: 1px solid var(--ink); padding: 10px 0; background: var(--cream); }
+        .site-nav .container { display: flex; align-items: center; gap: 28px; }
+        .nav-logo { font-size: 18px; font-weight: 900; font-style: italic; letter-spacing: -0.5px; text-decoration: none; color: var(--ink); }
+        .nav-logo .red { color: var(--red-bright); }
+        .nav-divider { width: 1px; height: 18px; background: var(--rule); }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.15s; }
+        .nav-links a:hover { color: var(--red-bright); }
+        .nav-links a.active { color: var(--ink); font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+        /* MASTHEAD */
+        .masthead { padding: 32px 0 20px; text-align: center; border-bottom: 2px solid var(--ink); }
+        .masthead-super { font-family: 'Courier New', monospace; font-size: 9.5px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--red-bright); margin-bottom: 10px; }
+        .masthead-title { font-family: 'Didot', 'Bodoni 72', 'Big Caslon', Palatino, Georgia, serif; font-size: clamp(36px, 6vw, 72px); font-weight: 900; font-style: italic; line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+        .masthead-title .red { color: var(--red-bright); }
+        .masthead-sub { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 18px; }
+        .ornament { display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .ornament-line { height: 1px; background: var(--ink); width: 100%; max-width: 300px; }
+        .ornament-sym { color: var(--red-bright); font-size: 13px; flex-shrink: 0; }
+
+        /* UPDATE BAR */
+        .update-bar { background: var(--ink); color: #BBBBAA; padding: 10px 0; border-bottom: 3px solid var(--red-bright); }
+        .update-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .update-label { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+        .update-countdown { font-family: 'Courier New', monospace; font-size: 12px; font-weight: 700; color: var(--red-bright); letter-spacing: 0.08em; }
+        .update-date { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.08em; color: #888; }
+
+        /* HERO RATE CARDS */
+        .hero { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); margin: 36px 0 0; }
+        .hero-card { border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 28px 32px; }
+        .hero-card-label { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px; }
+        .hero-rate { font-family: 'Didot', 'Bodoni 72', Georgia, serif; font-size: clamp(42px, 6vw, 72px); font-weight: 900; font-style: italic; line-height: 1; color: var(--ink); margin-bottom: 6px; }
+        .hero-rate .unit { font-size: 0.45em; color: var(--ink-light); }
+        .hero-range { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--ink-mid); margin-bottom: 14px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 12px; background: var(--ink); color: var(--cream); }
+        .hero-badge.hold { background: #7B5000; }
+        .hero-badge.cut { background: var(--red-bright); }
+        .hero-badge.hike { background: #1B5E20; color: #fff; }
+        .hero-meeting-date { font-family: 'Didot', 'Bodoni 72', Georgia, serif; font-size: clamp(20px, 3vw, 32px); font-weight: 900; font-style: italic; color: var(--ink); margin-bottom: 6px; line-height: 1.2; }
+        .hero-countdown-label { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 10px; }
+        .fomc-countdown { display: flex; gap: 16px; margin-top: 8px; }
+        .countdown-unit { text-align: center; }
+        .countdown-num { font-family: 'Courier New', monospace; font-size: 28px; font-weight: 700; color: var(--red-bright); line-height: 1; display: block; }
+        .countdown-lbl { font-family: 'Courier New', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-light); }
+        .hero-note { font-family: 'Courier New', monospace; font-size: 9.5px; color: var(--ink-light); line-height: 1.6; margin-top: 14px; }
+
+        /* SECTION HEADER */
+        .section-hd { display: flex; align-items: center; gap: 14px; margin: 44px 0 24px; }
+        .section-tag { background: var(--ink); color: var(--cream); font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 12px; white-space: nowrap; }
+        .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        /* MEETING HISTORY TABLE */
+        .history-table { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); margin-bottom: 48px; }
+        .history-table th { background: var(--ink); color: var(--cream); font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 16px; text-align: left; font-weight: 700; }
+        .history-table td { padding: 12px 16px; border-bottom: 1px solid var(--rule); font-size: 14px; vertical-align: middle; }
+        .history-table tr:last-child td { border-bottom: none; }
+        .history-table tr:hover td { background: var(--cream-dark); }
+        .decision-hold { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7B5000; background: #FFF8E1; padding: 3px 10px; display: inline-block; }
+        .decision-cut { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: var(--red-bright); padding: 3px 10px; display: inline-block; }
+        .decision-hike { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #1B5E20; padding: 3px 10px; display: inline-block; }
+        .vote-cell { font-family: 'Courier New', monospace; font-size: 12px; color: var(--ink-mid); }
+        .vote-note { font-size: 11px; color: var(--ink-light); font-style: italic; display: block; }
+        .date-cell { font-family: 'Courier New', monospace; font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+        .range-cell { font-family: 'Courier New', monospace; font-size: 12px; color: var(--ink-mid); }
+
+        /* RATE CHART */
+        .chart-wrap { border: 1px solid var(--ink); background: #0D1B2A; margin-bottom: 48px; padding: 24px; }
+        .chart-title { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #BBBBAA; margin-bottom: 16px; }
+
+        /* HOW IT WORKS */
+        .how-box { border: 1px solid var(--rule); padding: 24px 28px; margin-bottom: 48px; background: var(--cream-dark); }
+        .how-box h3 { font-family: 'Courier New', monospace; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mid); margin-bottom: 10px; }
+        .how-box p { font-size: 13px; color: var(--ink-light); line-height: 1.7; font-style: italic; }
+
+        /* FOOTER */
+        footer { border-top: 2px solid var(--ink); padding: 28px 0 36px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; margin-bottom: 20px; }
+        .footer-logo { font-size: 22px; font-weight: 900; font-style: italic; letter-spacing: -0.5px; }
+        .footer-logo .red { color: var(--red-bright); }
+        .footer-meta { font-family: 'Courier New', monospace; font-size: 10.5px; color: var(--ink-light); line-height: 1.9; margin-top: 8px; }
+        .footer-links { font-family: 'Courier New', monospace; font-size: 10.5px; color: var(--ink-light); line-height: 2; text-align: right; }
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+        .footer-disc { border-top: 1px solid var(--rule); padding-top: 16px; font-family: 'Courier New', monospace; font-size: 10px; color: var(--ink-light); line-height: 1.65; font-style: italic; }
+
+        @media (max-width: 900px) { .hero { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .footer-top { flex-direction: column; } .footer-links { text-align: left; } .history-table th:nth-child(4), .history-table td:nth-child(4) { display: none; } }
+        @media (max-width: 430px) { .container { padding: 0 16px; } .hero-card { padding: 20px 18px; } }
+    </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+    <div class="ticker-label">Markets</div>
+    <div class="ticker-track">
+        <div class="ticker-move" id="tickerMove">
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.58%</span>
+            <span class="ticker-item">◆ CPI (YoY) &nbsp;3.8% ↑</span>
+            <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.3%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+2.0% ▲</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.46%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.2% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.6%</span>
+            <span class="ticker-item" style="margin-right:80px;">&nbsp;</span>
+        </div>
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="fed-tracker.html" class="active">Fed Tracker</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-super">★ &nbsp; Monetary Policy Monitor &nbsp; ★</div>
+        <h1 class="masthead-title"><span class="red">Fed</span> Tracker</h1>
+        <div class="masthead-sub">FOMC Rate Decisions · Vote Breakdowns · Next Meeting Countdown</div>
+        <div class="ornament">
+            <div class="ornament-line"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- UPDATE BAR -->
+<!-- UPDATE-BAR-START -->
+<div class="update-bar">
+    <div class="container">
+        <span class="update-label">Last updated: <strong>May 14, 2026</strong></span>
+        <span class="update-countdown">Next update in: <span id="update-countdown">--:--:--</span></span>
+        <span class="update-date">Data: Federal Reserve · FRED · federalreserve.gov</span>
+    </div>
+</div>
+<!-- UPDATE-BAR-END -->
+
+<main>
+<div class="container">
+
+    <!-- HERO CARDS -->
+    <!-- FOMC-RATE-START -->
+    <div class="hero">
+
+        <div class="hero-card">
+            <div class="hero-card-label">Current Target Range</div>
+            <div class="hero-rate">3.50<span class="unit">%</span></div>
+            <div class="hero-range">TARGET RANGE: 3.50% &ndash; 3.75%</div>
+            <div class="hero-range" style="margin-bottom:14px;">EFFECTIVE RATE: 3.58%</div>
+            <span class="hero-badge hold">⬤ &nbsp;On Hold</span>
+            <div class="hero-note" style="margin-top:14px;">75 bps of cuts delivered since late 2024. Committee divided — dissents on both sides signal deep uncertainty over next move.</div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-card-label">Next FOMC Meeting</div>
+            <div class="hero-meeting-date">June 17&ndash;18, 2026</div>
+            <div class="hero-countdown-label">Time until decision:</div>
+            <div class="fomc-countdown">
+                <div class="countdown-unit"><span class="countdown-num" id="fomc-days">--</span><span class="countdown-lbl">Days</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="fomc-hours">--</span><span class="countdown-lbl">Hours</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="fomc-mins">--</span><span class="countdown-lbl">Mins</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="fomc-secs">--</span><span class="countdown-lbl">Secs</span></div>
+            </div>
+            <div class="hero-note" style="margin-top:14px;">Decision expected June 18 at 2:00pm ET. Press conference to follow.</div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-card-label">Policy Stance</div>
+            <div class="hero-rate" style="font-size:clamp(24px,3.5vw,42px);margin-bottom:12px;">Restricted<br>Neutral</div>
+            <div class="hero-note">Fed funds rate sits above neutral but inflation re-acceleration has eliminated near-term cut probability. Market pricing: 82% hold at June meeting.</div>
+            <div style="margin-top:16px;">
+                <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">2026 Rate Path (Market Implied)</div>
+                <div style="font-family:'Courier New',monospace;font-size:11px;color:var(--ink-mid);">Jun &nbsp;— Hold &nbsp;82%<br>Jul &nbsp;— Hold &nbsp;74%<br>Sep &nbsp;— Cut 25bps &nbsp;51%</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- FOMC-RATE-END -->
+
+    <!-- MEETING HISTORY -->
+    <div class="section-hd" style="margin-top:44px;">
+        <span class="section-tag">FOMC Meeting History</span>
+        <div class="section-rule"></div>
+        <span style="font-family:'Courier New',monospace;font-size:9.5px;color:var(--ink-light);white-space:nowrap;">LAST 8 MEETINGS</span>
+    </div>
+
+    <!-- FOMC-HISTORY-START -->
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Decision</th>
+                <th>Target Range</th>
+                <th>Vote</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="date-cell">Apr 29, 2026</td>
+                <td><span class="decision-hold">Hold</span></td>
+                <td class="range-cell">3.50% &ndash; 3.75%</td>
+                <td class="vote-cell">9&ndash;1 <span class="vote-note">1 dissent for cut</span></td>
+                <td style="font-size:13px;color:var(--ink-mid);">Divided committee. Inflation re-acceleration cited as constraint.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Mar 19, 2026</td>
+                <td><span class="decision-hold">Hold</span></td>
+                <td class="range-cell">3.50% &ndash; 3.75%</td>
+                <td class="vote-cell">8&ndash;1 <span class="vote-note">1 dissent for hike</span></td>
+                <td style="font-size:13px;color:var(--ink-mid);">Tariff pass-through cited as upside inflation risk.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Jan 29, 2026</td>
+                <td><span class="decision-hold">Hold</span></td>
+                <td class="range-cell">3.50% &ndash; 3.75%</td>
+                <td class="vote-cell">10&ndash;0</td>
+                <td style="font-size:13px;color:var(--ink-mid);">Unanimous hold. Watching labor market and inflation trajectory.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Dec 18, 2025</td>
+                <td><span class="decision-cut">Cut &ndash;25bps</span></td>
+                <td class="range-cell">3.50% &ndash; 3.75%</td>
+                <td class="vote-cell">9&ndash;1 <span class="vote-note">1 dissent for hold</span></td>
+                <td style="font-size:13px;color:var(--ink-mid);">Final cut of 2025 cycle. Dot plot revised higher for 2026.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Nov 7, 2025</td>
+                <td><span class="decision-hold">Hold</span></td>
+                <td class="range-cell">3.75% &ndash; 4.00%</td>
+                <td class="vote-cell">10&ndash;0</td>
+                <td style="font-size:13px;color:var(--ink-mid);">Paused easing cycle. Inflation progress slowing.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Sep 18, 2025</td>
+                <td><span class="decision-cut">Cut &ndash;25bps</span></td>
+                <td class="range-cell">3.75% &ndash; 4.00%</td>
+                <td class="vote-cell">10&ndash;0</td>
+                <td style="font-size:13px;color:var(--ink-mid);">Second cut of easing cycle. Labor market softening flagged.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Jul 30, 2025</td>
+                <td><span class="decision-hold">Hold</span></td>
+                <td class="range-cell">4.00% &ndash; 4.25%</td>
+                <td class="vote-cell">10&ndash;0</td>
+                <td style="font-size:13px;color:var(--ink-mid);">Held after June cut. Monitoring data.</td>
+            </tr>
+            <tr>
+                <td class="date-cell">Jun 12, 2025</td>
+                <td><span class="decision-cut">Cut &ndash;25bps</span></td>
+                <td class="range-cell">4.00% &ndash; 4.25%</td>
+                <td class="vote-cell">9&ndash;1 <span class="vote-note">1 dissent for hold</span></td>
+                <td style="font-size:13px;color:var(--ink-mid);">First cut of easing cycle. Inflation progress deemed sufficient.</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- FOMC-HISTORY-END -->
+
+    <!-- RATE CHART -->
+    <div class="section-hd">
+        <span class="section-tag">Rate History</span>
+        <div class="section-rule"></div>
+        <span style="font-family:'Courier New',monospace;font-size:9.5px;color:var(--ink-light);white-space:nowrap;">JUN 2025 &ndash; PRESENT</span>
+    </div>
+
+    <div class="chart-wrap">
+        <div class="chart-title">Federal Funds Target Rate Upper Bound (%)</div>
+        <!-- FOMC-CHART-START -->
+        <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <line x1="60" y1="10" x2="60" y2="150" stroke="#1E3A5A" stroke-width="1"/>
+            <line x1="60" y1="150" x2="790" y2="150" stroke="#1E3A5A" stroke-width="1"/>
+            <line x1="60" y1="30" x2="790" y2="30" stroke="#0D2035" stroke-width="0.5"/>
+            <line x1="60" y1="70" x2="790" y2="70" stroke="#0D2035" stroke-width="0.5"/>
+            <line x1="60" y1="110" x2="790" y2="110" stroke="#0D2035" stroke-width="0.5"/>
+            <text x="52" y="34" fill="#4A7AAA" font-family="Courier New,monospace" font-size="10" text-anchor="end">4.5%</text>
+            <text x="52" y="74" fill="#4A7AAA" font-family="Courier New,monospace" font-size="10" text-anchor="end">4.0%</text>
+            <text x="52" y="114" fill="#4A7AAA" font-family="Courier New,monospace" font-size="10" text-anchor="end">3.5%</text>
+            <text x="52" y="154" fill="#4A7AAA" font-family="Courier New,monospace" font-size="10" text-anchor="end">3.0%</text>
+            <polyline points="60,30 168,30 168,70 280,70 280,110 392,110 392,30 504,30 504,110 616,110 616,70 728,70 728,110 790,110" fill="none" stroke="#C41E3A" stroke-width="2.5" stroke-linejoin="step-after"/>
+            <circle cx="168" cy="70" r="5" fill="#C41E3A"/>
+            <circle cx="280" cy="110" r="5" fill="#C41E3A"/>
+            <circle cx="504" cy="110" r="5" fill="#C41E3A"/>
+            <circle cx="616" cy="70" r="5" fill="#C41E3A"/>
+            <circle cx="728" cy="110" r="5" fill="#C41E3A"/>
+            <text x="100" y="168" fill="#2A4060" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Jun '25</text>
+            <text x="210" y="168" fill="#C41E3A" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Jun &minus;25</text>
+            <text x="330" y="168" fill="#2A4060" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Sep '25</text>
+            <text x="450" y="168" fill="#C41E3A" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Dec &minus;25</text>
+            <text x="570" y="168" fill="#2A4060" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Jan '26</text>
+            <text x="680" y="168" fill="#2A4060" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Mar '26</text>
+            <text x="780" y="168" fill="#2A4060" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Apr '26</text>
+        </svg>
+        <!-- FOMC-CHART-END -->
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="how-box">
+        <h3>About This Tracker</h3>
+        <p>This page is updated daily at 9:00am ET by an automated agent that pulls the latest Federal Reserve data from FRED (Federal Reserve Bank of St. Louis) and federalreserve.gov. Meeting history, vote breakdowns, and rate projections reflect official Federal Reserve releases. Market-implied probabilities are derived from federal funds futures pricing.</p>
+    </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">← Back to Dashboard</a><br>
+                <a href="archive.html">Article Archive</a><br>
+                <a href="fed-tracker.html">Fed Tracker</a><br>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance.
+        </div>
+    </div>
+</footer>
+
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:12px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;width:220px;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">&#10003; You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+
+<script>
+// Ticker loop
+const tm = document.getElementById('tickerMove');
+tm.innerHTML += tm.innerHTML;
+
+// FOMC meeting countdown — June 18, 2026 2pm ET = 18:00 UTC
+function updateFomcCountdown() {
+    const target = new Date('2026-06-18T18:00:00Z');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+        document.getElementById('fomc-days').textContent = '0';
+        document.getElementById('fomc-hours').textContent = '0';
+        document.getElementById('fomc-mins').textContent = '0';
+        document.getElementById('fomc-secs').textContent = '0';
+        return;
+    }
+    document.getElementById('fomc-days').textContent  = Math.floor(diff / 86400000);
+    document.getElementById('fomc-hours').textContent = Math.floor((diff % 86400000) / 3600000);
+    document.getElementById('fomc-mins').textContent  = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('fomc-secs').textContent  = Math.floor((diff % 60000) / 1000);
+}
+
+// Daily update countdown — next 9am ET = 13:00 UTC
+function updateDailyCountdown() {
+    const now = new Date();
+    const next = new Date();
+    next.setUTCHours(13, 0, 0, 0);
+    if (now >= next) next.setDate(next.getDate() + 1);
+    const diff = next - now;
+    const h = String(Math.floor(diff / 3600000)).padStart(2,'0');
+    const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    document.getElementById('update-countdown').textContent = h + 'h ' + m + 'm ' + s + 's';
+}
+
+setInterval(updateFomcCountdown, 1000);
+setInterval(updateDailyCountdown, 1000);
+updateFomcCountdown();
+updateDailyCountdown();
+
+// Sticky bar
+(function(){
+    if(localStorage.getItem('tmb-subscribed')) return;
+    var shown=false;
+    window.addEventListener('scroll',function(){
+        if(shown) return;
+        if(window.scrollY>400){document.getElementById('sticky-bar').style.display='block';shown=true;}
+    });
+})();
+function dismissBar(){document.getElementById('sticky-bar').style.display='none';sessionStorage.setItem('bar-dismissed','1');}
+function stickySubmit(e){
+    e.preventDefault();
+    var email=document.getElementById('sticky-email').value;
+    fetch('https://beehiiv-proxy.cleary0720.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,utm_source:'sticky-bar'})})
+    .then(function(){localStorage.setItem('tmb-subscribed','1');document.getElementById('sticky-form').style.display='none';document.getElementById('sticky-success').style.display='block';setTimeout(dismissBar,3000);})
+    .catch(function(){document.getElementById('sticky-form').style.display='none';document.getElementById('sticky-success').style.display='block';setTimeout(dismissBar,3000);});
+}
+</script>
+
+</body>
+</html>
