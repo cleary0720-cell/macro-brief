@@ -449,6 +449,104 @@
             .footer-links { text-align: left; }
         }
 
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -491,6 +589,7 @@
 
         <div class="article-byline-row">
             <span class="article-byline">By <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
             <span class="article-date">May 14, 2026</span>
         </div>
 
@@ -701,5 +800,16 @@ function dismissBar(){document.getElementById("sticky-bar").style.display="none"
 function stickySubmit(e){e.preventDefault();var email=document.getElementById("sticky-email").value;fetch("https://beehiiv-proxy.cleary0720.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,utm_source:"sticky-bar"})}).then(function(){localStorage.setItem("tmb-subscribed","1");document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);}).catch(function(){document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);});}
 </script>
 
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
 </body>
 </html>
