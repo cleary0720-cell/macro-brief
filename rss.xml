@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Macro Brief</title>
+    <link>https://themacrobrief.net</link>
+    <description>Independent economic analysis for the informed investor. Weekly macro coverage, Fed tracking, and indicator deep-dives by Connor Leary.</description>
+    <language>en-us</language>
+    <copyright>© 2026 Connor Leary / The Macro Brief</copyright>
+    <managingEditor>cleary0720@gmail.com (Connor Leary)</managingEditor>
+    <webMaster>cleary0720@gmail.com (Connor Leary)</webMaster>
+    <atom:link href="https://themacrobrief.net/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation</title>
+      <link>https://themacrobrief.net/articles/2025-04-oil-prices.html</link>
+      <description>A confluence of supply restraint, geopolitical friction, and fragile demand has crude oil back at the center of the macroeconomic debate — complicating an already delicate moment for the Federal Reserve and American households alike.</description>
+      <pubDate>Wed, 30 Apr 2025 08:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://themacrobrief.net/articles/2025-04-oil-prices.html</guid>
+      <category>Energy &amp; Commodities</category>
+      <author>cleary0720@gmail.com (Connor Leary)</author>
+    </item>
+  </channel>
+</rss>
