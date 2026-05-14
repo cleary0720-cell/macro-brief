@@ -262,6 +262,10 @@ Replace all placeholder values (HEADLINE, CATEGORY, DATE, etc.) with real conten
 
 ---
 
+
+### Related articles
+In the article HTML, fill in the two RELATED ARTICLE placeholders with the two most thematically relevant existing articles. Use their actual filename, thumbnail path, category, and headline. Pick articles from the existing articles/ folder that share the closest topic to the new article.
+
 ## Rules
 
 - Research thoroughly before writing. Quality over speed.
