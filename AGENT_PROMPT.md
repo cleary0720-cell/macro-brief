@@ -71,6 +71,8 @@ Increment issue number from highest in archive. Body: 700-900 words, The Economi
 
 Only define each term once. Don't over-explain — one brief clause is enough.
 
+**Paragraph spacing:** The `.article-body p` CSS rule MUST include `margin-bottom: 0;`. Without it, browsers add extra space between paragraphs on top of the indent, creating a double-spaced appearance. Always copy this block exactly from article-template.html — do not omit `margin-bottom: 0`.
+
 **Bottom Line box:** At the very end of the article body, before the related articles section, include a `<div class="bottom-line">` box with 3–4 sentences in plain English that a non-finance reader can understand. Connect the article's analysis to real consumer impact: cost of living, jobs, borrowing costs, savings. No jargon in this section. Format:
 
 ```html
