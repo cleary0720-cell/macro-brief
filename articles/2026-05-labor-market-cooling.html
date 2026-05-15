@@ -642,7 +642,16 @@
                 letter-spacing: 0.14em !important;
             }
         }
-    </style>
+    
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+        </style>
 </head>
 <body>
 
@@ -712,6 +721,19 @@
         <h2>The Sectors Doing the Heavy Lifting</h2>
 
         <p>The sectoral breakdown of April's gains tells a story that has become familiar over the past year. Healthcare added 37,000 positions — easily the strongest contribution of any single industry — continuing a structural trend driven by an aging population and rising demand for medical services that no cyclical forces can easily dislodge. Transportation and warehousing also contributed positively, as did retail trade, which has held up better than many expected given elevated borrowing costs and stagnant real incomes.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
 
         <p>What notably did not contribute was manufacturing. Employment in goods-producing industries showed little net change in April, a pattern that has persisted since late 2025. The explanation is not mysterious: tariff-driven uncertainty about input costs, supply-chain restructuring, and export markets has made factory operators reluctant to expand headcount. Announcing a production line expansion requires a view of costs and revenue over years, not quarters — and that kind of visibility is precisely what the current trade policy environment has withheld. The productive core of an economy that tariff advocates promised to reinvigorate is, for now, holding its breath.</p>
 
