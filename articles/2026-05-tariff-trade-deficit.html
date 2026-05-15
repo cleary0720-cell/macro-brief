@@ -621,7 +621,16 @@
                 letter-spacing: 0.14em !important;
             }
         }
-    </style>
+    
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+        </style>
 </head>
 <body>
 
@@ -683,6 +692,19 @@
         <h2>A Deficit Divided Against Itself</h2>
 
         <p>The most striking feature of the new trade data is not how much the overall deficit has shrunk, but how unequally that shrinkage has been distributed. The annual US trade deficit with China fell to approximately $202 billion in 2025 — its lowest level in more than two decades — as sweeping tariffs effectively priced out a broad swath of Chinese manufactured goods. But the bilateral story is only half the picture. As goods stopped flowing from China, they started flowing from elsewhere.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
 
         <p>In 2025, the United States ran record trade deficits with both Mexico ($196.9 billion) and Vietnam ($178.2 billion), as manufacturers and retailers rerouted supply chains to minimize tariff exposure. The monthly figures of 2026 tell the same story in real time: in February, the US posted deficits of $16.8 billion with Mexico and $16.5 billion with Vietnam — countries whose geography and manufacturing capacity made them natural waypoints for goods originally destined for Chinese factories. Trade economists have a name for this phenomenon. They call it trade diversion, and it follows tariff regimes with remarkable fidelity.</p>
 
