@@ -98,6 +98,52 @@
         /* FOOTER */
         footer { border-top: 1px solid var(--rule); padding: 16px 28px; text-align: center; font-family: 'Courier New', monospace; font-size: 10px; color: var(--ink-light); letter-spacing: 0.08em; }
         footer a { color: var(--red-bright); text-decoration: none; }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+                list-style: none;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid #EDE8DB; }
+            .nav-links a {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -105,6 +151,7 @@
 <nav class="site-nav">
     <a href="/" class="nav-logo"><span class="red">The</span> Macro Brief</a>
     <div class="nav-divider"></div>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
     <ul class="nav-links">
         <li><a href="/">Dashboard</a></li>
         <li><a href="/archive.html">Archive</a></li>
@@ -143,5 +190,11 @@
     &copy; 2026 Connor Leary / The Macro Brief &nbsp;&middot;&nbsp; <a href="/">themacrobrief.net</a>
 </footer>
 
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
 </body>
 </html>
