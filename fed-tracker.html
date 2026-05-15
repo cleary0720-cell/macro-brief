@@ -146,9 +146,19 @@
             padding: 4px 10px;
             margin-left: auto;
             line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
         }
         @media (max-width: 640px) {
-            .nav-hamburger { display: block; }
+            .nav-hamburger { display: flex; }
             .nav-divider { display: none; }
             .site-nav .container { flex-wrap: wrap; position: relative; }
             .nav-links {
@@ -204,7 +214,7 @@
     <div class="container">
         <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
         <div class="nav-divider"></div>
-        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; Menu</button>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
         <ul class="nav-links">
             <li><a href="index.html">Dashboard</a></li>
             <li><a href="archive.html">Archive</a></li>
@@ -289,7 +299,6 @@
     <!-- FOMC-RATE-END -->
 
 
-    <!-- MEANS-FOR-YOU-START -->
     <!-- WHAT THIS MEANS FOR YOU -->
     <div style="border:1px solid var(--ink);padding:28px 32px;margin:36px 0;background:var(--cream-dark);">
         <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--red-bright);margin-bottom:14px;">What the current rate means for you</div>
@@ -312,8 +321,6 @@
             </div>
         </div>
     </div>
-
-    <!-- MEANS-FOR-YOU-END -->
 
     <!-- MEETING HISTORY -->
     <div class="section-hd" style="margin-top:44px;">
