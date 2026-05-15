@@ -27,7 +27,7 @@ ls articles/
 ls images/
 ```
 
-Note existing articles (no repeated topics), RSS entries, and the LATEST-ARTICLE-START/END markers in index.html.
+Note existing articles (no repeated topics), RSS entries, and the LATEST-ARTICLE-START/END and WHAT-TO-WATCH-START/END markers in index.html.
 
 ---
 
@@ -102,7 +102,7 @@ Find the `ADD NEW ARTICLES ABOVE THIS LINE` comment and insert a new card above 
 
 ---
 
-## Step 6 — Update index.html dashboard
+## Step 6 — Update index.html dashboard (latest article)
 
 Replace everything between `<!-- LATEST-ARTICLE-START -->` and `<!-- LATEST-ARTICLE-END -->`:
 
@@ -121,6 +121,40 @@ Replace everything between `<!-- LATEST-ARTICLE-START -->` and `<!-- LATEST-ARTI
 </div>
 <!-- LATEST-ARTICLE-END -->
 ```
+
+---
+
+## Step 6b — Update What to Watch section
+
+Research the next 7–14 days of scheduled US economic data releases using WebSearch. Look for release calendars on bls.gov, federalreserve.gov, bea.gov, and census.gov.
+
+Pick the 3–5 most market-relevant upcoming releases (jobs, CPI, PPI, GDP, retail sales, FOMC meetings, etc.). For each release, note the exact date, agency, time (ET), and what the previous reading was.
+
+Replace everything between `<!-- WHAT-TO-WATCH-START -->` and `<!-- WHAT-TO-WATCH-END -->` in index.html with fresh watch-row entries in this format:
+
+```html
+<!-- WHAT-TO-WATCH-START -->
+<div class="watch-grid">
+    <div class="watch-row">
+        <div class="watch-date-col">
+            <div class="watch-month">MON</div>
+            <div class="watch-day">DD</div>
+        </div>
+        <div class="watch-info">
+            <div class="watch-event">RELEASE NAME — Period</div>
+            <div class="watch-agency">AGENCY · TIME ET</div>
+            <div class="watch-note">Previous: PRIOR READING. 1–2 sentence context on what to look for and why it matters.</div>
+        </div>
+        <div class="watch-tag-col"><div class="watch-cat">CATEGORY</div></div>
+    </div>
+    <!-- repeat for each release -->
+</div>
+<!-- WHAT-TO-WATCH-END -->
+```
+
+Category tags must be one of: Labor, Inflation, GDP, Consumer, Fed Policy, Housing, Trade, Money Supply.
+
+Sort rows by date ascending. Only include releases that are genuinely upcoming (after today's date). Do not include past releases.
 
 ---
 
@@ -273,7 +307,7 @@ In the article HTML, fill in the two RELATED ARTICLE placeholders with the two m
 - Never repeat a topic already in the articles/ folder.
 - Only push to GitHub if the article HTML is complete and valid.
 - Only send newsletter after all 5 GitHub pushes succeed.
-- Never modify index.html except between LATEST-ARTICLE-START and LATEST-ARTICLE-END.
+- Only modify index.html between LATEST-ARTICLE-START/END and WHAT-TO-WATCH-START/END markers. Never touch anything else in index.html.
 - Never touch CSS, JavaScript, navigation, newsletter forms, or footer links.
 - Always use Python for GitHub file pushes. Never use shell base64.
 - The publication is by Connor Leary (cleary0720@gmail.com).
