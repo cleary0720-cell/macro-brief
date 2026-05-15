@@ -62,6 +62,24 @@ Category must be exactly one of:
 
 Increment issue number from highest in archive. Body: 700-900 words, The Economist meets WSJ voice. Save the file.
 
+**Jargon rule:** When you first use a technical term that a general reader wouldn't know, add a brief parenthetical definition inline. Examples:
+- "the FOMC (the Fed's rate-setting committee)"
+- "core CPI (which strips out volatile food and energy prices)"
+- "PCE (Personal Consumption Expenditures — the Fed's preferred inflation gauge)"
+- "basis points (one basis point = 0.01 percentage points)"
+- "stagflation (when prices rise and growth slows at the same time)"
+
+Only define each term once. Don't over-explain — one brief clause is enough.
+
+**Bottom Line box:** At the very end of the article body, before the related articles section, include a `<div class="bottom-line">` box with 3–4 sentences in plain English that a non-finance reader can understand. Connect the article's analysis to real consumer impact: cost of living, jobs, borrowing costs, savings. No jargon in this section. Format:
+
+```html
+<div class="bottom-line">
+    <span class="bottom-line-label">Bottom Line</span>
+    <p>Plain English summary. What does this mean for someone's grocery bill, mortgage, job, or savings? 3-4 sentences max. No jargon — spell out any term a general reader might not know.</p>
+</div>
+```
+
 ---
 
 ## Step 4 — Download thumbnail photo
