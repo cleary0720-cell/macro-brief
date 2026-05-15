@@ -559,9 +559,19 @@
             padding: 4px 10px;
             margin-left: auto;
             line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
         }
         @media (max-width: 640px) {
-            .nav-hamburger { display: block; }
+            .nav-hamburger { display: flex; }
             .nav-divider { display: none; }
             .site-nav .container { flex-wrap: wrap; position: relative; }
             .nav-links {
@@ -582,77 +592,6 @@
                 letter-spacing: 0.14em !important;
             }
         }
-
-        /* ── MID-ARTICLE SUBSCRIBE ── */
-        .mid-subscribe {
-            border-top: 2px solid var(--ink);
-            border-bottom: 2px solid var(--ink);
-            padding: 28px 32px;
-            margin: 36px 0;
-            background: var(--cream-dark);
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        .mid-sub-left { flex: 1; min-width: 200px; }
-        .mid-sub-eyebrow {
-            font-family: 'Courier New', monospace;
-            font-size: 9px;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: var(--red-bright);
-            margin-bottom: 6px;
-        }
-        .mid-sub-hed {
-            font-size: 18px;
-            font-weight: 700;
-            font-style: italic;
-            line-height: 1.3;
-            color: var(--ink);
-        }
-        .mid-sub-right { flex-shrink: 0; }
-        .mid-sub-form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-        .mid-sub-input {
-            padding: 10px 14px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            border: 1px solid var(--ink);
-            background: var(--cream);
-            color: var(--ink);
-            outline: none;
-            width: 220px;
-            transition: border-color 0.2s;
-        }
-        .mid-sub-input:focus { border-color: var(--red-bright); }
-        .mid-sub-btn {
-            padding: 10px 20px;
-            background: var(--red-bright);
-            color: #fff;
-            border: none;
-            font-family: 'Courier New', monospace;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.2s;
-        }
-        .mid-sub-btn:hover { background: #8B0000; }
-        .mid-sub-success {
-            display: none;
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            color: var(--green, #1B5E20);
-            letter-spacing: 0.1em;
-        }
-        @media (max-width: 560px) {
-            .mid-subscribe { padding: 20px 18px; gap: 16px; }
-            .mid-sub-input { width: 100%; font-size: 16px; }
-            .mid-sub-form { flex-direction: column; align-items: stretch; }
-            .mid-sub-btn { text-align: center; }
-        }
     </style>
 </head>
 <body>
@@ -671,7 +610,7 @@
     <div class="container">
         <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
         <div class="nav-divider"></div>
-        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; Menu</button>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
         <ul class="nav-links">
             <li><a href="../index.html">Dashboard</a></li>
             <li><a href="../archive.html">Archive</a></li>
@@ -715,23 +654,6 @@
         <h2>A Deficit Divided Against Itself</h2>
 
         <p>The most striking feature of the new trade data is not how much the overall deficit has shrunk, but how unequally that shrinkage has been distributed. The annual US trade deficit with China fell to approximately $202 billion in 2025 — its lowest level in more than two decades — as sweeping tariffs effectively priced out a broad swath of Chinese manufactured goods. But the bilateral story is only half the picture. As goods stopped flowing from China, they started flowing from elsewhere.</p>
-
-        <!-- MID-ARTICLE SUBSCRIBE -->
-        <div class="mid-subscribe">
-            <div class="mid-sub-left">
-                <div class="mid-sub-eyebrow">Free Weekly Newsletter</div>
-                <div class="mid-sub-hed">Enjoying this analysis?<br>Get it in your inbox every Sunday.</div>
-            </div>
-            <div class="mid-sub-right">
-                <form class="mid-sub-form" onsubmit="midSubSubmit(event, this)">
-                    <input class="mid-sub-input" type="email" placeholder="your@email.com" required>
-                    <button class="mid-sub-btn" type="submit">Subscribe Free</button>
-                </form>
-                <div class="mid-sub-success">&#10003; You're in. See you Sunday.</div>
-            </div>
-        </div>
-
-
 
         <p>In 2025, the United States ran record trade deficits with both Mexico ($196.9 billion) and Vietnam ($178.2 billion), as manufacturers and retailers rerouted supply chains to minimize tariff exposure. The monthly figures of 2026 tell the same story in real time: in February, the US posted deficits of $16.8 billion with Mexico and $16.5 billion with Vietnam — countries whose geography and manufacturing capacity made them natural waypoints for goods originally destined for Chinese factories. Trade economists have a name for this phenomenon. They call it trade diversion, and it follows tariff regimes with remarkable fidelity.</p>
 
@@ -965,26 +887,6 @@ function stickySubmit(e){e.preventDefault();var email=document.getElementById("s
 function toggleMobileNav() {
     var nl = document.querySelector('.nav-links');
     if (nl) nl.classList.toggle('open');
-}
-</script>
-
-
-<script>
-function midSubSubmit(e, form) {
-    e.preventDefault();
-    var email = form.querySelector('input[type="email"]').value;
-    fetch('https://beehiiv-proxy.cleary0720.workers.dev', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email: email, utm_source: 'mid-article'})
-    }).then(function() {
-        localStorage.setItem('tmb-subscribed', '1');
-        form.style.display = 'none';
-        form.nextElementSibling.style.display = 'block';
-    }).catch(function() {
-        form.style.display = 'none';
-        form.nextElementSibling.style.display = 'block';
-    });
 }
 </script>
 
