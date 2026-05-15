@@ -605,6 +605,77 @@
                 letter-spacing: 0.14em !important;
             }
         }
+
+        /* ── MID-ARTICLE SUBSCRIBE ── */
+        .mid-subscribe {
+            border-top: 2px solid var(--ink);
+            border-bottom: 2px solid var(--ink);
+            padding: 28px 32px;
+            margin: 36px 0;
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .mid-sub-left { flex: 1; min-width: 200px; }
+        .mid-sub-eyebrow {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+        .mid-sub-hed {
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.3;
+            color: var(--ink);
+        }
+        .mid-sub-right { flex-shrink: 0; }
+        .mid-sub-form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+        .mid-sub-input {
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid var(--ink);
+            background: var(--cream);
+            color: var(--ink);
+            outline: none;
+            width: 220px;
+            transition: border-color 0.2s;
+        }
+        .mid-sub-input:focus { border-color: var(--red-bright); }
+        .mid-sub-btn {
+            padding: 10px 20px;
+            background: var(--red-bright);
+            color: #fff;
+            border: none;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .mid-sub-btn:hover { background: #8B0000; }
+        .mid-sub-success {
+            display: none;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: var(--green, #1B5E20);
+            letter-spacing: 0.1em;
+        }
+        @media (max-width: 560px) {
+            .mid-subscribe { padding: 20px 18px; gap: 16px; }
+            .mid-sub-input { width: 100%; font-size: 16px; }
+            .mid-sub-form { flex-direction: column; align-items: stretch; }
+            .mid-sub-btn { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -695,6 +766,23 @@
         <h2>Section Heading</h2>
 
         <p>Use section headings to break a longer piece into digestible parts. Each section should advance the argument or add a new dimension to the analysis.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-subscribe">
+            <div class="mid-sub-left">
+                <div class="mid-sub-eyebrow">Free Weekly Newsletter</div>
+                <div class="mid-sub-hed">Enjoying this analysis?<br>Get it in your inbox every Sunday.</div>
+            </div>
+            <div class="mid-sub-right">
+                <form class="mid-sub-form" onsubmit="midSubSubmit(event, this)">
+                    <input class="mid-sub-input" type="email" placeholder="your@email.com" required>
+                    <button class="mid-sub-btn" type="submit">Subscribe Free</button>
+                </form>
+                <div class="mid-sub-success">&#10003; You're in. See you Sunday.</div>
+            </div>
+        </div>
+
+
 
         <p>Continue writing here. Add as many paragraphs as you need. Delete any example elements you are not using.</p>
 
@@ -883,6 +971,26 @@ function stickySubmit(e){e.preventDefault();var email=document.getElementById("s
 function toggleMobileNav() {
     var nl = document.querySelector('.nav-links');
     if (nl) nl.classList.toggle('open');
+}
+</script>
+
+
+<script>
+function midSubSubmit(e, form) {
+    e.preventDefault();
+    var email = form.querySelector('input[type="email"]').value;
+    fetch('https://beehiiv-proxy.cleary0720.workers.dev', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email, utm_source: 'mid-article'})
+    }).then(function() {
+        localStorage.setItem('tmb-subscribed', '1');
+        form.style.display = 'none';
+        form.nextElementSibling.style.display = 'block';
+    }).catch(function() {
+        form.style.display = 'none';
+        form.nextElementSibling.style.display = 'block';
+    });
 }
 </script>
 
