@@ -1890,7 +1890,7 @@
 
 <script>
 (function() {
-    if (sessionStorage.getItem('bar-dismissed')) return;
+    if (localStorage.getItem('bar-dismissed')) return;
     var shown = false;
     window.addEventListener('scroll', function() {
         if (shown) return;
@@ -1903,7 +1903,7 @@
 
 function dismissBar() {
     document.getElementById('sticky-bar').style.display = 'none';
-    sessionStorage.setItem('bar-dismissed', '1');
+    localStorage.setItem('bar-dismissed', '1');
 }
 
 function stickySubmit(e) {
