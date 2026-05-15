@@ -1,21 +1,21 @@
 import urllib.request, shutil, sys
 
 PHOTO_MAP = {
-    'Monetary Policy':    '3779760',
-    'Inflation':          '5632398',
-    'Labor Markets':      '3760067',
-    'Economic Output':    '1108101',
-    'Fixed Income':       '534216',
-    'Consumer Economy':   '1884581',
-    'Money Supply':       '164527',
-    'Trade Policy':       '906494',
-    'Energy & Commodities': '2101137',
-    'Fiscal Policy':      '1550337',
-    'Housing Market':     '106399',
-    'Financial Markets':  '6801874',
-    'Banking':            '1602726',
-    'Technology Economy': '373543',
-    'Global Economy':     '1098515',
+    "Monetary Policy": "3779760",
+    "Inflation": "5632398",
+    "Labor Markets": "3184292",
+    "Economic Output": "1108101",
+    "Fixed Income": "534216",
+    "Consumer Economy": "1884581",
+    "Money Supply": "164527",
+    "Trade Policy": "1427541",
+    "Energy & Commodities": "2101137",
+    "Fiscal Policy": "1550337",
+    "Housing Market": "106399",
+    "Financial Markets": "6801874",
+    "Banking": "1602726",
+    "Technology Economy": "373543",
+    "Global Economy": "1098515"
 }
 FALLBACK = '4386321'
 
