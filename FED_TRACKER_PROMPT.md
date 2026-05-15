@@ -46,6 +46,10 @@ Prepend a new table row for any new meeting that has occurred since last update.
 - vote-cell: Vote count with vote-note span for dissent details
 - Notes td: Brief summary of key statement language
 
+
+**Between MEANS-FOR-YOU-START and MEANS-FOR-YOU-END:**
+Only update this section if the Fed Funds Rate has changed since the last update. If the rate changed, update the four consumer impact boxes (Mortgages, Savings, Credit Cards, Auto Loans) to reflect the new rate environment using current market data. If the rate was held, leave this section untouched.
+
 **In the JavaScript section:**
 Update the FOMC countdown target date to the next meeting decision time (2pm ET = 18:00 UTC).
 
