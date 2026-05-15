@@ -466,7 +466,16 @@
                 letter-spacing: 0.14em !important;
             }
         }
-    </style>
+    
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+        </style>
 </head>
 <body>
 
@@ -534,6 +543,19 @@
         <h2>The Supply Side: OPEC+ Holds the Line</h2>
 
         <p>The supply side of the equation is doing most of the heavy lifting in this rally. OPEC+ — the coalition of oil-exporting nations co-led by Saudi Arabia and Russia — has maintained disciplined production cuts even as member nations face mounting fiscal pressure to pump more. Saudi Arabia's breakeven price, the oil level at which the kingdom balances its national budget, sits well above where prices were trading earlier this year, creating a structural incentive to keep crude expensive.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
 
         <p>The Kingdom has demonstrated a willingness to sacrifice market share in the short term to defend price floors — a strategic shift from the 2014-era "pump at will" approach that briefly destabilized global energy markets. Russia, despite Western sanctions constraining its export channels, has found alternative buyers in Asia, preserving its output while aligning with the cartel's price objectives. The result is a supply ceiling that has proved more durable than many analysts expected.</p>
 
