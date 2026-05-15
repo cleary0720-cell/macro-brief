@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Soft Stall: America's Labor Market Is Cooling Without Breaking — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+        /* ── BOTTOM LINE ── */
+        .bottom-line {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 24px 28px;
+            margin: 40px 0 8px;
+        }
+        .bottom-line-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .bottom-line p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #D8D4C8;
+            margin: 0;
+            text-indent: 0 !important;
+            font-style: normal;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+            <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <span class="article-category">Labor Markets</span>
+            <div class="article-category-rule"></div>
+            <span class="article-issue">Vol. I, No. 4</span>
+        </div>
+
+        <h1 class="article-headline">The <span class="red">Soft Stall</span>: America's Labor Market Is Cooling Without Breaking</h1>
+
+        <p class="article-subhead">April's 115,000-job print and decelerating wage growth expose a workforce caught between stubborn inflation and a Federal Reserve with no room to ease — a combination that risks turning a mild slowdown into something harder to escape.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">By <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
+            <span class="article-date">May 17, 2026</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="container">
+    <div class="article-hero">
+        <img src="../images/2026-05-labor-market-cooling-thumb.jpg" alt="Workers and labor market">
+        <div class="article-hero-caption">America's labor market enters a new phase: hiring has slowed, wages are losing ground to inflation, and manufacturing sits idle amid tariff uncertainty. — Editorial photo</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <p>The April jobs report had the feel of a near-miss. Nonfarm payrolls rose by 115,000 — a number that, by historical standards, represents decent if unspectacular job growth, but that arrived after March's 178,000-job print as the latest evidence of a labor market losing altitude. The unemployment rate held at 4.3 percent. Average hourly earnings rose just 0.2 percent for the month, or 3.6 percent year-over-year — below every major forecast. Together, the data describe a workforce that is neither expanding briskly nor contracting. It is, in the vocabulary of economists, softening. And for the Federal Reserve, a labor market that softens while inflation stays elevated is arguably the worst outcome of all.</p>
+
+        <p>The Bureau of Labor Statistics released the April Employment Situation on May 8, and the headline figure — 115,000 — carried a complexity that single numbers routinely obscure. Expectations had been low: consensus forecasts clustered near 55,000, in part because early-month jobless claims data had pointed to softness. The beat was real. But so was the trend. March's 178,000 was itself a downward revision from an initially stronger reading, and the three-month average for payroll additions has now slipped into a range — roughly 135,000 to 145,000 per month — that, in earlier cycles, would have been considered the floor of a healthy expansion. Today, that floor feels less stable.</p>
+
+        <h2>The Sectors Doing the Heavy Lifting</h2>
+
+        <p>The sectoral breakdown of April's gains tells a story that has become familiar over the past year. Healthcare added 37,000 positions — easily the strongest contribution of any single industry — continuing a structural trend driven by an aging population and rising demand for medical services that no cyclical forces can easily dislodge. Transportation and warehousing also contributed positively, as did retail trade, which has held up better than many expected given elevated borrowing costs and stagnant real incomes.</p>
+
+        <p>What notably did not contribute was manufacturing. Employment in goods-producing industries showed little net change in April, a pattern that has persisted since late 2025. The explanation is not mysterious: tariff-driven uncertainty about input costs, supply-chain restructuring, and export markets has made factory operators reluctant to expand headcount. Announcing a production line expansion requires a view of costs and revenue over years, not quarters — and that kind of visibility is precisely what the current trade policy environment has withheld. The productive core of an economy that tariff advocates promised to reinvigorate is, for now, holding its breath.</p>
+
+        <div class="pull-quote">"A labor market that softens while inflation stays elevated gives the Fed no easy exit. It cannot cut without risking a price spiral; it cannot hike without risking a genuine jobs contraction."</div>
+
+        <h2>The JOLTS Signal: A Market in Suspended Animation</h2>
+
+        <p>The Job Openings and Labor Turnover Survey (JOLTS) for March — the most recent available — reinforced the picture of a labor market caught between inertia and caution. Job openings held at 6.9 million, still elevated by any pre-pandemic standard but down sharply from the 2022 peak of nearly 12 million. More revealing was the quit rate (a measure economists track closely because workers quit voluntarily only when they are confident of finding something better): quits held at 3.2 million in March, a level associated with workers who feel uncertain enough about their prospects to stay put. Layoffs and discharges were also little changed, at 1.9 million.</p>
+
+        <p>This is the "low-hire, low-fire" labor market that has defined the cycle since early 2025 — neither a boom nor a bust, but a kind of economic suspended animation. Employers are not laying workers off in large numbers, which is why unemployment remains at 4.3 percent rather than climbing toward 5. But they are also not hiring with conviction. The result is a market that looks stable in the aggregate while quietly losing the dynamism — the worker mobility, the wage competition, the new-job formation — that generates productivity and prosperity over time.</p>
+
+        <p>One data point from the April report warrants particular attention. The number of people unemployed for less than five weeks jumped by 358,000 in April, reaching 2.5 million. Short-duration unemployment is frequently the leading edge of broader labor market deterioration: in tight markets, workers who lose jobs quickly find new ones and the number stays low. In cooling markets, those short spells can lengthen. It is too early to call it a trend. It is not too early to watch.</p>
+
+        <h2>Real Wages and the Inflation Trap</h2>
+
+        <p>The wage deceleration embedded in April's report carries a particular sting. Average hourly earnings growing at 3.6 percent annually might sound healthy in isolation, but it must be read against the PCE (Personal Consumption Expenditures — the Federal Reserve's preferred inflation gauge) deflator, which surged to 4.5 percent in the first quarter of 2026. The arithmetic is straightforward and uncomfortable: American workers, on average, are earning less in real terms than they were a year ago, even after receiving nominal pay increases. Wages are rising, but prices are rising faster.</p>
+
+        <p>The household squeeze this creates is compounded by borrowing costs. With the federal funds rate at 3.50 to 3.75 percent and the 10-year Treasury yield at 4.57 percent — a level that reflects markets pricing in the possibility of future rate hikes, not cuts — credit is expensive for consumers and businesses alike. Mortgage rates are running well above 7 percent. Auto loan and credit card rates remain at multi-decade highs. The channels through which monetary policy restrains spending are all fully open.</p>
+
+        <h2>Labor Market at a Glance</h2>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Current</th>
+                        <th>Period</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nonfarm Payrolls</td>
+                        <td>+115,000</td>
+                        <td>April 2026</td>
+                        <td class="td-neg">↓ from +178,000</td>
+                    </tr>
+                    <tr>
+                        <td>Unemployment Rate</td>
+                        <td>4.3%</td>
+                        <td>April 2026</td>
+                        <td>Unchanged</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Hourly Earnings (YoY)</td>
+                        <td>+3.6%</td>
+                        <td>April 2026</td>
+                        <td class="td-neg">↓ from +3.8% est.</td>
+                    </tr>
+                    <tr>
+                        <td>Job Openings (JOLTS)</td>
+                        <td>6.9 million</td>
+                        <td>March 2026</td>
+                        <td>Unchanged</td>
+                    </tr>
+                    <tr>
+                        <td>Quits</td>
+                        <td>3.2 million</td>
+                        <td>March 2026</td>
+                        <td>Little change</td>
+                    </tr>
+                    <tr>
+                        <td>Layoffs &amp; Discharges</td>
+                        <td>1.9 million</td>
+                        <td>March 2026</td>
+                        <td>Little change</td>
+                    </tr>
+                    <tr>
+                        <td>PCE Price Index (QoQ, ann.)</td>
+                        <td>+4.5%</td>
+                        <td>Q1 2026</td>
+                        <td class="td-neg">↑ from +2.9%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>The Fed's Impossible Calculus</h2>
+
+        <p>For the Federal Open Market Committee (FOMC — the Fed's rate-setting body), a softening labor market would, under normal conditions, create room to cut interest rates and support demand. But with core PCE running at 4.3 percent and headline inflation still elevated by oil-price pass-through and tariff effects, no such room exists. A rate cut risks reigniting price pressures that are already well above the 2 percent target; a rate hike risks converting a soft stall into a genuine contraction. The April 28-29 FOMC meeting produced another hold at 3.50 to 3.75 percent — a decision that satisfied neither the hawks who want tighter policy nor the doves who want accommodation. It was, in essence, a policy of managed paralysis.</p>
+
+        <p>The June 16-17 FOMC meeting will be more consequential. The May Employment Situation, due June 5, and the May Consumer Price Index, due June 10, will arrive as the decisive inputs to a decision that will reveal whether the Fed still commands the economic narrative — or whether the interaction of geopolitical oil shocks, tariff-driven goods inflation, and a decelerating labor market has stripped it of any good options entirely. The bond market's verdict — a 10-year yield holding above 4.5 percent — suggests that investors have already concluded the latter.</p>
+
+        <p>The labor market, then, is sending a signal that the broader economy has been reluctant to deliver clearly: that high borrowing costs, persistent inflation, and tariff-driven uncertainty are beginning to compound in ways that aggregate statistics can obscure. GDP grew at 2.0 percent in the first quarter. But that figure is backward-looking. The jobs market is where the future arrives first — and right now, it is describing a future of constrained hiring, eroding real wages, and a central bank with no comfortable path forward.</p>
+
+        <div class="bottom-line">
+            <span class="bottom-line-label">Bottom Line</span>
+            <p>Even though job losses are not spiking and the unemployment rate is holding steady, there are real signs the job market is quietly losing steam — especially in manufacturing, where companies are too uncertain about tariffs and costs to hire new workers. More importantly, prices are rising faster than wages right now, which means most workers are actually taking home less in real terms than they were a year ago even with a pay raise. If you are searching for a new job, expecting a meaningful raise, or carrying a variable-rate loan, the environment ahead looks tighter, not easier.</p>
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+        <div class="related-hd">
+            <span class="related-tag">Related Articles</span>
+            <div class="related-rule"></div>
+        </div>
+        <div class="related-grid">
+            <a class="related-card" href="../articles/2026-05-inflation-relapse.html">
+                <div class="related-thumb"><img src="../images/inflation-thumb.jpg" alt="Inflation"></div>
+                <div class="related-body">
+                    <div class="related-cat">Inflation</div>
+                    <div class="related-title">Inflation Relapse: The April Price Surge That Rewrites the Fed's 2026 Playbook</div>
+                </div>
+            </a>
+            <a class="related-card" href="../articles/2026-05-tariff-trade-deficit.html">
+                <div class="related-thumb"><img src="../images/tariff-thumb.jpg" alt="Trade Policy"></div>
+                <div class="related-body">
+                    <div class="related-cat">Trade Policy</div>
+                    <div class="related-title">The Tariff Dividend: How America's Trade Gap Has Narrowed — and What It's Actually Cost</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <div class="article-tags">
+            <span class="article-tag">Labor Markets</span>
+            <span class="article-tag">Jobs Report</span>
+            <span class="article-tag">Federal Reserve</span>
+            <span class="article-tag">Wages</span>
+            <span class="article-tag">Inflation</span>
+        </div>
+
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=The+Soft+Stall%3A+America%27s+Labor+Market+Is+Cooling+Without+Breaking&url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-05-labor-market-cooling.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-05-labor-market-cooling.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    macrobriefnews@gmail.com<br>
+                    Volume I · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:12px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;width:220px;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+<script>
+(function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
+function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
+function stickySubmit(e){e.preventDefault();var email=document.getElementById("sticky-email").value;fetch("https://beehiiv-proxy.cleary0720.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,utm_source:"sticky-bar"})}).then(function(){localStorage.setItem("tmb-subscribed","1");document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);}).catch(function(){document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);});}
+</script>
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
+
+<script src="subscribe.js"></script>
+</body>
+</html>
