@@ -2,7 +2,6 @@ import urllib.request, urllib.parse, shutil, sys, json, random
 
 PEXELS_KEY = 'gKfA0uAiln84lEEyFzf64iuizHKdeSKCiWG2xebCsFpE24ViqIOG0ufD'
 
-# Fallback photo IDs per category if search returns no results
 FALLBACK_MAP = {
     'Monetary Policy':      ['3779760', '4386321', '534216'],
     'Inflation':            ['5632398', '4386321', '3943716'],
@@ -21,6 +20,8 @@ FALLBACK_MAP = {
     'Global Economy':       ['1098515', '1427541', '3779760'],
 }
 
+HEADERS = {'Authorization': PEXELS_KEY, 'User-Agent': 'TheMacroBrief/1.0'}
+
 category = sys.argv[1]
 slug     = sys.argv[2]
 keyword  = sys.argv[3] if len(sys.argv) > 3 else category
@@ -33,18 +34,13 @@ def download_by_id(pid):
         with open(out, 'wb') as f:
             shutil.copyfileobj(r, f)
 
-# Search Pexels for the keyword
 query = urllib.parse.urlencode({'query': keyword, 'per_page': 15, 'orientation': 'landscape'})
-req = urllib.request.Request(
-    f'https://api.pexels.com/v1/search?{query}',
-    headers={'Authorization': PEXELS_KEY}
-)
+req = urllib.request.Request(f'https://api.pexels.com/v1/search?{query}', headers=HEADERS)
 try:
     with urllib.request.urlopen(req, timeout=15) as r:
         data = json.loads(r.read())
     photos = data.get('photos', [])
     if photos:
-        # Pick a random photo from the results to avoid repeats
         photo = random.choice(photos[:10])
         pid = str(photo['id'])
         img_url = photo['src']['large2x']
