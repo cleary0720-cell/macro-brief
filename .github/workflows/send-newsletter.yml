@@ -1,0 +1,20 @@
+name: Send Newsletter                                                                                                               
+                                                                                                                                    
+  on:                                                                                                                               
+    push:                                                                                                                           
+      branches: [main]
+      paths:
+        - 'articles/**.html'
+                                                                                                                                      
+  jobs:
+    newsletter:                                                                                                                       
+      runs-on: ubuntu-latest                                
+      steps:                                                                                                                        
+        - uses: actions/checkout@v4                                                                                                 
+          with:
+            fetch-depth: 2
+        - name: Send newsletter                                                                                                       
+          env:
+            GMAIL_PASS: ${{ secrets.GMAIL_PASS }}                                                                                     
+            BEEHIIV_KEY: ${{ secrets.BEEHIIV_KEY }}                                                                                   
+          run: python3 .github/scripts/send_newsletter.py
