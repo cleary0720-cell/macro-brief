@@ -1,23 +1,21 @@
 name: Send Newsletter                                                                                                               
-                                                            
-  on:                                                                                                                               
+on:
     push:                                                                                                                             
-      branches: [main]
-      paths:
+      branches: [main]                                      
+      paths:                                                                                                                        
         - 'articles/**.html'                                                                                                          
-  
-  jobs:                                                                                                                               
-    newsletter:                                             
-      runs-on: ubuntu-latest                                                                                                        
-      steps:
+jobs:
+    newsletter:                                                                                                                       
+      runs-on: ubuntu-latest                                
+      steps:                                                                                                                          
         - uses: actions/checkout@v4
-          with:
-            fetch-depth: 2
-        - name: Send newsletter and fix thumbnail
+          with:                                                                                                                       
+            fetch-depth: 2                                  
+        - name: Send newsletter and fix thumbnail                                                                                   
           env:                                                                                                                        
             GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
             BEEHIIV_KEY: ${{ secrets.BEEHIIV_KEY }}                                                                                   
-            PEXELS_KEY: ${{ secrets.PEXELS_KEY }}           
+            PEXELS_KEY: ${{ secrets.PEXELS_KEY }}                                                                                     
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                                                                                 
-            GITHUB_REPOSITORY: ${{ github.repository }}
+            GITHUB_REPOSITORY: ${{ github.repository }}                                                                               
           run: python3 .github/scripts/send_newsletter.py
