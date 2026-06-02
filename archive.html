@@ -874,7 +874,23 @@
             n + ' EDITIONS PUBLISHED';
     }
 
+    function sortCards(ascending) {
+        const grid = document.getElementById('article-grid');
+        const cards = Array.from(grid.querySelectorAll('.article-card:not(.placeholder)'));
+        cards.sort((a, b) => {
+            const getDate = card => {
+                const el = card.querySelector('.card-published span:last-child');
+                return el ? new Date(el.textContent.trim()) : new Date(0);
+            };
+            return ascending ? getDate(a) - getDate(b) : getDate(b) - getDate(a);
+        });
+        cards.forEach(card => grid.appendChild(card));
+    }
+
     function applyFilter(category) {
+        if (category === 'all') {
+            sortCards(true);
+        }
         allCards.forEach(card => {
             if (category === 'all') {
                 card.style.display = '';
@@ -907,6 +923,8 @@
         if (!hasArticle) btn.style.display = 'none';
     });
 
+    // Default: All tab shows oldest to newest
+    sortCards(true);
     updateCount(realCards);
 </script>
 
