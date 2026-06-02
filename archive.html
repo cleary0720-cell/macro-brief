@@ -888,9 +888,7 @@
     }
 
     function applyFilter(category) {
-        if (category === 'all') {
-            sortCards(true);
-        }
+        sortCards(false);
         allCards.forEach(card => {
             if (category === 'all') {
                 card.style.display = '';
@@ -923,8 +921,8 @@
         if (!hasArticle) btn.style.display = 'none';
     });
 
-    // Default: All tab shows oldest to newest
-    sortCards(true);
+    // Default: newest first
+    sortCards(false);
     updateCount(realCards);
 </script>
 
