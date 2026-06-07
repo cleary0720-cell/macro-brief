@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Crutch: How a Trillion-Dollar Data-Center Boom Became the Load-Bearing Wall of the US Economy — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+
+        /* ── BOTTOM LINE ── */
+        .bottom-line {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 24px 28px;
+            margin: 40px 0 8px;
+        }
+        .bottom-line-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .bottom-line p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #D8D4C8;
+            margin: 0;
+            text-indent: 0 !important;
+            font-style: normal;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
+
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+        </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+            <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <span class="article-category">Technology Economy</span>
+            <div class="article-category-rule"></div>
+            <span class="article-issue">Vol. I, No. 9</span>
+        </div>
+
+        <h1 class="article-headline">The AI Crutch: How a Trillion-Dollar Data-Center Boom Became the <span class="red">Load-Bearing Wall</span> of the US Economy</h1>
+
+        <p class="article-subhead">Federal Reserve economists now estimate that AI infrastructure spending is adding close to a full percentage point to US GDP growth — financed increasingly by debt that credit investors say could become the next systemic shock.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">By <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
+            <span class="article-date">June 07, 2026</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="container">
+    <div class="article-hero">
+        <img src="../images/2026-06-ai-data-center-boom-thumb.jpg" alt="Editorial graphic illustrating the scale of US corporate debt financing">
+        <div class="article-hero-caption">The AI infrastructure boom is increasingly a debt story — corporate borrowing tied to data-center construction has become one of Wall Street's fastest-growing exposures. — Editorial graphic</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <p>The headline number from the Bureau of Economic Analysis's latest GDP report looked unremarkable: 1.6% annualized growth in the first quarter of 2026, a modest deceleration from the prior quarter. But strip away one line item — private investment in artificial intelligence data centers — and the picture darkens considerably. Federal Reserve researchers now estimate that data-center construction and equipment spending alone contributed between 0.8 and 1.1 percentage points to headline GDP growth this year, meaning that without the AI infrastructure boom, the US economy would be expanding at barely half its reported pace, brushing up against stall speed.</p>
+
+        <p>The scale of the buildout is difficult to overstate. Data-center investment has rocketed from an annualized rate of roughly $60 billion in the final quarter of 2024 to an estimated $370 billion by the second quarter of 2026 — better than a six-fold increase in eighteen months. The largest US technology firms, often called "hyperscalers" (the cloud-computing giants — Amazon, Microsoft, Alphabet, Meta and others — that build and operate computing infrastructure on a scale large enough to serve the entire internet), now plan to spend as much as $725 billion this year on capital expenditures, the overwhelming majority of it on AI computing equipment. In April alone, US construction spending on data centers topped $50 billion for the first time — 2.3% of all construction spending nationwide, and for the first time on record, more than the country spends building offices.</p>
+
+        <p>Equity markets have cheered every dollar of it. On June 1, the Nasdaq Composite closed above 27,000 for the first time in its history, while the Nasdaq 100 — the index of the exchange's largest non-financial companies — pushed past 30,000. The rally has been propelled almost entirely by a narrow band of AI infrastructure names reporting blowout earnings and announcing ever-larger capital raises, even as more than 60% of S&amp;P 500 constituents have trailed the broader index over the past year.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
+        <p>What is less visible from the stock ticker is how this boom is being financed. Not even Amazon, Microsoft or Meta — companies that generate tens of billions of dollars in free cash flow each quarter — are willing to fund a buildout whose total price tag is estimated at $3 trillion purely from their own balance sheets. Instead, they have turned increasingly to corporate bond markets and private credit, transforming what looks from the outside like a technology story into, at its core, a debt story. Wall Street banks have reorganized entire teams around data-center financing; one senior Goldman Sachs banker recently described the business as "all AI data centers, all the time."</p>
+
+        <p>That financing wave is now showing up on risk officers' watch lists. In a Bank of America survey released in early June, 34% of global fund managers identified AI hyperscaler capital spending as the most likely source of the next systemic credit event — double the share who said so in April — and for the first time on record, an "AI bubble" topped the list of concerns among credit investors specifically. DoubleLine portfolio manager Robert Cohen went further on June 3, telling clients that an AI debt bubble in credit markets is now all but inevitable, drawing a parallel to historical waves of overinvestment in railroads and the early internet.</p>
+
+        <div class="pull-quote">"An AI debt bubble in credit markets is now almost certain — the only real questions are timing, and how much collateral damage it leaves behind when it clears."</div>
+
+        <p>The fragility of the arrangement was on full display in late April, when a report that OpenAI had missed internal user and revenue targets sent corporate bonds linked to data-center borrowers tumbling in a single trading session. The episode illustrated how tightly the fortunes of the broader US economy — not merely the technology sector, but reported GDP itself — are now bound to the spending decisions, credit ratings, and revenue trajectories of a small handful of companies executing an infrastructure bet whose ultimate payoff remains, by definition, unproven.</p>
+
+        <h2>A Single Point of Failure</h2>
+
+        <p>This arrangement leaves policymakers in an uncomfortable position. An economy that, on paper, looks resilient — unemployment near 4.3%, GDP growth holding above 1.5%, equity indices at record highs — is in practice leaning heavily on the capital-spending cycle of one industry, financed substantially through leverage that sits outside traditional bank balance sheets and therefore outside much of the regulatory apparatus built after 2008. Some economists have drawn uneasy comparisons to the mid-2000s, when residential housing investment played an outsized role in propping up headline growth figures — though officials are quick to note real differences, since AI infrastructure is, unlike many subprime-era mortgages, generating real and growing revenue today. Still, if hyperscaler spending decelerates even modestly, or if credit markets reprice the risk attached to data-center debt, the percentage point or more of GDP growth currently attributed to the AI boom could reverse just as quickly as it appeared.</p>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Current</th>
+                        <th>Prior</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data-center investment (annualized rate)</td>
+                        <td>$370B (Q2 2026 est.)</td>
+                        <td>$180B (Q4 2025)</td>
+                        <td class="td-pos">&#43;106%</td>
+                    </tr>
+                    <tr>
+                        <td>2026 Big Tech AI capex (planned)</td>
+                        <td>$725B</td>
+                        <td>$650B (Feb. est.)</td>
+                        <td class="td-pos">&#43;$75B</td>
+                    </tr>
+                    <tr>
+                        <td>GDP growth contribution from data-center capex</td>
+                        <td>0.8&ndash;1.1 pts</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                    </tr>
+                    <tr>
+                        <td>Fund managers citing AI capex as top credit risk</td>
+                        <td>34%</td>
+                        <td>17% (April)</td>
+                        <td class="td-neg">&#43;17 pts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>None of this means the AI investment cycle is destined to end badly, or that the computing infrastructure being built will prove unproductive over the long run. But it does mean that an unusually large share of what currently passes for American economic strength is concentrated in a single, debt-financed wager — one whose unwinding, should it come, would not stay confined to technology stocks. For a Federal Reserve already weighing a rate decision on June 17 against stubborn inflation and a cooling labor market, the AI capex boom adds yet another variable it did not choose and cannot easily control: an economy that may be stronger than it looks today, or far weaker than it appears, depending entirely on whether one industry's spending spree keeps running on schedule.</p>
+
+        <div class="bottom-line">
+            <span class="bottom-line-label">Bottom Line</span>
+            <p>A huge share of America's recent economic growth is coming from one place: tech giants pouring hundreds of billions of dollars into building AI computing centers, much of it borrowed. Stock markets have surged on the back of this spending, but the people who track credit risk for a living are increasingly worried the debt behind it could turn sour. If that spending slows down, or lenders get nervous and pull back, a meaningful chunk of what's currently propping up US growth could disappear quickly — leaving an economy that looked strong on paper suddenly looking much weaker.</p>
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+        <div class="related-hd">
+            <span class="related-tag">Related Articles</span>
+            <div class="related-rule"></div>
+        </div>
+        <div class="related-grid">
+            <!-- RELATED ARTICLE 1 -->
+            <a class="related-card" href="../articles/2026-05-debt-interest-crisis.html">
+                <div class="related-thumb"><img src="../images/2026-05-debt-interest-crisis-thumb.jpg" alt="US federal debt interest payments chart"></div>
+                <div class="related-body">
+                    <div class="related-cat">Fiscal Policy</div>
+                    <div class="related-title">The $1 Trillion Bill: America's Debt Interest Crisis Is the Fiscal Story Nobody Talks About</div>
+                </div>
+            </a>
+            <!-- RELATED ARTICLE 2 -->
+            <a class="related-card" href="../articles/2026-05-consumer-spending.html">
+                <div class="related-thumb"><img src="../images/2026-05-consumer-spending-thumb.jpg" alt="Consumer spending and retail"></div>
+                <div class="related-body">
+                    <div class="related-cat">Consumer Economy</div>
+                    <div class="related-title">The Debt-Fueled Consumer: America's Spending Resilience Is Running on Borrowed Time</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <div class="article-tags">
+            <span class="article-tag">Artificial Intelligence</span>
+            <span class="article-tag">GDP</span>
+            <span class="article-tag">Credit Markets</span>
+            <span class="article-tag">Technology</span>
+            <span class="article-tag">Federal Reserve</span>
+        </div>
+
+        <!-- SHARE — update the tweet text and URL to match this article -->
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=The+AI+Crutch%3A+How+a+Trillion-Dollar+Data-Center+Boom+Became+the+Load-Bearing+Wall+of+the+US+Economy&url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief%2Farticles%2F2026-06-ai-data-center-boom.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcleary0720-cell.github.io%2Fmacro-brief%2Farticles%2F2026-06-ai-data-center-boom.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    macrobriefnews@gmail.com<br>
+                    Volume II · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:12px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;width:220px;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+<script>
+(function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
+function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
+function stickySubmit(e){e.preventDefault();var email=document.getElementById("sticky-email").value;fetch("https://beehiiv-proxy.cleary0720.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,utm_source:"sticky-bar"})}).then(function(){localStorage.setItem("tmb-subscribed","1");document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);}).catch(function(){document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);});}
+</script>
+
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
+
+<script src="subscribe.js"></script>
+</body>
+</html>
