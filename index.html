@@ -1269,6 +1269,441 @@
                 letter-spacing: 0.14em !important;
             }
         }
+        /* ═══════════════════════════════════════════
+           DASHBOARD EXPANSION
+        ═══════════════════════════════════════════ */
+
+        /* ─────────────────────────────────────
+           INFLATION BREAKDOWN PANEL
+        ───────────────────────────────────── */
+
+        .inf-panel {
+            border: 1px solid var(--cream-border);
+            border-top: 2px solid var(--ink);
+            background: var(--cream);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .inf-row {
+            display: flex;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--cream-border);
+            gap: 0;
+        }
+
+        .inf-row:last-child {
+            border-bottom: none;
+        }
+
+        .inf-row:hover {
+            background: var(--cream-dark);
+            transition: background 0.15s ease;
+        }
+
+        /* Component name — left column */
+        .inf-label {
+            flex: 0 0 220px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink-mid);
+            line-height: 1.3;
+        }
+
+        .inf-label-sub {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-top: 3px;
+        }
+
+        /* Large % value — center */
+        .inf-val {
+            flex: 1;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .inf-val.high    { color: var(--red); }
+        .inf-val.mod     { color: var(--amber); }
+        .inf-val.low     { color: var(--green); }
+        .inf-val.neg     { color: var(--green); }
+
+        /* Directional label — right column */
+        .inf-trend {
+            flex: 0 0 200px;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            line-height: 1.35;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .inf-trend-arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .inf-trend-label {
+            font-size: 9px;
+            letter-spacing: 0.18em;
+        }
+
+        .inf-trend.rising        { color: var(--red); }
+        .inf-trend.easing        { color: var(--green); }
+        .inf-trend.stable        { color: var(--amber); }
+
+        /* Source line beneath panel */
+        .inf-source {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            color: var(--ink-light);
+            text-align: right;
+            margin-top: -26px;
+            margin-bottom: 32px;
+            padding-right: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 780px) {
+            .inf-label {
+                flex: 0 0 160px;
+            }
+            .inf-trend {
+                flex: 0 0 140px;
+            }
+            .inf-val {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .inf-row {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 16px 18px;
+            }
+            .inf-label {
+                flex: 1 1 100%;
+                margin-bottom: 4px;
+            }
+            .inf-val {
+                flex: 1 1 auto;
+                text-align: left;
+                font-size: 42px;
+            }
+            .inf-trend {
+                flex: 0 0 auto;
+                align-items: flex-end;
+                text-align: right;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           YIELD CURVE SECTION
+        ═══════════════════════════════════════════ */
+
+        .yc-wrap {
+            border: 1px solid var(--ink);
+            background: var(--cream);
+            margin-bottom: 36px;
+        }
+
+        .yc-inner {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            align-items: stretch;
+        }
+
+        .yc-chart-col {
+            padding: 20px 24px 16px;
+            border-right: 1px solid var(--ink);
+        }
+
+        .yc-chart-col svg {
+            width: 100%;
+            display: block;
+        }
+
+        .yc-meta-col {
+            padding: 22px 22px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: var(--cream-dark);
+        }
+
+        .yc-status-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .yc-status-lbl {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        .yc-badge {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border: 1px solid;
+            width: fit-content;
+        }
+
+        .yc-badge.normal {
+            color: var(--green);
+            border-color: var(--green);
+            background: rgba(27,94,32,0.06);
+        }
+
+        .yc-badge.inverted {
+            color: var(--red);
+            border-color: var(--red);
+            background: rgba(178,34,34,0.06);
+        }
+
+        .yc-badge.flat {
+            color: var(--amber);
+            border-color: var(--amber);
+            background: rgba(123,80,0,0.06);
+        }
+
+        .yc-rates-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .yc-rate-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--cream-border);
+        }
+
+        .yc-rate-row:last-child {
+            border-bottom: none;
+        }
+
+        .yc-rate-tenor {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            color: var(--ink-light);
+            text-transform: uppercase;
+        }
+
+        .yc-rate-val {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .yc-rate-row.highlight .yc-rate-tenor {
+            color: var(--ink-mid);
+            font-weight: 700;
+        }
+
+        .yc-rate-row.highlight .yc-rate-val {
+            color: var(--green);
+        }
+
+        .yc-footnote {
+            font-size: 11.5px;
+            font-style: italic;
+            color: var(--ink-light);
+            line-height: 1.6;
+            border-top: 1px solid var(--rule);
+            padding-top: 14px;
+            margin-top: 2px;
+        }
+
+        .yc-source {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+            margin-top: 4px;
+        }
+
+        /* Spread chips under chart */
+        .yc-spreads {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .yc-spread-chip {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        .yc-spread-chip strong {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 780px) {
+            .yc-inner {
+                grid-template-columns: 1fr;
+            }
+            .yc-chart-col {
+                border-right: none;
+                border-bottom: 1px solid var(--ink);
+            }
+            .yc-meta-col {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .yc-rates-block {
+                flex: 1;
+                min-width: 140px;
+            }
+            .yc-status-block { flex-basis: 100%; }
+        }
+
+        /* ─────────────────────────────────────
+           FOMC PROBABILITY BAR
+        ───────────────────────────────────── */
+
+        .fomc-box {
+            border: 1px solid var(--ink);
+            background: var(--cream);
+            padding: 24px 28px 22px;
+            margin-bottom: 36px;
+        }
+
+        .fomc-subtitle {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        /* The probability bar — horizontal flex, stays on one line at all widths */
+        .fomc-bar {
+            display: flex;
+            width: 100%;
+            height: 64px;
+            border: 1px solid var(--cream-border);
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .fomc-seg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            overflow: hidden;
+            transition: opacity 0.15s ease;
+        }
+
+        .fomc-seg:hover { opacity: 0.88; }
+
+        .fomc-pct {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .fomc-lbl {
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.82);
+            margin-top: 3px;
+        }
+
+        /* Segment colors */
+        .fomc-cut  { background: var(--green); }
+        .fomc-hold { background: var(--amber); }
+        .fomc-hike { background: var(--red);   }
+
+        /* Hide text on very narrow segments (< ~4% of bar) */
+        .fomc-seg[style*="flex: 0"] .fomc-pct,
+        .fomc-seg[style*="flex: 0"] .fomc-lbl { display: none; }
+
+        /* Legend row */
+        .fomc-legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .fomc-leg-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.08em;
+            color: var(--ink-mid);
+        }
+
+        .fomc-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .fomc-dot-cut  { background: var(--green); }
+        .fomc-dot-hold { background: var(--amber); }
+        .fomc-dot-hike { background: var(--red);   }
+
+        /* Plain-English summary note */
+        .fomc-note {
+            font-size: 12.5px;
+            color: var(--ink-light);
+            font-style: italic;
+            line-height: 1.6;
+            border-top: 1px solid var(--rule);
+            padding-top: 11px;
+        }
+
     </style>
 </head>
 <body>
@@ -1433,8 +1868,104 @@
             <div class="card-plain"><span class="card-plain-label">In plain terms</span>M2 measures how much money is flowing through the economy — cash, checking accounts, savings, and money market funds. At $22.8 trillion and growing 4.7% year-over-year, there is a lot of money chasing goods, which keeps prices elevated even as the Fed holds borrowing costs high.</div>
         </div>
 
+
+        <!-- 8 ─ Core PCE -->
+        <div class="ind-card neg" data-ind="core-pce">
+            <div class="card-cat">Inflation</div>
+            <div class="card-name">Core PCE Price Index (YoY)</div>
+            <div class="card-val">3.3%</div>
+            <div class="card-sig"><div class="sig-dot"></div>RE-ACCELERATING ↑</div>
+            <div class="card-desc">April 2026 Core PCE — the Fed's preferred inflation gauge — rose 3.3% year-over-year, up from 3.2% in March and well above the 2% target. After bottoming near 2.6% in early 2025, core prices have climbed steadily for more than a year as service-sector and shelter costs prove persistent.</div>
+        </div>
+
+        <!-- 9 ─ ISM Manufacturing PMI -->
+        <div class="ind-card pos" data-ind="ism-pmi">
+            <div class="card-cat">Economic Output</div>
+            <div class="card-name">ISM Manufacturing PMI</div>
+            <div class="card-val">54.0</div>
+            <div class="card-sig"><div class="sig-dot"></div>EXPANDING ▲</div>
+            <div class="card-desc">May 2026 ISM Manufacturing PMI surged to 54.0 — the strongest reading since May 2022 — capping a dramatic reversal from 10 consecutive months of contraction through 2025. After bottoming at 47.9 in December 2025, manufacturing has expanded for five straight months as new orders and production accelerate.</div>
+        </div>
+
+        <!-- 10 ─ Initial Jobless Claims -->
+        <div class="ind-card neu" data-ind="jobless-claims">
+            <div class="card-cat">Labor Market</div>
+            <div class="card-name">Initial Jobless Claims (4-wk avg)</div>
+            <div class="card-val">215k</div>
+            <div class="card-sig"><div class="sig-dot"></div>STABLE →</div>
+            <div class="card-desc">The 4-week moving average of initial jobless claims stood at 215,000 for the week ending May 23, 2026 — within the healthy historical range and consistent with a labor market that is softening at the margin rather than deteriorating. Claims briefly dipped to a cycle low near 200k in early May before edging back up.</div>
+        </div>
+
     </div>
     <!-- INDICATORS-END -->
+
+    <!-- INFLATION-BREAKDOWN-START -->
+    <div class="section-hd">
+        <span class="section-tag">Inflation Breakdown</span>
+        <div class="section-rule"></div>
+        <span class="section-date">BLS CPI — APR 2026</span>
+    </div>
+
+    <div class="inf-panel">
+
+        <!-- Row 1: Headline CPI -->
+        <div class="inf-row">
+            <div class="inf-label">
+                Headline CPI
+                <span class="inf-label-sub">All Items, YoY</span>
+            </div>
+            <div class="inf-val high">3.8%</div>
+            <div class="inf-trend rising">
+                <span class="inf-trend-arrow">↑</span>
+                <span class="inf-trend-label">Re-Accelerating</span>
+            </div>
+        </div>
+
+        <!-- Row 2: Core CPI -->
+        <div class="inf-row">
+            <div class="inf-label">
+                Core CPI
+                <span class="inf-label-sub">Ex. Food &amp; Energy, YoY</span>
+            </div>
+            <div class="inf-val mod">2.8%</div>
+            <div class="inf-trend rising">
+                <span class="inf-trend-arrow">↑</span>
+                <span class="inf-trend-label">Re-Accelerating</span>
+            </div>
+        </div>
+
+        <!-- Row 3: Shelter -->
+        <div class="inf-row">
+            <div class="inf-label">
+                Shelter
+                <span class="inf-label-sub">Rent &amp; OER, YoY</span>
+            </div>
+            <div class="inf-val high">3.3%</div>
+            <div class="inf-trend rising">
+                <span class="inf-trend-arrow">↑</span>
+                <span class="inf-trend-label">Re-Accelerating</span>
+            </div>
+        </div>
+
+        <!-- Row 4: Energy -->
+        <div class="inf-row">
+            <div class="inf-label">
+                Energy
+                <span class="inf-label-sub">All Energy, YoY</span>
+            </div>
+            <div class="inf-val high">+17.9%</div>
+            <div class="inf-trend stable">
+                <span class="inf-trend-arrow">→</span>
+                <span class="inf-trend-label">Elevated / Easing</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="inf-source">
+        Source: U.S. Bureau of Labor Statistics, Consumer Price Index — April 2026 (released May 12, 2026)
+    </div>
+    <!-- INFLATION-BREAKDOWN-END -->
 
     <!-- TREND MODAL -->
     <div id="ind-modal">
@@ -1486,6 +2017,161 @@
             </div>
         </div>
     </div>
+
+    <!-- YIELD-CURVE-START -->
+
+    <!-- YIELD CURVE -->
+    <div class="section-hd">
+        <span class="section-tag">Treasury Yield Curve</span>
+        <div class="section-rule"></div>
+        <span class="section-date">JUNE 9, 2026</span>
+    </div>
+
+    <div class="yc-wrap">
+        <div class="yc-inner">
+
+            <!-- SVG Chart -->
+            <div class="yc-chart-col">
+                <svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+                    <defs>
+                        <!-- Gradient fill: green (normal curve) -->
+                        <linearGradient id="yc-grad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#1B5E20" stop-opacity="0.18"/>
+                            <stop offset="100%" stop-color="#1B5E20" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Horizontal grid lines + Y-axis labels -->
+                    <!-- 1M: 4.22% -> (46.0,96.4) -->
+                    <!-- 3M: 3.80% -> (96.7,130.0) -->
+                    <!-- 6M: 3.83% -> (147.3,127.6) -->
+                    <!-- 1Y: 3.85% -> (198.0,126.0) -->
+                    <!-- 2Y: 4.15% -> (248.7,102.0) -->
+                    <!-- 5Y: 4.29% -> (299.3,90.8) -->
+                    <!-- 7Y: 4.42% -> (350.0,80.4) -->
+                    <!-- 10Y: 4.56% -> (400.7,69.2) -->
+                    <!-- 20Y: 5.05% -> (451.3,30.0) -->
+                    <!-- 30Y: 5.03% -> (502.0,31.6) -->
+
+                    <!-- Grid lines at ~3.55, 3.87, 4.20, 4.52% (evenly spaced) -->
+                    <line x1="46" y1="142.0" x2="502" y2="142.0" stroke="#C8C0AA" stroke-width="0.5"/>
+                    <text x="41" y="145.5" text-anchor="end" font-family="Courier New" font-size="9" fill="#888">3.55%</text>
+
+                    <line x1="46" y1="116.0" x2="502" y2="116.0" stroke="#C8C0AA" stroke-width="0.5"/>
+                    <text x="41" y="119.5" text-anchor="end" font-family="Courier New" font-size="9" fill="#888">3.87%</text>
+
+                    <line x1="46" y1="90.0" x2="502" y2="90.0" stroke="#C8C0AA" stroke-width="0.5"/>
+                    <text x="41" y="93.5" text-anchor="end" font-family="Courier New" font-size="9" fill="#888">4.20%</text>
+
+                    <line x1="46" y1="64.0" x2="502" y2="64.0" stroke="#C8C0AA" stroke-width="0.5"/>
+                    <text x="41" y="67.5" text-anchor="end" font-family="Courier New" font-size="9" fill="#888">4.52%</text>
+
+                    <!-- Area fill polygon -->
+                    <polygon
+                        points="46.0,142.0 46.0,96.4 96.7,130.0 147.3,127.6 198.0,126.0 248.7,102.0 299.3,90.8 350.0,80.4 400.7,69.2 451.3,30.0 502.0,31.6 502.0,142.0"
+                        fill="url(#yc-grad)"/>
+
+                    <!-- Yield curve line -->
+                    <polyline
+                        points="46.0,96.4 96.7,130.0 147.3,127.6 198.0,126.0 248.7,102.0 299.3,90.8 350.0,80.4 400.7,69.2 451.3,30.0 502.0,31.6"
+                        fill="none"
+                        stroke="#1B5E20"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"/>
+
+                    <!-- Data point circles -->
+                    <circle cx="46.0"  cy="96.4"  r="3.5" fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="96.7"  cy="130.0" r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="147.3" cy="127.6" r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="198.0" cy="126.0" r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="248.7" cy="102.0" r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="299.3" cy="90.8"  r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="350.0" cy="80.4"  r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="400.7" cy="69.2"  r="3.5" fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="451.3" cy="30.0"  r="2"   fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+                    <circle cx="502.0" cy="31.6"  r="3.5" fill="#1B5E20" stroke="white" stroke-width="1.5"/>
+
+                    <!-- X-axis maturity labels -->
+                    <text x="46.0"  y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">1M</text>
+                    <text x="96.7"  y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">3M</text>
+                    <text x="147.3" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">6M</text>
+                    <text x="198.0" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">1Y</text>
+                    <text x="248.7" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">2Y</text>
+                    <text x="299.3" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">5Y</text>
+                    <text x="350.0" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">7Y</text>
+                    <text x="400.7" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">10Y</text>
+                    <text x="451.3" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">20Y</text>
+                    <text x="502.0" y="174" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">30Y</text>
+                </svg>
+
+                <!-- Spread chips -->
+                <div class="yc-spreads">
+                    <span class="yc-spread-chip">2s10s &nbsp;<strong>+41 bps</strong></span>
+                    <span class="yc-spread-chip">3m10y &nbsp;<strong>+76 bps</strong></span>
+                    <span class="yc-spread-chip">Recession prob (12m) &nbsp;<strong>15%</strong></span>
+                </div>
+            </div>
+
+            <!-- Meta / rates sidebar -->
+            <div class="yc-meta-col">
+
+                <div class="yc-status-block">
+                    <div class="yc-status-lbl">Curve Shape</div>
+                    <div class="yc-badge normal">&#9650; Normal</div>
+                    <p class="yc-footnote">The curve is normal — long-term yields exceed short-term rates, consistent with healthy growth expectations. The front end dips at 3–12 months, reflecting ~100 bps of Fed cuts priced by mid-2028.</p>
+                </div>
+
+                <div class="yc-rates-block">
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">1 Mo</span>
+                        <span class="yc-rate-val">4.22%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">3 Mo</span>
+                        <span class="yc-rate-val">3.80%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">6 Mo</span>
+                        <span class="yc-rate-val">3.83%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">1 Yr</span>
+                        <span class="yc-rate-val">3.85%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">2 Yr</span>
+                        <span class="yc-rate-val">4.15%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">5 Yr</span>
+                        <span class="yc-rate-val">4.29%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">7 Yr</span>
+                        <span class="yc-rate-val">4.42%</span>
+                    </div>
+                    <div class="yc-rate-row highlight">
+                        <span class="yc-rate-tenor">10 Yr</span>
+                        <span class="yc-rate-val">4.56%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">20 Yr</span>
+                        <span class="yc-rate-val">5.05%</span>
+                    </div>
+                    <div class="yc-rate-row">
+                        <span class="yc-rate-tenor">30 Yr</span>
+                        <span class="yc-rate-val">5.03%</span>
+                    </div>
+                </div>
+
+                <div class="yc-source">Source: U.S. Treasury / Fed<br>Data as of Jun 9, 2026</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- YIELD-CURVE-END -->
 
     <!-- WHAT TO WATCH -->
     <div class="section-hd">
@@ -1604,6 +2290,61 @@
             </div>
         </div>
     </div>
+
+    <!-- FOMC-PROB-START -->
+    <div class="section-hd">
+        <span class="section-tag">Fed Meeting Odds</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <div class="fomc-box">
+
+        <!-- Meeting date + current rate subtitle -->
+        <div class="fomc-subtitle">
+            Next decision: June 17, 2026 &nbsp;·&nbsp; Current rate: 3.50% – 3.75%
+        </div>
+
+        <!-- Probability bar — flex values = probabilities (must sum to 100) -->
+        <div class="fomc-bar">
+            <!-- CUT segment: 1% -->
+            <div class="fomc-seg fomc-cut" style="flex: 1">
+                <span class="fomc-pct">1%</span>
+                <span class="fomc-lbl">Cut</span>
+            </div>
+            <!-- HOLD segment: 99% -->
+            <div class="fomc-seg fomc-hold" style="flex: 99">
+                <span class="fomc-pct">99%</span>
+                <span class="fomc-lbl">Hold</span>
+            </div>
+            <!-- HIKE segment: 0% -->
+            <div class="fomc-seg fomc-hike" style="flex: 0">
+                <span class="fomc-pct">0%</span>
+                <span class="fomc-lbl">Hike</span>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="fomc-legend">
+            <span class="fomc-leg-item">
+                <span class="fomc-dot fomc-dot-cut"></span> CUT
+            </span>
+            <span class="fomc-leg-item">
+                <span class="fomc-dot fomc-dot-hold"></span> HOLD
+            </span>
+            <span class="fomc-leg-item">
+                <span class="fomc-dot fomc-dot-hike"></span> HIKE
+            </span>
+        </div>
+
+        <!-- Plain-English summary -->
+        <p class="fomc-note">
+            Markets are pricing in a 99% chance the Fed holds rates steady at the June meeting,
+            reflecting sticky core inflation at 3.3% PCE and a still-resilient labor market —
+            leaving Powell little room to pivot ahead of the July decision.
+        </p>
+
+    </div>
+    <!-- FOMC-PROB-END -->
 
     <!-- LATEST FROM ARCHIVE -->
     <div class="section-hd">
@@ -1767,6 +2508,24 @@
             note: 'M2 growth accelerated from 3.9% in mid-2025 to 4.7% by April 2026, with total supply reaching $22.8 trillion per the Fed\'s May 26 H.6 release. The sustained expansion of money supply provides structural support for nominal spending — and for the persistence of inflation — that the Fed\'s rate stance has not yet fully absorbed.',
             months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
             values: [3.9,4.0,4.0,4.1,4.2,4.2,4.3,4.4,4.5,4.6,4.6,4.7]
+        },
+        'core-pce': {
+            name: 'Core PCE Price Index (YoY)', cat: 'Inflation', color: '#C41E3A',
+            note: 'Core PCE — the Fed\'s preferred inflation measure — bottomed at 2.6% in early 2025 then steadily re-accelerated to 3.3% by April 2026. The trend mirrors CPI\'s resurgence and explains why the FOMC has remained on hold despite slowing growth in prior quarters. May 2026 data releases June 25.',
+            months: ["May '25","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr"],
+            values: [2.6, 2.7, 2.7, 2.7, 2.7, 2.8, 2.9, 3.0, 3.1, 3.1, 3.2, 3.3]
+        },
+        'ism-pmi': {
+            name: 'ISM Manufacturing PMI', cat: 'Economic Output', color: '#1B5E20',
+            note: 'Manufacturing contracted for 10 straight months through December 2025, hitting 47.9 — the cycle low. A dramatic reversal began in January 2026 (52.6), driven by a surge in new orders and production. May 2026\'s reading of 54.0 is the strongest since May 2022, signaling a genuine industrial recovery.',
+            months: ["Jun '25","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr","May"],
+            values: [49.0, 48.0, 48.7, 49.1, 48.7, 48.2, 47.9, 52.6, 52.4, 52.7, 52.7, 54.0]
+        },
+        'jobless-claims': {
+            name: 'Initial Jobless Claims (4-wk avg)', cat: 'Labor Market', color: '#7B5000',
+            note: 'Initial jobless claims have remained remarkably stable in the 200–225k range throughout the period — a sign that layoffs are not accelerating even as hiring slows. The brief dip to a cycle low of ~200k in early May 2026 suggests employers are holding onto workers despite macro uncertainty. Values shown are monthly 4-week averages (in thousands). Note: Jul–Dec 2025 figures are approximate monthly averages derived from weekly DOL data.',
+            months: ["Jun '25","Jul","Aug","Sep","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr","May"],
+            values: [222, 221, 224, 231, 225, 220, 218, 213, 216, 211, 202, 215]
         }
     };
 
