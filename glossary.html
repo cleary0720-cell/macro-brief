@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Glossary — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="alternate" type="application/rss+xml" title="The Macro Brief" href="https://themacrobrief.net/rss.xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+        .nav-links a.active { color: var(--ink); font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+        /* ── MASTHEAD ── */
+        .masthead {
+            padding: 32px 0 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .masthead-super {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 10px;
+        }
+
+        .masthead-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(38px, 7vw, 80px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+
+        .masthead-title .red { color: var(--red-bright); }
+
+        .masthead-sub {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 18px;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ornament-line {
+            height: 1px;
+            background: var(--ink);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .ornament-sym {
+            color: var(--red-bright);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ── EDITION BAR ── */
+        .edition-bar {
+            border-bottom: 1px solid var(--ink);
+            padding: 8px 0;
+        }
+
+        .edition-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ed-item {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.07em;
+            color: var(--ink-mid);
+        }
+
+        .ed-center {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--red-bright);
+            font-weight: 700;
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 36px 0 24px;
+        }
+
+        .section-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a {
+            color: var(--ink-light);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 560px) {
+            .footer-top { flex-direction: column; }
+            .footer-links { text-align: left; }
+            .ed-item:first-child { display: none; }
+        }
+
+        /* TICKER */
+        .ticker-bar { background: var(--red-bright); color: #fff; height: 28px; display: flex; align-items: center; overflow: hidden; }
+        .ticker-label { background: var(--ink); color: #fff; font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 16px; height: 100%; display: flex; align-items: center; flex-shrink: 0; border-right: 1px solid #333; }
+        .ticker-track { overflow: hidden; flex: 1; }
+        .ticker-move { display: inline-block; white-space: nowrap; font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 0.08em; animation: marquee 42s linear infinite; }
+        .ticker-move:hover { animation-play-state: paused; }
+        .ticker-item { margin: 0 22px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── GLOSSARY ── */
+        .gloss-alpha-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
+        .gloss-alpha-bar a { font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--red); text-decoration: none; font-weight: 700; }
+        .gloss-alpha-bar span { font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--rule); }
+        .gloss-letter-hd { font-family: 'Courier New', monospace; font-size: 1.1rem; font-weight: 700; color: var(--red); border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+        .gloss-entry { padding: 1rem 0; border-bottom: 1px solid var(--cream-dark); }
+        .gloss-term { font-family: 'Courier New', monospace; font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; text-transform: uppercase; }
+        .gloss-cat { display: inline-block; font-family: 'Courier New', monospace; font-size: 0.68rem; color: var(--ink-light); border: 1px solid var(--rule); padding: 0.1rem 0.4rem; margin: 0.3rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .gloss-def { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.6; margin: 0.4rem 0; }
+        .gloss-why { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin-top: 0.3rem; }
+
+        .page-header {
+            padding: 36px 0 28px;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 0;
+        }
+
+        .page-header-super {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 10px;
+        }
+
+        .page-header-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -1px;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .page-header-sub {
+            font-size: 14px;
+            color: var(--ink-light);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+    <div class="ticker-label">Markets</div>
+    <div class="ticker-track">
+        <div class="ticker-move" id="tickerMove">
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.58%</span>
+            <span class="ticker-item">◆ CPI (YoY) &nbsp;3.8% ↑</span>
+            <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.3%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+2.0% ▲</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.46%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.2% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.6%</span>
+            <span class="ticker-item" style="margin-right:80px;">&nbsp;</span>
+        </div>
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="glossary.html" class="active">Glossary</a></li>
+            <li><a href="economic-calendar.html">Calendar</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+    <div class="container">
+        <span class="ed-item">BY CONNOR LEARY · 2025</span>
+        <span class="ed-center">✦ &nbsp; ECONOMIC GLOSSARY &nbsp; ✦</span>
+        <span class="ed-item">VOL. I · UNITED STATES</span>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main>
+<div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="page-header-super">★ &nbsp; Reference &nbsp; ★</div>
+        <h1 class="page-header-title">Economic Glossary</h1>
+        <p class="page-header-sub">Plain-English definitions for the terms that move markets — and your wallet.</p>
+    </div>
+
+    <!-- Section Header -->
+    <div class="section-hd">
+        <span class="section-tag">25 Terms</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <!-- Alphabetical Jump Bar -->
+    <div class="gloss-alpha-bar">
+        <span>Jump to:</span>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#F">F</a>
+        <a href="#G">G</a>
+        <a href="#H">H</a>
+        <a href="#I">I</a>
+        <a href="#L">L</a>
+        <a href="#M">M</a>
+        <a href="#P">P</a>
+        <a href="#Q">Q</a>
+        <a href="#R">R</a>
+        <a href="#S">S</a>
+        <a href="#Y">Y</a>
+    </div>
+
+    <!-- ── B ── -->
+    <h2 class="gloss-letter-hd" id="B">B</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Basis Points</div>
+        <span class="gloss-cat">General</span>
+        <p class="gloss-def">A basis point is one one-hundredth of a percentage point — so 100 basis points equals 1%. When the Fed "raises rates by 25 basis points," that means the rate goes up by 0.25%. The term exists because small fractions of a percent matter enormously in finance, and saying "a quarter of a percent" repeatedly gets unwieldy.</p>
+        <p class="gloss-why"><em>Why it matters to you: every rate hike or cut you read about is measured in basis points — knowing the conversion helps you gauge how dramatic a move actually is.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Bear Market</div>
+        <span class="gloss-cat">Markets</span>
+        <p class="gloss-def">A bear market is a sustained decline of 20% or more from a recent peak in a broad stock index. It typically signals widespread fear, tightening financial conditions, or economic contraction. Bear markets can last months or even years, and they tend to see sharp rallies along the way that can fool investors into thinking the worst is over.</p>
+        <p class="gloss-why"><em>Why it matters to you: if your retirement account or portfolio has dropped 20%+, you're in a bear market — and historical data suggests patience, not panic, tends to produce better outcomes.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Bull Market</div>
+        <span class="gloss-cat">Markets</span>
+        <p class="gloss-def">A bull market is a sustained rise of 20% or more from a recent trough. It reflects broad investor confidence, economic expansion, and rising corporate earnings. Bull markets are typically longer than bear markets — the U.S. has historically spent more time in bull markets than bear markets over the long run.</p>
+        <p class="gloss-why"><em>Why it matters to you: bull markets reward investors who stay in the market, making it one of the strongest arguments for long-term, buy-and-hold investing.</em></p>
+    </div>
+
+    <!-- ── C ── -->
+    <h2 class="gloss-letter-hd" id="C">C</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">CPI — Consumer Price Index</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">The CPI is the U.S. government's primary measure of inflation. It tracks price changes across a fixed "basket" of goods and services — groceries, rent, gas, medical care, clothing, and more — that a typical urban household buys. It's published monthly by the Bureau of Labor Statistics and is one of the most closely watched economic reports in the world.</p>
+        <p class="gloss-why"><em>Why it matters to you: CPI directly affects Social Security adjustments, tax brackets, and the rate the Fed sets — which in turn determines mortgage rates, car loans, and credit card rates.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Core CPI</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">Core CPI is CPI with food and energy prices stripped out. Food and energy prices swing wildly with weather, geopolitics, and harvests, so economists use Core CPI to find the underlying inflation trend — the kind driven by wages, rents, and services, which is stickier and harder to bring down.</p>
+        <p class="gloss-why"><em>Why it matters to you: when the Fed debates whether to raise or cut rates, Core CPI is usually the figure they're watching most carefully.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Core PCE</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">Core PCE (Personal Consumption Expenditures price index, excluding food and energy) is the Federal Reserve's preferred inflation gauge. It's similar to Core CPI but weights categories differently and adjusts for changes in consumer behavior — for example, if beef gets expensive and people switch to chicken, Core PCE captures that shift while CPI doesn't. This makes Core PCE a slightly softer, more flexible measure.</p>
+        <p class="gloss-why"><em>Why it matters to you: the Fed's 2% inflation target is measured against Core PCE, so when it's above that level, rate hikes become more likely.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Credit Spread</div>
+        <span class="gloss-cat">Markets</span>
+        <p class="gloss-def">A credit spread is the gap between the yield on a corporate bond and the yield on a comparable U.S. Treasury bond. Since Treasuries are considered risk-free, the spread represents the extra interest investors demand to hold corporate debt. When investors get nervous about the economy or corporate health, spreads widen — companies have to offer higher yields to attract buyers.</p>
+        <p class="gloss-why"><em>Why it matters to you: widening credit spreads are an early warning signal of financial stress — they often rise before a recession becomes visible in other data.</em></p>
+    </div>
+
+    <!-- ── D ── -->
+    <h2 class="gloss-letter-hd" id="D">D</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Debt Ceiling</div>
+        <span class="gloss-cat">Fiscal Policy</span>
+        <p class="gloss-def">The debt ceiling is the legal limit set by Congress on how much the federal government can borrow. When the Treasury hits the ceiling, it can't issue new debt to pay existing obligations — unless Congress votes to raise or suspend the limit. This has nothing to do with approving new spending; it's about paying for spending Congress already authorized.</p>
+        <p class="gloss-why"><em>Why it matters to you: a U.S. debt default — even a temporary one — could spike interest rates, rattle financial markets, and potentially trigger a recession.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Deflation</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">Deflation is a broad, sustained fall in prices across the economy. While falling prices might sound like a good deal, deflation is dangerous: consumers delay purchases expecting prices to fall further, businesses earn less revenue, wages drop, and the economy can spiral into a deep recession. Japan's "Lost Decade" of the 1990s is the most cited modern example.</p>
+        <p class="gloss-why"><em>Why it matters to you: if you carry debt, deflation makes it harder to repay because the real value of what you owe rises even as incomes fall.</em></p>
+    </div>
+
+    <!-- ── F ── -->
+    <h2 class="gloss-letter-hd" id="F">F</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Federal Funds Rate</div>
+        <span class="gloss-cat">Monetary Policy</span>
+        <p class="gloss-def">The federal funds rate is the interest rate at which banks lend money to each other overnight to meet reserve requirements. The Federal Reserve sets a target range for this rate and it ripples through the entire economy — influencing mortgage rates, credit card rates, business loans, savings account yields, and more. It's the Fed's primary lever for controlling inflation and economic growth.</p>
+        <p class="gloss-why"><em>Why it matters to you: when the Fed raises this rate, your mortgage gets more expensive, savings accounts pay more, and borrowing costs rise across the board.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">FOMC</div>
+        <span class="gloss-cat">Monetary Policy</span>
+        <p class="gloss-def">The Federal Open Market Committee is the branch of the Federal Reserve that sets U.S. monetary policy. It meets eight times per year and votes on the federal funds rate target. The committee consists of the seven members of the Fed's Board of Governors plus five of the twelve regional Federal Reserve Bank presidents, who rotate in and out on an annual basis.</p>
+        <p class="gloss-why"><em>Why it matters to you: every FOMC meeting is a potential market-moving event — the committee's decisions determine the cost of borrowing money throughout the entire economy.</em></p>
+    </div>
+
+    <!-- ── G ── -->
+    <h2 class="gloss-letter-hd" id="G">G</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">GDP — Gross Domestic Product</div>
+        <span class="gloss-cat">Economic Output</span>
+        <p class="gloss-def">GDP is the total market value of all goods and services produced within a country's borders in a given time period — usually measured quarterly and annually. It's the broadest single measure of economic size and health. GDP can grow because people are buying more, businesses are investing more, the government is spending more, or the country is exporting more than it imports.</p>
+        <p class="gloss-why"><em>Why it matters to you: sustained GDP growth means more jobs, higher wages, and rising living standards — while shrinking GDP is the defining signal of a recession.</em></p>
+    </div>
+
+    <!-- ── H ── -->
+    <h2 class="gloss-letter-hd" id="H">H</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Hawkish / Dovish</div>
+        <span class="gloss-cat">Monetary Policy</span>
+        <p class="gloss-def">These terms describe a central banker's (or economist's) policy stance. A hawkish stance favors higher interest rates to fight inflation, even at the risk of slowing economic growth or raising unemployment. A dovish stance favors lower rates to stimulate growth and employment, even if inflation might pick up. Fed officials can shift between the two depending on economic conditions.</p>
+        <p class="gloss-why"><em>Why it matters to you: when the Fed turns hawkish, expect tighter credit and higher borrowing costs; when it turns dovish, cheap money tends to flow back into the economy and markets.</em></p>
+    </div>
+
+    <!-- ── I ── -->
+    <h2 class="gloss-letter-hd" id="I">I</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Inflation</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">Inflation is the rate at which prices for goods and services rise over time, eroding the purchasing power of money. A little inflation is considered healthy — the Fed targets around 2% annually — because it encourages spending and investment rather than hoarding cash. But too much inflation, like the surge seen in 2021–2023, forces the Fed to raise interest rates aggressively to cool demand.</p>
+        <p class="gloss-why"><em>Why it matters to you: inflation silently eats away at your savings and paycheck — if prices rise 5% but your raise is 3%, you're effectively earning less in real terms.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Initial Jobless Claims</div>
+        <span class="gloss-cat">Labor Market</span>
+        <p class="gloss-def">Initial jobless claims is a weekly count of the number of Americans who filed for unemployment insurance for the first time. Released every Thursday by the Department of Labor, it's one of the timeliest economic indicators available. A sustained rise in claims signals that layoffs are accelerating; a sustained decline signals a strengthening job market.</p>
+        <p class="gloss-why"><em>Why it matters to you: because this data comes out weekly, it's often the first sign of a labor market shift — giving a several-week heads-up before monthly jobs reports confirm the trend.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Inverted Yield Curve</div>
+        <span class="gloss-cat">Markets</span>
+        <p class="gloss-def">A yield curve inverts when short-term U.S. Treasury yields (like the 2-year) rise above long-term yields (like the 10-year). Normally, longer-term bonds pay higher yields because investors demand more compensation for tying up their money longer. When the curve inverts, it means investors expect the Fed to cut rates in the future — usually because they anticipate a recession ahead.</p>
+        <p class="gloss-why"><em>Why it matters to you: the 2-year/10-year spread has inverted before every U.S. recession in modern history, making it one of Wall Street's most closely watched warning signals.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">ISM PMI</div>
+        <span class="gloss-cat">Economic Output</span>
+        <p class="gloss-def">The ISM Purchasing Managers Index is a monthly survey of purchasing managers at manufacturing and services firms across the U.S. Each manager reports whether business conditions — new orders, production, employment, deliveries — are expanding, contracting, or unchanged compared to the prior month. A reading above 50 signals expansion; below 50 signals contraction. It's one of the fastest economic indicators to arrive each month.</p>
+        <p class="gloss-why"><em>Why it matters to you: because PMI surveys are released at the start of each month for the previous month, markets often react to them before most other economic data arrives.</em></p>
+    </div>
+
+    <!-- ── L ── -->
+    <h2 class="gloss-letter-hd" id="L">L</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Labor Force Participation Rate</div>
+        <span class="gloss-cat">Labor Market</span>
+        <p class="gloss-def">The labor force participation rate (LFPR) is the percentage of the civilian, non-institutionalized population aged 16 and older that is either employed or actively looking for work. It's a critical supplement to the unemployment rate — if people give up looking for jobs and drop out of the labor force, the unemployment rate can fall even as the job market weakens.</p>
+        <p class="gloss-why"><em>Why it matters to you: a falling participation rate can mask a weaker economy than the headline unemployment number suggests, and it affects Social Security projections and long-run wage growth.</em></p>
+    </div>
+
+    <!-- ── M ── -->
+    <h2 class="gloss-letter-hd" id="M">M</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">M2 Money Supply</div>
+        <span class="gloss-cat">Monetary Policy</span>
+        <p class="gloss-def">M2 is a broad measure of the money supply that includes physical cash, checking accounts, savings accounts, money market accounts, and small-denomination CDs. When M2 grows rapidly — as it did in 2020–2021 following massive pandemic stimulus — more dollars are chasing the same amount of goods, which can fuel inflation. The Fed monitors M2 as one signal of monetary conditions.</p>
+        <p class="gloss-why"><em>Why it matters to you: explosive M2 growth is often a leading indicator of inflation — by the time prices rise at the register, the excess money has been in the system for months.</em></p>
+    </div>
+
+    <!-- ── P ── -->
+    <h2 class="gloss-letter-hd" id="P">P</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">PCE — Personal Consumption Expenditures</div>
+        <span class="gloss-cat">Inflation</span>
+        <p class="gloss-def">The PCE price index measures changes in the prices of goods and services consumed by U.S. households. Unlike CPI, which uses a fixed basket of goods, PCE adjusts its weights over time to reflect how consumers actually change their spending habits. It also captures a broader range of spending, including healthcare costs paid by employers. The Fed explicitly uses Core PCE as its inflation benchmark.</p>
+        <p class="gloss-why"><em>Why it matters to you: PCE is the scorecard the Fed grades itself on — if Core PCE is above 2%, the Fed has reason to keep rates elevated, which keeps your borrowing costs higher.</em></p>
+    </div>
+
+    <!-- ── Q ── -->
+    <h2 class="gloss-letter-hd" id="Q">Q</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Quantitative Easing / Tightening</div>
+        <span class="gloss-cat">Monetary Policy</span>
+        <p class="gloss-def">Quantitative Easing (QE) is when the Federal Reserve buys bonds — typically Treasuries and mortgage-backed securities — to inject money into the financial system and push down long-term interest rates. It's a tool used when cutting the fed funds rate alone isn't enough to stimulate the economy. Quantitative Tightening (QT) is the reverse: the Fed lets bonds mature without reinvesting, or actively sells them, to shrink its balance sheet and tighten financial conditions.</p>
+        <p class="gloss-why"><em>Why it matters to you: QE tends to push asset prices higher and mortgage rates lower; QT does the opposite — both directly affect the cost and availability of credit in the real economy.</em></p>
+    </div>
+
+    <!-- ── R ── -->
+    <h2 class="gloss-letter-hd" id="R">R</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Recession</div>
+        <span class="gloss-cat">Economic Output</span>
+        <p class="gloss-def">A recession is a significant, widespread, and prolonged decline in economic activity. The popular rule of thumb is two consecutive quarters of negative GDP growth, but the official arbiter in the U.S. is the National Bureau of Economic Research (NBER), which looks at a broader range of factors including employment, income, and industrial production. Recessions are officially dated only after the fact, sometimes months after they've begun.</p>
+        <p class="gloss-why"><em>Why it matters to you: recessions typically bring job losses, tighter credit, and falling asset prices — all of which can have real consequences for your finances, career, and retirement savings.</em></p>
+    </div>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Retail Sales</div>
+        <span class="gloss-cat">Consumer</span>
+        <p class="gloss-def">Retail sales is a monthly report from the Census Bureau that measures total receipts at stores and online retailers — from grocery stores and gas stations to clothing shops and car dealerships. Since consumer spending accounts for roughly 70% of U.S. GDP, retail sales is one of the most direct gauges of economic momentum. Strong retail sales signal consumer confidence; weak or falling sales can foreshadow a slowdown.</p>
+        <p class="gloss-why"><em>Why it matters to you: if retail sales are falling, businesses often cut back on hiring and investment — which can eventually affect your job security and income growth.</em></p>
+    </div>
+
+    <!-- ── S ── -->
+    <h2 class="gloss-letter-hd" id="S">S</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Stagflation</div>
+        <span class="gloss-cat">General</span>
+        <p class="gloss-def">Stagflation is the toxic combination of stagnant economic growth, high inflation, and high unemployment occurring simultaneously. It's notoriously difficult to address because the standard policy tools work against each other: raising interest rates to fight inflation slows the economy further, while cutting rates to boost growth can make inflation worse. The U.S. last experienced severe stagflation in the 1970s.</p>
+        <p class="gloss-why"><em>Why it matters to you: stagflation is the worst of both worlds — your living costs rise while job security falls and investment returns suffer.</em></p>
+    </div>
+
+    <!-- ── Y ── -->
+    <h2 class="gloss-letter-hd" id="Y">Y</h2>
+
+    <div class="gloss-entry">
+        <div class="gloss-term">Yield Curve</div>
+        <span class="gloss-cat">Markets</span>
+        <p class="gloss-def">The yield curve is a graph plotting U.S. Treasury bond yields from the shortest maturities (1-month, 3-month) to the longest (10-year, 30-year). Under normal conditions the curve slopes upward — longer maturities pay higher yields to compensate investors for tying up their money longer. The shape of the curve encodes the market's collective expectations about future growth, inflation, and interest rates. A steep curve signals expectations of growth; a flat or inverted curve signals concern.</p>
+        <p class="gloss-why"><em>Why it matters to you: the yield curve influences mortgage rates, bank profitability, and broader credit availability — and its shape has a strong historical track record of predicting recessions.</em></p>
+    </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2025 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">← Back to Dashboard</a><br>
+                <a href="archive.html">Article Archive</a><br>
+                <a href="glossary.html">Economic Glossary</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Seamless ticker loop
+    const tm = document.getElementById('tickerMove');
+    tm.innerHTML += tm.innerHTML;
+</script>
+
+</body>
+</html>
