@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Calendar — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="alternate" type="application/rss+xml" title="The Macro Brief" href="https://themacrobrief.net/rss.xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+            --amber:      #B8860B;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+        .nav-links a.active { color: var(--ink); font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+        /* ── MASTHEAD ── */
+        .masthead {
+            padding: 32px 0 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .masthead-super {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 10px;
+        }
+
+        .masthead-title {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(38px, 7vw, 80px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+
+        .masthead-title .red { color: var(--red-bright); }
+
+        .masthead-sub {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 18px;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ornament-line {
+            height: 1px;
+            background: var(--ink);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .ornament-sym {
+            color: var(--red-bright);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ── EDITION BAR ── */
+        .edition-bar {
+            border-bottom: 1px solid var(--ink);
+            padding: 8px 0;
+        }
+
+        .edition-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ed-item {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.07em;
+            color: var(--ink-mid);
+        }
+
+        .ed-center {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--red-bright);
+            font-weight: 700;
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 36px 0 24px;
+        }
+
+        .section-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a {
+            color: var(--ink-light);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 560px) {
+            .footer-top { flex-direction: column; }
+            .footer-links { text-align: left; }
+            .ed-item:first-child { display: none; }
+        }
+
+        /* TICKER */
+        .ticker-bar { background: var(--red-bright); color: #fff; height: 28px; display: flex; align-items: center; overflow: hidden; }
+        .ticker-label { background: var(--ink); color: #fff; font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 16px; height: 100%; display: flex; align-items: center; flex-shrink: 0; border-right: 1px solid #333; }
+        .ticker-track { overflow: hidden; flex: 1; }
+        .ticker-move { display: inline-block; white-space: nowrap; font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 0.08em; animation: marquee 42s linear infinite; }
+        .ticker-move:hover { animation-play-state: paused; }
+        .ticker-item { margin: 0 22px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── CALENDAR ── */
+        .cal-month-hd { font-family: 'Courier New', monospace; font-size: 1rem; font-weight: 700; color: var(--ink); text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--ink); padding-bottom: 0.4rem; margin: 2rem 0 1.25rem; }
+        .cal-event { background: var(--cream-dark); padding: 1rem 1.2rem; margin-bottom: 0.75rem; border-left: 3px solid var(--rule); }
+        .cal-event-top { display: flex; align-items: flex-start; gap: 1rem; }
+        .cal-date-pill { display: flex; flex-direction: column; align-items: center; min-width: 2.8rem; background: var(--ink); color: var(--cream); padding: 0.3rem 0.4rem; }
+        .cal-month { font-family: 'Courier New', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; }
+        .cal-day { font-family: 'Courier New', monospace; font-size: 1.3rem; font-weight: 700; line-height: 1; }
+        .cal-info { flex: 1; }
+        .cal-event-name { font-family: 'Courier New', monospace; font-size: 0.88rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+        .cal-agency { font-family: 'Courier New', monospace; font-size: 0.7rem; color: var(--ink-light); margin-top: 0.2rem; }
+        .cal-impact { font-family: 'Courier New', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; padding: 0.2rem 0.45rem; align-self: flex-start; flex-shrink: 0; }
+        .cal-impact.high { background: var(--red); color: var(--cream); }
+        .cal-impact.med { background: var(--amber); color: var(--cream); }
+        .cal-impact.low { border: 1px solid var(--rule); color: var(--ink-light); }
+        .cal-event-body { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.4rem; }
+        .cal-why, .cal-you { font-size: 0.82rem; color: var(--ink-mid); line-height: 1.5; }
+        .cal-note { margin-top: 2.5rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); font-family: 'Courier New', monospace; font-size: 0.78rem; color: var(--ink-light); font-style: italic; line-height: 1.5; }
+        @media (max-width: 600px) {
+            .cal-event-top { flex-wrap: wrap; }
+            .cal-impact { order: -1; align-self: auto; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+    <div class="ticker-label">Markets</div>
+    <div class="ticker-track">
+        <div class="ticker-move" id="tickerMove">
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.58%</span>
+            <span class="ticker-item">◆ CPI (YoY) &nbsp;3.8% ↑</span>
+            <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.3%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+2.0% ▲</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.46%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.2% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.6%</span>
+            <span class="ticker-item" style="margin-right:80px;">&nbsp;</span>
+        </div>
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="economic-calendar.html" class="active">Calendar</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-super">★ &nbsp; Economic Calendar &nbsp; ★</div>
+        <h1 class="masthead-title"><span class="red">Economic</span> Calendar</h1>
+        <div class="masthead-sub">Upcoming data releases — and why they matter to your wallet.</div>
+        <div class="ornament">
+            <div class="ornament-line"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line" style="max-width:50px;"></div>
+            <span class="ornament-sym">◆</span>
+            <div class="ornament-line"></div>
+        </div>
+    </div>
+</header>
+
+<!-- EDITION BAR -->
+<div class="edition-bar">
+    <div class="container">
+        <span class="ed-item">BY CONNOR LEARY · 2026</span>
+        <span class="ed-center">✦ &nbsp; KEY RELEASES &nbsp; ✦</span>
+        <span class="ed-item">VOL. I · UNITED STATES</span>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main>
+<div class="container">
+
+    <div class="section-hd">
+        <span class="section-tag">Upcoming Releases</span>
+        <div class="section-rule"></div>
+    </div>
+
+    <!-- ── JUNE 2026 ── -->
+    <div class="cal-month-hd">June 2026</div>
+
+    <!-- Jun 10: CPI -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">10</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Consumer Price Index — May 2026</div>
+                <div class="cal-agency">Bureau of Labor Statistics · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> The headline inflation number. A hot reading pushes Treasury yields up and stocks down; a cool reading fuels rate cut hopes.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> Determines whether the Fed has room to cut rates at upcoming meetings — which flows directly into mortgage rates and loan costs.</div>
+        </div>
+    </div>
+
+    <!-- Jun 11: PPI -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">11</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Producer Price Index — May 2026</div>
+                <div class="cal-agency">Bureau of Labor Statistics · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact med">MED</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> PPI leads CPI — rising producer costs often flow through to consumers within months, giving markets an early read on future inflation.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> A leading indicator for where your grocery and gas prices are headed over the coming months.</div>
+        </div>
+    </div>
+
+    <!-- Jun 13: UMich Sentiment -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">13</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">University of Michigan Consumer Sentiment (Preliminary)</div>
+                <div class="cal-agency">University of Michigan · 10:00 AM ET</div>
+            </div>
+            <div class="cal-impact med">MED</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> Measures how optimistic consumers feel about the economy. Low sentiment often precedes spending pullbacks that drag on GDP.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> If consumers feel worse about the economy, spending slows — which can affect jobs and wage growth in the months ahead.</div>
+        </div>
+    </div>
+
+    <!-- Jun 17: Retail Sales -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">17</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Retail Sales — May 2026</div>
+                <div class="cal-agency">Census Bureau · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> Consumer spending drives 70% of the U.S. economy. Strong retail sales signal resilience and reduce expectations of rate cuts.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> Shows whether Americans are still spending freely despite high prices and elevated borrowing costs.</div>
+        </div>
+    </div>
+
+    <!-- Jun 17: FOMC -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">17</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">FOMC Rate Decision</div>
+                <div class="cal-agency">Federal Reserve · 2:00 PM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> The most watched event of the month. The Fed sets the benchmark interest rate that ripples through every loan, bond, and investment in the economy.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> This decision directly affects your mortgage rate, car loan APR, and savings account yield.</div>
+        </div>
+    </div>
+
+    <!-- Jun 18: Housing Starts -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">18</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Housing Starts &amp; Building Permits — May 2026</div>
+                <div class="cal-agency">Census Bureau · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact med">MED</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> New construction signals developer confidence and feeds into future housing supply, which affects inflation and economic growth projections.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> More homes being built means more supply — eventual downward pressure on home prices and rents.</div>
+        </div>
+    </div>
+
+    <!-- Jun 26: GDP Q1 Third Estimate -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">26</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">GDP Q1 2026 — Third Estimate</div>
+                <div class="cal-agency">Bureau of Economic Analysis · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> The final reading on Q1 economic growth. Significant revisions can shift recession narratives and reprice rate expectations across the curve.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> If GDP is revised negative, recession risk increases and the Fed may shift its posture toward rate cuts.</div>
+        </div>
+    </div>
+
+    <!-- Jun 27: PCE -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUN</span>
+                <span class="cal-day">27</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">PCE Price Index — May 2026</div>
+                <div class="cal-agency">Bureau of Economic Analysis · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> PCE is the Fed's preferred inflation measure. Markets often reprice rate expectations immediately on release, moving bonds and equities sharply.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> The number the Fed actually uses to decide on rates — even more important than CPI for rate cut timing.</div>
+        </div>
+    </div>
+
+    <!-- ── JULY 2026 ── -->
+    <div class="cal-month-hd">July 2026</div>
+
+    <!-- Jul 1: ISM Manufacturing PMI -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUL</span>
+                <span class="cal-day">1</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">ISM Manufacturing PMI — June 2026</div>
+                <div class="cal-agency">Institute for Supply Management · 10:00 AM ET</div>
+            </div>
+            <div class="cal-impact med">MED</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> A leading indicator for factory activity. A reading above 50 signals expansion; below 50 signals contraction — watched closely for early recession signals.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> Strong manufacturing usually means more jobs and higher wages in the months ahead.</div>
+        </div>
+    </div>
+
+    <!-- Jul 3: Jobs Report -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUL</span>
+                <span class="cal-day">3</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Employment Situation — Jobs Report June 2026</div>
+                <div class="cal-agency">Bureau of Labor Statistics · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> The most closely watched monthly release. Payrolls, the unemployment rate, and wage growth all land in a single report — a consistent market mover.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> Job creation and wage growth determine how much Americans can afford to spend — and whether the Fed has cover to cut rates.</div>
+        </div>
+    </div>
+
+    <!-- Jul 10: CPI -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUL</span>
+                <span class="cal-day">10</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">Consumer Price Index — June 2026</div>
+                <div class="cal-agency">Bureau of Labor Statistics · 8:30 AM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> First look at June inflation. Sets market expectations going into the July 29 FOMC meeting — a hot or cold reading can swing rate cut odds dramatically.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> The key inflation number between now and the next Fed decision — essentially a preview of whether relief on borrowing costs is coming.</div>
+        </div>
+    </div>
+
+    <!-- Jul 29: FOMC -->
+    <div class="cal-event">
+        <div class="cal-event-top">
+            <div class="cal-date-pill">
+                <span class="cal-month">JUL</span>
+                <span class="cal-day">29</span>
+            </div>
+            <div class="cal-info">
+                <div class="cal-event-name">FOMC Rate Decision</div>
+                <div class="cal-agency">Federal Reserve · 2:00 PM ET</div>
+            </div>
+            <div class="cal-impact high">HIGH</div>
+        </div>
+        <div class="cal-event-body">
+            <div class="cal-why"><strong>Why it moves markets:</strong> Second Fed decision of the summer. By this point the committee will have May and June inflation data in hand — giving markets a clearer signal on rate trajectory.</div>
+            <div class="cal-you"><strong>What it means for you:</strong> If inflation continues cooling, July could be when the Fed signals or delivers the first rate cut — lowering costs on variable-rate debt.</div>
+        </div>
+    </div>
+
+    <!-- Callout note -->
+    <div class="cal-note">
+        This calendar is updated weekly by The Macro Brief's automated dashboard agent using official government release schedules.
+    </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Published by Connor Leary<br>
+                    cleary0720@gmail.com<br>
+                    Volume I · 2025 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">← Back to Dashboard</a><br>
+                <a href="archive.html">Article Archive</a><br>
+                <a href="glossary.html">Glossary</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Seamless ticker loop
+    const tm = document.getElementById('tickerMove');
+    tm.innerHTML += tm.innerHTML;
+</script>
+
+</body>
+</html>
