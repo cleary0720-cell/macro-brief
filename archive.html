@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive — The Macro Brief</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
     <link rel="alternate" type="application/rss+xml" title="The Macro Brief" href="https://themacrobrief.net/rss.xml">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
@@ -402,48 +400,6 @@
             gap: 5px;
         }
 
-        /* ── FILTER BAR ── */
-        .filter-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .filter-label {
-            font-family: 'Courier New', monospace;
-            font-size: 9px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--ink-light);
-            margin-right: 4px;
-        }
-
-        .filter-btn {
-            font-family: 'Courier New', monospace;
-            font-size: 9px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            padding: 5px 12px;
-            border: 1px solid var(--rule);
-            background: transparent;
-            color: var(--ink-mid);
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--ink);
-            color: var(--ink);
-        }
-
-        .filter-btn.active {
-            background: var(--ink);
-            border-color: var(--ink);
-            color: var(--cream);
-        }
-
         /* ── EMPTY STATE ── */
         .empty-notice {
             border: 1px dashed var(--rule);
@@ -529,49 +485,19 @@
         .ticker-move:hover { animation-play-state: paused; }
         .ticker-item { margin: 0 22px; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .nav-hamburger {
-            display: none;
-            background: none;
-            border: 1px solid var(--rule);
-            cursor: pointer;
-            font-size: 16px;
-            color: var(--ink);
-            padding: 4px 10px;
-            margin-left: auto;
-            line-height: 1;
-            align-items: center;
-            gap: 6px;
-        }
-        .nav-menu-label {
-            font-family: 'Courier New', monospace;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            vertical-align: middle;
-        }
-        @media (max-width: 640px) {
-            .nav-hamburger { display: flex; }
-            .nav-divider { display: none; }
-            .site-nav .container { flex-wrap: wrap; position: relative; }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                border-top: 1px solid var(--rule);
-                margin-top: 8px;
-                padding-top: 4px;
-                gap: 0;
-            }
-            .nav-links.open { display: flex; }
-            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
-            .nav-links a {
-                display: block !important;
-                padding: 10px 4px !important;
-                font-size: 11px !important;
-                letter-spacing: 0.14em !important;
-            }
-        }
+
+        .picks-section { margin-bottom: 2.5rem; }
+        .picks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .picks-card { border: 2px solid var(--amber) !important; }
+        .picks-badge { display: inline-block; background: var(--amber); color: var(--cream); font-family: 'Courier New', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.4rem; margin-left: 0.4rem; vertical-align: middle; }
+        .card-read-time { font-family: 'Courier New', monospace; font-size: 0.7rem; color: var(--ink-light); margin-left: 0.5rem; }
+        .archive-controls { margin-bottom: 1.5rem; }
+        #archive-search { width: 100%; box-sizing: border-box; padding: 0.6rem 0.8rem; font-family: 'Courier New', monospace; font-size: 0.85rem; background: var(--cream-dark); border: 1px solid var(--rule); color: var(--ink); outline: none; margin-bottom: 0.75rem; }
+        #archive-search:focus { border-color: var(--ink-mid); }
+        .filter-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+        .filter-btn { font-family: 'Courier New', monospace; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; background: none; border: 1px solid var(--rule); color: var(--ink-light); padding: 0.3rem 0.7rem; cursor: pointer; transition: all 0.15s; }
+        .filter-btn:hover { border-color: var(--ink-mid); color: var(--ink); }
+        .filter-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
     </style>
 </head>
 <body>
@@ -581,13 +507,13 @@
     <div class="ticker-label">Markets</div>
     <div class="ticker-track">
         <div class="ticker-move" id="tickerMove">
-            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.63%</span>
+            <span class="ticker-item">◆ FED FUNDS RATE &nbsp;3.58%</span>
             <span class="ticker-item">◆ CPI (YoY) &nbsp;3.8% ↑</span>
             <span class="ticker-item">◆ UNEMPLOYMENT &nbsp;4.3%</span>
-            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+1.6% ▲</span>
-            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.45% ↓</span>
-            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.9% ↑</span>
-            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.7%</span>
+            <span class="ticker-item">◆ GDP GROWTH Q1 &nbsp;+2.0% ▲</span>
+            <span class="ticker-item">◆ 10-YR TREASURY &nbsp;4.46%</span>
+            <span class="ticker-item">◆ RETAIL SALES &nbsp;+4.2% ↑</span>
+            <span class="ticker-item">◆ M2 GROWTH &nbsp;4.6%</span>
             <span class="ticker-item" style="margin-right:80px;">&nbsp;</span>
         </div>
     </div>
@@ -596,7 +522,7 @@
 <!-- INFO BAR -->
 <div class="info-bar">
     <div class="container">
-        <span>EST. 2026 · VOLUME I</span>
+        <span>EST. 2024 · VOLUME I</span>
         <span>AN INDEPENDENT ECONOMIC PUBLICATION</span>
         <span>BY CONNOR LEARY</span>
     </div>
@@ -607,12 +533,11 @@
     <div class="container">
         <a href="index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
         <div class="nav-divider"></div>
-        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
         <ul class="nav-links">
             <li><a href="index.html">Dashboard</a></li>
             <li><a href="archive.html" class="active">Archive</a></li>
-            
-            <li><a href="fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="economic-calendar.html">Calendar</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </div>
@@ -649,154 +574,54 @@
 <main>
 <div class="container">
 
+    <section class="picks-section">
+        <div class="section-hd">
+            <span class="section-tag">Editor's Picks</span>
+            <div class="section-rule"></div>
+        </div>
+        <div class="picks-grid">
+            <a class="article-card picks-card" href="articles/2025-04-oil-prices.html">
+                <div class="card-thumb">
+                    <div style="width:100%;height:100%;background:linear-gradient(160deg,#0A0A0A 0%,#1C0800 50%,#0D0D0D 100%);display:flex;align-items:center;justify-content:center;">
+                        <span style="font-family:'Didot','Bodoni 72',Georgia,serif;font-size:36px;font-weight:900;font-style:italic;color:#F6F1E7;letter-spacing:-1px;">Oil<span style="color:#C41E3A;">'s</span> Surge</span>
+                    </div>
+                </div>
+                <div class="card-cat-stripe"></div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">Energy &amp; Commodities</span>
+                        <span class="picks-badge">Editor's Pick</span>
+                        <span class="card-read-time">5 min read</span>
+                    </div>
+                    <div class="card-title">The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation</div>
+                    <div class="card-excerpt">A confluence of supply restraint, geopolitical friction, and fragile demand has crude oil back at the center of the macroeconomic debate.</div>
+                    <div class="card-published"><span class="card-published-label">Published</span> <span>April 30, 2025</span></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <div class="section-hd">
-        <span class="section-tag" id="section-label">All Articles</span>
+        <span class="section-tag">All Articles</span>
         <div class="section-rule"></div>
         <span class="section-count" id="article-count">0 EDITIONS PUBLISHED</span>
     </div>
 
-    <div class="filter-bar">
-        <span class="filter-label">Filter:</span>
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Policy">Policy</button>
-        <button class="filter-btn" data-filter="Economy">Economy</button>
-        <button class="filter-btn" data-filter="Markets &amp; Money">Markets &amp; Money</button>
-        <button class="filter-btn" data-filter="Prices">Prices</button>
+    <div class="archive-controls">
+        <input type="text" id="archive-search" placeholder="Search articles…" autocomplete="off">
+        <div class="filter-row">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="policy">Policy</button>
+            <button class="filter-btn" data-filter="economy">Economy</button>
+            <button class="filter-btn" data-filter="markets">Markets &amp; Money</button>
+            <button class="filter-btn" data-filter="inflation">Inflation</button>
+            <button class="filter-btn" data-filter="labor">Labor</button>
+            <button class="filter-btn" data-filter="energy">Energy</button>
+        </div>
+        <div id="no-results" style="display:none;padding:2rem 0;color:var(--ink-light);font-family:'Courier New',monospace;font-size:0.85rem;">No articles match your search.</div>
     </div>
 
     <div class="article-grid" id="article-grid">
-
-        <!-- ARTICLE 5 — Housing Lock-In -->
-        <a class="article-card" href="articles/2026-05-housing-lock-in.html" data-category="Economy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-housing-lock-in-thumb.jpg" alt="House and mortgage rates">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Housing Market</span>
-                </div>
-                <div class="card-title">The Locked Market: How the Mortgage Rate Trap Is Starving America's Housing Supply</div>
-                <div class="card-excerpt">With 30-year mortgage rates above 7% and more than half of all outstanding mortgages locked in below 4%, housing inventory has collapsed — cornering first-time buyers, inflating rents, and creating a structural feedback loop the Fed cannot cut its way out of.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 18, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- ARTICLE 4 — Labor Market Cooling -->
-        <a class="article-card" href="articles/2026-05-labor-market-cooling.html" data-category="Economy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-labor-market-cooling-thumb.jpg" alt="Workers and hiring">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Labor Markets</span>
-                </div>
-                <div class="card-title">The Soft Stall: America's Labor Market Is Cooling Without Breaking</div>
-                <div class="card-excerpt">April's 115,000-job print and decelerating wage growth expose a workforce caught between stubborn inflation and a Federal Reserve with no room to ease.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 17, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- ARTICLE 3 — Tariff Trade Deficit -->
-        <a class="article-card" href="articles/2026-05-tariff-trade-deficit.html" data-category="Policy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-tariff-trade-deficit-thumb.jpg" alt="Shipping containers at port">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Trade Policy</span>
-                </div>
-                <div class="card-title">The Tariff Dividend: How America's Trade Gap Has Narrowed — and What It's Actually Cost</div>
-                <div class="card-excerpt">America's goods and services deficit has compressed by more than half in early 2026, but beneath the headline figures lies trade diversion, inflation pass-through, and unanswered questions about long-term competitiveness.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 14, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- ARTICLE 6 — Fiscal Debt Interest Crisis -->
-        <a class="article-card" href="articles/2026-05-debt-interest-crisis.html" data-category="Policy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-debt-interest-crisis-thumb.jpg" alt="US federal debt interest payments chart">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Fiscal Policy</span>
-                </div>
-                <div class="card-title">The $1 Trillion Bill: America's Debt Interest Crisis Is the Fiscal Story Nobody Talks About</div>
-                <div class="card-excerpt">For the first time in history, the US will pay more than $1 trillion in net interest on its national debt this year — and with Treasury yields surging and the One Big Beautiful Bill adding trillions more, the burden is accelerating.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 17, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- ARTICLE 7 — Consumer Spending -->
-        <a class="article-card" href="articles/2026-05-consumer-spending.html" data-category="Economy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-consumer-spending-thumb.jpg" alt="Consumer spending and retail">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Consumer Economy</span>
-                </div>
-                <div class="card-title">The Debt-Fueled Consumer: America's Spending Resilience Is Running on Borrowed Time</div>
-                <div class="card-excerpt">Retail sales at 4.9% look robust — but beneath the headline, savings rates are collapsing, credit card balances have topped $1.3 trillion at 21% interest, and American households are financing their optimism with borrowed money.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 24, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <a class="article-card" href="articles/2026-05-money-supply.html" data-category="Markets &amp; Money">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-money-supply-thumb.jpg" alt="Currency and financial data representing money supply growth">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Money Supply</span>
-                </div>
-                <div class="card-title">Too Much Money: Why the Fed's M2 Surge Is Making the Inflation Fight Harder Than It Looks</div>
-                <div class="card-excerpt">M2 money supply has hit a record $22.8 trillion, growing at 4.7% annually — and the arithmetic of the quantity theory tells a clear story about why getting from 3.8% inflation to 2% may be the hardest mile yet.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 31, 2026</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- ARTICLE 9 — AI Data Center Boom -->
-        <a class="article-card" href="articles/2026-06-ai-data-center-boom.html" data-category="Economy">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-06-ai-data-center-boom-thumb.jpg" alt="Rows of servers inside a modern AI data center">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Technology Economy</span>
-                </div>
-                <div class="card-title">The AI Crutch: How a Trillion-Dollar Data-Center Boom Became the Load-Bearing Wall of the US Economy</div>
-                <div class="card-excerpt">Federal Reserve economists now estimate AI infrastructure spending is adding nearly a full percentage point to GDP growth — financed increasingly by debt that credit investors say could become the next systemic shock.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>June 07, 2026</span>
-                </div>
-            </div>
-        </a>
 
         <!-- ─────────────────────────────────────────────
              ADD NEW ARTICLES ABOVE THIS LINE
@@ -810,34 +635,18 @@
                              or leave .card-thumb-placeholder for no image
         ────────────────────────────────────────────── -->
 
-        <!-- ARTICLE 2 — Inflation Relapse -->
-        <a class="article-card" href="articles/2026-05-inflation-relapse.html" data-category="Prices">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="images/2026-05-inflation-relapse-thumb.jpg" alt="Grocery store prices">
-            </div>
-            <div class="card-cat-stripe"></div>
-            <div class="card-body">
-                <div class="card-meta">
-                    <span class="card-category">Inflation</span>
-                </div>
-                <div class="card-title">Inflation Relapse: The April Price Surge That Rewrites the Fed's 2026 Playbook</div>
-                <div class="card-excerpt">A hotter-than-expected April CPI reading — driven by an energy shock, tariff pass-through, and sticky services — has erased the prospect of Federal Reserve rate cuts this year.</div>
-                <div class="card-published">
-                    <span class="card-published-label">Published</span>
-                    <span>May 14, 2026</span>
-                </div>
-            </div>
-        </a>
-
         <!-- ARTICLE 1 — Oil Prices -->
-        <a class="article-card" href="articles/2025-04-oil-prices.html" data-category="Prices">
+        <a class="article-card" href="articles/2025-04-oil-prices.html">
             <div class="card-thumb">
-                <img class="card-thumb-img" src="images/oil-thumb.jpg" alt="Oil refinery">
+                <div style="width:100%;height:100%;background:linear-gradient(160deg,#0A0A0A 0%,#1C0800 50%,#0D0D0D 100%);display:flex;align-items:center;justify-content:center;">
+                    <span style="font-family:'Didot','Bodoni 72',Georgia,serif;font-size:36px;font-weight:900;font-style:italic;color:#F6F1E7;letter-spacing:-1px;">Oil<span style="color:#C41E3A;">'s</span> Surge</span>
+                </div>
             </div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
                 <div class="card-meta">
                     <span class="card-category">Energy &amp; Commodities</span>
+                    <span class="card-read-time">5 min read</span>
                 </div>
                 <div class="card-title">The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation</div>
                 <div class="card-excerpt">A confluence of supply restraint, geopolitical friction, and fragile demand has crude oil back at the center of the macroeconomic debate.</div>
@@ -847,6 +656,66 @@
                 </div>
             </div>
         </a>
+
+        <!-- PLACEHOLDER 2 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta"><span class="card-category">Federal Reserve</span></div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 3 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta"><span class="card-category">Inflation</span></div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 4 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta"><span class="card-category">Labor Market</span></div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 5 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta"><span class="card-category">Fixed Income</span></div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER 6 -->
+        <div class="article-card placeholder">
+            <div class="card-thumb"><div class="card-thumb-placeholder"><span>Coming Soon</span></div></div>
+            <div class="card-cat-stripe"></div>
+            <div class="card-body">
+                <div class="card-meta"><span class="card-category">Consumer</span></div>
+                <div class="card-title">Your Next Article Title Goes Here</div>
+                <div class="card-excerpt">A brief summary of the article will appear here. Write 1–2 sentences describing the key insight or argument.</div>
+                <div class="card-published"><span class="card-published-label">Published</span><span>— —, 2025</span></div>
+            </div>
+        </div>
 
     </div><!-- /#article-grid -->
 
@@ -861,7 +730,7 @@
                 <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
                 <div class="footer-meta">
                     Published by Connor Leary<br>
-                    macrobriefnews@gmail.com<br>
+                    cleary0720@gmail.com<br>
                     Volume I · 2025 · All rights reserved
                 </div>
             </div>
@@ -877,101 +746,62 @@
 </footer>
 
 <script>
+    // Count live (non-placeholder) articles and update the counter
+    const cards = document.querySelectorAll('.article-card:not(.placeholder)');
+    const count = cards.length;
+    document.getElementById('article-count').textContent =
+        count === 0 ? '0 EDITIONS PUBLISHED' :
+        count === 1 ? '1 Article · 5 Coming Soon' :
+        count + ' EDITIONS PUBLISHED';
+
     // Seamless ticker loop
     const tm = document.getElementById('tickerMove');
     tm.innerHTML += tm.innerHTML;
+</script>
 
-    // Category filter
-    const allCards = Array.from(document.querySelectorAll('.article-card'));
-    const realCards = allCards.filter(c => !c.classList.contains('placeholder'));
+<script>
+(function() {
+    var search = document.getElementById('archive-search');
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var noResults = document.getElementById('no-results');
+    var activeFilter = 'all';
+    var searchQuery = '';
 
-    function updateCount(visible) {
-        const n = visible.length;
-        document.getElementById('article-count').textContent =
-            n === 0 ? '0 EDITIONS PUBLISHED' :
-            n === 1 ? '1 EDITION PUBLISHED' :
-            n + ' EDITIONS PUBLISHED';
-    }
-
-    function sortCards(ascending) {
-        const grid = document.getElementById('article-grid');
-        const cards = Array.from(grid.querySelectorAll('.article-card:not(.placeholder)'));
-        cards.sort((a, b) => {
-            const getDate = card => {
-                const el = card.querySelector('.card-published span:last-child');
-                return el ? new Date(el.textContent.trim()) : new Date(0);
-            };
-            return ascending ? getDate(a) - getDate(b) : getDate(b) - getDate(a);
-        });
-        cards.forEach(card => grid.appendChild(card));
-    }
-
-    function applyFilter(category) {
-        sortCards(false);
-        allCards.forEach(card => {
-            if (category === 'all') {
+    function filterCards() {
+        var cards = document.querySelectorAll('#article-grid .article-card');
+        var visible = 0;
+        cards.forEach(function(card) {
+            var title = (card.querySelector('.card-title') || {}).textContent || '';
+            var cat = (card.querySelector('.card-category') || {}).textContent || '';
+            var matchSearch = !searchQuery || title.toLowerCase().includes(searchQuery);
+            var matchFilter = activeFilter === 'all' || cat.toLowerCase().includes(activeFilter);
+            if (matchSearch && matchFilter) {
                 card.style.display = '';
-            } else if (card.classList.contains('placeholder')) {
-                card.style.display = 'none';
+                visible++;
             } else {
-                card.style.display = card.dataset.category === category ? '' : 'none';
+                card.style.display = 'none';
             }
         });
-        const visible = category === 'all'
-            ? realCards
-            : realCards.filter(c => c.dataset.category === category);
-        updateCount(visible);
-        document.getElementById('section-label').textContent =
-            category === 'all' ? 'All Articles' : category;
+        noResults.style.display = visible === 0 ? '' : 'none';
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilter(btn.dataset.filter);
+    if (search) {
+        search.addEventListener('input', function() {
+            searchQuery = this.value.trim().toLowerCase();
+            filterCards();
+        });
+    }
+
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+            activeFilter = this.getAttribute('data-filter');
+            filterCards();
         });
     });
-
-    // Hide filter buttons with no matching articles
-    document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
-        if (btn.dataset.filter === 'all') return;
-        const hasArticle = realCards.some(c => c.dataset.category === btn.dataset.filter);
-        if (!hasArticle) btn.style.display = 'none';
-    });
-
-    // Default: newest first
-    sortCards(false);
-    updateCount(realCards);
+})();
 </script>
 
-<!-- STICKY SUBSCRIBE BAR -->
-<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:200px;">
-            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
-            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
-        </div>
-        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
-            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:12px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;width:220px;">
-            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
-        </form>
-        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
-        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
-    </div>
-</div>
-<script>
-(function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
-function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
-function stickySubmit(e){e.preventDefault();var email=document.getElementById("sticky-email").value;fetch("https://beehiiv-proxy.cleary0720.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,utm_source:"sticky-bar"})}).then(function(){localStorage.setItem("tmb-subscribed","1");document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);}).catch(function(){document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);});}
-</script>
-
-<script>
-function toggleMobileNav() {
-    var nl = document.querySelector('.nav-links');
-    if (nl) nl.classList.toggle('open');
-}
-</script>
-<script src="subscribe.js"></script>
 </body>
 </html>
