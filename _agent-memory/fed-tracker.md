@@ -1,12 +1,12 @@
 # Fed Tracker Agent Memory
-Last updated: June 11, 2026
+Last updated: June 12, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm and https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm
-- Effective rate: https://fred.stlouisfed.org/series/FEDFUNDS (and EFFR/DFF series) — reading of 3.62% confirmed through June 11, 2026; sofrrate.com/policy-rates shows EFFR 3.62% but returned 403 on WebFetch
+- Effective rate: https://fred.stlouisfed.org/series/FEDFUNDS (and EFFR/DFF series) — reading of 3.62% confirmed through June 12, 2026; sofrrate.com/policy-rates shows EFFR 3.62% but returned 403 on WebFetch
 - Market probabilities: CME FedWatch — summarized via WebSearch hits on kucoin.com blog, idahobusinessreview.com, cryptobriefing.com, cnbc.com recaps; direct site fetches (centralbank.watch, rateprobability.com, atlantafed.org, sofrrate.com) return 403
 - Vote breakdown: federalreserve.gov FOMC statement/minutes pages (April 29, 2026 meeting: 8-4, historic 4-way dissent)
 - CPI data: BLS (bls.gov) and CBS News / CNBC for confirmed releases
@@ -15,9 +15,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 ## Known issues
 - Most aggregator sites that display CME FedWatch data (centralbank.watch, rateprobability.com, atlantafed.org, growbeansprout.com, morningstar.com, interactivecrypto.com, sofrrate.com) return HTTP 403 on WebFetch. Use WebSearch with specific queries referencing site names and read snippets.
 - Yahoo Finance, CBS News, CNBC article pages also return 403 on WebFetch — use WebSearch to pull snippets from headlines.
+- tradingeconomics.com also returns 403 on WebFetch.
 - September and October meeting-specific probabilities are harder to surface — use broader queries like "Fed hike October December 2026 probability" and cross-reference multiple sources.
 
 ## Run log
+### June 12, 2026
+- Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
+- Effective rate: 3.62% (unchanged)
+- Next meeting: June 16–17, 2026 (Kevin Warsh's first as Chair) — 5 days away, still upcoming, no new row added
+- Market odds (stable): June ~98% hold / ~2% hike; July ~85% hold / ~15% hike; Sep ~56% hold / ~28% hike; Oct ~63% cumulative hike probability (CME, Jun 12)
+  - Multiple sources: 96.5%–99.2% hold probability for June — using ~98% as consistent estimate
+  - September hike: ~26% Polymarket / ~28% CME — consistent with prior runs
+  - October: "roughly 60% chance of a move" per interest-rate swaps (Yahoo Finance) — consistent with ~63% from Jun 11
+- New FOMC row added: no
+- Changes made: "Last updated" → June 12, 2026; CME date reference updated Jun 11 → Jun 12. Rate unchanged so MEANS-FOR-YOU section left untouched. JS countdown (2026-06-17T18:00:00Z) still correct.
+
 ### June 11, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
 - Effective rate: 3.62% (unchanged)
