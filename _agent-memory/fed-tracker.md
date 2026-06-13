@@ -1,13 +1,15 @@
 # Fed Tracker Agent Memory
-Last updated: June 12, 2026
+Last updated: June 13, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm and https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm
-- Effective rate: https://fred.stlouisfed.org/series/FEDFUNDS (and EFFR/DFF series) — reading of 3.62% confirmed through June 12, 2026; sofrrate.com/policy-rates shows EFFR 3.62% but returned 403 on WebFetch
-- Market probabilities: CME FedWatch — summarized via WebSearch hits on kucoin.com blog, idahobusinessreview.com, cryptobriefing.com, cnbc.com recaps; direct site fetches (centralbank.watch, rateprobability.com, atlantafed.org, sofrrate.com) return 403
+- Effective rate: https://fred.stlouisfed.org/series/EFFR (confirmed 3.62% through Jun 10; sofrrate.com/policy-rates shows EFFR 3.62% but returned 403 on WebFetch)
+- Market probabilities: CME FedWatch — summarized via WebSearch; direct site fetches (centralbank.watch, rateprobability.com, atlantafed.org, sofrrate.com) return 403. Polymarket useful for meeting-specific hike odds.
+- December hike probability (~51%): CNBC article from May 2026, corroborated via WebSearch on June 13
+- Year-end hike odds (~70%): confirmed via June 16-17 preview articles (nnng.com blackout period coverage)
 - Vote breakdown: federalreserve.gov FOMC statement/minutes pages (April 29, 2026 meeting: 8-4, historic 4-way dissent)
 - CPI data: BLS (bls.gov) and CBS News / CNBC for confirmed releases
 - June 17 meeting preview: tradingkey.com, continuumeconomics.com, chase.com, fool.com / Yahoo Finance all had good coverage
@@ -16,9 +18,24 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Most aggregator sites that display CME FedWatch data (centralbank.watch, rateprobability.com, atlantafed.org, growbeansprout.com, morningstar.com, interactivecrypto.com, sofrrate.com) return HTTP 403 on WebFetch. Use WebSearch with specific queries referencing site names and read snippets.
 - Yahoo Finance, CBS News, CNBC article pages also return 403 on WebFetch — use WebSearch to pull snippets from headlines.
 - tradingeconomics.com also returns 403 on WebFetch.
-- September and October meeting-specific probabilities are harder to surface — use broader queries like "Fed hike October December 2026 probability" and cross-reference multiple sources.
+- fxstreet.com analysis pages return 403 (including AMP versions).
+- Polymarket and CME FedWatch can diverge slightly on September/October odds — use CME as primary, Polymarket as corroboration.
 
 ## Run log
+### June 13, 2026
+- Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
+- Effective rate: 3.62% (confirmed through Jun 10, unchanged)
+- Next meeting: June 16–17, 2026 (Warsh's first as Chair) — 4 days away, still upcoming, no new row added
+- Market odds (June 13):
+  - Jun: ~98% hold / ~2% hike (stable; sources range 97.1%–99.4%, using ~98% as consistent estimate)
+  - Jul: ~85% hold / ~15% hike (no new specific data; unchanged)
+  - Sep: ~74% hold / ~26% hike (Polymarket; slight decrease from ~28% CME on Jun 12)
+  - Oct: ~32% hike at meeting (Polymarket)
+  - Dec: ~51% hike probability (CME FedWatch — new confirmed data)
+  - Year-end: ~70% probability of at least one hike in 2026 (up from ~66%)
+- New FOMC row added: no
+- Changes made: "Last updated" → June 13, 2026; Sep probability updated ~56%/~28% → ~74%/~26%; Oct updated from "~63% cumulative (CME, Jun 12)" to "~32% at meeting (Polymarket)"; Dec ~51% yr-end ~70% added as new row; MEANS-FOR-YOU left untouched (rate unchanged); JS countdown (2026-06-17T18:00:00Z) still correct.
+
 ### June 12, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
 - Effective rate: 3.62% (unchanged)
@@ -40,17 +57,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Slight post-CPI settlement: June hold ticked up from 97%→98%
 - Key context: Wide consensus Warsh will drop easing bias at June 16–17 meeting; SEP/dot plot likely revised sharply higher on inflation; Morgan Stanley warns of FX disruption if Warsh delivers hawkish surprise; no rate change expected
 - New FOMC row added: no
-- Changes made: "Last updated" → June 11, 2026; June hold probability updated 97%→98%, Hike 3%→2%; CME date reference updated Jun 9→Jun 11. Rate unchanged so MEANS-FOR-YOU section left untouched. JS countdown (2026-06-17T18:00:00Z) still correct.
 
 ### June 10, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
 - Effective rate: 3.62% (unchanged)
-- Next meeting: June 16–17, 2026 (Kevin Warsh's first as Chair) — still upcoming, no new row added
-- **MAJOR DATA RELEASE**: May CPI released June 10: 4.2% YoY (highest since April 2023), +0.5% MoM. Core: 2.9% YoY, +0.2% MoM. Energy shock driver — gasoline +40.5% YoY (Iran war/Strait of Hormuz).
-- Market odds: June ~97% hold / ~3% hike; July ~85% hold / ~15% hike; Sep ~56% hold / ~28% hike; Oct ~63% cumulative hike probability
+- Next meeting: June 16–17, 2026 — still upcoming, no new row added
+- **MAJOR DATA RELEASE**: May CPI released June 10: 4.2% YoY (highest since April 2023), +0.5% MoM. Core: 2.9% YoY. Energy shock — gasoline +40.5% YoY (Iran war/Strait of Hormuz).
 - Goldman Sachs withdrew 2026 rate-cut forecast on June 7. BNP Paribas expects three successive hikes starting December.
 - New FOMC row added: no
-- Changes made: "Last updated" → June 10, 2026; CPI ticker updated 3.8% → 4.2%; Card 1 & 3 notes updated with CPI release; Oct ~63% cumulative hike probability added. JS countdown (2026-06-17T18:00:00Z) still correct.
 
 ### June 9, 2026
 - Target range: 3.50% – 3.75%; Effective rate: 3.62% (unchanged)
