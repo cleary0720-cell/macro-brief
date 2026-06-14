@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 13, 2026
+Last updated: June 14, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -22,6 +22,19 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Polymarket and CME FedWatch can diverge slightly on September/October odds — use CME as primary, Polymarket as corroboration.
 
 ## Run log
+### June 14, 2026
+- Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
+- Effective rate: 3.62% (latest confirmed through Jun 12/13; Jun 14 data published Jun 15)
+- Next meeting: June 16–17, 2026 (Warsh's first as Chair) — 3 days away, still upcoming, no new row added
+- Market odds (June 14 — essentially unchanged from Jun 13):
+  - Jun: ~98–99% hold / ~1–2% hike (CME FedWatch/Polymarket sources: 98.3%–99.5% hold range)
+  - Jul: ~85% hold / ~15% hike (no new data, unchanged)
+  - Sep: ~74% hold / ~26% hike (unchanged from Jun 13)
+  - Oct: ~32% hike at meeting (Polymarket, unchanged)
+  - Dec: ~51% hike probability / ~70% yr-end odds (CME, Jun 14)
+- New FOMC row added: no
+- Changes made: "Last updated" → June 14, 2026; CME date reference updated Jun 13 → Jun 14. Rate unchanged so MEANS-FOR-YOU section left untouched. JS countdown (2026-06-17T18:00:00Z) still correct.
+
 ### June 13, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
 - Effective rate: 3.62% (confirmed through Jun 10, unchanged)
