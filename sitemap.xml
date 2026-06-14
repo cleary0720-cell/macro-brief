@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://themacrobrief.net/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://themacrobrief.net/archive.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://themacrobrief.net/articles/2025-04-oil-prices.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://themacrobrief.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://themacrobrief.net/archive.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://themacrobrief.net/fed-tracker.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://themacrobrief.net/about.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-06-ai-data-center-boom.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-tariff-trade-deficit.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-money-supply.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-labor-market-cooling.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-inflation-relapse.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-housing-lock-in.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-debt-interest-crisis.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2026-05-consumer-spending.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://themacrobrief.net/articles/2025-04-oil-prices.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
