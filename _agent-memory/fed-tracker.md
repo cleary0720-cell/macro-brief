@@ -1,29 +1,75 @@
 # Fed Tracker Agent Memory
-Last updated: June 16, 2026
+Last updated: June 17, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm and https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm
-- Effective rate: https://fred.stlouisfed.org/series/EFFR (confirmed 3.62% through Jun 12; May 2026 monthly avg 3.63%; Jun 13 data released Jun 16)
+- Effective rate: https://fred.stlouisfed.org/series/EFFR (confirmed 3.62% through Jun 12; Jun 15 data: 3.63%; Jun 16 data: 3.62% per sofrrate.com search snippet)
 - Market probabilities: CME FedWatch — summarized via WebSearch; direct site fetches (centralbank.watch, rateprobability.com, atlantafed.org, sofrrate.com) return 403. Polymarket useful for meeting-specific hike odds.
-- Year-end hike odds (~38%): Polymarket June 16 (unchanged from Jun 15)
+- Year-end hike odds (~38%): Polymarket June 16-17 (unchanged)
 - Vote breakdown: federalreserve.gov FOMC statement/minutes pages (April 29, 2026 meeting: 8-4, historic 4-way dissent)
-- June 16-17 meeting live coverage: coinpaprika.com, fxstreet.com, kiplinger.com, indexbox.io, defirate.com had same-day coverage
+- June 17 decision coverage (pre-decision): CNBC, unboxfuture.com (403 WebFetch), Kalshi (70% odds of zero dissents article from CNBC Jun 17)
 
 ## Known issues
 - Most aggregator sites that display CME FedWatch data (centralbank.watch, rateprobability.com, atlantafed.org, growbeansprout.com, morningstar.com, interactivecrypto.com, sofrrate.com) return HTTP 403 on WebFetch. Use WebSearch with specific queries referencing site names and read snippets.
 - Yahoo Finance, CBS News, CNBC article pages also return 403 on WebFetch — use WebSearch to pull snippets from headlines.
 - tradingeconomics.com also returns 403 on WebFetch.
 - fxstreet.com analysis pages return 403 (including AMP versions).
-- Polymarket and CME FedWatch can diverge significantly:
-  - CME FedWatch (Jun 13): 97.1% hold for June
-  - Polymarket (Jun 15-16): ~99.6% hold for June
-  - Today's combined best estimate: ~97.8–98% hold / ~2% hike
-- EFFR for Jun 13 data released on Jun 16 — typically out by 9am ET from NY Fed; WebFetch to federalreserve.gov and fred.stlouisfed.org returns 403, use WebSearch.
+- unboxfuture.com returns 403 on WebFetch but provides good search snippets.
+- Polymarket and CME FedWatch can diverge significantly.
+- EFFR data: NY Fed releases prior business day's data at approximately 9:00am ET. June 17 data (for June 16) would be released at ~9am ET on June 17.
+- EFFR has been fluctuating: 3.62% on Jun 12, 3.63% on Jun 15, back to 3.62% on Jun 16.
+
+## CRITICAL — June 17, 2026: FOMC DECISION DAY
+The June 17 run (9am ET) happened BEFORE the 2pm ET FOMC announcement. The next run (June 18) MUST:
+1. Add new FOMC-HISTORY row for June 17, 2026:
+   - Decision: Hold (almost certain — ~99% probability)
+   - Range: 3.50%–3.75% (unchanged)
+   - Vote: Need to confirm — Kalshi pre-decision showed 70% odds of zero dissents (very united vs. April's 8-4)
+   - Notes: Warsh's first meeting as Chair; SEP/dot plot meeting; easing bias expected to be removed; dot plot expected to show zero cuts for 2026
+   - Source: search for "FOMC June 17 2026 result vote statement" on June 18 morning
+2. Update hero cards:
+   - "Next FOMC Meeting" → July 28-29, 2026
+   - Remove "Decision Day" language, replace with normal "Next meeting" card for July
+   - Update JS countdown: `new Date('2026-07-29T18:00:00Z')` (July 29 at 2pm ET = 18:00 UTC)
+3. Update committee notes (Card 1): Replace "Decision Day" language with post-meeting summary of what happened — statement language changes, press conference key quotes, dot plot result
+4. Update policy stance (Card 3): Update probabilities for July, September, October, December based on post-decision market moves
+5. If rate changes: update MEANS-FOR-YOU section (unlikely — expected hold)
+6. Update "Last updated" to June 18, 2026
+
+## Post-Decision Research Queries for June 18 Run
+- "FOMC June 17 2026 result vote statement Warsh hawkish"
+- "Fed June 17 2026 dot plot SEP cuts 2026 result"
+- "CME FedWatch July 2026 probability after June decision"
+- "unboxfuture.com Fed June 2026 hawkish pause rates held" (had snippet mentioning "10-2 vote" — verify)
+- Look for: advisorperspectives.com, CNBC, Reuters post-decision coverage
 
 ## Run log
+
+### June 17, 2026
+- Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
+- Effective rate: 3.62% (confirmed Jun 16 from sofrrate.com; Jun 15 was 3.63%, reverted to 3.62%)
+- FOMC meeting: June 16–17, 2026 — TODAY IS DECISION DAY (2pm ET)
+- Agent ran at 9am ET — decision not announced yet
+- Market odds (June 17 pre-decision):
+  - Jun: ~99% hold / ~1% hike (Polymarket Jun 15: 99.6%; Kalshi Jun 17: 70% odds of zero dissents)
+  - Jul: ~85% hold / ~15% hike (unchanged)
+  - Sep: ~74% hold / ~26% hike (unchanged)
+  - Oct: ~32% hike at meeting (Polymarket)
+  - 2026 any hike: ~38% (Polymarket, Jun 16-17)
+- New FOMC row added: NO (decision not announced at time of run — will add June 18)
+- Changes made:
+  - "Last updated" → June 17, 2026
+  - Ticker "FED FUNDS RATE 3.63%" → 3.62% (EFFR confirmed for Jun 16)
+  - Committee notes updated: "Day 1" → "Decision Day" language, Warsh decision at 2pm ET today
+  - Next Meeting card: "Day 1 of 2" → "Decision Day — Day 2 of 2"
+  - June probability: ~98% → ~99% (aligned with Polymarket June 15-17 data)
+  - Polymarket reference date: "Jun 16" → "Jun 17"
+- JS countdown (2026-06-17T18:00:00Z): unchanged (still correct — it points to 2pm ET TODAY)
+- Notes: Unboxfuture.com had article titled "Fed June 2026 Hawkish Pause: Rates Held at 3.50%-3.75%" with a search snippet mentioning "10-2 vote" — could be post-decision content but couldn't verify via WebFetch (403). CNBC article (Jun 17) said Kalshi shows 70% odds of zero dissents vs. April's 8-4 split.
+
 ### June 16, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
 - Effective rate: 3.62% (latest confirmed through Jun 12; Jun 13 data released today Jun 16 — likely ~3.62–3.63%)
@@ -98,27 +144,9 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - May CPI released June 10: 4.2% YoY (highest since April 2023); energy shock (gasoline +40.5% YoY, Iran war)
 - New FOMC row added: no
 
-## CRITICAL — Watch for next run (June 17–18, 2026)
-June 16–17 meeting decision expected June 17 at 2pm ET. NEXT RUN after that date will require:
-1. New FOMC-HISTORY row: date "Jun 17, 2026", decision (almost certainly Hold — ~98% probability), range (almost certainly 3.50%–3.75%), vote breakdown (watch for new dissents under Warsh — does Warsh himself dissent vs. any bloc?), statement language summary
-2. Critical items to watch at this meeting:
-   - Does Warsh formally drop the easing bias? (near-consensus expectation; Pimco's Clarida confirmed "planets are aligned" to eliminate guidance language)
-   - Does Warsh begin scrapping forward guidance / dot plot? (Fortune article confirmed Warsh wants to eliminate guidance language)
-   - Updated dot plot: lone remaining 2026 cut likely erased given 4.2% May CPI
-   - SEP inflation projections: likely revised up sharply given 4.2% May CPI
-   - Any new dissents? Vote count? Hawks pushing for hike vs. Warsh's first-meeting positioning?
-   - Press conference tone: formal hawkish signal for H2 hike?
-   - Morgan Stanley warned of FX market disruption if Warsh delivers hawkish surprise
-3. Update hero cards: new "Next FOMC Meeting" date → July 28–29, 2026
-4. Update JS countdown to: new Date('2026-07-29T18:00:00Z')
-5. Update committee notes with new statement language
-6. Update market probabilities for July, September, October, December meetings
-7. If rate changes: update MEANS-FOR-YOU section with current mortgage/savings/credit card/auto loan rates
-8. Update "Last updated" to June 17 or 18 depending on run timing
-
 ## FOMC 2026 meeting schedule (remaining)
-- June 16–17, 2026 — IN PROGRESS TODAY (countdown JS target: 2026-06-17T18:00:00Z) ← SEP/dot plot meeting, Warsh's first as Chair
-- July 28–29, 2026
+- June 16–17, 2026 — COMPLETED (decision announced Jun 17 at 2pm ET — RESULTS PENDING for next agent run)
+- July 28–29, 2026 ← NEXT meeting after Jun 17
 - September 15–16, 2026 ← SEP/dot plot meeting
 - October 27–28, 2026
 - December 8–9, 2026 ← SEP/dot plot meeting
