@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 18, 2026
+Last updated: June 19, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -20,8 +20,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR data: NY Fed releases prior business day's data at approximately 9:00am ET.
 - Polymarket and CME FedWatch can diverge significantly — note both when available.
 - Warsh withheld his dot at June meeting; 18 dots submitted going forward (not 19). May change at future meetings.
+- sofrrate.com page title may show weekly average EFFR (3.62%) rather than daily EFFR (3.63%) — prefer ycharts/NY Fed for daily figure.
 
 ## Run log
+
+### June 19, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (June 17 confirmed daily EFFR; June 18 daily not yet confirmed different; IORB at 3.65% from June 18)
+- FOMC meeting: No new meeting — last was June 16–17 (decision June 17, 12-0 hold)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jun 19):
+  - Hold: ~79% (Polymarket: 79.5%; CME: ~77%)
+  - Hike 25bps: ~19% (Polymarket: 19.4%; CME: ~22%)
+  - Cut: negligible (~1%)
+- September hike probability: ~25% (Polymarket)
+- 2026 year-end any hike: ~66% (CME)
+- New FOMC row added: NO (no new meeting)
+- Changes made:
+  - "Last updated" → June 19, 2026
+  - Card 2 hero note: Updated July odds from "~75% hold / ~22% hike (CME, Jun 18)" → "~79% hold / ~19% hike (Jun 19)"
+  - Policy Stance card: Updated July line from "~75% / ~22% (CME, Jun 18)" → "~79% / ~19% (Jun 19)"; Sep/yr-end odds updated
+- Notes: Rate unchanged so MEANS-FOR-YOU left untouched. Odds shifted slightly toward hold vs. yesterday — small but confirms markets are not pricing in imminent July hike. EFFR stayed flat at 3.63%.
 
 ### June 18, 2026
 - Target range: 3.50% – 3.75% (HOLD — confirmed June 17, 2026 unanimous 12-0 vote)
@@ -43,16 +62,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Sep: Elevated hike odds; futures imply ~3.8% by September
   - 2026 any hike: ~57.5% (Polymarket, Jun 18) / ~66% yr-end (CME, Jun 18)
 - New FOMC row added: YES — Jun 17, 2026 (Hold, 12-0)
-- Changes made:
-  - "Last updated" → June 18, 2026
-  - Ticker EFFR: 3.62% → 3.63%
-  - Effective Rate (Card 1): 3.62% → 3.63%
-  - Card 1 committee notes: Replaced "Decision Day" language with post-meeting summary
-  - Card 2 Next Meeting: "June 16–17" → "July 28–29, 2026"; countdown/notes updated
-  - Card 3 Policy Stance: "Restricted Neutral" → "Hawkish Hold"; text updated; probabilities updated
-  - JS countdown: 2026-06-17T18:00:00Z → 2026-07-29T18:00:00Z
-  - FOMC-HISTORY: Prepended Jun 17, 2026 row (Hold, 12-0)
-- Notes: Rate unchanged so MEANS-FOR-YOU section left untouched. The June 17 decision was a textbook hawkish hold — unanimous vote + communication overhaul removed all easing signals.
 
 ### June 17, 2026
 - Target range: 3.50% – 3.75% (unchanged since Apr 29, 2026 meeting)
@@ -115,3 +124,4 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - No MEANS-FOR-YOU update needed unless rate actually changes (still 3.50-3.75%)
 - Next countdown target: 2026-07-29T18:00:00Z
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
+- EFFR daily: 3.63% (last confirmed Jun 17); IORB: 3.65% (effective Jun 18)
