@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-06-14
+Last updated: 2026-06-21
 
 ## Repository
 - Owner: cleary0720-cell
@@ -21,8 +21,8 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - Most external image hosting domains are blocked — download via workers only
 - Government data sources (bls.gov, federalreserve.gov, bea.gov, etc.) return HTTP 403 on WebFetch
 - Use WebSearch for ALL economic data — financial news sites cover government releases well
-- advisorperspectives.com treasury snapshot articles have full yield curve data for each trading day
-- Most financial data sites (FRED, Slickcharts, StreetStats, Vanguard) also return 403
+- advisorperspectives.com treasury snapshot articles have full yield curve data for each trading day — BUT also return 403 on WebFetch; use WebSearch snippets instead
+- Most financial data sites (FRED, Slickcharts, StreetStats, centralbank.watch) also return 403 on WebFetch
 
 ## Agent memory files (in _agent-memory/)
 - site.md — this file, written by dashboard agent each Sunday
@@ -48,36 +48,45 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - FOMC-PROB-START/END — CME FedWatch probability bar + .fomc-note callout
 - WHAT-TO-WATCH-START/END — upcoming economic releases calendar
 
-## Data source strategy (confirmed June 2026)
-All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
-- CPI, unemployment, jobless claims: WebSearch → bls.gov data covered by cnbc.com, bloomberg.com, advisorperspectives.com
-- GDP, PCE: WebSearch → bea.gov data covered by financial news sites
-- Retail Sales: WebSearch → census.gov data well-covered
-- Fed Rate / FOMC: WebSearch → federalreserve.gov press releases in search snippets
-- Treasury yields: WebSearch for "[Date] treasury yields" → advisorperspectives.com snapshot articles best
-- M2: WebSearch → mises.org and macrotrends.net cover H.6 releases
-- ISM PMI: WebSearch → prnewswire.com carries official ISM press releases verbatim
-- FOMC odds: WebSearch → CME FedWatch, centralbank.watch, kalshi.com all covered in search
-
-## Sparkline roll-forward rules
-- Monthly indicators (all except GDP): add new month at end, drop oldest, keep 12 entries
-  - Only roll forward when NEW monthly data released since last update
-  - CPI/unemployment label months by DATA month (not release month)
-  - 10Y Treasury rolls monthly (use latest available month-end or mid-month value)
-  - Retail Sales: "May" in sparkline = April retail data (labeled by data month). Roll when May retail released (June 17)
-  - Jobless claims: use 4-week average at end of reference month
-- GDP: quarterly, always 8 entries, roll only when BEA releases new quarter
-
 ## Newsletter
 - Sent automatically by GitHub Action send-newsletter.yml
 - Triggers on push to articles/**.html
 - Do NOT call Beehiiv API manually
 
 ## Current macro context (June 2026)
-- Fed Funds: 3.50-3.75%, on hold since Nov 2025
+- Fed Funds: 3.50-3.75%, held June 17 (unanimous) under new Chair Kevin Warsh
+- Hawkish dot plot: 9/18 members project hike, year-end median 3.8%; October earliest expected
+- Warsh did not submit a dot; no press conference at July 29 meeting
 - Iran-Israel conflict driving energy prices +23.5% YoY → May CPI 4.2%
-- Core inflation more contained: Core CPI 2.9%, Core PCE 3.3%
-- Labor market re-accelerating: May +172k jobs, unemployment 4.3%
+- Core inflation more contained: Core CPI 2.9%, Core PCE 3.3% (April; May due June 25)
+- Labor market solid: May +172k jobs, unemployment 4.3%, jobless claims drifting up (223k 4-wk avg)
+- Consumer: May retail +6.9% YoY — strongest in over a year
 - GDP Q1 2026: +1.6% (2nd est.); 3rd estimate due June 25
-- FOMC June 17: 99% hold; dot plot expected to show zero 2026 cuts
-- Next FOMC: July 28-29, 2026
+- M2: 4.7% (April, revised up from 4.5%)
+- Yield curve: Normal but flattening — 2s10s +27bps (down from +40); 2Y spiked +17bps on June 17
+- FOMC July 29: 80% hold, 19% hike, 1% cut
+- Next FOMC: July 29, 2026 (no press conference)
+- Next key releases: June 25 (GDP 3rd + Core PCE May), July 2 (Jobs), July 14 (CPI), July 29 (FOMC)
+
+## Data source strategy (confirmed June 2026)
+All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
+- CPI, unemployment, jobless claims: WebSearch → bls.gov data covered by cnbc.com, bloomberg.com, advisorperspectives.com
+- GDP, PCE: WebSearch → bea.gov data covered by financial news sites
+- Retail Sales: WebSearch → nrf.com and advisorperspectives.com/dshort carry full Census data
+- Fed Rate / FOMC: WebSearch → stocktitan.net, tradingkey.com, cnbc.com cover FOMC decisions fully
+- Treasury yields: WebSearch for "[Date] treasury yields" → snippets from CNBC, advisorperspectives, FRED references
+  - 3M, 2Y, 10Y, 30Y usually confirmed; 1M, 6M, 1Y, 5Y, 7Y, 20Y need interpolation
+- M2: WebSearch for "[Month] 2026 M2 year over year percent" → tradingeconomics.com snippets give YoY %
+- ISM PMI: WebSearch → prnewswire.com carries official ISM press releases verbatim
+- FOMC odds: WebSearch "Fed [month] 2026 rate decision probability hike hold" → rateprobability.com, centralbank.watch, CME FedWatch snippets
+
+## Sparkline roll-forward rules
+- Monthly indicators (all except GDP): add new month at end, drop oldest, keep 12 entries
+  - Only roll forward when NEW monthly data released since last update
+  - CPI/unemployment label months by DATA month (not release month)
+  - 10Y Treasury rolls monthly (use latest available month value; update in-place if same month)
+  - Retail Sales: labeled by release month (one month ahead of data month). "Jun" = May retail data. Roll when advance report released.
+  - Jobless claims: update latest month entry with new 4-week average; roll when new month starts
+  - M2: update in-place with revised data; roll only when new month's H.6 released
+- GDP: quarterly, always 8 entries, roll only when BEA releases new quarter
+- First entry in sparkline array: add year if in prior calendar year (e.g., "Jul '25")
