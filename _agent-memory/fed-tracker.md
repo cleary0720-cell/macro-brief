@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 20, 2026
+Last updated: June 21, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -21,8 +21,25 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Polymarket and CME FedWatch can diverge significantly — note both when available.
 - Warsh withheld his dot at June meeting; 18 dots submitted going forward (not 19). May change at future meetings.
 - sofrrate.com page title may show weekly average EFFR (3.62%) rather than daily EFFR (3.63%) — prefer ycharts/NY Fed for daily figure.
+- WebSearch snippets about Polymarket may mix current odds with older quotes; cross-check against CME FedWatch for consistency.
 
 ## Run log
+
+### June 21, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Jun 17 confirmed daily EFFR; sofrrate.com shows 3.62% weekly avg for Jun 20 — keeping 3.63%)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jun 21):
+  - Polymarket: ~74% hold / ~25% hike (25bps) / ~2% cut
+  - CME FedWatch: ~72% hold / ~28% hike
+  - (Shifted from Jun 20: ~79% hold / ~19% hike — market pricing in slightly more hike risk)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → June 21, 2026
+  - Next FOMC card: Updated July odds from "(Jun 20): ~79% hold / ~19% hike" → "(Jun 21): ~74% hold / ~25% hike / ~2% cut (Polymarket). CME: ~72% / ~28% hike"
+  - Policy Stance card: Jul line updated from "~79% / ~19% (Jun 20)" → "~74% / ~25% / Cut ~2% (Jun 21, Polymarket)"
+- Notes: Rate unchanged so MEANS-FOR-YOU left untouched. Market odds drifted more hawkish overnight — hike probability up ~5-6pp from yesterday. June CPI due July 14 is next major catalyst.
 
 ### June 20, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -138,3 +155,5 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next countdown target: 2026-07-29T18:00:00Z
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (last confirmed Jun 17); IORB: 3.65% (effective Jun 18)
+- Market odds as of Jun 21: ~74% hold / ~25% hike (Polymarket); ~72% / ~28% hike (CME)
+- June CPI (July 14) is next major data catalyst before the July 29 FOMC meeting
