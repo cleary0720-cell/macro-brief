@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 21, 2026
+Last updated: June 22, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -24,6 +24,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - WebSearch snippets about Polymarket may mix current odds with older quotes; cross-check against CME FedWatch for consistency.
 
 ## Run log
+
+### June 22, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Jun 17 last confirmed daily EFFR; Jun 19 data not yet in search snippets — keeping 3.63%)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jun 22):
+  - Polymarket: ~79% hold / ~21% hike (25bps) — shift back toward hold from Jun 21 (74%/25%/2%)
+  - CME FedWatch: ~72% hold / ~28% hike (roughly unchanged)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → June 22, 2026
+  - Next FOMC card: Updated July odds from "(Jun 21): ~74% hold / ~25% hike / ~2% cut" → "(Jun 22): ~79% hold / ~21% hike (Polymarket)"
+  - Policy Stance card 2026 Rate Path: Jul line updated from "~74% / ~25% / Cut ~2% (Jun 21, Polymarket)" → "~79% / ~21% (Jun 22, Polymarket)"; yr-end note updated
+- Notes: Rate unchanged so MEANS-FOR-YOU left untouched. Polymarket hike odds fell ~4pp overnight (back to range seen Jun 19-20). CME holding at ~28%. Odds oscillating in 74-79% hold band this week. Next major catalyst: June CPI (July 14), then July 29 FOMC.
 
 ### June 21, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -155,5 +170,5 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next countdown target: 2026-07-29T18:00:00Z
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (last confirmed Jun 17); IORB: 3.65% (effective Jun 18)
-- Market odds as of Jun 21: ~74% hold / ~25% hike (Polymarket); ~72% / ~28% hike (CME)
+- Market odds as of Jun 22: ~79% hold / ~21% hike (Polymarket); ~72% / ~28% hike (CME)
 - June CPI (July 14) is next major data catalyst before the July 29 FOMC meeting
