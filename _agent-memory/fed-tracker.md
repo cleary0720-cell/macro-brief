@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 24, 2026
+Last updated: June 25, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -24,6 +24,24 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - WebSearch snippets about Polymarket may mix current odds with older quotes; cross-check against CME FedWatch for consistency.
 
 ## Run log
+
+### June 25, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Jun 22 most recently confirmed; Jun 24 not yet published by NY Fed at run time)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jun 25):
+  - Polymarket: ~76% hold / ~24% hike (25bps) / ~2% cut (slightly more hold vs. yesterday's 74%/25%/2%)
+- New FOMC row added: NO
+- Key data released today:
+  - Core PCE May 2026: 3.4% YoY (up from 3.3% April); 0.3% MoM — slightly above the Fed's own June forecast of 3.3%
+  - Personal Income May: +0.7% MoM; Personal Spending May: +0.7% MoM — both above estimates
+  - GDP Q1 2026 3rd estimate: scheduled for today but actual figure not confirmed in search results (2nd est. was 1.6%)
+- Changes made:
+  - "Last updated" → June 25, 2026
+  - Card 2 (Next FOMC): Updated July odds from "(Jun 24): ~74% hold...~25% hike...CME: ~65% / ~35%" → "(Jun 25): ~76% hold / ~24% hike / ~2% cut (Polymarket)"; added Core PCE May 3.4% note
+  - Card 3 (Policy Stance): Added "Core PCE (May, Jun 25): 3.4% YoY — slightly above Fed's 3.3% June forecast" to notes; Jul rate path updated to "~76% / ~24% / Cut ~2% (Jun 25, Polymarket)"
+- Notes: Rate unchanged so MEANS-FOR-YOU left untouched. Core PCE rose to 3.4% — top-side surprise relative to Fed's own 3.3% June forecast, but market odds shifted slightly more toward hold (74%→76%). Core PCE readings reinforce Warsh's hawkish stance; September hike remains the most likely timing per dot plot. Next major catalyst: July 2 Jobs Report, July 14 CPI, July 29 FOMC.
 
 ### June 24, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -200,5 +218,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next countdown target: 2026-07-29T18:00:00Z
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (last confirmed Jun 17); IORB: 3.65% (effective Jun 18)
-- Market odds as of Jun 24: ~74% hold / ~25% hike / ~2% cut (Polymarket); ~65% hold / ~35% hike (CME — notable hawkish shift)
-- Core PCE May (June 25) and June CPI (July 14) are next major data catalysts before the July 29 FOMC meeting
+- Market odds as of Jun 25: ~76% hold / ~24% hike / ~2% cut (Polymarket)
+- Core PCE May 2026: 3.4% YoY (released Jun 25) — above Fed's own 3.3% June forecast; Personal Income/Spending both +0.7% MoM
+- June CPI (July 14) and July 2 Jobs Report are next major data catalysts before the July 29 FOMC meeting
