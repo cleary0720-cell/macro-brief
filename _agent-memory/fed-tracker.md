@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: June 30, 2026
+Last updated: July 1, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -24,11 +24,28 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - sofrrate.com page title may show weekly average EFFR (3.62%) rather than daily EFFR (3.63%) — prefer ycharts/NY Fed for daily figure.
 - WebSearch snippets about Polymarket may mix current odds with older quotes; cross-check against CME FedWatch for consistency.
 - IMPORTANT: CME FedWatch shows ~70% hold / ~30% HIKE (move to 3.75-4.00%). Always interpret CME's "3.75-4.00%" outcome as a HIKE from the current 3.50-3.75% range. Do NOT label this as a "cut."
-- CME hike odds trend: Jun 22 ~28% → Jun 23 ~28% → Jun 24 ~35% → Jun 25 ~35% → Jun 26 ~37% → Jun 27 ~31% → Jun 28 ~31% → Jun 29 ~30% → Jun 30 ~30%.
+- CME hike odds trend: Jun 22 ~28% → Jun 23 ~28% → Jun 24 ~35% → Jun 25 ~35% → Jun 26 ~37% → Jun 27 ~31% → Jun 28 ~31% → Jun 29 ~30% → Jun 30 ~30% → Jul 1 ~30% (unchanged).
+- ISM Manufacturing PMI June 2026: Released 10am ET July 1 — not yet indexed at time of 9am run. May data was 54.0%. Check July 2 run for result.
+- EFFR as of June 30: NY Fed releases prior-day data at ~9am ET. June 30 reading expected to be 3.63% (unchanged); July 1 run occurred before July 1 EFFR data published.
 - Dashboard agent site.md previously confused CME 31% hike as "cut" — always verify directional interpretation against memory notes.
 - CORRECTION: Q2 2026 GDP advance estimate is NOT due June 30 — BEA's official schedule has it for July 30, 2026 (confirmed via bea.gov/news/schedule search on Jun 30). Earlier memory note was wrong; Atlanta Fed GDPNow (~2.5% as of Jun 25) is just a nowcast, not the official release.
 
 ## Run log
+
+### July 1, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (last confirmed Jun 26; Jun 30/Jul 1 data not yet indexed at run time)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jul 1):
+  - Polymarket: ~80% hold / ~19% hike (25bps) / ~1% cut (slight uptick in hike from Jun 30's 18%; sources showed 79.5%/19.4% and 81%/18% — averaged to ~80%/~19%)
+  - CME FedWatch: ~70% hold / ~30% hike (most recent confirmed: Jun 29; no fresher Jul 1 data in snippets)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 1, 2026
+  - Card 2 (Next FOMC): Updated "(Jun 30)" → "(Jul 1)"; Polymarket ~81%/~18% → ~80%/~19%; CME unchanged ~70%/~30%
+  - Card 3 (Policy Stance): Updated "(Jun 30, Polymarket)" → "(Jul 1, Polymarket)"; updated 81%→80% hold, 18%→19% hike; CME unchanged
+- Notes: Rate unchanged so MEANS-FOR-YOU left untouched. ISM PMI June 2026 releases at 10am ET today — not indexed at 9am run time. EFFR data for Jun 30 also not yet released at run time. Next catalysts: Jul 1 ISM PMI (10am ET), Jul 2 Jobs Report, Jul 14 CPI, Jul 29 FOMC.
 
 ### June 30, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -147,11 +164,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next countdown target: 2026-07-29T18:00:00Z
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (last confirmed Jun 25); IORB: 3.65% (effective Jun 18)
-- Market odds as of Jun 30: ~81% hold / ~18% hike / ~1% cut (Polymarket); CME: ~70% hold / ~30% hike
+- Market odds as of Jul 1: ~80% hold / ~19% hike / ~1% cut (Polymarket); CME: ~70% hold / ~30% hike
 - Core PCE May 2026: 3.4% YoY (released Jun 25) — above Fed's own 3.3% June forecast
 - GDP Q1 2026 FINAL: +2.1% (revised up from +1.6% 2nd estimate, released June 25)
 - Q2 2026 GDP advance estimate: due July 30, 2026 (corrected — NOT June 30; that was a prior memory error)
 - June CPI (July 14) and July 2 Jobs Report are next major data catalysts before the July 29 FOMC meeting
-- Polymarket odds trend: Jun 20 ~79%/19% → Jun 21 ~74%/25% → Jun 22 ~79%/21% → Jun 23 ~75%/25% → Jun 24 ~74%/25% → Jun 25 ~76%/24% → Jun 26 ~76%/24% → Jun 27 ~82%/18% → Jun 28 ~82%/18% → Jun 29 ~82%/16% → Jun 30 ~81%/18%
-- CME hike odds trend: Jun 22 ~28% → Jun 23 ~28% → Jun 24 ~35% → Jun 25 ~35% → Jun 26 ~37% → Jun 27 ~31% → Jun 28 ~31% → Jun 29 ~30% → Jun 30 ~30%
+- Polymarket odds trend: Jun 20 ~79%/19% → Jun 21 ~74%/25% → Jun 22 ~79%/21% → Jun 23 ~75%/25% → Jun 24 ~74%/25% → Jun 25 ~76%/24% → Jun 26 ~76%/24% → Jun 27 ~82%/18% → Jun 28 ~82%/18% → Jun 29 ~82%/16% → Jun 30 ~81%/18% → Jul 1 ~80%/19%
+- CME hike odds trend: Jun 22 ~28% → Jun 23 ~28% → Jun 24 ~35% → Jun 25 ~35% → Jun 26 ~37% → Jun 27 ~31% → Jun 28 ~31% → Jun 29 ~30% → Jun 30 ~30% → Jul 1 ~30%
 - CRITICAL NOTE: CME "30% hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — this is a HIKE, not a cut.
