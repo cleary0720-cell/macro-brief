@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 7, 2026
+Last updated: July 8, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -11,6 +11,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Vote breakdown: federalreserve.gov FOMC statement pages; search "FOMC [date] vote statement"
 - Dot plot / SEP: Seeking Alpha, TradingKey, CNBC post-decision summaries carry dot plot details
 - Post-decision analysis: sherwood.news, coinpedia.org, forexfactory.com, interactivecrypto.com
+- FOMC minutes content (same-day previews): techtimes.com, goldsilver.com, tradingview.com/news, beincrypto.com, interactivecrypto.com
 
 ## Known issues
 - Most aggregator sites that display CME FedWatch data (centralbank.watch, rateprobability.com, atlantafed.org, growbeansprout.com, morningstar.com, interactivecrypto.com, sofrrate.com) return HTTP 403 on WebFetch. Use WebSearch and read snippets.
@@ -31,9 +32,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - WebSearch can be intermittently unavailable (July 6, 2026 run: most searches failed; retries eventually succeeded). If searches keep failing, retry with broader queries or different phrasings.
 - July 6 experience: WebSearch was very unreliable at run time (9am ET Sunday). Multiple "web search error: unavailable" responses. Try at least 4-6 searches with different queries before giving up.
 - On Sundays: CME FedWatch won't have new data beyond Friday's close. EFFR for Friday won't be published until Monday morning. Polymarket is 24/7 and may shift slightly.
-- July 7 (Monday): EFFR data for July 3 is confirmed at 3.63% (published this morning per NY Fed schedule). WebSearch was reliable and quick on this run.
+- FOMC minutes preview articles (published before 2pm ET same day) will show "expected" content based on the already-known dot plot — actual new debate details only in post-release analysis. Don't present preview content as "minutes revealed" facts.
+- Blockchain.news article titles with Polymarket odds can be from any day — cross-check dates in context before using; July 4 article about "Bitcoin rally lifts hold to 88.5%" can appear in same search as July 8 articles.
 
 ## Run log
+
+### July 8, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 7 data confirmed published July 8 per NY Fed schedule)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026
+- Market odds for July (Jul 8, pre-FOMC-minutes):
+  - Polymarket: ~78% hold / ~21% hike / ~0% cut (shifted more hawkish from Jul 7's 84%/15%)
+  - Polymarket "hike in 2026": 49.5% (approaching 50/50)
+  - CME FedWatch: ~73.4% hold / ~26.6% hike (Jul 7 data; Jul 8 not confirmed pre-minutes)
+  - CME September hike: ~50–55% (per multiple search snippets)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 8, 2026
+  - Card 2 (Next FOMC): Updated market odds to Jul 8 figures (~78%/21% Polymarket); updated FOMC minutes note from "tomorrow July 8" to "today at 2pm ET"; added Polymarket 49.5% hike-in-2026 figure; added CME September ~50-55% hike odds
+  - Card 3 (Policy Stance): Updated Jul line to "~78% hold / ~21% hike (Jul 8, Polymarket); CME: ~73.4% hold / ~26.6% hike (Jul 7)"; updated Sep line to "CME: ~50–55% hike odds"; updated 2026 line to include "hike in 2026: 49.5% (Polymarket, Jul 8)"
+- Notes: Wednesday July 8. EFFR July 7 confirmed 3.63%. Polymarket moved more hawkish overnight (84% → 78%) ahead of FOMC minutes at 2pm ET today. CME September hike odds notable at 50–55%. Minutes are the major catalyst today; CPI June on July 14 is next. Rate unchanged so MEANS-FOR-YOU left untouched. JS countdown already set correctly to 2026-07-29T18:00:00Z.
 
 ### July 7, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -44,11 +63,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Polymarket: ~84% hold / ~15% hike / ~0% cut (significant dovish shift from Jul 6's 79.5%/19.4%)
   - CME FedWatch: ~73.4% hold / ~26.6% hike (slight hawkish shift from Jul 4-6's 75.6%/24.4%)
 - New FOMC row added: NO
-- Changes made:
-  - "Last updated" → July 7, 2026
-  - Card 2 (Next FOMC): Updated market odds to Jul 7 figures; Polymarket 79.5%/19.4% → 84%/15%; CME 75.6%/24.4% → 73.4%/26.6%; updated FOMC minutes note to "tomorrow (July 8)"
-  - Card 3 (Policy Stance): Updated Jul line to "~84% hold / ~15% hike (Jul 7, Polymarket); CME: ~73.4% hold / ~26.6% hike (Jul 7)"
-- Notes: Monday July 7. EFFR July 3 confirmed 3.63%. Polymarket moved significantly toward hold (84% vs 79.5% on Jul 6). CME moved slightly more hawkish. FOMC minutes tomorrow (July 8 at 2pm ET) is next major catalyst. Rate unchanged so MEANS-FOR-YOU left untouched.
 
 ### July 6, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -132,9 +146,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - No MEANS-FOR-YOU update needed unless rate actually changes (still 3.50-3.75%)
 - Next countdown target: 2026-07-29T18:00:00Z (already set correctly in JS)
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
-- EFFR daily: 3.63% (July 3 data confirmed published July 7); IORB: 3.65% (effective Jun 18)
-- Market odds as of Jul 7: ~84% hold / ~15% hike / ~0% cut (Polymarket); CME: ~73.4% hold / ~26.6% hike
-- Polymarket "zero cuts in 2026": 79.8% (unchanged from Jul 6)
+- EFFR daily: 3.63% (July 7 data confirmed published July 8); IORB: 3.65% (effective Jun 18)
+- Market odds as of Jul 8 (pre-minutes): ~78% hold / ~21% hike / ~0% cut (Polymarket); CME: ~73.4% hold / ~26.6% hike (Jul 7)
+- Polymarket "zero cuts in 2026": 79.8% (unchanged)
+- Polymarket "hike in 2026": 49.5% (approaching 50/50, up from lower levels pre-NFP)
+- CME September 2026 hike odds: ~50–55%
 - Core PCE May 2026: 3.4% YoY (released Jun 25) — above Fed's own 3.3% June forecast
 - GDP Q1 2026 FINAL: +2.1% (revised up from +1.6%, released June 25)
 - Q2 2026 GDP advance estimate: due July 30, 2026
@@ -142,11 +158,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - ADP June private payrolls: 98k (released Jul 1) — below 110k expected
 - June BLS Jobs Report (released Jul 2): +57,000 payrolls (vs. 115k expected — major miss); May revised down to 129k; 720,000 left labor force; participation rate fell to 61.5% (lowest since Mar 2021); unemployment 4.2%; avg hourly earnings +0.3% MoM ($37.64)
 - Supreme Court Cook ruling (Jun 29, 2026): Trump v. Cook, 5-4; Trump CANNOT fire Gov. Lisa Cook for now
-- FOMC minutes (June meeting) release: July 8, 2026 at 2pm ET — key catalyst before FOMC July 29
+- FOMC minutes (June meeting): released July 8, 2026 at 2pm ET — key catalyst (after this agent ran at 9am)
 - June CPI (July 14) is next major catalyst before July 29 FOMC
 - Warsh at ECB Forum (Jul 1): said inflation "too high," declined to hint at July rate decision
-- Treasury yields on Jul 7: 2Y=4.114%, 10Y=4.469%, 30Y=4.984% (little changed; investors await FOMC minutes)
-- Polymarket odds trend: Jul 3 ~89%/10% → Jul 4 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 6 ~79.5%/19.4% → Jul 7 ~84%/15%
-- CME hike odds trend: Jul 3 ~19% → Jul 4-6 ~24.4% → Jul 7 ~26.6%
+- Polymarket odds trend: Jul 3 ~89%/10% → Jul 4 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 6 ~79.5%/19.4% → Jul 7 ~84%/15% → Jul 8 ~78%/21%
+- CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 ~26.6% (unchanged pre-minutes)
 - CRITICAL NOTE: CME "26.6% hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — HIKE, not cut.
-- Next major catalysts: Jul 8 FOMC minutes (2pm ET), Jul 14 CPI, Jul 16 Retail Sales, Jul 29 FOMC, Jul 30 GDP Q2 advance
+- Next major catalysts: Jul 8 FOMC minutes (2pm ET TODAY — after agent run), Jul 14 CPI, Jul 16 Retail Sales, Jul 29 FOMC, Jul 30 GDP Q2 advance
+- RBNZ: hiked to 2.50% on/around July 8 (noted in blockchain.news headlines) — not directly relevant to Fed tracker but context for global rate environment
