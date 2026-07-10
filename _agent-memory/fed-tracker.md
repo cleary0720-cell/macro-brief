@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 9, 2026
+Last updated: July 10, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -36,6 +36,23 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Blockchain.news article titles with Polymarket odds can be from any day — cross-check dates in context before using.
 
 ## Run log
+
+### July 10, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (no change; July 9 data published July 10 per NY Fed schedule)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026 (decision July 29)
+- Market odds for July (Jul 10):
+  - Polymarket: ~84% hold / ~15% hike / <1% cut (significant dovish shift from yesterday's 73.5%/26.5%)
+  - CME FedWatch: ~70.1% hold / ~29.9% hike (Jul 8 close, most recent confirmed; CME trending toward ~78% hold)
+  - Polymarket "zero cuts in 2026": ~77% (unchanged from Jul 9)
+  - CME September hike: ~50–55% (unchanged)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 10, 2026
+  - Card 2 (Next FOMC): Updated market odds to Jul 10 Polymarket (~84%/~15%); noted hold odds surged ~10 points ahead of June CPI (Jul 14)
+  - Card 3 (Policy Stance): Updated Jul line to "Hold ~84% · Hike ~15% · Cut <1% (Jul 10, Polymarket)"; updated 2026 zero-cuts line to Jul 10 date
+- Notes: Friday July 10. Polymarket hold odds surged ~10pp from 73.5% (Jul 9, post-minutes) to ~84% today — pre-CPI caution; June CPI (July 14) is the next major catalyst before July 29 FOMC. CME lagging Polymarket's dovish shift (last confirmed: 70.1% hold Jul 8 close). EFFR still 3.63%. Rate unchanged so MEANS-FOR-YOU left untouched. JS countdown already set correctly to 2026-07-29T18:00:00Z.
 
 ### July 9, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -159,8 +176,8 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next countdown target: 2026-07-29T18:00:00Z (already set correctly in JS)
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (July 8 data expected published July 9 per NY Fed schedule)
-- Market odds as of Jul 9 (post-minutes): ~73.5% hold / ~26.5% hike / ~0% cut (Polymarket); CME: ~70.1% hold / ~29.9% hike (Jul 8 close)
-- Polymarket "zero cuts in 2026": ~77% (down from 79.8%, Jul 9)
+- Market odds as of Jul 10: ~84% hold / ~15% hike / <1% cut (Polymarket); CME: ~70.1% hold / ~29.9% hike (Jul 8 close, trending toward ~78% hold)
+- Polymarket "zero cuts in 2026": ~77% (stable, Jul 10)
 - CME September 2026 hike odds: ~50–55%
 - BofA post-minutes: called for 75bps of hikes in 2026 (three 25bps increases)
 - FOMC minutes (June meeting, Jul 8 release): Hawkish; committee split 9-8 on 2026 hike; inflation forecasts revised higher for 2026 and 2027; few policymakers saw eventual hike warranted if inflation persists
@@ -173,7 +190,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Supreme Court Cook ruling (Jun 29, 2026): Trump v. Cook, 5-4; Trump CANNOT fire Gov. Lisa Cook for now
 - June CPI (July 14) is next major catalyst before July 29 FOMC
 - Warsh at ECB Forum (Jul 1): said inflation "too high," declined to hint at July rate decision
-- Polymarket odds trend: Jul 3 ~89%/10% → Jul 4 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 6 ~79.5%/19.4% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes)
+- Polymarket odds trend: Jul 3 ~89%/10% → Jul 4 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 6 ~79.5%/19.4% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes) → Jul 10 ~84%/15% (dovish surge, pre-CPI)
 - CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 ~26.6% (pre-minutes) → Jul 8 close ~29.9% (post-minutes)
 - CRITICAL NOTE: CME "29.9% hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — HIKE, not cut.
 - Next major catalysts: Jul 14 CPI, Jul 16 Retail Sales, Jul 29 FOMC, Jul 30 GDP Q2 advance
