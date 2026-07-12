@@ -14,15 +14,16 @@
 11. Fixed Income / Bond Market Repricing — "The Yield Reckoning: How a Hawkish Fed Is Rewriting the Rules of the Bond Market" (2026-06-fixed-income-repricing.html) — Fixed Income
 12. Banking / Commercial Real Estate CRE Stress — "The $936 Billion Wall: How America's Commercial Real Estate Debt Crisis Is Rewriting Regional Banking" (2026-06-banking-cre-stress.html) — Banking
 13. Stagflation / June 2026 Jobs Shock — "The Stagflation Signal: Why America's Jobs Collapse Is an Inflation Problem, Not Just a Growth One" (2026-07-stagflation-warning.html) — Economic Output
+14. Equity Risk Premium / Stock Market Valuations — "The Vanishing Premium: America's Stock Market Is No Longer Rewarding Investors for Taking Risk" (2026-07-equity-risk-premium.html) — Financial Markets
 
 ## Last run
-- Date: July 5, 2026
-- Article: "The Stagflation Signal: Why America's Jobs Collapse Is an Inflation Problem, Not Just a Growth One"
-- Category: Economic Output (filter bucket: Economy)
-- Issue: Vol. I, No. 13
-- Filename: articles/2026-07-stagflation-warning.html
-- Thumbnail: fallback: cp 2026-05-labor-market-cooling-thumb.jpg 2026-07-stagflation-warning-thumb.jpg
-- Push: git push origin HEAD:main — SUCCESS (commit 24257f7)
+- Date: July 12, 2026
+- Article: "The Vanishing Premium: America's Stock Market Is No Longer Rewarding Investors for Taking Risk"
+- Category: Financial Markets (filter bucket: Markets & Money)
+- Issue: Vol. I, No. 14
+- Filename: articles/2026-07-equity-risk-premium.html
+- Thumbnail: fallback: cp 2026-05-debt-interest-crisis-thumb.jpg 2026-07-equity-risk-premium-thumb.jpg
+- Push: git push origin HEAD:main — SUCCESS (commit 7bf2226)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -42,40 +43,39 @@ Fallback mapping:
   Energy / Commodities / Oil → oil-thumb.jpg
   Technology Economy → 2026-06-ai-data-center-boom-thumb.jpg
   Economic Output / Stagflation → 2026-05-labor-market-cooling-thumb.jpg
+  Financial Markets → 2026-05-debt-interest-crisis-thumb.jpg
   Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
 
 ## Issue numbering
-Next article will be Vol. I, No. 14
+Next article will be Vol. I, No. 15
 
 ## Key data used in last article (do not re-report as new)
-- June 2026 nonfarm payrolls: +57,000 (consensus +115,000)
-- Unemployment rate: 4.2% (down from 4.3% — fell due to LFPR drop, not hiring)
-- Labor force participation: 61.5% (lowest since March 2021; excluding COVID = lowest since June 1976)
-- Labor force headcount: -720,000 in June
-- Household survey employment: -507,000 in June
-- Average hourly earnings: +0.3% MoM / +3.5% YoY (real wages = -0.7% vs 4.2% CPI)
-- April revision: 179K → 148K (-31,000)
-- May revision: 172K → 129K (-43,000)
-- Combined revision: -74,000
-- Leisure & hospitality: -61,000 (largest drag)
-- Healthcare: +22,000; Social assistance: +25,000; Prof. & business services: +36,000
-- 10Y Treasury yield: 4.49% (ROSE despite weak jobs — stagflation signal)
-- 2Y Treasury yield: 4.14% (fell ~2bps — near-term hike taken off table)
-- Fed funds: 3.50-3.75% (held at June 17 FOMC, 5th consecutive hold)
-- Dot plot median year-end: 3.8% (hike bias); rate cuts pushed to 2027-2028
+- S&P 500 at 7,482.71 (July 8, 2026), up 9.3% YTD
+- Forward P/E: ~20x (19.98x per StreetStats); Trailing P/E: 24.71x
+- Forward earnings yield: ~5.0%; Trailing earnings yield: ~4.05%
+- 10Y Treasury: 4.55%; 30Y Treasury: 5.05%
+- Equity Risk Premium (trailing measure): approx. -0.5% to -1.2% (negative)
+- Goldman Sachs FY2026 EPS estimate: $340/share (+24% YoY)
+- FactSet forward 12-month consensus: $374/share
+- AI spending = ~half of total S&P 500 earnings growth in 2026
+- Q2 2026 analyst earnings growth estimate: +19.1% YoY
+- FOMC July 29: 75% hold / 25% hike (CME FedWatch as of July 8-10)
+- DXY dollar index: 100.97 (July 10), +1.11% over past month
 
 ## Topic suggestions for future runs (not yet covered)
-- Financial Markets — S&P 500 valuations vs. rising rates, equity risk premium compression
-- Global Economy — China slowdown, EM capital flows, dollar strength / reserve diversification
+- Global Economy — China slowdown, EM capital flows, dollar strength / reserve diversification (DXY at 100.97, +3.18% YoY — compelling angle)
 - Consumer Economy — credit card delinquencies, BNPL growth (different angle from consumer spending article)
 - Fiscal Policy — 2026 budget deficit trajectory, debt ceiling dynamics (different angle from debt interest article)
-- Housing Market — June 2026 housing starts data (released July 17: prior starts 1,177K, -15.4% MoM)
+- Housing Market — June 2026 housing starts data (releasing July 17: prior starts 1,177K, -15.4% MoM)
 - Inflation — June 2026 CPI when released (July 14); prior: 4.2% headline / 2.9% core
+- Monetary Policy — Post-FOMC July 29 reaction (did they hike or hold?)
 
 ## Upcoming data to potentially anchor future articles
-- Jul 14: CPI June 2026 (BLS) — prior: 4.2% headline / 2.9% core
+- Jul 14: CPI June 2026 (BLS) — prior: 4.2% headline / 2.9% core (MOST CRITICAL)
 - Jul 15: PPI June 2026 (BLS) — prior: 6.5% YoY / core +0.8% MoM
 - Jul 16: Retail Sales June 2026 (Census) — prior: +0.9% MoM / +6.9% YoY
 - Jul 17: Housing Starts June 2026 (Census/HUD) — prior starts: 1,177K (-15.4% MoM, lowest since May 2020)
-- Jul 29: FOMC Decision (Fed, 3.50-3.75% current rate; 76% hold / 24% cut priced)
+- Jul 29: FOMC Decision (Fed, 3.50-3.75% current rate; 75% hold / 25% hike priced)
 - Jul 30: GDP Q2 2026 advance estimate (BEA) — prior: Q1 final +2.1%
+- Aug 1: ISM Manufacturing PMI July 2026 (ISM)
+- Aug 6: Jobs Report July 2026 (BLS)
