@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 17, 2026
+Last updated: July 18, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,26 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 18, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 17 confirmed — same as July 14–16; sofrrate.com and H.15 show 3.63%)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026 (decision July 29)
+- Market odds (July 18, Friday):
+  - Polymarket July 29: ~96% hold / ~4% hike (unchanged from Jul 17; no major catalyst)
+  - CME FedWatch July 29: ~88.8% hold / ~11.2% hike (Jul 17 close; unchanged)
+  - CME September 2026: ~49% combined hike odds (44% +25bps + 4.7% +50bps; confirmed from Jul 17)
+  - Polymarket "rate hike in 2026?": 51% YES — crossed 50% threshold (notable milestone)
+  - Polymarket "Fed rate hike by...?": October Meeting 46% > September Meeting 34% — market pricing October as MORE likely first-hike meeting than September
+  - Polymarket "zero cuts in 2026": ~82% (up from ~77% on Jul 10; significant increase)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 18, 2026
+  - Card 2: Updated market odds date (Jul 17 → Jul 18); added Polymarket "0 cuts in 2026" moving to ~82%; added October (46%) > September (34%) as first-hike timing context; added "rate hike in 2026" crossing 51%
+  - Card 3 (Rate Path): Updated Jul line date (Jul 17 → Jul 18); added Oct line noting 46% Polymarket first-hike odds; updated 2026 zero-cuts from ~77% (Jul 10) to ~82% (Jul 18)
+- Notes: Quiet Friday. No major data releases, no Fed speeches. Polymarket "rate hike in 2026" crossed 51% YES for the first time — a notable psychological milestone. October now priced as the more likely first-hike meeting (46%) vs September (34%), suggesting market is pushing back near-term action expectations. Zero cuts odds moved from ~77% (Jul 10) to ~82% (Jul 18) — a significant 5pp shift. CME data for July/September unchanged from Jul 17 close as no intraday catalyst. July 29 FOMC (11 days away) remains ~96% Polymarket hold. Next major catalysts: Jul 29 FOMC (decision at 2pm ET), Jul 30 GDP Q2 advance estimate.
+- Known issues this run: CME September search results returned stale pre-CPI data (50.6% + 19.6% = ~70.2% combined); relied on July 17 memory which confirmed ~49% combined post-CPI/PPI. Multiple CME aggregator sites still return 403. Polymarket "0 cuts in 2026" figure appears in both "79%" (hokanews.com article) and "82%" (live Polymarket query) — used 82% as more current.
 
 ### July 17, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -307,8 +327,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (July 14 CONFIRMED — rose back to 3.63% after dipping to 3.62% on July 9-13)
 - **June CPI (released July 14, 2026):** 3.5% YoY (vs 4.2% May, vs 3.8% expected); -0.4% MoM; core 2.6% YoY (vs 2.9% May); biggest monthly price decline in 6+ years; energy-led
-- Market odds as of Jul 17: Polymarket July: ~96% hold / ~4% hike; CME July: ~88.8% hold / ~11.2% hike
-- CME September 2026 hike odds: ~49% combined (25+ bps) as of Jul 17 (44% +25bps + 4.7% +50bps) — DOWN from ~70% on Jul 16 as post-CPI/PPI soft data fully digested
+- Market odds as of Jul 18: Polymarket July: ~96% hold / ~4% hike; CME July: ~88.8% hold / ~11.2% hike (unchanged from Jul 17)
+- CME September 2026 hike odds: ~49% combined (25+ bps) as of Jul 17 close (44% +25bps + 4.7% +50bps)
+- Polymarket "rate hike in 2026?": 51% YES as of Jul 18 (crossed 50% threshold)
+- Polymarket "Fed rate hike by...?": October (46%) > September (34%) as first-hike meeting
+- Polymarket "zero cuts in 2026": ~82% as of Jul 18 (up from ~77% on Jul 10)
 - June PPI (released Jul 15): -0.3% MoM; +5.5% YoY; core PPI (ex food, energy, trade): +0.1% MoM (down from +0.8% May); goods -1.4% MoM; services +0.2%
 - **June Retail Sales (released Jul 16, 2026):** CNBC/NRF Retail Monitor: +0.33% MoM, +9.41% YoY (total excl. autos & gas); core +0.36% MoM, +10.08% YoY; 9th consecutive month of growth; Census advance forecast was +0.2% MoM (official Census number not confirmed via search)
 - Polymarket "zero cuts in 2026": ~77% (last confirmed Jul 10)
@@ -322,9 +345,9 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - June BLS Jobs Report (released Jul 2): +57,000 payrolls (vs. 115k expected — major miss); unemployment 4.2%; participation rate fell to 61.5% (lowest since Mar 2021)
 - Supreme Court Cook ruling (Jun 29, 2026): Trump v. Cook, 5-4; Trump CANNOT fire Gov. Lisa Cook for now
 - Warsh at ECB Forum (Jul 1): said inflation "too high," declined to hint at July decision
-- Polymarket odds trend: Jul 3 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes) → Jul 10 ~84%/15% (dovish surge) → Jul 11 ~78%/22% (hawkish reversal) → Jul 12 ~78%/22% (unchanged) → Jul 13 ~79.5%/20.5% → Jul 14 pre-CPI ~65.5% (hawkish repositioning) → Jul 14 post-CPI: ~83% (collapsed hike) → Jul 15 post-PPI: ~93% hold / ~7% hike → Jul 16: ~95.25%/~4.75% → Jul 17: ~96%/~4%
-- CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 close ~29.9% → Jul 11 ~36.3% → Jul 11 close ~34.2% → Jul 13 ~34.2% → Jul 14 pre-CPI ~42% → Jul 14 post-CPI ~17% (MAJOR COLLAPSE) → Jul 15 post-PPI: ~12% → Jul 16: ~16.6% → Jul 17: ~11.2%
-- CME September hike odds trend: Jul 16: ~70% → Jul 17: ~49% (44% +25bps + 4.7% +50bps) — significant easing as post-CPI/PPI data absorbed
+- Polymarket odds trend: Jul 3 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes) → Jul 10 ~84%/15% (dovish surge) → Jul 11 ~78%/22% (hawkish reversal) → Jul 12 ~78%/22% (unchanged) → Jul 13 ~79.5%/20.5% → Jul 14 pre-CPI ~65.5% (hawkish repositioning) → Jul 14 post-CPI: ~83% (collapsed hike) → Jul 15 post-PPI: ~93% hold / ~7% hike → Jul 16: ~95.25%/~4.75% → Jul 17: ~96%/~4% → Jul 18: ~96%/~4% (unchanged)
+- CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 close ~29.9% → Jul 11 ~36.3% → Jul 11 close ~34.2% → Jul 13 ~34.2% → Jul 14 pre-CPI ~42% → Jul 14 post-CPI ~17% (MAJOR COLLAPSE) → Jul 15 post-PPI: ~12% → Jul 16: ~16.6% → Jul 17: ~11.2% → Jul 18: ~11.2% (unchanged)
+- CME September hike odds trend: Jul 16: ~70% → Jul 17: ~49% (44% +25bps + 4.7% +50bps) → Jul 18: ~49% (unchanged)
 - CRITICAL NOTE: CME "hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — HIKE, not cut.
 - Vice Chair Jefferson speech (Jul 16): "sufficiently restrictive" but hike possible if inflation stays sticky; discussed energy shock + AI effects
-- Next major catalysts: Jul 29 FOMC (hold ~96% Polymarket; ~88.8% CME), Jul 30 GDP Q2 advance estimate; Sep 15-16 FOMC (earliest live action point; ~49% combined hike CME as of Jul 17)
+- Next major catalysts: Jul 29 FOMC (hold ~96% Polymarket; ~88.8% CME; 11 days away), Jul 30 GDP Q2 advance estimate; Sep 15-16 FOMC (live action point ~49% CME; Oct 27-28 now markets' most-likely first-hike at 46% Polymarket)
