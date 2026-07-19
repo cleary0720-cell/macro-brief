@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-07-12
+Last updated: 2026-07-19
 
 ## Repository
 - Owner: cleary0720-cell
@@ -53,60 +53,69 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - Triggers on push to articles/**.html
 - Do NOT call Beehiiv API manually
 
-## Current macro context (July 12, 2026)
+## Current macro context (July 19, 2026)
 - Fed Funds: 3.50-3.75%, held June 17 (unanimous) under new Chair Kevin Warsh, 5th consecutive hold
 - Hawkish dot plot (June 17): 9/18 members project hike, year-end median 3.8%
 - GDP Q1 2026 FINAL: +2.1% (revised up from +1.6%, released June 25)
-- CPI May: 4.2% YoY; Core CPI 2.9%; Shelter 3.4%; Energy +23.5% — JUNE CPI DUE JULY 14
-- Core PCE May: 3.4% YoY (released June 25) — June data due late July
-- M2 May: 5.6% YoY (released June 23)
-- ISM PMI June: 53.3 (released July 1, down from 54.0; Prices Paid fell 9.1 pts; 6th expansion month)
-- Labor June: +57,000 jobs (very weak); unemployment 4.2%; participation 61.5% (lowest since March 2021)
-- Jobless claims 4-wk avg: 218,750 (~219k) for week ending July 4, released July 9
-- Consumer: May retail +6.9% YoY — JUNE DATA DUE JULY 16
-- Treasury yields (July 10): 3M=3.86%, 1Y=4.06%, 2Y=4.19%, 5Y=4.27%, 7Y=4.40%, 10Y=4.55%, 30Y=5.05%
-  - Interpolated: 1M≈3.73%, 6M≈3.96%, 20Y≈4.80%
-  - 2s10s spread: +36 bps; 3m10y: +69 bps; NORMAL curve; 30Y crossed 5.00%
-- FOMC July 29 (per CME FedWatch, ~July 8-10): 0% cut / 75% hold / 25% HIKE
-  - MAJOR SHIFT from last week: was 24% cut / 76% hold / 0% hike
-- Sentiment: 35/100 CAUTIOUS
+- CPI June: 3.5% YoY (DOWN from 4.2% in May, released July 14) — BIGGEST NEWS THIS WEEK
+  - Core CPI June: 2.6% (down from 2.9%); Shelter: 3.3%; Energy: +15.7% (down from 23.5%)
+- Core PCE May: 3.4% YoY (released June 25) — June data due late July (likely Jul 30)
+- M2 May: 5.6% YoY (released June 23) — June data due July 28
+- ISM PMI June: 53.3 (released July 1, sixth expansion month) — July data due August 3
+- Labor June: +57,000 jobs (very weak); unemployment 4.2%; participation 61.5%
+- Jobless claims 4-wk avg: 214,250 (~214k) for week ending July 11, released July 17 — CYCLE LOW
+- Consumer: June retail +6.7% YoY (released July 16, down from 6.9%)
+- Treasury yields (July 17): 3M=3.83%, 1Y≈4.05%, 2Y=4.18%, 5Y=4.28%, 10Y=4.55%, 30Y=5.09%
+  - Interpolated: 1M≈3.65%, 6M≈3.94%, 7Y≈4.39%, 20Y≈4.82%
+  - 2s10s spread: +37 bps; 3m10y: +72 bps; NORMAL curve; 30Y at 5.09%
+  - NOTE: Major intraweek spike July 13 (Iran oil fears → 46.5% hike odds) reversed fully by July 14-17
+- FOMC July 29 (per CME FedWatch, growbeansprout July 16): 0% cut / 90% hold / 10% HIKE
+  - Previous week: 0% cut / 75% hold / 25% HIKE
+  - June CPI (3.5% vs 3.9% expected) collapsed hike odds from 25% to 10%
+- Sentiment: 42/100 CAUTIOUS (up from 35)
 - Next FOMC: July 29, 2026 (no press conference)
-- Next key releases: Jul 14 (CPI June), Jul 15 (PPI June), Jul 16 (Retail Sales June), Jul 29 (FOMC), Jul 30 (GDP Q2 advance)
-- Edition: Vol. I, No. 11
+- Next key releases: Jul 28 (M2 H.6), Jul 29 (FOMC), Jul 30 (GDP Q2 advance, Core PCE June), Aug 3 (ISM PMI July), Aug 7 (Jobs Report July)
+- Edition: Vol. I, No. 12
 
 ## Data source strategy (confirmed July 2026)
 All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
-- CPI, unemployment, jobs, jobless claims: WebSearch → bls.gov data covered by cnbc.com, tradingeconomics.com
+- CPI, unemployment, jobs, jobless claims: WebSearch → bls.gov data covered by cnbc.com, tradingeconomics.com, usinflationcalculator.com
 - GDP, PCE: WebSearch → bea.gov data covered by advisorperspectives.com/dshort, indexbox.io
-- Retail Sales: WebSearch → nrf.com and advisorperspectives.com/dshort carry full Census data
+- Retail Sales: WebSearch → qz.com, etftrends.com and advisorperspectives.com/dshort carry full Census data
 - Fed Rate / FOMC: WebSearch → stocktitan.net, cnbc.com cover FOMC decisions fully
-- Treasury yields: WebSearch for "[Date] treasury yields" → primerates.com, seekingalpha.com, streetstats.finance
-  - 3M, 1Y, 2Y, 5Y, 7Y, 10Y, 30Y usually confirmed; 1M, 6M, 20Y need interpolation
-  - If 20Y = 30Y in search results, that's a data error — interpolate between 10Y and 30Y
+- Treasury yields: WebSearch for "[Date] treasury yields" → etftrends.com treasury snapshots, forbes.com treasury rates
+  - 3M, 2Y, 5Y, 10Y, 30Y usually confirmed; 1M, 6M, 7Y, 20Y need interpolation
+  - If any maturity shows implausible value (e.g. spike-day outlier), use prior day data or interpolate
+  - Always use Thursday/Friday close data, not Monday spike data
 - M2: WebSearch for "[Month] 2026 M2 year over year" → fxmacrodata.com, tradingeconomics.com
 - ISM PMI: WebSearch → prnewswire.com carries official ISM press releases verbatim
-- FOMC odds: WebSearch "CME FedWatch [meeting date] FOMC probability" → prefer CME-specific; check rateprobability.com too
-  - CRITICAL: Check every run, odds can flip dramatically without a data release
+- FOMC odds: WebSearch "CME FedWatch [meeting date] FOMC probability" → prefer CME-specific; growbeansprout.com most reliable
+  - CRITICAL: Check every run, odds can flip dramatically (e.g. 25% hike → 46.5% hike → 10% hike IN ONE WEEK this run)
+  - Multiple sources will conflict after major data releases — always note the date of the source
 
 ## Sparkline roll-forward rules
 - Monthly indicators (all except GDP): add new month at end, drop oldest, keep 12 entries
   - Only roll forward when NEW monthly data released since last update
-  - Jobless claims: rolls when we have a new calendar month's week ending data available
-    - Jul 12 run: rolled to Jul (added week ending July 4 data = 218,750; dropped Aug '25)
-    - Current oldest: Aug '25 (most indicators); Sep '25 for some
-  - CPI/unemployment: label by DATA month (e.g., June data released in July labeled "Jun")
+  - CPI/Core CPI: label by DATA month (e.g., June data released in July labeled "Jun")
   - 10Y Treasury: rolls monthly; use latest available month value; update in-place when still same month
-  - Retail Sales: labeled by RELEASE month (one month ahead of data). "Jul" = June retail data
+  - Retail Sales: labeled by RELEASE month (one month ahead of data). "Jul" = June retail data (released in July)
   - M2: roll when new month's H.6 released (typically ~3 weeks after month end)
+  - Jobless claims: update IN-PLACE when same calendar month (both July 4 and July 11 data → update Jul entry)
+    - Roll to new month only when new calendar month's data is available
 - GDP: quarterly, always 8 entries, roll only when BEA releases a genuinely new quarter
 - First entry in sparkline array: add year if in prior calendar year (e.g., "Aug '25")
-- Current oldest entry: Aug '25 for most indicators; Sep '25 for some
+- Current oldest entries after Jul 19 run:
+  - cpi: "Jul '25" (most recently rolled)
+  - retail: "Aug '25" (most recently rolled)
+  - unemployment: "Jul '25"
+  - jobless-claims: "Aug '25"
+  - treasury: "Aug '25"
+  - m2, core-pce, ism-pmi, fed-rate: "Jun '25" or similar
 
-## Upcoming releases (as of July 12, 2026)
-- Jul 14: CPI June 2026 (BLS) — MOST CRITICAL before FOMC
-- Jul 15: PPI June 2026 (BLS)
-- Jul 16: Retail Sales June 2026 (Census)
-- Jul 29: FOMC Decision (Fed, no press conference) — 75% hold / 25% hike
-- Jul 30: GDP Q2 2026 advance estimate (BEA)
-- Aug 1: ISM Manufacturing PMI July 2026 (ISM)
-- Aug 6: Jobs Report July 2026 (BLS)
+## Upcoming releases (as of July 19, 2026)
+- Jul 28: M2 H.6 release (June 2026 money supply)
+- Jul 29: FOMC Decision (Fed, no press conference) — 90% hold / 10% hike
+- Jul 30: GDP Q2 2026 advance estimate (BEA) + Core PCE June (BEA personal income)
+- Aug 3: ISM Manufacturing PMI July 2026 (ISM, Monday)
+- Aug 7: Jobs Report July 2026 (BLS, Friday) — critical for September FOMC
+- Aug 12: CPI July 2026 (BLS) — critical for September FOMC
