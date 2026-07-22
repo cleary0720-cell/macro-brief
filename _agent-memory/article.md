@@ -23,7 +23,7 @@
 - Category: Inflation (archive data-category="Inflation", matching the existing "Inflation" filter button)
 - Issue: Vol. I, No. 15
 - Filename: articles/2026-07-cpi-june-disinflation.html
-- Thumbnail: fallback: cp 2026-05-inflation-relapse-thumb.jpg 2026-07-cpi-june-disinflation-thumb.jpg
+- Thumbnail: replaced July 22, 2026 with fresh Pexels image (download_thumb.py now fixed)
 - Push: git push origin HEAD:main — SUCCESS (commit 6c18373)
 
 ## Push method (confirmed working)
@@ -31,21 +31,16 @@ git add [files] && git commit -m "message" && git push origin HEAD:main
 Do NOT use mcp__github__create_or_update_file for pushing — it fails on binary files and large HTML.
 
 ## Thumbnail
-download_thumb.py STILL has IndentationError on line 1 (leading whitespace on all lines) — do NOT call it.
-pexels-proxy.cleary0720.workers.dev remains unreachable — use cp fallback EVERY TIME.
-Fallback mapping:
-  Monetary Policy / Banking / Fixed Income / Debt → 2026-05-debt-interest-crisis-thumb.jpg
-  Inflation → 2026-05-inflation-relapse-thumb.jpg
-  Trade Policy / Tariffs → 2026-05-tariff-trade-deficit-thumb.jpg
-  Labor Markets → 2026-05-labor-market-cooling-thumb.jpg
-  Consumer Economy / Retail → 2026-05-consumer-spending-thumb.jpg
-  Housing Market → 2026-05-housing-lock-in-thumb.jpg
-  Money Supply / Fiscal Policy → 2026-05-money-supply-thumb.jpg
-  Energy / Commodities / Oil → oil-thumb.jpg
-  Technology Economy → 2026-06-ai-data-center-boom-thumb.jpg
-  Economic Output / Stagflation → 2026-05-labor-market-cooling-thumb.jpg
-  Financial Markets → 2026-05-debt-interest-crisis-thumb.jpg
-  Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
+download_thumb.py is FIXED (indentation error resolved July 22, 2026) — use it every time.
+pexels-proxy.cleary0720.workers.dev is WORKING — do NOT use the cp fallback.
+
+Usage: python3 download_thumb.py "<Category>" "<slug>" "<descriptive keyword phrase>"
+Example: python3 download_thumb.py "Inflation" "2026-08-cpi-july" "consumer prices grocery store shelves"
+
+Rules:
+- Always pass a specific, descriptive keyword phrase as arg 3 (not just the category name)
+- Use 3-5 words that describe the article's visual theme
+- The proxy returns a fresh random image each call — no duplicates
 
 ## Archive filter buckets (ACTUAL archive.html state — overrides instructions)
 The archive.html has MORE filter buttons than the instructions describe:
