@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://beehiiv-proxy.cleary0720.workers.dev https://www.google-analytics.com; frame-src https://challenges.cloudflare.com; font-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>The Macro Brief — Economic Intelligence</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -2598,52 +2601,7 @@
     });
     // ── END TREND CHARTS ────────────────────────────────
 
-    document.getElementById('nl-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const email     = document.getElementById('nl-email').value.trim();
-        const firstName = document.getElementById('nl-fname').value.trim();
-        const lastName  = document.getElementById('nl-lname').value.trim();
-        const btn       = document.getElementById('nl-btn');
-        const errEl     = document.getElementById('nl-error');
-
-        btn.textContent = 'Subscribing…';
-        btn.disabled    = true;
-        errEl.style.display = 'none';
-
-        try {
-            const body = {
-                email,
-                reactivate_existing: false,
-                send_welcome_email:  true
-            };
-            if (firstName) body.first_name = firstName;
-            if (lastName)  body.last_name  = lastName;
-
-            const res = await fetch(
-                'https://beehiiv-proxy.cleary0720.workers.dev',
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body)
-                }
-            );
-
-            if (!res.ok) {
-                const data = await res.json().catch(() => ({}));
-                throw new Error(data.message || `Request failed (${res.status})`);
-            }
-
-            this.style.display = 'none';
-            document.getElementById('nl-success').style.display = 'block';
-
-        } catch (err) {
-            btn.textContent = "Subscribe — It's Free →";
-            btn.disabled    = false;
-            errEl.textContent = '⚠ ' + (err.message || 'Something went wrong. Please try again.');
-            errEl.style.display = 'block';
-        }
-    });
+    /* nl-form handled by subscribe.js (Turnstile-protected) */
 </script>
 
 <!-- STICKY SUBSCRIBE BAR -->
@@ -2666,42 +2624,7 @@
     </div>
 </div>
 
-<script>
-(function() {
-    if (localStorage.getItem('bar-dismissed')) return;
-    var shown = false;
-    window.addEventListener('scroll', function() {
-        if (shown) return;
-        if (window.scrollY > 400) {
-            document.getElementById('sticky-bar').style.display = 'block';
-            shown = true;
-        }
-    });
-})();
-
-function dismissBar() {
-    document.getElementById('sticky-bar').style.display = 'none';
-    localStorage.setItem('bar-dismissed', '1');
-}
-
-function stickySubmit(e) {
-    e.preventDefault();
-    var email = document.getElementById('sticky-email').value;
-    fetch('https://beehiiv-proxy.cleary0720.workers.dev', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email: email, utm_source: 'sticky-bar'})
-    }).then(function() {
-        document.getElementById('sticky-form').style.display = 'none';
-        document.getElementById('sticky-success').style.display = 'block';
-        setTimeout(dismissBar, 3000);
-    }).catch(function() {
-        document.getElementById('sticky-form').style.display = 'none';
-        document.getElementById('sticky-success').style.display = 'block';
-        setTimeout(dismissBar, 3000);
-    });
-}
-</script>
+<!-- Sticky bar logic (dismissBar, stickySubmit, scroll show) handled by subscribe.js -->
 
 
 <script>

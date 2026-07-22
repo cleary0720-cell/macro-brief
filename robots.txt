@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /_agent-memory/
+Disallow: /article-template.html
+Disallow: /download_thumb.py
+
+Sitemap: https://themacrobrief.net/sitemap.xml

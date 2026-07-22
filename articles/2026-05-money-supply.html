@@ -674,6 +674,8 @@
             <li><a href="../index.html">Dashboard</a></li>
             <li><a href="../archive.html">Archive</a></li>
             <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+            <li><a href="../economic-calendar.html">Calendar</a></li>
             <li><a href="../about.html">About</a></li>
         </ul>
     </div>
@@ -940,7 +942,6 @@
 <script>
 (function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
 function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
-function stickySubmit(e){e.preventDefault();var email=document.getElementById("sticky-email").value;fetch("https://beehiiv-proxy.cleary0720.workers.dev",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,utm_source:"sticky-bar"})}).then(function(){localStorage.setItem("tmb-subscribed","1");document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);}).catch(function(){document.getElementById("sticky-form").style.display="none";document.getElementById("sticky-success").style.display="block";setTimeout(dismissBar,3000);});}
 </script>
 
 <script>
@@ -961,6 +962,6 @@ function toggleMobileNav() {
 }
 </script>
 
-<script src="subscribe.js"></script>
+<script src="../subscribe.js"></script>
 </body>
 </html>

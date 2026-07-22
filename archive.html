@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://beehiiv-proxy.cleary0720.workers.dev https://www.google-analytics.com; frame-src https://challenges.cloudflare.com; font-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Archive — The Macro Brief</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
@@ -26,6 +29,7 @@
             --rule:       #C8C0AA;
             --red:        #B22222;
             --red-bright: #C41E3A;
+            --amber:      #f59e0b;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -565,7 +569,7 @@
 <!-- EDITION BAR -->
 <div class="edition-bar">
     <div class="container">
-        <span class="ed-item">BY CONNOR LEARY · 2025</span>
+        <span class="ed-item">BY CONNOR LEARY · 2026</span>
         <span class="ed-center">✦ &nbsp; ALL EDITIONS &nbsp; ✦</span>
         <span class="ed-item">VOL. I · UNITED STATES</span>
     </div>
@@ -731,7 +735,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-06-ai-data-center-boom.html">
+        <a class="article-card" href="articles/2026-06-ai-data-center-boom.html" data-category="economy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-06-ai-data-center-boom-thumb.jpg" alt="AI Data Center Boom"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -742,7 +746,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-money-supply.html">
+        <a class="article-card" href="articles/2026-05-money-supply.html" data-category="markets">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-money-supply-thumb.jpg" alt="Money Supply"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -753,7 +757,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-consumer-spending.html">
+        <a class="article-card" href="articles/2026-05-consumer-spending.html" data-category="economy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-consumer-spending-thumb.jpg" alt="Consumer Spending"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -764,7 +768,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-debt-interest-crisis.html">
+        <a class="article-card" href="articles/2026-05-debt-interest-crisis.html" data-category="policy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-debt-interest-crisis-thumb.jpg" alt="Debt Interest Crisis"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -775,7 +779,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-labor-market-cooling.html">
+        <a class="article-card" href="articles/2026-05-labor-market-cooling.html" data-category="labor">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-labor-market-cooling-thumb.jpg" alt="Labor Market Cooling"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -786,7 +790,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-housing-lock-in.html">
+        <a class="article-card" href="articles/2026-05-housing-lock-in.html" data-category="economy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-housing-lock-in-thumb.jpg" alt="Housing Lock-In"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -797,7 +801,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-inflation-relapse.html">
+        <a class="article-card" href="articles/2026-05-inflation-relapse.html" data-category="inflation">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-inflation-relapse-thumb.jpg" alt="Inflation Relapse"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -808,7 +812,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2026-05-tariff-trade-deficit.html">
+        <a class="article-card" href="articles/2026-05-tariff-trade-deficit.html" data-category="policy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2026-05-tariff-trade-deficit-thumb.jpg" alt="Tariff Trade Deficit"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -819,7 +823,7 @@
             </div>
         </a>
 
-        <a class="article-card" href="articles/2025-04-oil-prices.html">
+        <a class="article-card" href="articles/2025-04-oil-prices.html" data-category="energy">
             <div class="card-thumb"><img class="card-thumb-img" src="images/2025-04-oil-prices-thumb.jpg" alt="Oil barrels"></div>
             <div class="card-cat-stripe"></div>
             <div class="card-body">
@@ -844,7 +848,7 @@
                 <div class="footer-meta">
                     Published by Connor Leary<br>
                     cleary0720@gmail.com<br>
-                    Volume I · 2025 · All rights reserved
+                    Volume I · 2026 · All rights reserved
                 </div>
             </div>
             <div class="footer-links">
@@ -860,7 +864,7 @@
 
 <script>
     // Count live (non-placeholder) articles and update the counter
-    const cards = document.querySelectorAll('.article-card:not(.placeholder)');
+    const cards = document.querySelectorAll('#article-grid .article-card:not(.placeholder)');
     const count = cards.length;
     document.getElementById('article-count').textContent =
         count === 0 ? '0 EDITIONS PUBLISHED' :
@@ -887,7 +891,8 @@
             var title = (card.querySelector('.card-title') || {}).textContent || '';
             var cat = (card.querySelector('.card-category') || {}).textContent || '';
             var matchSearch = !searchQuery || title.toLowerCase().includes(searchQuery);
-            var matchFilter = activeFilter === 'all' || cat.toLowerCase().includes(activeFilter);
+            var catKey = (card.dataset.category || cat).toLowerCase();
+            var matchFilter = activeFilter === 'all' || catKey.includes(activeFilter);
             if (matchSearch && matchFilter) {
                 card.style.display = '';
                 visible++;

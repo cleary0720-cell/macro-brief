@@ -1,4 +1,4 @@
-import subprocess, os, json, urllib.request, urllib.parse, base64, re, smtplib, random, shutil
+import subprocess, os, json, urllib.request, urllib.parse, base64, re, smtplib, random, shutil, html
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
@@ -24,20 +24,21 @@ article_url = f"https://themacrobrief.net/{article_path}"
 print(f"Article: {article_path}")
 
 with open(article_path) as f:
-    html = f.read()
+    raw_html = f.read()
 
-headline_m = re.search(r'class="article-hed"[^>]*>([^<]+)<', html)
-subhead_m  = re.search(r'class="article-subhead">(.+?)</p>', html, re.DOTALL)
-category_m = re.search(r'class="article-category"[^>]*>([^<]+)<', html)
-paras = re.findall(r'<p>(?!.*class=)(.+?)</p>', html, re.DOTALL)
+headline_m = re.search(r'class="article-hed"[^>]*>([^<]+)<', raw_html)
+subhead_m  = re.search(r'class="article-subhead">(.+?)</p>', raw_html, re.DOTALL)
+category_m = re.search(r'class="article-category"[^>]*>([^<]+)<', raw_html)
+paras = re.findall(r'<p>(?!.*class=)(.+?)</p>', raw_html, re.DOTALL)
 
-headline = headline_m.group(1).strip() if headline_m else commit_msg.replace("Add article: ", "")
-subhead  = subhead_m.group(1).strip() if subhead_m else ""
-category = category_m.group(1).strip() if category_m else "Macro"
+# Escape all user-derived content before injecting into email HTML
+headline = html.escape(headline_m.group(1).strip() if headline_m else commit_msg.replace("Add article: ", ""))
+subhead  = html.escape(subhead_m.group(1).strip() if subhead_m else "")
+category = html.escape(category_m.group(1).strip() if category_m else "Macro")
 date_str = datetime.now().strftime("%B %d, %Y")
 
 BODY_HTML = "".join([
-    f'<p style="font-size:15px;line-height:1.8;color:#333;margin:0 0 16px;">{p.strip()[:500]}</p>'
+    f'<p style="font-size:15px;line-height:1.8;color:#333;margin:0 0 16px;">{html.escape(p.strip()[:500])}</p>'
     for p in paras[:3] if len(p.strip()) > 20
 ])
 
@@ -94,18 +95,29 @@ if PEXELS_KEY and os.path.exists(thumb_path):
         print(f"Pexels thumbnail fix failed: {e} — keeping existing thumbnail")
 
 # --- Send newsletter ---
+# Secret is stored base64-encoded in GH Secrets — do not remove the decode step without updating the secret value
 BEEHIIV_KEY = base64.b64decode(os.environ["BEEHIIV_KEY"]).decode()
+# TODO: move this to a GitHub Actions secret (BEEHIIV_PUB_ID)
 PUB_ID = "pub_7c236eb8-9009-4da1-bf40-903fee0558bf"
 
-req = urllib.request.Request(
-    f"https://api.beehiiv.com/v2/publications/{PUB_ID}/subscriptions?limit=100&status=active",
-    headers={"Authorization": f"Bearer {BEEHIIV_KEY}"}
-)
-with urllib.request.urlopen(req) as r:
-    data = json.loads(r.read())
+# Fetch all subscribers with pagination (Beehiiv returns max 100 per page)
+subscribers = []
+page = 1
+limit = 100
+while True:
+    req = urllib.request.Request(
+        f"https://api.beehiiv.com/v2/publications/{PUB_ID}/subscriptions?limit={limit}&page={page}&status=active",
+        headers={"Authorization": f"Bearer {BEEHIIV_KEY}"}
+    )
+    with urllib.request.urlopen(req) as r:
+        data = json.loads(r.read())
+    batch = [s["email"] for s in data.get("data", [])
+             if s.get("email") and s["email"] != "test@example.com"]
+    subscribers.extend(batch)
+    if len(batch) < limit:
+        break
+    page += 1
 
-subscribers = [s["email"] for s in data.get("data", [])
-    if s.get("email") and s["email"] != "test@example.com"]
 print(f"Sending to {len(subscribers)} subscribers")
 
 email_html = (
@@ -133,6 +145,7 @@ email_html = (
 GMAIL_USER = "macrobriefnews@gmail.com"
 GMAIL_PASS = os.environ["GMAIL_PASS"]
 
+sent_count = 0
 with smtplib.SMTP("smtp.gmail.com", 587) as server:
     server.ehlo()
     server.starttls()
@@ -142,8 +155,10 @@ with smtplib.SMTP("smtp.gmail.com", 587) as server:
         msg["Subject"] = headline
         msg["From"]    = f"The Macro Brief <{GMAIL_USER}>"
         msg["To"]      = email
+        msg["List-Unsubscribe"] = f"<mailto:{GMAIL_USER}?subject=unsubscribe>"
+        msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
         msg.attach(MIMEText(email_html, "html"))
         server.send_message(msg)
-        print(f"Sent to {email}")
+        sent_count += 1
 
-print("Newsletter sent successfully.")
+print(f"Newsletter sent to {sent_count} subscribers.")
