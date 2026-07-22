@@ -34,7 +34,7 @@
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { background: var(--cream); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { background: var(--cream); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
         /* TICKER */
@@ -95,7 +95,7 @@
         .countdown-unit { text-align: center; }
         .countdown-num { font-family: 'Courier New', monospace; font-size: 28px; font-weight: 700; color: var(--red-bright); line-height: 1; display: block; }
         .countdown-lbl { font-family: 'Courier New', monospace; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-light); }
-        .hero-note { font-family: 'Courier New', monospace; font-size: 9.5px; color: var(--ink-light); line-height: 1.6; margin-top: 14px; }
+        .hero-note { font-family: 'Courier New', monospace; font-size: 9.5px; color: var(--ink-light); line-height: 1.6; margin-top: 14px; overflow-wrap: break-word; word-break: break-word; }
 
         /* SECTION HEADER */
         .section-hd { display: flex; align-items: center; gap: 14px; margin: 44px 0 24px; }
@@ -183,6 +183,8 @@
                 font-size: 11px !important;
                 letter-spacing: 0.14em !important;
             }
+            .info-bar .container { flex-wrap: wrap; }
+            .info-bar .container span:not(:first-child) { display: none; }
         }
     </style>
 </head>
@@ -339,6 +341,7 @@
     </div>
 
     <!-- FOMC-HISTORY-START -->
+    <div style="overflow-x:auto;">
     <table class="history-table">
         <thead>
             <tr>
@@ -415,6 +418,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
     <!-- FOMC-HISTORY-END -->
 
     <!-- RATE CHART -->
@@ -528,7 +532,7 @@
             <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
         </div>
         <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
-            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:12px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;width:220px;">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:16px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;min-width:0;flex:1;">
             <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
         </form>
         <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">&#10003; You're subscribed!</div>
@@ -593,7 +597,18 @@ updateDailyCountdown();
 <script>
 function toggleMobileNav() {
     var nl = document.querySelector('.nav-links');
-    if (nl) nl.classList.toggle('open');
+    if (!nl) return;
+    var isOpen = nl.classList.toggle('open');
+    if (isOpen) {
+        setTimeout(function() {
+            document.addEventListener('click', function handler(e) {
+                if (!e.target.closest('.site-nav')) {
+                    nl.classList.remove('open');
+                    document.removeEventListener('click', handler);
+                }
+            });
+        }, 0);
+    }
 }
 </script>
 
