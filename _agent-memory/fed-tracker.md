@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 23, 2026
+Last updated: July 24, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 24, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 22 EFFR confirmed; July 23 not yet published at 9am ET run time)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026 (decision July 29) — 5 DAYS AWAY
+- Fed blackout period: July 18 through July 30 — no speeches
+- Market odds (July 24):
+  - Polymarket July 29: ~74% hold / ~25% hike (down sharply from ~85%/~15% on Jul 23; ~11pp hawkish swing)
+  - CME FedWatch July 29: ~63.5% hold / ~36.5% hike (Jul 23 close; was ~83.4%/~16.6% on Jul 21 close)
+  - Polymarket "rate hike in 2026?": ~67% YES (unchanged from Jul 23; conflicting search data; keeping Jul 23 figure)
+  - Polymarket "zero cuts in 2026": ~84-85% (blockchain.news: 84.45%; essentially unchanged)
+  - CME September 2026: ~49% combined hike (44% +25bps + 4.7% +50bps; unchanged from Jul 17–18)
+  - Polymarket "Fed rate hike by...?": October 46% > September 34% (unchanged)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 24, 2026
+  - Card 2 (Next FOMC): Updated market odds date (Jul 23 → Jul 24); Polymarket ~85%/~15% → ~74%/~25%; CME ~83.4%/~16.6% (Jul 22 close) → ~63.5%/~36.5% (Jul 23 close); replaced UK CPI narrative with Iran/Strait of Hormuz escalation context; noted Motley Fool Jul 24 "tripled over last week" article
+  - Card 3 (Rate Path): Updated Jul line to "Hold ~74% · Hike ~25% · Cut <1% (Jul 24, Polymarket); CME: ~63.5%/~36.5% (Jul 23 close) — Iran Hormuz"; updated Oct line date to Jul 24
+- Notes: MAJOR hawkish repricing on July 24. Iran's IRGC Navy reaffirmed Strait of Hormuz closure "until further notice" (since July 11-12, ongoing; new escalation/peace talk breakdown July 22-23), spiking oil prices and inflation fears. Polymarket July 29 hold dropped from ~85% to ~74% (11pp); CME July 29 hike nearly tripled from Jul 15's 10.7% to ~36.5% by Jul 23 (Motley Fool July 24 confirmed "tripled over last week"). A 46.5% CME hike figure appeared in search results (same as July 13 Iran spike) but could not be confirmed as July 24 data vs historical reference; used confirmed Jul 23 close (~36.5%). EFFR: 3.63% stable (Jul 22 confirmed; Jul 23 publishes later today). No rate change → MEANS-FOR-YOU left untouched. JS countdown: 2026-07-29T18:00:00Z (already correct).
+- IMPORTANT NOTE: CME FedWatch goes from Jul 21 close (~16.6% hike) to Jul 22 close (~34.7% hike) to Jul 23 close (~36.5% hike). The memory's "Jul 22 CME: ~83.4% hold / ~16.6% hike" was actually the Jul 21 CLOSE published at start of Jul 22. Iran escalation hit Jul 22 trading — CME closed Jul 22 at ~34.7% hike (not ~16.6%).
 
 ### July 23, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -426,12 +447,13 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (July 14 CONFIRMED — rose back to 3.63% after dipping to 3.62% on July 9-13)
 - **June CPI (released July 14, 2026):** 3.5% YoY (vs 4.2% May, vs 3.8% expected); -0.4% MoM; core 2.6% YoY (vs 2.9% May); biggest monthly price decline in 6+ years; energy-led
-- Market odds as of Jul 23: Polymarket July: ~85% hold / ~15% hike; CME July: ~83.4% hold / ~16.6% hike (Jul 22 close)
+- Market odds as of Jul 24: Polymarket July: ~74% hold / ~25% hike; CME July: ~63.5% hold / ~36.5% hike (Jul 23 close)
 - CME September 2026 hike odds: ~49% combined (25+ bps) as of Jul 17–18 close (44% +25bps + 4.7% +50bps)
-- Polymarket "rate hike in 2026?": ~67% YES as of Jul 23 (up from ~64% Jul 22)
+- Polymarket "rate hike in 2026?": ~67% YES as of Jul 23-24 (conflicting data on Jul 24; keeping Jul 23 figure)
 - Polymarket "Fed rate hike by...?": October (46%) > September (34%) as first-hike meeting
-- Polymarket "zero cuts in 2026": ~85% as of Jul 23 (up from ~82% Jul 18)
-- FOMC countdown in JS: 2026-07-29T18:00:00Z (FIXED Jul 23 — was wrong at Sep 16; update to Sep 16 after Jul 29 FOMC)
+- Polymarket "zero cuts in 2026": ~84-85% as of Jul 24 (blockchain.news: 84.45%)
+- FOMC countdown in JS: 2026-07-29T18:00:00Z (correctly set; update to Sep 16 after Jul 29 FOMC)
+- KEY IRAN CONTEXT: Strait of Hormuz has been closed since Jul 11-12, 2026. IRGC reaffirmed closure "until further notice" Jul 22-23. This is now the primary market catalyst (eclipsing June CPI). Peace talks broke down. Oil prices spiking, driving fresh inflation/hike fears. Polymarket July hold fell from ~95% (Jul 17) → ~82% (Jul 22) → ~85% (Jul 23) → ~74% (Jul 24). CME July hike: 10.7% (Jul 15) → 34.7% (Jul 22 close) → 36.5% (Jul 23 close). Monitor: Strait of Hormuz situation could move odds dramatically up or down in either direction.
 - June PPI (released Jul 15): -0.3% MoM; +5.5% YoY; core PPI (ex food, energy, trade): +0.1% MoM (down from +0.8% May); goods -1.4% MoM; services +0.2%
 - **June Retail Sales (released Jul 16, 2026):** CNBC/NRF Retail Monitor: +0.33% MoM, +9.41% YoY (total excl. autos & gas); core +0.36% MoM, +10.08% YoY; 9th consecutive month of growth; Census advance forecast was +0.2% MoM (official Census number not confirmed via search)
 - Polymarket "zero cuts in 2026": ~77% (last confirmed Jul 10)
@@ -445,8 +467,8 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - June BLS Jobs Report (released Jul 2): +57,000 payrolls (vs. 115k expected — major miss); unemployment 4.2%; participation rate fell to 61.5% (lowest since Mar 2021)
 - Supreme Court Cook ruling (Jun 29, 2026): Trump v. Cook, 5-4; Trump CANNOT fire Gov. Lisa Cook for now
 - Warsh at ECB Forum (Jul 1): said inflation "too high," declined to hint at July decision
-- Polymarket odds trend: Jul 3 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes) → Jul 10 ~84%/15% (dovish surge) → Jul 11 ~78%/22% (hawkish reversal) → Jul 12 ~78%/22% (unchanged) → Jul 13 ~79.5%/20.5% → Jul 14 pre-CPI ~65.5% (hawkish repositioning) → Jul 14 post-CPI: ~83% (collapsed hike) → Jul 15 post-PPI: ~93% hold / ~7% hike → Jul 16: ~95.25%/~4.75% → Jul 17: ~96%/~4% → Jul 18: ~96%/~4% (unchanged) → Jul 19: ~95%/~5% (slight hawkish drift) → Jul 20: ~95.25%/~4.75% (slight dovish recovery; Sunday) → Jul 21: ~95%/~5% (essentially unchanged; quiet Monday) → Jul 22: ~82%/~18% (significant hawkish repricing; ~13pp drop in hold odds; pre-FOMC week positioning; "hike in 2026?" jumped to ~64%) → Jul 23: ~85%/~15% (dovish recovery ~3.5pp; UK CPI catalyst; "hike in 2026?" rose to ~67%; zero cuts 2026 to ~85%)
-- CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 close ~29.9% → Jul 11 ~36.3% → Jul 11 close ~34.2% → Jul 13 ~34.2% → Jul 14 pre-CPI ~42% → Jul 14 post-CPI ~17% (MAJOR COLLAPSE) → Jul 15 post-PPI: ~12% → Jul 16: ~16.6% → Jul 17: ~11.2% → Jul 18: ~11.2% (unchanged) → Jul 19: ~13.3% (Sun; CME reflects Fri close) → Jul 21 close: ~16.6% (published Jul 22; CME July hike odds rose from 13.3% to 16.6%)
+- Polymarket odds trend: Jul 3 ~89%/10% → Jul 5 ~80.5%/17.5% → Jul 7 ~84%/15% → Jul 8 ~78%/21% → Jul 9 ~73.5%/26.5% (post-minutes) → Jul 10 ~84%/15% (dovish surge) → Jul 11 ~78%/22% (hawkish reversal) → Jul 12 ~78%/22% (unchanged) → Jul 13 ~79.5%/20.5% → Jul 14 pre-CPI ~65.5% (hawkish repositioning) → Jul 14 post-CPI: ~83% (collapsed hike) → Jul 15 post-PPI: ~93% hold / ~7% hike → Jul 16: ~95.25%/~4.75% → Jul 17: ~96%/~4% → Jul 18: ~96%/~4% (unchanged) → Jul 19: ~95%/~5% (slight hawkish drift) → Jul 20: ~95.25%/~4.75% (slight dovish recovery; Sunday) → Jul 21: ~95%/~5% (essentially unchanged; quiet Monday) → Jul 22: ~82%/~18% (significant hawkish repricing; ~13pp drop in hold odds; Iran Strait of Hormuz closure escalation; "hike in 2026?" jumped to ~64%) → Jul 23: ~85%/~15% (dovish recovery ~3.5pp; UK CPI catalyst; "hike in 2026?" rose to ~67%; zero cuts 2026 to ~85%) → Jul 24: ~74%/~25% (significant hawkish repricing; Iran/Hormuz peace talks breakdown; Motley Fool: "July hike probability tripled over last week")
+- CME hike odds trend: Jul 3 ~30% → Jul 4-6 ~24.4% → Jul 7 ~26.6% → Jul 8 close ~29.9% → Jul 11 ~36.3% → Jul 11 close ~34.2% → Jul 13 ~34.2% → Jul 14 pre-CPI ~42% → Jul 14 post-CPI ~17% (MAJOR COLLAPSE) → Jul 15 post-PPI: ~12% → Jul 16: ~16.6% → Jul 17: ~11.2% → Jul 18: ~11.2% (unchanged) → Jul 19: ~13.3% (Sun; CME reflects Fri close) → Jul 21 close: ~16.6% (published Jul 22) → Jul 22 close: ~34.7% (Iran Hormuz escalation hit during Jul 22 trading — MAJOR MOVE) → Jul 23 close: ~36.5% (continued hawkish drift)
 - CME September hike odds trend: Jul 16: ~70% → Jul 17: ~49% (44% +25bps + 4.7% +50bps) → Jul 18–19: ~49% (unchanged)
 - CRITICAL NOTE: CME "hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — HIKE, not cut.
 - Vice Chair Jefferson speech (Jul 16): "sufficiently restrictive" but hike possible if inflation stays sticky; discussed energy shock + AI effects
