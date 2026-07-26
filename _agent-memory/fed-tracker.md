@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 25, 2026
+Last updated: July 26, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,28 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 26, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 23 EFFR confirmed; July 24 EFFR publishes Monday July 28)
+- FOMC meeting: No new meeting — last was June 16–17 (Hold, 12-0)
+- Next meeting: July 28–29, 2026 (decision July 29) — 3 DAYS AWAY (Saturday run)
+- Fed blackout period: July 18 through July 30 — no speeches
+- Market odds (July 26):
+  - Polymarket July 29: ~73.75% hold / ~24.65% hike (~74%/~25% rounded; $88.07M volume; essentially unchanged from Jul 25)
+  - CME FedWatch July 29: ~62.1% hold / ~38% hike (Jul 25 close est.; last confirmed Jul 24 at ~37.9%; no weekend CME update)
+  - Polymarket "rate hike in 2026?": ~67% YES (unchanged from Jul 23-25; no new data)
+  - Polymarket "zero cuts in 2026": ~84-85% (unchanged; no new data)
+  - CME September 2026: ~49% combined hike (44% +25bps + 4.7% +50bps; last confirmed Jul 17–18; unchanged)
+  - Polymarket "Fed rate hike by...?": October 46% > September 34% (unchanged)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → July 26, 2026
+  - Card 2 (Next FOMC): Updated market odds date (Jul 25 → Jul 26); Polymarket ~74%/~25% (essentially unchanged); CME updated to "Jul 25 close est." (~38%)
+  - Card 3 (Rate Path): Updated Jul line date to Jul 26; "Rate hike in 2026?" date updated to Jul 26; CME updated to Jul 25 close est.
+- Notes: Saturday July 26. FOMC decision in 3 days (July 29). Polymarket essentially unchanged at ~73.75%/~24.65% (rounds to ~74%/~25%). CME July 25 close not specifically confirmed — used July 24 confirmed (37.9%) as estimate. Iran/Strait of Hormuz: still ongoing; US-Iran strikes continuing; oil near $89/barrel (slipped from ~$90 peak week of Jul 22). Fed blackout in effect — no speeches before July 29. EFFR: 3.63% stable (July 23 confirmed; July 24 EFFR not yet published). No rate change → MEANS-FOR-YOU left untouched. JS countdown: 2026-07-29T18:00:00Z (correctly set).
+- IMPORTANT: Polymarket July 29 volume confirmed at $88.07M (up from $81.3M on Jul 23 blockchain.news article). Use volume to determine data recency — higher volume = more recent.
+- CRITICAL REMINDER: After July 29 FOMC decision — update countdown JS to 2026-09-16T18:00:00Z; add July 29 row to FOMC history table; update market odds accordingly.
 
 ### July 25, 2026
 - Target range: 3.50% – 3.75% (no change)
@@ -468,7 +490,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
 - EFFR daily: 3.63% (July 14 CONFIRMED — rose back to 3.63% after dipping to 3.62% on July 9-13)
 - **June CPI (released July 14, 2026):** 3.5% YoY (vs 4.2% May, vs 3.8% expected); -0.4% MoM; core 2.6% YoY (vs 2.9% May); biggest monthly price decline in 6+ years; energy-led
-- Market odds as of Jul 25: Polymarket July: ~74% hold / ~25% hike (unchanged); CME July: ~62.1% hold / ~37.9% hike (Jul 24 close)
+- Market odds as of Jul 26: Polymarket July: ~73.75% hold / ~24.65% hike (~74%/~25% rounded; $88.07M volume; unchanged from Jul 25); CME July: ~62.1% hold / ~38% hike (Jul 25 close est.; last confirmed Jul 24 at ~37.9%)
 - CME September 2026 hike odds: ~49% combined (25+ bps) as of Jul 17–18 close (44% +25bps + 4.7% +50bps)
 - Polymarket "rate hike in 2026?": ~67% YES as of Jul 23-24 (conflicting data on Jul 24; keeping Jul 23 figure)
 - Polymarket "Fed rate hike by...?": October (46%) > September (34%) as first-hike meeting
