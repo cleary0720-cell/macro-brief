@@ -16,80 +16,67 @@
 13. Stagflation / June 2026 Jobs Shock — "The Stagflation Signal: Why America's Jobs Collapse Is an Inflation Problem, Not Just a Growth One" (2026-07-stagflation-warning.html) — Economic Output
 14. Equity Risk Premium / Stock Market Valuations — "The Vanishing Premium: America's Stock Market Is No Longer Rewarding Investors for Taking Risk" (2026-07-equity-risk-premium.html) — Financial Markets
 15. June 2026 CPI Disinflation / Rate Pivot Case — "The Price Reversal: Inside June's Historic CPI Drop and the Question It Left Unanswered" (2026-07-cpi-june-disinflation.html) — Inflation
+16. Iran Strait of Hormuz Oil Shock / Fed Rate Hike Repricing — "The Hormuz Premium: Iran's Oil Shock and the Rate Hike the Market Wasn't Expecting" (2026-07-hormuz-oil-fed.html) — Energy & Commodities
 
 ## Last run
-- Date: July 19, 2026
-- Article: "The Price Reversal: Inside June's Historic CPI Drop and the Question It Left Unanswered"
-- Category: Inflation (archive data-category="Inflation", matching the existing "Inflation" filter button)
-- Issue: Vol. I, No. 15
-- Filename: articles/2026-07-cpi-june-disinflation.html
-- Thumbnail: replaced July 22, 2026 with fresh Pexels image (download_thumb.py now fixed)
-- Push: git push origin HEAD:main — SUCCESS (commit 6c18373)
+- Date: July 26, 2026
+- Article: "The Hormuz Premium: Iran's Oil Shock and the Rate Hike the Market Wasn't Expecting"
+- Category: Energy & Commodities (archive data-category="Energy", matching the "energy" filter button)
+- Issue: Vol. I, No. 16
+- Filename: articles/2026-07-hormuz-oil-fed.html
+- Thumbnail: fallback cp oil-thumb.jpg → 2026-07-hormuz-oil-fed-thumb.jpg (pexels-proxy returned 403)
+- Push: git push origin HEAD:main — SUCCESS (commit c60eb47)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
 Do NOT use mcp__github__create_or_update_file for pushing — it fails on binary files and large HTML.
 
 ## Thumbnail
-download_thumb.py is FIXED (indentation error resolved July 22, 2026) — use it every time.
-pexels-proxy.cleary0720.workers.dev is WORKING — do NOT use the cp fallback.
-
-Usage: python3 download_thumb.py "<Category>" "<slug>" "<descriptive keyword phrase>"
-Example: python3 download_thumb.py "Inflation" "2026-08-cpi-july" "consumer prices grocery store shelves"
-
-Rules:
-- Always pass a specific, descriptive keyword phrase as arg 3 (not just the category name)
-- Use 3-5 words that describe the article's visual theme
-- The proxy returns a fresh random image each call — no duplicates
+download_thumb.py returned 403 (Tunnel connection failed) on July 26 — pexels-proxy may be intermittently blocked.
+If download_thumb.py fails: use the cp fallback from the category mapping immediately.
+Fallback mapping:
+- Energy / Commodities / Oil → oil-thumb.jpg
+- Monetary Policy / Banking / Fixed Income / Debt → 2026-05-debt-interest-crisis-thumb.jpg
+- Inflation → 2026-05-inflation-relapse-thumb.jpg
+- Trade Policy / Tariffs → 2026-05-tariff-trade-deficit-thumb.jpg
+- Labor Markets → 2026-05-labor-market-cooling-thumb.jpg
+- Consumer Economy / Retail → 2026-05-consumer-spending-thumb.jpg
+- Housing Market → 2026-05-housing-lock-in-thumb.jpg
+- Money Supply / Fiscal Policy → 2026-05-money-supply-thumb.jpg
+- Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
 
 ## Archive filter buckets (ACTUAL archive.html state — overrides instructions)
-The archive.html has MORE filter buttons than the instructions describe:
-  All, Policy, Economy, Markets & Money, Inflation, Labor, Energy
-Use data-category matching the actual filter buttons:
-  Monetary Policy / Fiscal Policy / Trade Policy → "Policy"
-  Labor Markets / Housing / Consumer / Economic Output / Global / Technology → "Economy"
-  Fixed Income / Money Supply / Financial Markets / Banking → "Markets & Money"
-  Inflation → "Inflation"
-  Labor Markets (alt) → "Labor" (either "Economy" or "Labor" — "Economy" is safer)
-  Energy & Commodities → "Energy"
+The archive.html filter script lowercases data-category before matching data-filter.
+Use data-category matching the filter buttons (case-insensitive in practice):
+  Monetary Policy / Fiscal Policy / Trade Policy → data-category="Policy" / data-filter="policy"
+  Labor Markets / Housing / Consumer / Economic Output / Global / Technology → data-category="Economy" / data-filter="economy"
+  Fixed Income / Money Supply / Financial Markets / Banking → data-category="Markets & Money" / data-filter="markets"
+  Inflation → data-category="Inflation" / data-filter="inflation"
+  Labor Markets (alt) → data-category="Labor" / data-filter="labor"
+  Energy & Commodities → data-category="Energy" / data-filter="energy"
 
 ## Issue numbering
-Next article will be Vol. I, No. 16
+Next article will be Vol. I, No. 17
 
 ## Key data used in last article (do not re-report as new)
-- CPI June 2026: -0.4% MoM (largest monthly decline since April 2020), +3.5% YoY (vs 3.8% consensus)
-- Core CPI June: 0.0% MoM (vs +0.2% expected), +2.6% YoY (from 2.9%)
-- Energy MoM: -5.7%; Gasoline MoM: -9.7%; Energy YoY: +15.7%
-- Shelter MoM: +0.1% (smallest since Jan 2021); YoY: +3.3%
-- Supercore services MoM: 0.0% (from +0.5% in May); YoY: +3.1% (from +3.7%)
-- Food YoY: +3.0%; Food at home YoY: +2.7%
-- PPI June: -0.3% MoM (vs 0.0% expected), +5.5% YoY (vs +6.2% expected); Goods -1.4% MoM
-- CME FedWatch July 29: 90% hold / 10% hike (collapsed from 25% hike / 42% intraweek peak)
-- Fed Chair Warsh: "Mission accomplished? Not my view." Gov. Waller: "several months needed"
-- Core PCE May 2026: +3.4% YoY (June data due July 30)
-- Housing Starts June: +1,427K SAAR (+19% MoM), mostly multifamily; single-family flat; permits -3.0%
-- Michigan Sentiment July prelim: 54.4 (beat 51.0 estimate)
-- Atlanta Fed GDPNow Q2 2026: ~1.7% annualized (prior Q1 final: +2.1%)
-- 2Y Treasury reaction to CPI: fell 7 bps to 4.185% on July 14
-
-## FOMC July 29 — CORRECTION
-The FOMC July 29 meeting DOES have a press conference (Chair Warsh, 2:30 PM ET).
-There is NO Summary of Economic Projections (dot plot) at this meeting.
-Prior site.md said "no press conference" — this was incorrect.
+- Iran Strait of Hormuz re-escalation: mid-July 2026 (US airstrikes, Houthi attacks on Saudi tankers)
+- WTI: closed week at $90.46/barrel (+10% weekly surge)
+- Brent: briefly hit $100, settled ~$97/barrel (fell 4% Friday on peace-talk reports)
+- 10-year Treasury yield: 4.71% on July 23 (highest since January 2025)
+- CME FedWatch FOMC July 29 hike probability: ~10% on July 15 → ~38% by July 24 (near-tripling)
+- Jobless claims (week ending July 18, released July 23): 187,000 — lowest since September 1969
+- June payrolls: +57,000 / unemployment: 4.2%
+- Core PCE May: 3.4% YoY
+- Core CPI June: 2.6% YoY
+- Governor Waller July 13: "If we get another hot reading on core inflation, the FOMC will need to consider tightening monetary policy in the near term"
 
 ## Topic suggestions for future runs (not yet covered)
+- Post-FOMC July 29 reaction (what did Warsh signal about September? Hold or hike?)
+- GDP Q2 2026 advance result (due July 30, GDPNow tracking ~1.7%)
+- Core PCE June 2026 (due July 30, prior May: +3.4% YoY)
+- July 2026 Jobs Report (due Aug 7, prior June: +57K / 4.2% unemployment)
+- CPI July 2026 (due Aug 12, prior June: -0.4% MoM / +3.5% YoY — oil will push headline higher)
 - Global Economy — China slowdown, EM capital flows, dollar strength (DXY ~100-101 range)
 - Consumer Economy — credit card delinquency surge, BNPL growth (distinct from consumer spending article)
 - Fiscal Policy — 2026 budget deficit trajectory post-"One Big Beautiful Bill," debt ceiling dynamics
 - Housing Market — housing starts rebound (+19% MoM in June, but all multifamily; single-family flat, permits declining)
-- Post-FOMC July 29 reaction (what did Warsh signal about September?)
-- GDP Q2 2026 advance result (due July 30, GDPNow tracking ~1.7%)
-- Core PCE June 2026 (due July 30, prior May: +3.4% YoY)
-- July 2026 Jobs Report (due Aug 7, prior June: +57K / 4.2% unemployment)
-
-## Upcoming data to anchor future articles
-- Jul 29: FOMC Decision + Warsh press conference (3.50-3.75% current; 90% hold / 10% hike)
-- Jul 30: GDP Q2 2026 advance (GDPNow ~1.7%) + Core PCE June (prior +3.4% YoY)
-- Aug 3: ISM Manufacturing PMI July (prior 53.3)
-- Aug 7: Jobs Report July (prior +57K / 4.2% unemployment)
-- Aug 12: CPI July 2026 (prior -0.4% MoM / +3.5% YoY)
