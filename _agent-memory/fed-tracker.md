@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 28, 2026
+Last updated: July 29, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,35 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 29, 2026
+- Target range: 3.50% – 3.75% (no change — FOMC decision at 2pm ET today, not yet announced)
+- Effective rate: 3.63% (July 28 EFFR published today per NY Fed schedule; stable at 3.63%)
+- FOMC meeting: **DECISION DAY** — July 28–29 meeting concludes today at 2pm ET
+- Next meeting (after today): September 15–16, 2026 (SEP/dot plot meeting)
+- Fed blackout period: July 18 through July 30 — no speeches
+- Market odds (July 29 morning):
+  - Polymarket July 29: ~73% hold / ~27% hike (stable from Jul 28; $140M+ volume on Polymarket+Kalshi; held steady overnight)
+  - CME FedWatch July 29: ~64% hold / ~36% hike (Jul 29 morning; edged slightly more hawkish from Monday's ~67%/~33%)
+  - Polymarket "rate hike in 2026?": ~67% YES (unchanged from Jul 23-24)
+  - Polymarket "zero cuts in 2026": ~85% (unchanged)
+  - Polymarket "Fed rate hike by...?": October 46% > September 34% (unchanged)
+  - CME September: repricing lower from ~82% combined hike peak (Jul 22-25) as Iran ceasefire holds (Day 4); pre-Iran base ~49%
+- New FOMC row added: NO (decision at 2pm ET today — will be added tomorrow if hold, or immediately by next run)
+- Changes made:
+  - "Last updated" → July 29, 2026
+  - Card 2 (Next FOMC): Updated market odds date (Jul 28 → Jul 29 morning); CME ~67%/~33% → ~64%/~36%; Polymarket unchanged at ~73%/~27%; updated decision language from "FOMC meeting is underway today (Jul 28); decision tomorrow" → "FOMC decision is TODAY at 2:00pm ET. Press conference at 2:30pm ET."; updated Iran ceasefire Day 3 → Day 4; updated CME Monday-open narrative to include Tuesday morning edging; removed "decision tomorrow" text
+  - Card 3 (Rate Path): Updated Jul line date (Jul 28 → Jul 29); CME ~67%/~33% → ~64%/~36%; "FOMC meeting underway; decision Jul 29" → "FOMC decision today 2pm ET"; Iran ceasefire Day 3 → Day 4; Oct line date (Jul 28 → Jul 29)
+- Notes: **FOMC DECISION DAY.** 9am ET pre-decision run. Meeting started Jul 28; decision at 2pm ET today (Jul 29). CME edged slightly more hawkish overnight from ~67%/~33% to ~64%/~36% — pre-decision positioning. Polymarket held stable at ~73%/~27% overnight ($140M+ combined volume). Iran ceasefire now in Day 4 (Jul 26-29; Oman still mediating). Brent still near ~$86/bbl. July 29 is NOT a SEP/dot plot meeting — only statement + implementation note will be released. No MEANS-FOR-YOU update (rate unchanged). JS countdown correctly at 2026-07-29T18:00:00Z.
+- **CRITICAL NOTE for NEXT RUN (July 30, 2026):**
+  - **FOMC decision announced at 2pm ET today** — by July 30 morning, outcome will be known
+  - If HOLD (most likely ~73% Polymarket): Add new row to FOMC history table (Jul 29, 2026 | Hold | 3.50%-3.75% | vote TBD); update JS countdown to 2026-09-16T18:00:00Z; update Card 2 to show September as next meeting; remove all "decision today/tomorrow" language
+  - If HIKE to 3.75-4.00%: Add new row (Jul 29, 2026 | Hike +25bps | 3.75%-4.00%); update Card 1 rate to 3.75%, range to 3.75-4.00%, badge to "Hike"; update MEANS-FOR-YOU section; update JS countdown to 2026-09-16T18:00:00Z; update effective rate once confirmed
+  - Press conference at 2:30pm ET today — search for Warsh quotes and vote breakdown
+  - July 30 also: GDP Q2 2026 advance estimate (BEA) + Core PCE June — major data day
+  - After today's decision: search "Federal Reserve July 29 2026 FOMC statement vote" for confirmed details
+  - CME source for tomorrow: IndexBox, federalnewsnetwork.com, indexbox.io carried today's pre-decision CME odds well
+  - Confirmed July 29 morning CME source: indexbox.io article "Fed Interest Rate Decision July 29: Hold or Hike? Market Expectations and Investor Advice" — cited CME Group directly as 64%/36%
 
 ### July 28, 2026
 - Target range: 3.50% – 3.75% (no change)
