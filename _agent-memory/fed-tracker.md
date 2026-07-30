@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 29, 2026
+Last updated: July 30, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,46 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 30, 2026
+- Target range: 3.50% – 3.75% (no change — July 29 decision confirmed HOLD)
+- Effective rate: 3.63% (July 27 EFFR confirmed; July 28/29 EFFR not yet published at 9am ET run time; stable)
+- FOMC decision (July 29, 2026): **HOLD 9-3** — most hawkish vote since September 2016
+  - Dissenters: Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), Lorie Logan (Dallas) — all wanted +25bps hike
+  - Unanimous hold majority: 9 voted to hold
+  - Statement: "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East."
+  - Short statement, no forward guidance (Warsh style)
+  - Warsh press conference: "We will take necessary steps to meet our 2% inflation goal."
+  - Non-SEP meeting — no new dot plot released
+  - Most officials now expect year-end 2026 rate of 3.6–4.1% (up from prior 3.25–3.75%)
+  - First 3-dissent vote since September 2016 (per U.S. News, CNBC, Bloomberg, Forbes)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting)
+- Market odds (July 30 morning):
+  - CME FedWatch September: ~81% hike probability / ~19% hold / 0% cut (surged from ~49% pre-decision; southeastagnet.com July 30 article confirmed "high odds September rate hike")
+  - Polymarket September: ~53–70% hike (conflicting sources; KuCoin "53%" vs defirate "70%"; use range until confirmed)
+  - Polymarket "Rate hike in 2026?": ~78% YES (up from ~67% pre-decision)
+  - Polymarket October: ~74% hike odds
+- Key data released today (July 30):
+  - Q2 2026 GDP advance estimate: +1.5% annualized (BEA; down from +2.1% Q1; consumer spending accelerated, government spending declined)
+  - Core PCE June 2026: data expected released today — not yet confirmed via search
+- New FOMC row added: YES — Jul 29, 2026 | Hold | 3.50%–3.75% | 9–3 (Hammack, Kashkari, Logan dissented for hike)
+- JS countdown updated: 2026-07-29T18:00:00Z → 2026-09-16T18:00:00Z
+- Changes made:
+  - "Last updated" → July 30, 2026
+  - Card 1: Added July 29 decision note (Hold 9-3, dissenters, statement quote, year-end projection 3.6-4.1%); added Q2 GDP +1.5% note
+  - Card 2: Updated meeting date from July 28-29 to Sep 15-16; replaced all pre-decision language with post-decision recap; added CME ~81% September hike; Polymarket ~53-70% September; "rate hike in 2026?" ~78%; Q2 GDP +1.5%
+  - Card 3: Updated policy stance note to reflect July 29 9-3 hold; updated rate path table (Jul: HELD 9-3; Sep: CME ~81% hike; Oct: Polymarket ~74%; 2026 rate hike ~78%)
+  - FOMC history table: Added new first row for Jul 29, 2026
+  - JS countdown: Updated to 2026-09-16T18:00:00Z
+- Notes: MAJOR UPDATE DAY. July 29 FOMC decision confirmed HOLD 9-3 — first 3-dissent vote since Sep 2016. Rate unchanged at 3.50-3.75%. September now live with CME at ~81% hike (surged from ~49%). Q2 GDP +1.5% released today (July 30) — growth slowed from Q1. MEANS-FOR-YOU left untouched (rate unchanged). Iran ceasefire appears to have ended or deteriorated — oil prices rebounding — but no clean current price confirmed via search. September meeting is a SEP/dot plot meeting — expect new projections.
+- CRITICAL NOTE for NEXT RUN (July 31+):
+  - EFFR for July 28/29/30 will publish on the next business day at 9am ET
+  - CME September odds: ~81% hike as of July 30 — will shift with Core PCE June (released July 30), oil/Iran developments
+  - Core PCE June 2026 was released today but not confirmed via search — search "core PCE June 2026" next run
+  - September FOMC (Sep 15-16) is a SEP meeting — dot plot will be released
+  - Next countdown target already set to 2026-09-16T18:00:00Z ✓
+  - FOMC history row for Jul 29 added ✓
+  - Key CME data source for post-decision: southeastagnet.com confirmed July 30 "CME FedWatch signals high odds September rate hike"
 
 ### July 29, 2026
 - Target range: 3.50% – 3.75% (no change — FOMC decision at 2pm ET today, not yet announced)
@@ -559,17 +599,19 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Statement format is now very short (~130 words) with no forward guidance
 - Easing bias REMOVED as of June 17, 2026
 - Dot plot signals one hike in H2 2026: 9 of 18 participants see at least one hike; median 2026 year-end at 3.8%
+- July 29, 2026 FOMC: HOLD 9-3 confirmed. Three dissenters (Hammack, Kashkari, Logan) wanted +25bps hike. Most hawkish vote since Sep 2016. Non-SEP meeting.
+- Most officials now project year-end 2026 rate of 3.6–4.1% (up from 3.25-3.75%)
 - No MEANS-FOR-YOU update needed unless rate actually changes (still 3.50-3.75%)
-- Next countdown target: 2026-07-29T18:00:00Z (already set correctly in JS)
-- Next FOMC row to add: July 29, 2026 (expect Hold or first Hike to 3.75-4.00%)
-- EFFR daily: 3.63% (July 14 CONFIRMED — rose back to 3.63% after dipping to 3.62% on July 9-13)
+- Next countdown target: 2026-09-16T18:00:00Z (already set correctly in JS as of Jul 30 run)
+- Next FOMC row to add: September 16, 2026 (SEP meeting — expect dot plot update)
+- EFFR daily: 3.63% (July 27 confirmed; stable)
 - **June CPI (released July 14, 2026):** 3.5% YoY (vs 4.2% May, vs 3.8% expected); -0.4% MoM; core 2.6% YoY (vs 2.9% May); biggest monthly price decline in 6+ years; energy-led
 - Market odds as of Jul 28: Polymarket July: ~73% hold / ~27% hike (slight hawkish tick; pre-decision positioning; $140M+ combined Polymarket+Kalshi volume); CME July: ~67% hold / ~33% hike (Jul 28 morning; repriced from ~65.7%/~34.3% on Jul 27 and ~61.3%/~38.7% on Jul 25)
 - CME September 2026 hike odds: surged to ~82% combined during Iran escalation peak (Jul 22-25); now repricing lower as Iran ceasefire holds (Day 3 as of Jul 28) and Brent crude retreats; pre-Iran confirmed base was ~49% (Jul 17-18)
 - Polymarket "rate hike in 2026?": ~67% YES as of Jul 23-24 (conflicting data on Jul 24; keeping Jul 23 figure)
 - Polymarket "Fed rate hike by...?": October (46%) > September (34%) as first-hike meeting
 - Polymarket "zero cuts in 2026": ~84-85% as of Jul 24 (blockchain.news: 84.45%)
-- FOMC countdown in JS: 2026-07-29T18:00:00Z (correctly set; update to Sep 16 after Jul 29 FOMC)
+- FOMC countdown in JS: 2026-09-16T18:00:00Z (updated Jul 30; correctly set for September 16 meeting)
 - KEY IRAN CONTEXT: Strait of Hormuz has been closed since Jul 11-12, 2026. IRGC reaffirmed closure "until further notice" Jul 22-23. Jul 26-28: US AND IRAN HOLDING FIRE FOR 3RD CONSECUTIVE DAY; Oman mediating; Brent crude fell from $100+ to ~$97 (Sun Jul 27) then further to ~$86 (Mon Jul 28, down ~10%). CME repriced from 38.7% hike (Jul 25) → 34.3% (Jul 27) → ~33% (Jul 28 morning). Polymarket July hold: ~95% (Jul 17) → ~74% (Jul 24-26) → ~78% (Jul 27) → ~73% (Jul 28; counter-intuitive hawkish tick on pre-decision positioning despite continued ceasefire). FOMC meets TOMORROW (Jul 29) — ceasefire status at decision time is key; if talks collapse overnight: expect hawkish reprice back toward 40%+ hike. If ceasefire holds through decision: expect hold outcome (73% Polymarket consensus).
 - June PPI (released Jul 15): -0.3% MoM; +5.5% YoY; core PPI (ex food, energy, trade): +0.1% MoM (down from +0.8% May); goods -1.4% MoM; services +0.2%
 - **June Retail Sales (released Jul 16, 2026):** CNBC/NRF Retail Monitor: +0.33% MoM, +9.41% YoY (total excl. autos & gas); core +0.36% MoM, +10.08% YoY; 9th consecutive month of growth; Census advance forecast was +0.2% MoM (official Census number not confirmed via search)
@@ -589,6 +631,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME September hike odds trend: Jul 16: ~70% → Jul 17: ~49% (44% +25bps + 4.7% +50bps) → Jul 18–19: ~49% (unchanged)
 - CRITICAL NOTE: CME "hike" = probability of rate moving to 3.75-4.00% (UP from 3.50-3.75%) — HIKE, not cut.
 - Vice Chair Jefferson speech (Jul 16): "sufficiently restrictive" but hike possible if inflation stays sticky; discussed energy shock + AI effects
-- Next major catalysts: Jul 29 FOMC DECISION (hold ~73% Polymarket; ~67% CME Jul 28 morning; MEETING UNDERWAY TODAY; decision 2pm ET Jul 29), Jul 30 GDP Q2 advance estimate + Core PCE June; Sep 15-16 FOMC
+- Next major catalysts: Core PCE June 2026 (released Jul 30 — not yet confirmed via search; search next run), ISM Manufacturing PMI July (Aug 3), Jobs Report July (Aug 7), CPI July (Aug 12), Sep 15-16 FOMC (SEP meeting)
 - Oil prices July 28: Brent ~$86/bbl (down ~10% on Monday from ~$97 Sunday; WTI ~$75-80 est.); Iran ceasefire Day 3
-- CRITICAL REMINDER: After July 29 FOMC decision — update countdown JS to 2026-09-16T18:00:00Z; add July 29 row to FOMC history table; update rate if changed; update MEANS-FOR-YOU if rate changed; REMOVE "FOMC meeting underway today" language from Card 2
+- DONE: July 29 FOMC hold confirmed; countdown updated to Sep 16; July 29 row added to history table; MEANS-FOR-YOU unchanged (rate held)
+- NEXT: September 15-16 FOMC is a SEP meeting — will include new dot plot and inflation/GDP projections
