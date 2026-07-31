@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 30, 2026
+Last updated: July 31, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,33 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### July 31, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 29, 2026 EFFR confirmed 3.63% — published July 31 per NY Fed schedule; stable)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting)
+- Core PCE June 2026 (released Jul 30): 3.3% YoY (down from 3.4% May); monthly +0.1% (vs +0.2% expected). Slightly cooler than expected but still elevated; four consecutive months at or above 3.3%.
+- Q2 2026 GDP advance estimate (released Jul 30): +1.5% annualized (confirmed from yesterday)
+- CME September hike: ~81% (post-decision level maintained; PCE came in slightly soft but oil rebound keeping pressure elevated)
+- Polymarket September: ~53–70% hike (KuCoin confirmed ~53%; defirate 70%; use range)
+- Polymarket "rate hike in 2026?": ~78% YES (Jul 30 figure; $6.05M volume trading on market as of Jul 31 search — no confirmed percentage update)
+- Polymarket "zero cuts in 2026": ~85% (Jul 30 confirmed)
+- Iran/oil update: CEASEFIRE ENDED — Trump declared it "over"; Brent crude rebounded to ~$92.27/bbl at 6:45am ET Jul 31 (up from ~$86 on Jul 28). This is a major development keeping energy inflation pressure elevated ahead of September FOMC.
+- New FOMC row added: NO (next is September 16, 2026)
+- JS countdown: 2026-09-16T18:00:00Z (correct — no change)
+- Changes made:
+  - "Last updated" → July 31, 2026
+  - Card 1: Added Core PCE June 2026 (3.3% YoY, +0.1% MoM) at end of hero-note
+  - Card 2: Added Core PCE June 2026 note after GDP; added Iran ceasefire ended note (Brent ~$92/bbl)
+  - Card 3: Added Core PCE note + Iran ceasefire/oil rebound to hero-note; updated Sep rate path line (removed "Jul 30 morning" ref, added Iran ceasefire context)
+- Notes: Quiet update day after major July 30 data day. Core PCE June confirmed at 3.3% (slightly cool vs 3.4% prior but still elevated). KEY DEVELOPMENT: Iran ceasefire appears to have ended — Brent rebounded to $92.27/bbl from $86 (Jul 28). This reverses some of the geopolitical de-escalation that had pushed oil down. September FOMC still a live hike meeting at ~81% CME. Next major catalysts: ISM Manufacturing PMI July (Aug 3), Jobs Report July (Aug 7), CPI July (Aug 12), Sep 15-16 FOMC (SEP meeting).
+- CRITICAL NOTE for NEXT RUN (Aug 1+):
+  - EFFR for July 30-31 will publish on next business day (Monday Aug 3 will have Fri Jul 31 EFFR)
+  - Core PCE June 2026 = 3.3% YoY confirmed — track how this affects September hike narrative
+  - Iran ceasefire ended — monitor oil prices closely; if Brent surges back toward $95-100, September hike odds may rise further
+  - CME September: ~81% — will reprice based on Jobs Report (Aug 7) and CPI July (Aug 12)
+  - Next countdown: Sep 16, 2026 at 18:00 UTC (correctly set)
+  - FOMC history: No new row until Sep 16 decision
 
 ### July 30, 2026
 - Target range: 3.50% – 3.75% (no change — July 29 decision confirmed HOLD)
@@ -604,8 +631,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - No MEANS-FOR-YOU update needed unless rate actually changes (still 3.50-3.75%)
 - Next countdown target: 2026-09-16T18:00:00Z (already set correctly in JS as of Jul 30 run)
 - Next FOMC row to add: September 16, 2026 (SEP meeting — expect dot plot update)
-- EFFR daily: 3.63% (July 27 confirmed; stable)
+- EFFR daily: 3.63% (July 29 confirmed; published July 31; stable)
 - **June CPI (released July 14, 2026):** 3.5% YoY (vs 4.2% May, vs 3.8% expected); -0.4% MoM; core 2.6% YoY (vs 2.9% May); biggest monthly price decline in 6+ years; energy-led
+- **Core PCE June 2026 (released July 30, 2026):** 3.3% YoY (down from 3.4% May); monthly +0.1% (vs +0.2% expected). Four consecutive months at or above 3.3%. Slightly cooler than expected but well above 2% target.
+- **Iran ceasefire update (July 31, 2026):** Ceasefire ended — Trump declared "over." Brent crude rebounded to ~$92.27/bbl at 6:45am ET Jul 31 (up from ~$86 on Jul 28). Energy inflation pressure remains elevated ahead of September FOMC.
 - Market odds as of Jul 28: Polymarket July: ~73% hold / ~27% hike (slight hawkish tick; pre-decision positioning; $140M+ combined Polymarket+Kalshi volume); CME July: ~67% hold / ~33% hike (Jul 28 morning; repriced from ~65.7%/~34.3% on Jul 27 and ~61.3%/~38.7% on Jul 25)
 - CME September 2026 hike odds: surged to ~82% combined during Iran escalation peak (Jul 22-25); now repricing lower as Iran ceasefire holds (Day 3 as of Jul 28) and Brent crude retreats; pre-Iran confirmed base was ~49% (Jul 17-18)
 - Polymarket "rate hike in 2026?": ~67% YES as of Jul 23-24 (conflicting data on Jul 24; keeping Jul 23 figure)
