@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: July 31, 2026
+Last updated: August 1, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,33 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### August 1, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 29 EFFR still latest confirmed; July 30 published July 31; July 31 EFFR publishes Monday Aug 4)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting)
+- CME September hike: ~82% (Jul 31 Friday close; essentially same as prior ~81%)
+- Polymarket September hike: ~59.5% (Aug 1 confirmed, $10.177M volume on market — UP from ~53% immediately post-decision)
+- Polymarket "rate hike in 2026?": ~78% YES (Jul 30-31 confirmed; search results showed 57-61% but those appear to be pre-decision articles — kept at 78%)
+- Polymarket "zero cuts in 2026": ~89% (up from 85% on July 31; multiple Aug 1 search results confirmed ~89.3%)
+- Iran: ceasefire ended (Trump declared it over Jul 31); conflict ongoing; Brent crude holding above $88/bbl
+- Oil: Search results confirm Brent above $88 July 31 (memory had $92.27 at 6:45am ET Jul 31)
+- New FOMC row added: NO (next is September 16, 2026)
+- JS countdown: 2026-09-16T18:00:00Z (no change — already correct)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- Changes made:
+  - "Last updated" → August 1, 2026
+  - Card 2: CME ~81% → ~82% (Jul 31 close); Polymarket Sep ~53-70% → ~59.5% (Aug 1, $10.2M volume); added "Zero cuts ~89%"
+  - Card 3 hero-note: ~81% → ~82%; Polymarket ~59.5%; zero cuts → ~89%; updated oil narrative
+  - Card 3 Rate Path table: Sep line updated CME/Polymarket; Oct line date updated; 2026 zero cuts ~85% → ~89%
+- Notes: Saturday Aug 1 — quiet update day. No major economic data released. Key change is Polymarket September odds tightening to ~59.5% (from 53-70% range) confirming post-decision hawkish repricing continues. CME stable at ~82%. Zero cuts now ~89% (up from 85%). Iran conflict ongoing; oil above $88. Next major catalysts: ISM Manufacturing PMI July (Aug 3), Jobs Report July (Aug 7), CPI July (Aug 12), Sep 15-16 FOMC (SEP meeting with dot plot).
+- CRITICAL NOTE for NEXT RUN (Aug 2+):
+  - EFFR for July 31 (Friday) publishes Monday Aug 4 — check for stability at 3.63%
+  - Jobs Report (July) releases Aug 7 — major catalyst for September hike odds
+  - CPI July releases Aug 12 — most important catalyst before September FOMC
+  - Iran conflict ongoing — monitor oil prices; if Brent spikes toward $95-100, September hike odds may approach 90%+ CME
+  - September FOMC (Sep 15-16) is a SEP meeting — expect new dot plot
+  - CAUTION: Search AI may resurface old 57-61% "rate hike in 2026?" articles. Always cross-check volume; $6.05M+ volume confirmed ~78% (Jul 31). Use higher volume as more recent signal.
 
 ### July 31, 2026
 - Target range: 3.50% – 3.75% (no change)
