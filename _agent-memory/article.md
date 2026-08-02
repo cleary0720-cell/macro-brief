@@ -17,25 +17,25 @@
 14. Equity Risk Premium / Stock Market Valuations — "The Vanishing Premium: America's Stock Market Is No Longer Rewarding Investors for Taking Risk" (2026-07-equity-risk-premium.html) — Financial Markets
 15. June 2026 CPI Disinflation / Rate Pivot Case — "The Price Reversal: Inside June's Historic CPI Drop and the Question It Left Unanswered" (2026-07-cpi-june-disinflation.html) — Inflation
 16. Iran Strait of Hormuz Oil Shock / Fed Rate Hike Repricing — "The Hormuz Premium: Iran's Oil Shock and the Rate Hike the Market Wasn't Expecting" (2026-07-hormuz-oil-fed.html) — Energy & Commodities
+17. FOMC 9-3 Dissent / September Rate Hike Setup — "Three Against: The Fed's Historic 9-3 Dissent and What It Means for September" (2026-08-fed-dissent-september.html) — Monetary Policy
 
 ## Last run
-- Date: July 26, 2026
-- Article: "The Hormuz Premium: Iran's Oil Shock and the Rate Hike the Market Wasn't Expecting"
-- Category: Energy & Commodities (archive data-category="Energy", matching the "energy" filter button)
-- Issue: Vol. I, No. 16
-- Filename: articles/2026-07-hormuz-oil-fed.html
-- Thumbnail: fallback cp oil-thumb.jpg → 2026-07-hormuz-oil-fed-thumb.jpg (pexels-proxy returned 403)
-- Push: git push origin HEAD:main — SUCCESS (commit c60eb47)
+- Date: August 2, 2026
+- Article: "Three Against: The Fed's Historic 9-3 Dissent and What It Means for September"
+- Category: Monetary Policy (archive data-category="Policy")
+- Issue: Vol. I, No. 17
+- Filename: articles/2026-08-fed-dissent-september.html
+- Thumbnail: fallback cp 2026-05-debt-interest-crisis-thumb.jpg → 2026-08-fed-dissent-september-thumb.jpg (pexels-proxy returned 403)
+- Push: git push origin HEAD:main — SUCCESS (commit 00bbada)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
-Do NOT use mcp__github__create_or_update_file for pushing — it fails on binary files and large HTML.
+Do NOT use mcp__github__create_or_update_file for pushing — it fails on large or binary files.
 
 ## Thumbnail
-download_thumb.py returned 403 (Tunnel connection failed) on July 26 — pexels-proxy may be intermittently blocked.
+download_thumb.py returned 403 (Tunnel connection failed) on August 2 — pexels-proxy consistently blocked in CCR.
 If download_thumb.py fails: use the cp fallback from the category mapping immediately.
 Fallback mapping:
-- Energy / Commodities / Oil → oil-thumb.jpg
 - Monetary Policy / Banking / Fixed Income / Debt → 2026-05-debt-interest-crisis-thumb.jpg
 - Inflation → 2026-05-inflation-relapse-thumb.jpg
 - Trade Policy / Tariffs → 2026-05-tariff-trade-deficit-thumb.jpg
@@ -43,40 +43,45 @@ Fallback mapping:
 - Consumer Economy / Retail → 2026-05-consumer-spending-thumb.jpg
 - Housing Market → 2026-05-housing-lock-in-thumb.jpg
 - Money Supply / Fiscal Policy → 2026-05-money-supply-thumb.jpg
+- Energy / Commodities / Oil → oil-thumb.jpg
 - Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
 
-## Archive filter buckets (ACTUAL archive.html state — overrides instructions)
+## Archive filter buckets (ACTUAL archive.html state)
 The archive.html filter script lowercases data-category before matching data-filter.
 Use data-category matching the filter buttons (case-insensitive in practice):
-  Monetary Policy / Fiscal Policy / Trade Policy → data-category="Policy" / data-filter="policy"
-  Labor Markets / Housing / Consumer / Economic Output / Global / Technology → data-category="Economy" / data-filter="economy"
-  Fixed Income / Money Supply / Financial Markets / Banking → data-category="Markets & Money" / data-filter="markets"
-  Inflation → data-category="Inflation" / data-filter="inflation"
-  Labor Markets (alt) → data-category="Labor" / data-filter="labor"
-  Energy & Commodities → data-category="Energy" / data-filter="energy"
+  Monetary Policy / Fiscal Policy / Trade Policy → data-category="Policy"
+  Labor Markets / Housing / Consumer / Economic Output / Global / Technology → data-category="Economy"
+  Fixed Income / Money Supply / Financial Markets / Banking → data-category="Markets & Money"
+  Inflation → data-category="Inflation"
+  Energy & Commodities → data-category="Energy"
 
 ## Issue numbering
-Next article will be Vol. I, No. 17
+Next article will be Vol. I, No. 18
 
 ## Key data used in last article (do not re-report as new)
-- Iran Strait of Hormuz re-escalation: mid-July 2026 (US airstrikes, Houthi attacks on Saudi tankers)
-- WTI: closed week at $90.46/barrel (+10% weekly surge)
-- Brent: briefly hit $100, settled ~$97/barrel (fell 4% Friday on peace-talk reports)
-- 10-year Treasury yield: 4.71% on July 23 (highest since January 2025)
-- CME FedWatch FOMC July 29 hike probability: ~10% on July 15 → ~38% by July 24 (near-tripling)
-- Jobless claims (week ending July 18, released July 23): 187,000 — lowest since September 1969
-- June payrolls: +57,000 / unemployment: 4.2%
-- Core PCE May: 3.4% YoY
-- Core CPI June: 2.6% YoY
-- Governor Waller July 13: "If we get another hot reading on core inflation, the FOMC will need to consider tightening monetary policy in the near term"
+- FOMC July 29, 2026: 9-3 vote to hold at 3.50-3.75%
+- Three dissenters: Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), Lorie Logan (Dallas)
+- Most hawkish internal dissent since September 2016
+- Hammack: "Not confident inflation will return to 2% on its own"
+- Kashkari: Modest hikes now reduce risk of more aggressive action later
+- Logan: "Without policy restraint, inflation will likely continue to trend above target"
+- September 16-17 hike probability: 72% per CME FedWatch (as of Aug 2)
+- GDP Q2 2026 advance: +1.5% annualized (below +1.8% consensus; Q1 was +2.1%)
+- Core PCE June: 3.3% YoY (down from 3.4% — first monthly decline in 14 months)
+- Headline PCE Q2 annualized: 5.1%
+- Initial jobless claims week ending July 25: 197,000 (4-wk avg: 202,750)
+- Nonfarm payrolls June: +57,000 / unemployment 4.2%
+- 10Y Treasury: 4.74%; 30Y: 5.28%; 2s10s: +45bps; 3m10y: +96bps
+- Bear steepener post-FOMC: 2Y -4bps, 10Y +5bps, 30Y +12bps
+- Warsh quote: "We pick people with extraordinary talent, depth of expertise, and a divergence of views so that we too can have a family fight"
 
 ## Topic suggestions for future runs (not yet covered)
-- Post-FOMC July 29 reaction (what did Warsh signal about September? Hold or hike?)
-- GDP Q2 2026 advance result (due July 30, GDPNow tracking ~1.7%)
-- Core PCE June 2026 (due July 30, prior May: +3.4% YoY)
-- July 2026 Jobs Report (due Aug 7, prior June: +57K / 4.2% unemployment)
-- CPI July 2026 (due Aug 12, prior June: -0.4% MoM / +3.5% YoY — oil will push headline higher)
-- Global Economy — China slowdown, EM capital flows, dollar strength (DXY ~100-101 range)
-- Consumer Economy — credit card delinquency surge, BNPL growth (distinct from consumer spending article)
+- July 2026 Jobs Report (due Aug 7, prior June: +57K / 4.2%) — critical September FOMC input
+- CPI July 2026 (due Aug 12, prior June: -0.4% MoM / +3.5% YoY) — second pre-September input
+- FOMC Minutes July 29 (due Aug 19, 2:00pm ET) — will reveal depth of hawkish debate
+- September FOMC decision itself (Sep 16-17) — post-decision reaction article
+- Global Economy — China slowdown, EM capital flows, dollar strength
+- Consumer Economy — credit card delinquency surge, BNPL growth (distinct from May consumer spending article)
 - Fiscal Policy — 2026 budget deficit trajectory post-"One Big Beautiful Bill," debt ceiling dynamics
-- Housing Market — housing starts rebound (+19% MoM in June, but all multifamily; single-family flat, permits declining)
+- Housing Market — housing starts rebound (+19% MoM in June, mostly multifamily; single-family permits declining)
+- PPI July (Aug 13), Retail Sales July (Aug 14)
