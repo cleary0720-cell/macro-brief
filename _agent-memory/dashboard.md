@@ -1,5 +1,5 @@
 # Dashboard Agent Memory
-Last updated: 2026-07-26
+Last updated: 2026-08-02
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -16,26 +16,57 @@ Command: git add index.html archive.html about.html sitemap.xml && git commit -m
 - Unemployment/Jobs: WebSearch "BLS employment situation [month] 2026" → cnbc.com, bls.gov summary
 - GDP: WebSearch "BEA GDP Q[n] 2026 [estimate]" → advisorperspectives.com, indexbox.io
 - 10-yr Treasury / Yield Curve: WebSearch "treasury yields [date] 2026" → etftrends.com and advisorperspectives.com/dshort have full snapshots
-  - Confirmed maturities Jul 24: 1M=3.82%, 3M=3.90%, 6M=4.09%*, 1Y=4.15%, 2Y=4.33%, 5Y=4.46%, 7Y=4.58%*, 10Y=4.69%, 20Y=4.93%*, 30Y=5.16%
+  - Confirmed maturities Jul 31: 1M=3.78%, 3M=3.78%, 6M=3.98%*, 1Y=4.05%, 2Y=4.29%, 5Y=4.46%, 7Y=4.52%*, 10Y=4.74%, 20Y=5.22%*, 30Y=5.28%
   - Also check primerates.com/primerate/treasury-yield-curve/ for daily yield curve snapshots
 - Retail Sales: WebSearch "retail sales [month] 2026 census bureau year over year" → qz.com, advisorperspectives.com/dshort, etftrends.com
 - M2: WebSearch "M2 money supply [month] 2026 federal reserve H.6" → fxmacrodata.com, tradingeconomics.com
 - FOMC odds: WebSearch "CME FedWatch [meeting date] 2026 FOMC probability" → growbeansprout.com, hngn.com, rateprobability.com
   - CRITICAL: Odds can flip dramatically in 24-48 hours (Iran geopolitical events)
   - Prefer hngn.com for latest headline %; growbeansprout.com for sustained CME-sourced data
+  - Post-decision repricing: September odds shifted to 72% hike within 24h of July 29 hold
 
 ## Known issues
 - bls.gov, federalreserve.gov, fred.stlouisfed.org, treasury.gov ALL return HTTP 403 on direct WebFetch
 - advisorperspectives.com also returns 403 on WebFetch
 - Use WebSearch only — all economic data is well-covered in search result snippets
-- 20Y Treasury: agent estimated 5.20% on Jul 24 (higher than 30Y 5.16%), flagged as possibly unreliable. Used interpolated 4.93% = (10Y+30Y)/2. If 20Y > 30Y from a source, verify and potentially interpolate.
+- 20Y Treasury: may exceed 30Y occasionally (liquidity premium or single-source anomaly). If 20Y > 30Y from a single source, note with asterisk and use as-is if multiple sources agree; interpolate (10Y+30Y)/2 only if clearly anomalous
 - sitemap.xml: always regenerate and include in commit even if unchanged
-- FOMC odds: Check EVERY run — market expectations can flip dramatically (10%→38% in ONE WEEK Jul 19→26)
+- FOMC odds: Check EVERY run — market expectations can flip dramatically (10%→38% in ONE WEEK Jul 19→26; then repriced to 72% hike post Jul 29 hold)
 - Multiple sources will show DIFFERENT FOMC odds — prefer CME-specific (growbeansprout.com best, then hngn.com); ignore Polymarket/Kalshi
 - jobless claims: always use 4-WEEK AVERAGE for card-val (not the weekly single print)
 - jobless claims: update IN-PLACE when still in same calendar month; only roll forward when new month starts
+- M2: June 2026 H.6 had methodology revision note — report with asterisk/note if present
 
 ## Run log
+
+### 2026-08-02
+- Fed Rate: 3.50–3.75% (3.63%) — HELD July 29, 9-3 vote; Hammack, Kashkari, Logan dissented (all wanted 25bps hike)
+- CPI (June 2026): 3.5% YoY — UNCHANGED
+- Core CPI (June 2026): 2.6%; Shelter: 3.3%; Energy: +15.7% — ALL UNCHANGED
+- Core PCE (June 2026): 3.3% — ROLLED FORWARD (was May 3.4%; first monthly decline in 14 months; released July 30)
+- ISM PMI (June 2026): 53.3 — UNCHANGED (July data due August 3)
+- Jobless Claims 4-wk avg (week ending July 25): ~202,750 (~203k) — DOWN from 208k; weekly 197k; released July 31; UPDATED IN-PLACE July entry (208→203)
+- Unemployment (June 2026): 4.2% — UNCHANGED
+- GDP Q2 2026 advance: +1.5% — ROLLED FORWARD (was Q1 +2.1%; released July 30; 8 entries now Q3'24–Q2'26)
+- 10-yr Treasury (July 31): 4.74% — UP from 4.69% (+5 bps); UPDATED IN-PLACE July entry (4.69→4.74)
+  - Bear steepener post-FOMC: 2Y fell -4bps to 4.29%; 10Y +5bps; 30Y +12bps to 5.28%
+- Retail Sales (June 2026): +6.7% YoY — UNCHANGED
+- M2 (June 2026): 5.5% YoY — ROLLED FORWARD (was May 5.6%; June H.6 released July 28; methodology revision noted)
+- Yield curve (July 31): 1M=3.78%, 3M=3.78%, 6M=3.98%*, 1Y=4.05%, 2Y=4.29%, 5Y=4.46%, 7Y=4.52%*, 10Y=4.74%, 20Y=5.22%*, 30Y=5.28%
+  - Curve: NORMAL; 2s10s +45 bps; 3m10y +96 bps; recession prob 5%
+  - Bear steepener from Jul 24: short end fell, long end rose; classic FOMC hold + future hike reaction
+  - Notable: 1M=3M=3.78% — flat at very short end, consistent with funds rate 3.50-3.75% after hold
+- FOMC odds (September 16-17 per CME FedWatch, as of Aug 2): CUT 1% / HOLD 27% / HIKE 72%
+  - 9-3 vote on July 29 + dissenter hawkishness → dramatic repricing to 72% hike
+- Sentiment: 43/100 CAUTIOUS (up from 40)
+- Edition: Vol. I, No. 14 · August 2, 2026 · Q3 2026 MACRO OUTLOOK
+- Sparklines rolled/updated:
+  - GDP: ROLLED FORWARD (added Q2'26 1.5%; was 7 entries Q3'24–Q1'26, now 8 entries Q3'24–Q2'26)
+  - core-pce: ROLLED FORWARD (dropped Jun '25 2.6, added Jun '26 3.3)
+  - m2: ROLLED FORWARD (added Jun '26 5.5; now 12 entries Jul '25–Jun '26)
+  - treasury Jul: IN-PLACE 4.69→4.74
+  - jobless-claims Jul: IN-PLACE 208→203
+- Key headline: Fed's 9-3 hawkish hold; dissenters named; September hike market odds 72%; GDP decelerating to +1.5%
 
 ### 2026-07-26
 - Fed Rate: 3.50–3.75% (3.63%) — HELD, no change

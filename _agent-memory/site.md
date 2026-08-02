@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-07-26
+Last updated: 2026-08-02
 
 ## Repository
 - Owner: cleary0720-cell
@@ -82,28 +82,30 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - sitemap.xml includes glossary.html (monthly, 0.5) and economic-calendar.html (weekly, 0.6)
 - rss.xml: all author/editor fields use macrobriefnews@gmail.com (not personal email)
 
-## Current macro context (July 26, 2026)
-- Fed Funds: 3.50-3.75%, held June 17 (unanimous) under Chair Kevin Warsh, 5th consecutive hold
-- Hawkish dot plot (June 17): 9/18 members project hike, year-end median 3.8%
-- GDP Q1 2026 FINAL: +2.1%; GDPNow Q2: +1.7% as of Jul 17 (next update Jul 28)
+## Current macro context (August 2, 2026)
+- Fed Funds: 3.50-3.75%, HELD July 29 (9-3 vote); dissenters: Hammack, Kashkari, Logan (all wanted 25bps hike)
+  - Chair Kevin Warsh led majority hold; dissenters signal hawkish pressure building
+  - 6th consecutive hold since rate-cutting cycle ended
+- Hawkish dot plot (June 17): 9/18 members projected hike, year-end median 3.8%
+- GDP Q2 2026 ADVANCE: +1.5% (released July 30); Q1 2026 FINAL: +2.1%
+  - Decelerating trend; trade uncertainty and consumer caution cited
 - CPI June: 3.5% YoY (down from 4.2%, released July 14)
   - Core CPI June: 2.6%; Shelter: 3.3%; Energy: +15.7%
-- Core PCE May: 3.4% YoY — June data due July 30
-- M2 May: 5.6% YoY — June data due July 28
+- Core PCE June: 3.3% YoY (down from May 3.4%; FIRST MONTHLY DECLINE IN 14 MONTHS; released July 30)
+- M2 June: 5.5% YoY (down from May 5.6%; H.6 released July 28; methodology revision noted)
 - ISM PMI June: 53.3 — July data due August 3
 - Labor June: +57,000 jobs (very weak); unemployment 4.2%; participation 61.5%
-- Jobless claims 4-wk avg: 207,500 (~208k) for week ending July 18, released July 23
-  - Weekly: 187,000 — LOWEST SINCE 1969 (BIG NEWS)
+- Jobless claims 4-wk avg: ~202,750 (~203k) for week ending July 25, released July 31
+  - Weekly July 25: 197,000 — near historic lows
 - Consumer: June retail +6.7% YoY
-- Treasury yields (July 24): 1M=3.82%, 3M=3.90%, 6M=4.09%*, 1Y=4.15%, 2Y=4.33%, 5Y=4.46%, 7Y=4.58%*, 10Y=4.69%, 20Y=4.93%*, 30Y=5.16%
-  - 2s10s: +36 bps; 3m10y: +79 bps; NORMAL curve
-  - Full curve shifted higher ~+7-18 bps vs Jul 17 (Iran re-escalation driver)
-- FOMC July 29 (per CME FedWatch, July 24): 0% cut / 62% hold / 38% HIKE
-  - DRAMATIC REVERSAL from Jul 19: 90% hold / 10% hike
-  - Driver: Iran Strait of Hormuz re-escalation, oil toward $90/barrel
-  - FOMC meets July 29 — 2:00pm ET decision, 2:30pm ET press conference
-- Sentiment: 40/100 CAUTIOUS
-- Edition: Vol. I, No. 13
+- Treasury yields (July 31): 1M=3.78%, 3M=3.78%, 6M=3.98%*, 1Y=4.05%, 2Y=4.29%, 5Y=4.46%, 7Y=4.52%*, 10Y=4.74%, 20Y=5.22%*, 30Y=5.28%
+  - 2s10s: +45 bps; 3m10y: +96 bps; NORMAL curve; recession prob ~5%
+  - Bear steepener post-FOMC: 2Y -4bps, 10Y +5bps, 30Y +12bps
+  - 1M=3M=3.78% — flat at very short end (anchored to funds rate 3.50-3.75%)
+- FOMC September 16-17 (per CME FedWatch, as of Aug 2): CUT 1% / HOLD 27% / HIKE 72%
+  - 9-3 dissent on July 29 repriced September dramatically (was ~38% hike pre-decision)
+- Sentiment: 43/100 CAUTIOUS
+- Edition: Vol. I, No. 14
 
 ## Data source strategy (confirmed July 2026)
 All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
@@ -117,7 +119,7 @@ All economic data must come via WebSearch — direct WebFetch to government site
 - M2: WebSearch → fxmacrodata.com, tradingeconomics.com
 - ISM PMI: WebSearch → prnewswire.com carries official ISM press releases
 - FOMC odds: WebSearch "CME FedWatch [meeting date] FOMC probability" → prefer growbeansprout.com, hngn.com
-  - CRITICAL: Check every run — odds can triple in one week on geopolitical events
+  - CRITICAL: Check every run — odds can triple in one week on geopolitical events or surprise FOMC votes
 
 ## Sparkline roll-forward rules
 - Monthly indicators (all except GDP): keep 12 entries, drop oldest, add newest when new data released
@@ -127,15 +129,16 @@ All economic data must come via WebSearch — direct WebFetch to government site
   - M2: roll when H.6 released (~3 weeks after month end)
 - GDP: quarterly, always 8 entries, roll only on new BEA quarter release
 - Year suffix in label: add "'YY" when entry is from prior calendar year (e.g., "Aug '25")
-- Current oldest entries after Jul 26 run:
+- Current oldest entries after Aug 2 run:
   - cpi: "Jul '25" | retail: "Aug '25" | unemployment: "Jul '25"
   - jobless-claims: "Aug '25" | treasury: "Aug '25"
-  - m2, core-pce, ism-pmi, fed-rate: "Jun '25" or similar
+  - m2: "Aug '25" | core-pce: "Aug '25" | fed-rate: "Aug '25"
+  - gdp: "Q3 '24" (8 entries now; next roll drops Q3'24 when Q3'26 advance est arrives ~Oct)
+  - ism-pmi: check code for oldest entry
 
-## Upcoming releases (as of July 26, 2026)
-- Jul 28 (Mon): M2 H.6 release (June 2026 money supply)
-- Jul 29 (Tue): FOMC Decision — 62% hold / 38% hike; 2:00pm ET
-- Jul 30 (Wed): GDP Q2 2026 advance estimate (BEA) + Core PCE June
-- Aug 3 (Sun/Mon): ISM Manufacturing PMI July 2026
-- Aug 7 (Fri): Jobs Report July 2026 (BLS)
-- Aug 12 (Wed): CPI July 2026 (BLS)
+## Upcoming releases (as of August 2, 2026)
+- Aug 3 (Sun/Mon): ISM Manufacturing PMI July 2026 — ROLL FORWARD (drop oldest, add Jul)
+- Aug 7 (Thu): Jobless Claims for week ending Aug 1 — UPDATE IN-PLACE August entry
+- Aug 7 (Fri): Employment Situation July 2026 (BLS) — CRITICAL for September FOMC decision
+- Aug 12 (Tue): CPI July 2026 (BLS) — ROLL FORWARD; second key pre-September FOMC input
+- Sep 16-17: FOMC September 2026 — 72% hike probability per CME; DOT PLOT meeting
