@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 1, 2026
+Last updated: August 2, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,33 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
 ## Run log
+
+### August 2, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 31 EFFR not yet published; publishes Monday Aug 4; stable at 3.63%)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting)
+- CME September hike: ~82% (Jul 31 Friday close; no weekend update)
+- Polymarket September hike: ~60% (Aug 2; up from 59.5% on Aug 1; slight hawkish tick)
+- Polymarket "zero cuts in 2026": ~89% (~89.3% confirmed Aug 2)
+- Polymarket "rate hike in 2026?": ~78% YES (unchanged from Aug 1)
+- Brent crude: ~$88/bbl (Aug 2; settled from $92 spike on Jul 31 morning; Iran conflict ongoing)
+- Iran: Ceasefire ended July 31; conflict ongoing; oil stabilized near $88/bbl
+- New FOMC row added: NO (next is September 16, 2026)
+- JS countdown: 2026-09-16T18:00:00Z (no change — already correct)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- Changes made:
+  - "Last updated" → August 2, 2026
+  - Card 2: Polymarket Sep ~59.5% (Aug 1) → ~60% (Aug 2); Brent $92 → ~$88/bbl (settled); "zero cuts" added ~89.3%
+  - Card 3 hero-note: Sep Polymarket ~59.5% → ~60%; Brent $92 → ~$88; zero cuts → ~89.3%
+  - Card 3 Rate Path table: Sep line updated (~60% Polymarket); Oct "rate hike in 2026?" date → Aug 2
+- Notes: Sunday Aug 2 — quiet update. No major economic data today (ISM Manufacturing PMI releases Monday Aug 3). CME FedWatch reflects Friday Jul 31 close (~82% Sep hike; no Sunday update). Polymarket ticked up slightly to ~60% Sep hike from 59.5% — very small move, market stable. Zero cuts confirmed at ~89.3%. Brent settled at ~$88/bbl from $92 spike. Iran conflict ongoing. Next major catalysts: ISM Manufacturing PMI July (Aug 3), Jobs Report July (Aug 7), CPI July (Aug 12), Sep 15-16 FOMC.
+- CRITICAL NOTE for NEXT RUN (Aug 3+):
+  - ISM Manufacturing PMI July releases Monday Aug 3 — search "ISM Manufacturing PMI July 2026"
+  - EFFR for July 31 (Friday) publishes Monday Aug 4 — check for stability at 3.63%
+  - Jobs Report (July) releases Friday Aug 7 — major catalyst for September hike odds
+  - CPI July releases Aug 12 — most important catalyst before September FOMC
+  - September FOMC (Sep 15-16) is a SEP meeting — expect new dot plot
+  - Brent crude watch: if it spikes toward $95-100, September hike odds may approach 90%+ CME
 
 ### August 1, 2026
 - Target range: 3.50% – 3.75% (no change)
