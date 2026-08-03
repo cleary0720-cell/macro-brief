@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 2, 2026
+Last updated: August 3, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -36,7 +36,44 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Blockchain.news article titles with Polymarket odds can be from any day — cross-check dates in context before using.
 - EFFR note: July 9 EFFR confirmed as 3.62% daily rate (multiple FRED/NY Fed searches confirmed; updated on page as of Jul 12). Previously showed 3.63% — now corrected. July 11 EFFR (Saturday) won't be published; July 10 (Friday) EFFR publishes Monday July 14.
 
+## Known issues (added Aug 3, 2026)
+- FXStreet URL pattern "202008031406" in search results for ISM Manufacturing PMI = August 3, **2020** article (54.2 vs 53.6 expected; prior 52.6). DO NOT use this as 2026 data. Prior 2026 June ISM was 53.3, not 52.6 — the 2020 article has different prior.
+- When searching for ISM Manufacturing PMI on release day (10am ET), searches run at 9am ET will NOT have the actual result yet. Note expected vs. prior and flag actual as TBD.
+- S&P Global flash PMI (released ~final week of month) tends to preview ISM direction but is a separate survey — reference as corroborating signal only.
+- Polymarket "rate hike in 2026?" article confusion: multiple articles from different dates (37%, 60%, 63%, 64%, 78%) exist. Use memory's most recent confirmed figure and cross-check volume for recency.
+- KuCoin articles on Polymarket odds appear to lag real-time by days; treat with caution.
+- CME FedWatch search results may blend data from multiple dates; cross-check context (the ~29.7% figure seen Aug 3 searches was a pre-July-29-decision quote, not current).
+
 ## Run log
+
+### August 3, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (July 31 EFFR not yet published; publishes Monday Aug 4; stable)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting)
+- CME September hike: ~82% (Jul 31 Friday close; most recent confirmed; Monday Aug 3 markets will reprice post-ISM data)
+- Polymarket September hike: ~59% (Aug 3; down slightly from ~60% on Aug 2 — essentially flat)
+- Polymarket "rate hike in 2026?": ~78% (Aug 2/3 confirmed; multiple searches showed older 63-67% figures from older articles — do NOT use those)
+- Polymarket "zero cuts in 2026?": ~89% (Aug 2 confirmed; searches showed 84-85% from older blockchain.news articles)
+- ISM Manufacturing PMI July 2026: Released today Aug 3 at 10am ET (after 9am ET agent run). June was 53.3. Consensus ~54.0. S&P Global flash July PMI: 53.8 (from 53.9 in June). ISM Prices Paid expected 70.0 vs prior 73.0. Actual not confirmed in this run.
+- EFFR for July 31 (Friday): Publishes tomorrow Aug 4 — check for stability at 3.63%
+- New FOMC row added: NO (next is September 16, 2026)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- Changes made:
+  - "Last updated" → August 3, 2026
+  - Card 2: Polymarket Sep ~60% (Aug 2) → ~59% (Aug 3); Iran update (Aug 2) → (Aug 3); added ISM PMI July note (consensus ~54.0, S&P flash 53.8)
+  - Card 3 hero-note: ~60% (Aug 2) → ~59% (Aug 3); zero cuts date updated to Aug 3; added ISM note at end
+  - Card 3 rate path table: Sep Polymarket → 59% (Aug 3); Oct date → Aug 3; 2026 zero cuts date → Aug 3; added ISM PMI note to Sep line
+- Notes: Quiet Monday morning update. ISM Manufacturing PMI July 2026 releases today at 10am ET (after this 9am ET agent run) — consensus ~54.0 vs prior 53.3; S&P Global flash 53.8; ISM Prices Paid expected to ease to 70.0 vs prior 73.0. Polymarket September ticked down 1pp to ~59%. CME stable at ~82% (Friday close). EFFR July 31 publishes tomorrow.
+- CRITICAL NOTE for NEXT RUN (Aug 4+):
+  - ISM Manufacturing PMI July 2026 result (10am ET today Aug 3): search "ISM manufacturing July 2026 result" — if beat (~54+), note hawkish for September; if miss (<53.3), note dovish signal
+  - EFFR for July 31 (Friday) publishes Monday Aug 4 at ~9am ET — search "effective federal funds rate EFFR July 31 2026" — expect 3.63% (stable)
+  - Jobs Report (July) releases Friday Aug 7 — MAJOR catalyst for September hike odds
+  - CPI July releases Aug 12 — single most important catalyst before September FOMC
+  - September FOMC (Sep 15-16) is a SEP meeting — new dot plot; will update countdown/meeting dates once decision is made
+  - FOMC history row: No new row until Sep 16 decision
+  - Iran conflict ongoing; monitor Brent crude — if it spikes toward $95-100, September hike odds may approach 90%+ CME
+  - CAUTION on data sources: Multiple search results returned stale Polymarket figures (37%, 60%, 63%, 64%) from pre-July-29-decision articles. Always use memory's most recent confirmed figure as baseline and require higher-volume articles to override.
 
 ### August 2, 2026
 - Target range: 3.50% – 3.75% (no change)
