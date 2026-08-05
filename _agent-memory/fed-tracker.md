@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 4, 2026
+Last updated: August 5, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -54,6 +54,33 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME search snippets on Aug 4 returned 82% as "current" — this was the Jul 31 close, NOT Aug 3 close. The Aug 3 close post-ISM was ~64.5%.
 
 ## Run log
+
+### August 5, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; H.15 updated Aug 4; Aug 4 EFFR publishes today ~9am ET — stable at 3.63%)
+- Next meeting: September 15–16, 2026 (SEP/dot plot meeting; decision Sep 16 at 2pm ET)
+- CME September hike: ~64.5% (Aug 3 post-ISM; no major macro data today to shift it; search results did not surface a clear Aug 4/5 close update — keeping Aug 3 confirmed figure)
+- Polymarket September hike: ~53% (Aug 5; down from ~56% on Aug 4 per memory; multiple searches returned 51-53% range today)
+- Polymarket "rate hike in 2026?": ~78% YES (unchanged)
+- Polymarket "zero cuts in 2026?": ~89% (unchanged)
+- ISM Services PMI July 2026: RELEASED TODAY (Aug 5) at 10am ET — AFTER this 9am run; prior June: 54.0 (down from 54.5 in May); actual result not available at time of run. Added note to page alerting readers it's releasing today.
+- New FOMC row added: NO (next is September 16, 2026)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- Changes made:
+  - "Last updated" → August 5, 2026
+  - Card 2: Polymarket Sep ~56% (Aug 4) → ~53% (Aug 5; down slightly on easing Prices Paid backdrop); added ISM Services PMI July note (releasing today at 10am ET, prior 54.0)
+  - Card 3 hero-note: Polymarket Sep ~56% (Aug 4) → ~53% (Aug 5); zero cuts date Aug 4 → Aug 5
+  - Card 3 rate path: Sep line — Polymarket updated to ~53% (Aug 5); added ISM Services PMI July note; Oct and 2026 lines date-stamped Aug 5
+- Notes: Quiet macro day. No FOMC decision, no major data released before 9am run. ISM Services PMI July is the only notable release today (10am ET); prior was 54.0 (June). CME search results ambiguous — growbeansprout cached Jul 28 data (54.4% cut, pre-decision); after-decision data clearer at 64.5% (Aug 3 post-ISM). Polymarket ticked down to ~53% (from 56% Aug 4) in line with easing Prices Paid narrative.
+- CRITICAL NOTE for NEXT RUN (Aug 6+):
+  - ISM Services PMI July (Aug 5 10am ET): Check actual result — prior 54.0, consensus unclear. If beat, expect CME September hike odds to reprice UP. If miss, odds may drift lower.
+  - Jobs Report July (Aug 7): MAJOR catalyst. Consensus +91k NFP, unemployment 4.3%. June was +57k (near 3-year low). Strong NFP could significantly reprice September hike odds.
+  - No other major data on Aug 6 (Wednesday).
+  - CPI July releases Aug 12 — second key pre-September FOMC input.
+  - CME search baseline: ~64.5% (Aug 3 post-ISM). Watch for repricing after Aug 5 ISM Services and Aug 7 Jobs Report.
+  - Polymarket baseline: ~53% (Aug 5). Check for movement after ISM Services result.
+- Known issue (Aug 5): growbeansprout.com and centralbank.watch consistently return cached pre-FOMC-decision data (Jul 28, showing "54.4% cut") in WebSearch snippets. This is completely stale data from BEFORE the July 29 FOMC decision. Always cross-reference with memory baseline and post-decision news articles. The current regime is HIKE-biased, not cut-biased.
 
 ### August 4, 2026
 - Target range: 3.50% – 3.75% (no change)
