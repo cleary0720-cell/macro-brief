@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 10, 2026
+Last updated: August 11, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -35,9 +35,55 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - blockchain.news article titles with Polymarket odds can be from any day — cross-check dates in context before using.
 - growbeansprout.com consistently returns cached pre-FOMC-decision data — completely stale. Ignore for directional analysis.
 - defirate.com Polymarket/Kalshi data appears significantly lagged — don't use for real-time odds.
-- Cleveland Fed Nowcast (confirmed Aug 10): July CPI ~3.42% YoY (down from 3.5% June); core +0.21% MoM / 2.52% YoY. This is PRE-RELEASE; actual BLS data may differ. Use as context/preview only.
+- Cleveland Fed Nowcast (confirmed Aug 11): July CPI ~3.42% YoY (unchanged forecast); core CPI +0.21% MoM / 2.52% YoY. August 2026 nowcast: headline ~3.22% YoY; core PCE ~3.36% (slight reaccel). All PRE-RELEASE; actual BLS July CPI releases Aug 12. Use as context/preview only.
+- HALLUCINATION WARNING: WebSearch CME results sometimes synthesize "90.7% cut" or similar figures that contradict all other evidence. If a probability figure is dramatically out of step with memory baselines, cross-check against Polymarket, Kalshi, and prior-day baselines before using. Trust the cross-check, not the outlier.
+- August 2026 nowcast sources: Motley Fool / Globe and Mail ("Fed's Initial August Inflation Forecast Has Arrived") and Yahoo Finance ("Federal Reserve Just Released Its August Inflation Forecast") both carry Cleveland Fed Nowcast details and are searchable.
 
 ## Run log
+
+### August 11, 2026
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; Aug 10 data published today; confirmed stable)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~40% (Aug 11; unchanged; hold leads ~60%)
+- CME October hike: ~55% (Aug 11; unchanged)
+- Kalshi September: ~65% hold / ~35% hike (Aug 11; stable)
+- Polymarket September hike: ~38% / hold ~61% (Aug 11; marginally shifted from ~37%/63%)
+- Polymarket "rate hike in 2026?": ~56% YES (Aug 11; stable)
+- Polymarket "zero cuts in 2026?": ~84% (pre-jobs baseline; stable)
+- Cleveland Fed Nowcast (Aug 11 update): July CPI ~3.42% YoY (unchanged from Aug 10); core CPI +0.21% MoM / 2.52% YoY. NEW August month nowcast: headline ~3.22% YoY (continued decline); core PCE ~3.36% (slight reacceleration — potential red flag)
+- US-Iran: Negotiations at impasse; Brent crude near $90/bbl (updated from ~$88)
+- Jackson Hole 2026: August 27–29 — Warsh to speak; key event before Sep 16 FOMC
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 11, 2026
+  - Card 1: Updated CME date refs to Aug 11; updated Cleveland Nowcast to Aug 11, added August 2026 nowcast (3.22% headline / 3.36% core PCE)
+  - Card 2: Updated CME/Polymarket date refs to Aug 11; Polymarket Sep: ~37% → ~38%; added August nowcast detail to Nowcast section
+  - Card 3: Updated CME/Polymarket date refs to Aug 11; Polymarket Sep: ~37% → ~38%; updated Iran/oil to "talks at impasse / ~$90/bbl"; updated Cleveland Nowcast with August month detail
+  - Rate path table: Sep/Oct rows updated to Aug 11 dates; added August nowcast and US-Iran note to Sep row
+- Notes: Quiet Tuesday — no major data releases, no Fed speakers scheduled. EFFR stable at 3.63%. CME and Kalshi essentially unchanged from Aug 10. Polymarket September ticked up marginally (~37% → ~38%). Key new data: Cleveland Fed Nowcast added August 2026 estimates — headline CPI expected at ~3.22% YoY (continued disinflation) but core PCE projected to reaccelerate to ~3.36% (potential red flag for Sep FOMC). US-Iran negotiations remain at impasse with oil near $90/bbl. The decisive catalyst is CPI July, releasing August 12.
+- Search data quality note: CME search results returned one hallucinated "90.7% cut" figure — completely inconsistent with known context; disregard. Cross-checking against Polymarket (~38% hike / ~61% hold) and memory baseline (~40% hike) confirmed no major repricing occurred. Always cross-check CME odds against multiple sources when a dramatic shift appears.
+
+### CRITICAL NOTE for NEXT RUN (Aug 12):
+- CPI JULY 2026 RELEASES AUGUST 12 (Tue) at 8:30am ET — THIS IS THE BIG ONE
+  - Cleveland Nowcast: headline ~3.42% YoY (down from 3.5%), monthly +0.09%
+  - Core nowcast: +0.21% MoM / 2.52% YoY
+  - Hawkish CPI (above 3.5% headline or hot core) → revive September hike odds dramatically (possible back to ~60-70%)
+  - Dovish CPI (below 3.4% headline or cool core) → cement September hold (~70-80% hold)
+  - EXPECT MAJOR CME REPRICING on Aug 12 — update ALL THREE CARDS and rate path table
+  - Search "CPI July 2026 August 12" and "CME FedWatch September probability August 12" right away
+- CME baselines as of Aug 11: ~40% Sep hike / ~60% hold / ~55% Oct hike
+- Polymarket baselines as of Aug 11: Sep hike ~38% / hold ~61%
+- EFFR: 3.63% stable (Aug 11 data for Aug 10 publication; expect Aug 12 data for Aug 11 on Aug 12)
+- Jobless Claims for week ending Aug 8: releases August 13 (Thu)
+  - Prior: initial 199k / 4-wk avg 198,750 (cycle low) / continued 1,801k (+24k)
+- Retail Sales July 2026: releases ~Aug 14-15 — ROLL FORWARD dashboard sparkline
+- FOMC Minutes from July 29 meeting: releases ~August 19 — watch for additional context on 9-3 vote
+- No new FOMC history row until Sep 16 decision
+- MEANS-FOR-YOU: only update if Fed Funds Rate changes (hasn't changed since Dec 2025)
+- Jackson Hole: Aug 27–29 — in all three cards; Warsh speech is next major Fed communication
 
 ### August 10, 2026
 - Target range: 3.50% – 3.75% (no change)
