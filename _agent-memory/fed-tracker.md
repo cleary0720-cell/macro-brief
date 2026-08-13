@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 12, 2026
+Last updated: August 13, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -39,6 +39,40 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - defirate.com Polymarket/Kalshi data appears significantly lagged — don't use for real-time odds.
 
 ## Run log
+
+### August 13, 2026 — JOBLESS CLAIMS DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; confirmed as of Aug 11 data)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- **Jobless Claims (week ending Aug 8, released Aug 13):**
+  - Initial claims: 209,000 (up 9k from prior ~199-200k; first reading above 200k in 3 weeks)
+  - 4-week average: 199,000 (unchanged at cycle low)
+  - Continued claims: ~1,800k+ (prior week was 1,801k; specific Aug 13 figure not confirmed)
+  - Slightly above the sub-200k streak; 209k just below 210k "concern" threshold; modest dovish signal
+- CME September (Aug 13, post-claims): ~45–48% hike / ~52–55% hold (modest dovish drift from 50/50 post-CPI Aug 12)
+  - Source: cryptobriefing.com "Traders see 45% chance of September Fed rate hike"; Yahoo Finance "odds settled into 45-48% range"
+- Polymarket September hike: ~38–40% (Aug 13; converging toward CME from prior repricing range)
+- Polymarket "rate hike in 2026?": ~56% YES (stable from Aug 12)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 13, 2026
+  - All 3 hero cards: CME odds updated to ~45–48% post-claims; Polymarket updated to ~38–40%; jobless claims Aug 13 data added
+  - Rate path table: Sep row updated with Aug 13 claims data and new CME/Polymarket odds
+- Notes: Claims came in at 209k — first reading above 200k in 3 consecutive sub-200k weeks (streak broken). Still historically very low. Modest dovish read: not alarming, but shifted CME from 50/50 to ~52-55% hold. Jackson Hole Aug 27-29 remains the key event before Sep 16 FOMC. Warsh keynote on Fri Aug 28. Theme: "Financial Innovation: Implications for Payments and Policy" — he hinted at "big picture" framing rather than paving the way for a specific Sep hike.
+
+### CRITICAL NOTE for NEXT RUN (Aug 14):
+- CME baselines as of Aug 13: ~45–48% Sep hike / ~52–55% hold; ~55% Oct hike (pre-CPI baseline)
+- Polymarket: Sep hike ~38–40%; "hike in 2026?" ~56%; "zero cuts" ~84%
+- EFFR: 3.63% stable
+- No major data releases on Aug 14 (Friday)
+- Next key data: FOMC Minutes from July 28-29 meeting releases ~August 19
+- Jackson Hole: Aug 27-29 — Warsh keynote Fri Aug 28
+- August CPI: estimated Sep 10, 2026
+- No new FOMC history row until Sep 16 decision
+- MEANS-FOR-YOU: only update if Fed Funds Rate changes (hasn't since Dec 2025)
 
 ### August 12, 2026 — CPI DAY
 - Target range: 3.50% – 3.75% (no change)
