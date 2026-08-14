@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 13, 2026
+Last updated: August 14, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -40,6 +40,39 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 
 ## Run log
 
+### August 14, 2026 — PPI + RETAIL SALES DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- **PPI July 2026 (released Aug 13 — included in this run):**
+  - MoM: 0.0% (flat; below 0.1-0.2% expected) — DOVISH
+  - YoY: 4.7% (cooling)
+  - Goods: -0.7% (energy drag); Services: +0.2%; Construction: +2.2%
+  - Core PPI (ex food, energy & trade services): +0.4% MoM (hidden hawk signal)
+  - Pushed CME September hold to ~65-68% (32-36% hike)
+- **Retail Sales July 2026 (released Aug 14 at 8:30am ET):**
+  - MoM: -0.6% (miss vs. +0.1% expected) — DOVISH
+  - YoY: +5.0% (cooling from +6.7% June)
+  - Motor vehicles: -1.8%; Nonstore (online): -2.2%; Gas stations: -0.9%
+  - Clothing: +1.9%; Health/personal care: +0.7%; Restaurants: +0.5%
+  - Spending pulled back as government tax refund boost faded
+- CME September (Aug 14, post-data): ~35–40% hike / ~60–65% hold
+  - Sources: tradingkey.com (42% after retail sales); ts2.tech ("hike odds remain" post retail sales); PPI alone pushed hold to 67.6%
+  - Net assessment: hold firmly leads after full data week
+- Polymarket September hike: ~35–40% (Aug 14; converging from ~38–40% post-CPI)
+- Polymarket "rate hike in 2026?": ~56% YES (stable)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 14, 2026
+  - Card 1: Added PPI + Retail Sales paragraphs; updated CME to ~35-40%
+  - Card 2: Updated CME to ~35-40%; added PPI + Retail Sales paragraphs; added FOMC Minutes Aug 19 to catalysts
+  - Card 3: Updated CME to ~35-40%; added PPI + Retail Sales paragraphs
+  - Rate path table: Sep row updated with new CME/Polymarket odds + PPI/Retail Sales data
+- Notes: Full data week Aug 12-14 was net dovish. CPI 3.4% in-line repriced CME to 50/50 (hawkish), then PPI flat pushed hold to 65-68%, then Retail Sales -0.6% miss maintained hold leads. Net result: September hike is now a minority-probability outcome (~35-40%). Jackson Hole (Aug 27-29) and FOMC Minutes (Aug 19) are the next key events. Warsh keynote (Fri Aug 28) will be the last major Fed communication before Sep 16 FOMC.
+
 ### August 13, 2026 — JOBLESS CLAIMS DAY
 - Target range: 3.50% – 3.75% (no change)
 - Effective rate: 3.63% (stable; confirmed as of Aug 11 data)
@@ -63,16 +96,19 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Rate path table: Sep row updated with Aug 13 claims data and new CME/Polymarket odds
 - Notes: Claims came in at 209k — first reading above 200k in 3 consecutive sub-200k weeks (streak broken). Still historically very low. Modest dovish read: not alarming, but shifted CME from 50/50 to ~52-55% hold. Jackson Hole Aug 27-29 remains the key event before Sep 16 FOMC. Warsh keynote on Fri Aug 28. Theme: "Financial Innovation: Implications for Payments and Policy" — he hinted at "big picture" framing rather than paving the way for a specific Sep hike.
 
-### CRITICAL NOTE for NEXT RUN (Aug 14):
-- CME baselines as of Aug 13: ~45–48% Sep hike / ~52–55% hold; ~55% Oct hike (pre-CPI baseline)
-- Polymarket: Sep hike ~38–40%; "hike in 2026?" ~56%; "zero cuts" ~84%
-- EFFR: 3.63% stable
-- No major data releases on Aug 14 (Friday)
-- Next key data: FOMC Minutes from July 28-29 meeting releases ~August 19
-- Jackson Hole: Aug 27-29 — Warsh keynote Fri Aug 28
+### CRITICAL NOTE for NEXT RUN (Aug 15 / weekend):
+- CME baselines as of Aug 14 (post PPI + retail sales data week): ~35–40% Sep hike / ~60–65% hold
+- Polymarket: Sep hike ~35–40% (converging post-data); "hike in 2026?" ~56% (stable); "zero cuts" ~84% (stable)
+- EFFR: 3.63% (stable; unchanged)
+- No major data releases Aug 15 (Saturday) or Aug 16 (Sunday)
+- Next key data: FOMC Minutes from July 28-29 meeting releases ~August 19 (Wednesday) — watch for context on 9-3 vote, internal debate
+- Jackson Hole: Aug 27-29 — Warsh keynote Fri Aug 28 (last major Fed communication before Sep 16 FOMC)
 - August CPI: estimated Sep 10, 2026
 - No new FOMC history row until Sep 16 decision
 - MEANS-FOR-YOU: only update if Fed Funds Rate changes (hasn't since Dec 2025)
+- PPI July 2026 (released Aug 13): 0.0% MoM (flat; below 0.1-0.2% expected); YoY 4.7%; goods -0.7%; services +0.2%; core PPI +0.4% MoM (hidden hawk signal); pushed CME hold to ~65-68%
+- Retail Sales July 2026 (released Aug 14): -0.6% MoM (miss vs. +0.1% expected); +5.0% YoY (cooling from +6.7% June); motor vehicles -1.8%; nonstore -2.2%; clothing +1.9%; gas stations -0.9%
+- Full "data week" Aug 12-14 summary: CPI 3.4% (in-line, hawkish reprice to 50/50), then PPI flat (dovish, hold leads 65-68%), then Retail Sales -0.6% (dovish hold maintained 60-65%); net dovish week
 
 ### August 12, 2026 — CPI DAY
 - Target range: 3.50% – 3.75% (no change)
