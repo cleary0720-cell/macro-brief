@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 15, 2026
+Last updated: August 16, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 16, 2026 — WEEKEND / NO DATA DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; no weekend EFFR publication; last published Aug 14 for Aug 13)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September (Aug 14 close, weekend unchanged): ~32% hike / ~68% hold
+- Polymarket September hike: ~35% (Aug 14; converging post-data week; likely unchanged over weekend)
+- Polymarket "rate hike in 2026?": ~56% YES (stable)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made: "Last updated" → August 16, 2026 only
+- Notes: Sunday — no markets, no data, no EFFR publication. All values carried from Aug 14 close. Search confirmed: (1) Warsh "big picture / not constrained by market prices" comment is from July 29 press conference — already in page; (2) FOMC Minutes (July 28-29) release confirmed August 19 at 2pm ET — already noted in cards; (3) First WebSearch result showed suspicious "87.8% cut probability" — flagged as hallucination/stale 2025 data, NOT used; data week Aug 12-14 left September hike as minority outcome (~32% CME). Key upcoming events unchanged: FOMC Minutes Aug 19, Jackson Hole Aug 27-29 (Warsh keynote Fri Aug 28), August CPI Sep 10.
+- Source credibility note: WebSearch synthesis about "87.8% chance of a 25bps CUT" for September is clearly stale data from 2025 easing cycle — ignore; CME odds context (hawkish hold with 3 dissenters for hike) is fully inconsistent with any cut probability.
 
 ### August 15, 2026 — WEEKEND / NO DATA DAY
 - Target range: 3.50% – 3.75% (no change)
