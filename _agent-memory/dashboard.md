@@ -1,5 +1,5 @@
 # Dashboard Agent Memory
-Last updated: 2026-08-09
+Last updated: 2026-08-16
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,6 +37,35 @@ Command: git add index.html archive.html about.html sitemap.xml && git commit -m
 - FOMC odds: After major data (jobs, CPI, FOMC decision), always re-search with the post-release date
 
 ## Run log
+
+### 2026-08-16
+- Fed Rate: 3.50–3.75% (3.63%) — HELD; no meeting since Jul 29; UNCHANGED
+- CPI (July 2026): 3.4% YoY (BLS, released Aug 12) — ROLLED FORWARD (was June 3.5%)
+  - Core CPI: 3.2% (unchanged from June); Shelter: 4.5%; Energy: +16.8% (rebounded from 15.7%)
+  - Energy +1.3% MoM on Iran tensions; CPI beat consensus of 3.2%
+- Core PCE (June 2026): 3.3% YoY — UNCHANGED (July data not yet released)
+- ISM PMI (July 2026): 55.6 — UNCHANGED
+- Jobless Claims 4-wk avg (week ending Aug 8): ~199k — IN-PLACE update
+  - Weekly: ~199k; released Aug 13 (partial confirmation only)
+- Unemployment (July 2026): 4.1% — UNCHANGED
+- GDP Q2 2026: +1.5% — UNCHANGED
+- 10-yr Treasury (Aug 14): 4.70% — UPDATED IN-PLACE (Aug entry: 4.65% → 4.70%)
+  - Bear-steepen post-CPI: 2Y=4.18% (+3 bps), 10Y=4.70% (+5 bps), 30Y=5.26% (+5 bps)
+- Retail Sales (July 2026): +5.0% YoY ($724.1B, Census released Aug 14) — ROLLED FORWARD (was June 6.7%)
+  - Ex-gas/autos core retail: +4.8% YoY; gasoline receipts -3.2%
+- M2 (June 2026): 5.5% YoY — UNCHANGED
+- Yield curve (Aug 14): 1M=3.76%, 3M=3.80%, 6M=3.89%, 1Y=3.97%, 2Y=4.18%, 5Y=4.37%, 7Y=4.50%, 10Y=4.70%, 20Y=5.18%, 30Y=5.26%
+  - Curve: NORMAL (green); 2s10s +52 bps; 3m10y +90 bps
+- FOMC odds (September 16-17, post-CPI repricing as of Aug 12-14): CUT 0% / HOLD 52% / HIKE 48%
+  - CPI beat (3.4% vs 3.2% consensus) pushed hike odds from 40% → 48%; partially offset by retail miss
+- Sentiment: 44/100 CAUTIOUS (down from 46 — stagflation signal resurfaces)
+- Edition: Vol. I, No. 16 · August 16, 2026
+- Sparklines rolled/updated:
+  - cpi: ROLLED FORWARD (dropped Jul '25 2.7; added Jul '26 3.4; oldest now Aug '25)
+  - retail: ROLLED FORWARD (dropped Aug '25 4.2; added Aug '26 5.0; oldest now Sep '25)
+  - treasury: UPDATED IN-PLACE (Aug entry: 4.65 → 4.70)
+  - all others: UNCHANGED
+- Key headline: CPI 3.4% YoY beat consensus; retail sales +5.0% miss vs prior +6.7%; FOMC hike odds at 48%; 10Y at 4.70%; stagflation risk rising
 
 ### 2026-08-09
 - Fed Rate: 3.50–3.75% (3.63%) — HELD, 8th consecutive hold; unchanged
