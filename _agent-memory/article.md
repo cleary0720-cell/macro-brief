@@ -19,23 +19,23 @@
 16. Iran Strait of Hormuz Oil Shock / Fed Rate Hike Repricing — "The Hormuz Premium: Iran's Oil Shock and the Rate Hike the Market Wasn't Expecting" (2026-07-hormuz-oil-fed.html) — Energy & Commodities
 17. FOMC 9-3 Dissent / September Rate Hike Setup — "Three Against: The Fed's Historic 9-3 Dissent and What It Means for September" (2026-08-fed-dissent-september.html) — Monetary Policy
 18. July 2026 Payroll Contraction / ISM Manufacturing Paradox — "Red Flag: America's First Payroll Loss in Years Forces the Fed Into an Impossible Corner" (2026-08-july-jobs-contraction.html) — Labor Markets
+19. July 2026 Retail Sales Miss / Consumer Credit Stress — "Spending on Empty: July's Retail Slump Signals the Consumer Economy's First Real Crack" (2026-08-retail-sales-paradox.html) — Consumer Economy
 
 ## Last run
-- Date: August 9, 2026
-- Article: "Red Flag: America's First Payroll Loss in Years Forces the Fed Into an Impossible Corner"
-- Category: Labor Markets (archive data-category="Economy")
-- Issue: Vol. I, No. 18
-- Filename: articles/2026-08-july-jobs-contraction.html
-- Thumbnail: fallback cp 2026-05-labor-market-cooling-thumb.jpg → 2026-08-july-jobs-contraction-thumb.jpg (pexels-proxy returned 403)
-- Push: git push origin HEAD:main — SUCCESS (commit 8d24c27)
+- Date: August 16, 2026
+- Article: "Spending on Empty: July's Retail Slump Signals the Consumer Economy's First Real Crack"
+- Category: Consumer Economy (archive data-category="Economy")
+- Issue: Vol. I, No. 19
+- Filename: articles/2026-08-retail-sales-paradox.html
+- Thumbnail: fallback cp 2026-05-consumer-spending-thumb.jpg → 2026-08-retail-sales-paradox-thumb.jpg (pexels-proxy consistently blocked in CCR)
+- Push: git push origin HEAD:main — SUCCESS (commit b2d760b)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
 Do NOT use mcp__github__create_or_update_file for pushing — it fails on large or binary files.
 
 ## Thumbnail
-download_thumb.py returns 403 (Tunnel connection failed) — pexels-proxy consistently blocked in CCR.
-Use the cp fallback from the category mapping immediately (do not retry or wait).
+download_thumb.py consistently returns 403 (Tunnel connection failed) in CCR — use the cp fallback IMMEDIATELY (do not attempt pexels-proxy).
 Fallback mapping:
 - Monetary Policy / Banking / Fixed Income / Debt → 2026-05-debt-interest-crisis-thumb.jpg
 - Inflation → 2026-05-inflation-relapse-thumb.jpg
@@ -48,42 +48,55 @@ Fallback mapping:
 - Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
 
 ## Archive filter buckets (confirmed working)
-The archive.html filter matches data-category (case-insensitive):
+The 4 fixed filter buckets in archive.html — do NOT add new ones:
   Monetary Policy / Fiscal Policy / Trade Policy → data-category="Policy"
   Labor Markets / Housing / Consumer / Economic Output / Global / Technology → data-category="Economy"
   Fixed Income / Money Supply / Financial Markets / Banking → data-category="Markets & Money"
-  Inflation → data-category="Inflation"
-  Energy & Commodities → data-category="Energy"
+  Inflation / Energy & Commodities → data-category="Prices"
+
+Note: Previous memory had "Inflation" → data-category="Inflation" and "Energy" → data-category="Energy" — INCORRECT. The correct filter bucket for both is "Prices" per the instructions.
 
 ## Issue numbering
-Next article will be Vol. I, No. 19
+Next article will be Vol. I, No. 20
 
-## Key data from July 2026 Jobs Report (August 7 release) — verified by research
-- July NFP: -23,000 (first net payroll loss in years; consensus +83,000)
-- BLS revisions: May revised -66k (to +63k), June revised -37k (to +20k) = -103k combined
-- Unemployment: 4.1% (down from 4.2%; driven by 264k workers leaving labor force)
-- Participation rate: 61.4% (near five-and-a-half year low)
-- Sector breakdown: Gov't -53k, Leisure/hospitality -40k, Retail -19k; Healthcare +22k, Construction +22k, Manufacturing +5k
-- Average hourly earnings: +3.2% YoY (lowest since May 2021; consensus was +3.5%)
-- Average workweek: 34.3 hours (unchanged)
-- ISM Manufacturing PMI July: 55.6 (four-year high); Production 58.5; Employment 52.8 (first expansion in 33 months)
-- CME FedWatch September: pre-report ~55% hike, post-report ~40% hike / 60% hold
-  - Markets also pricing 59% hike by October even if September skipped
-- Treasury yields Aug 7: 2Y peaked at -9bps intraday, settled ~-5bps to 4.20%; 10Y -3bps to 4.64%; 30Y to 5.19% — bull flattener
+## Key data verified August 16, 2026 (from index.html analysis section)
+- New Fed Chair: Kevin Warsh (Powell's term ended May 2026)
+- July CPI: 3.4% YoY, +0.1% MoM
+- July Core CPI: 2.5% (down from June's 2.6%; lowest since late 2024) — NOTE: site.md briefly listed 3.2%, but this is INCORRECT per detailed analysis
+- July Retail Sales: $763.6B total; -0.6% MoM; +5.0% YoY (down from June 6.7%)
+  - Motor vehicles: -1.8% MoM | Online: -2.2% MoM | Gas stations: -0.9% MoM, +16.2% YoY
+  - Apparel: +1.9% | Restaurants: +0.5% | Health/personal care: +0.7%
+- Credit card debt: $1.263 trillion (Q2 2026, NY Fed)
+- 90+ day delinquency: 12.8% (up from 7.6% in 2022 Q3; post-2008 highs)
+- 30-day delinquency: 2.92% (7th straight quarterly decrease)
+- Jobless claims 4-wk avg: 199,000 (week ending Aug 8)
+- September FOMC: 52% hold / 48% hike (CME FedWatch, as of Aug 14)
+- 10Y Treasury: 4.70%; 2Y: 4.18%; 30Y: 5.26%
+- Jackson Hole: August 27-29, 2026 — theme: "Financial Innovation: Implications for Payments and Policy"
 
-## Upcoming high-impact releases (as of August 9)
-- Aug 12 (Tue): CPI July 2026 — MOST IMPORTANT pre-September FOMC input
-- Aug 13 (Thu): PPI July 2026 — direct PCE input
-- Aug 14 (Fri): Retail Sales July 2026 (NOTE: Aug 14 Friday, NOT Aug 15 Saturday)
-- Aug 18 (Tue): Housing Starts and Building Permits July 2026
-- Aug 19 (Wed): FOMC Minutes July 28-29
-- Sep 16-17: FOMC September 2026 — 40% hike / 60% hold per CME
+## Upcoming high-impact releases (as of August 16, 2026)
+- Aug 19 (Wed): FOMC Minutes (July 28-29 meeting) — 2:00pm ET
+- Aug 19 (Wed): Housing Starts & Building Permits
+- Aug 21 (Fri): Jobless Claims; Philly Fed PMI; Flash S&P Global PMIs; Existing Home Sales
+- Aug 26 (Wed): Core PCE July (BEA) — CRITICAL; last inflation input before September FOMC
+- Aug 27-29: Jackson Hole Symposium (Kansas City Fed)
+- Sep 4 (Fri): August Jobs Report (BLS)
+- Sep 10 (Wed): CPI August 2026
+- Sep 16-17: FOMC September 2026 (52% hold / 48% hike)
 
 ## Topic suggestions for future runs (not yet covered)
-- CPI July 2026 reaction (Aug 12 release) — if significant move, could be an article
-- Global Economy — China slowdown, EM capital flows, dollar strength (not yet covered)
-- Consumer Economy — credit card delinquency surge, BNPL growth (distinct from May debt article)
-- Fiscal Policy — 2026 budget deficit post-"One Big Beautiful Bill," debt ceiling dynamics
-- Housing Market — housing starts, mortgage rate impact on inventory
-- FOMC Minutes reaction (Aug 19 release)
-- September FOMC decision itself (Sep 16-17)
+- Global Economy — China slowdown, strong dollar, EM capital flows (fully uncovered)
+- Fiscal Policy — 2026 budget deficit trajectory post-"One Big Beautiful Bill"
+- Housing Market — housing starts/building permits, affordability update (last covered May)
+- Financial Markets — equity market reaction to consumer/jobs deterioration
+- FOMC Minutes reaction (Aug 19 release) — could be Monday Aug 23 article if significant
+- Jackson Hole reaction (Aug 27-29) — could be Aug 30 or Sep 6 article
+- August CPI (Sep 10) — next big inflation data point
+- September FOMC decision itself (Sep 16-17) — most consequential article opportunity of 2026
+
+## Data source strategy (confirmed August 2026)
+Government sites return 403 on WebFetch — use WebSearch for all economic data.
+- Retail sales breakdown: census.gov summary via indexbox.io, shopappy.com, cryptobriefing.com
+- Consumer credit: newyorkfed.org research via cnbc.com, libertystreeteconomics.newyorkfed.org
+- Economic calendar: therighttrader.com, tradingeconomics.com, fxstreet.com
+- Jackson Hole dates/theme: financecalendar.com
