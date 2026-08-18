@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 17, 2026
+Last updated: August 18, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -94,6 +94,40 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
 - Changes made: "Last updated" → August 17, 2026 only
 - Notes: Monday — no major data releases. All values carried from Aug 14 close. Yahoo Finance article "Markets bet on a pause for September, but Fed hawks may not be swayed ahead of Jackson Hole" confirms broad market consensus but adds no new data. Warsh confirmed Jackson Hole keynote Fri Aug 28 will focus on "long-term structural questions, not near-term guidance" and is "not constrained by market prices." FOMC Minutes (July 28-29 meeting) confirmed for August 19 at 2pm ET. KuCoin/cryptobriefing articles showing "53% Polymarket hike vs 32% CME" appear to describe intraday Aug 12 conditions or are stale — do not use 53% figure; confirmed Polymarket was ~35% as of Aug 14 close.
+
+### August 18, 2026 — TUESDAY / NO DATA DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (confirmed stable; H.15 Aug 17 release confirmed Aug 13 daily data at 3.63%; Aug 14 weekly H.15 also stable)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September (Aug 18; marginal 1pp drift from Aug 14 close): ~31% hike / ~69% hold
+  - Source: WebSearch synthesis citing CME as of mid-August; vs ~32%/~68% Aug 14 close confirmed Aug 17
+  - 1pp change is within noise; no data releases drove the move
+- Polymarket September hike: ~35% (Aug 14 confirmed; Polymarket search returning stale/conflicting data — 53% figure confirmed stale intraday Aug 12; not updated from Aug 14 baseline)
+- Polymarket "rate hike in 2026?": ~56% YES (Aug 12-14 baseline; search synthesis showed "50%" or "64%" figures — 64% is Aug 6 (pre-data-week), 50% may be synthesis artifact; kept at ~56% last confirmed)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made: "Last updated" → August 18, 2026 only
+- Notes: Tuesday — no major data releases. All values carried from Aug 14 close. CME shows marginal 1pp drift (32%→31%) within noise. FOMC Minutes from July 28-29 meeting release TOMORROW (Wednesday August 19 at 2pm ET) — this is the key event to watch.
+  - Polymarket search results continue to surface stale figures (53% Sept hike = intraday Aug 12; 64% hike-in-2026 = Aug 6 pre-data-week). Do not use; keep Aug 14 baselines.
+  - CRITICAL WARNING repeated: WebSearch CME synthesis can hallucinate probability figures — cross-check against Polymarket, Kalshi, and prior-day baselines before using. The ~31% figure is consistent with ~32% Aug 14 (1pp drift, plausible for no-data day).
+
+### CRITICAL NOTE for NEXT RUN (Aug 19 / Wed — FOMC MINUTES DAY):
+- FOMC Minutes from July 28-29 meeting release Wednesday August 19 at 2pm ET
+  - Watch for dissenter reasoning: why Hammack, Kashkari, Logan wanted +25bps hike NOW vs waiting
+  - Watch for how many other members were "close to dissenting" — if minutes show broader near-hike tilt, September hike odds may jump significantly
+  - Watch for any explicit language about September triggers (inflation threshold, labor market conditions, specific data milestones)
+  - Sources: cnbc.com, thestreet.com, goldsilver.com, interactivecrypto.com, ig.com/uk all covered July 8 minutes well
+  - If minutes show hawkish tilt: odds may reprice from ~31% to 40%+ (update Sept CME odds in all three cards and rate path table)
+  - If minutes are balanced/data-dependent: minimal repricing; note in memory; update date only
+  - Do NOT update page until minutes are actually released (2pm ET = 18:00 UTC); run will be 9am ET = before release
+  - Update agent memory with minute content summary regardless
+- CME baselines as of Aug 18 (from no-data Tuesday drift): ~31% Sep hike / ~69% hold
+- Polymarket: Sep hike ~35% (Aug 14 confirmed baseline; keep until fresh data)
+- EFFR: 3.63% (confirmed stable; no change expected)
+- Jackson Hole: Aug 27-29 — Warsh keynote Fri Aug 28 (LAST major Fed communication before Sep 16 FOMC)
+- Key upcoming events: FOMC Minutes Aug 19 (TODAY for next run), Core PCE July ~Aug 27, Jobs Aug 5, CPI Aug Sep 10
 
 ### CRITICAL NOTE for NEXT RUN (Aug 18 / Tue or Aug 19 / Wed):
 - CME baselines as of Aug 14 close (confirmed unchanged Mon Aug 17): ~32% Sep hike / ~68% hold
