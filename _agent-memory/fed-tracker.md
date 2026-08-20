@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 19, 2026
+Last updated: August 20, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,45 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 20, 2026 — THURSDAY / POST-FOMC MINUTES DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (confirmed stable; sofrrate.com confirmed 3.63% as of Aug 18-19; NY Fed H.15 Aug 19 release should confirm Aug 18 data at same level)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- FOMC Minutes (July 29 meeting, released Aug 19 at 2pm ET): HAWKISH
+  - Key language: "Many participants assessed higher rates would likely be necessary if inflation did not fall" (investinglive.com headline, direct quote from minutes)
+  - Hawkish sentiment extended well beyond the 3 formal dissenters (Hammack/Kashkari/Logan)
+  - Committee expressed concern current financial conditions may not be sufficiently tight to restore price stability
+  - Dissenters' core arguments: supply shocks and AI-driven investment boom risk entrenching inflation above 2%; stable labor market gives room to prioritize price stability without harming employment
+  - No Board of Governors members among the dissenters
+  - Sources: investinglive.com, goldsilver.com, qz.com, agbull.com ("broader hawkish bloc, but September hike far from set"), fxstreet.com, TOPONE Markets, piptheory.com
+- CME September post-minutes: ~33-35% hike / ~65-67% hold
+  - Pre-minutes (Aug 19 morning): ~31% hike / ~69% hold (confirmed KuCoin "30.6%")
+  - Post-minutes: modest hawkish repricing; TOPONE Markets says "won't tell you what you think" — limited net repricing given weak post-meeting data
+  - Synthesis: ~33-35% hike (modest upward move from ~31%; broader hawkish tilt partially offset by weak jobs/PPI/retail data)
+  - CAUTION: SearchQuery synthesis had conflicting figures (73.6% hike — stale from several weeks ago; ~34-35% most credible for Aug 19-20)
+- Polymarket September hike: ~35% (Aug 14 baseline; post-minutes repricing uncertain; Polymarket likely to lag CME intraday move by hours)
+- Polymarket "rate hike in 2026?": ~56% YES (stable; unchanged)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 20, 2026
+  - Card 1: Added FOMC Minutes entry at end of hero-note (key language, broader hawkish tilt, post-minutes CME ~33-35%)
+  - Card 2: Updated CME from ~32% to ~33-35%; updated "Next key catalysts" to remove FOMC Minutes (now released) and add as released event with minutes content; updated Polymarket label to "Aug 14 baseline"
+  - Card 3: Updated CME ~32% to ~33-35%; added FOMC Minutes content at end; updated Polymarket label
+  - Rate path table Sep row: Updated CME from ~32% to ~33-35%; added FOMC Minutes quote; updated Polymarket label
+- Notes: FOMC Minutes were the main event today. Minutes confirmed hawkish sentiment broader than 9-3 vote alone suggested, but "broader hawkish bloc, but September hike far from set" (Agbull) — weak post-meeting data (jobs miss, in-line CPI, flat PPI, retail miss) has already driven CME from ~57% at decision to ~31-35% range. TOPONE Markets: "The Minutes Won't Tell You What You Think" — limited net repricing expected. Next major catalyst: Jackson Hole Aug 27-29 (Warsh keynote Fri Aug 28 — LAST major Fed communication before Sep 16 FOMC). Key data next week: Core PCE July 2026 est. Thursday Aug 27 (before Jackson Hole opens). EFFR data for Aug 19 (today): will be published ~9am ET today; sofrrate.com confirmed 3.63% through Aug 18; assume stable at 3.63%.
+
+### CRITICAL NOTE for NEXT RUN (Aug 21 / Fri):
+- Jackson Hole begins NEXT WEEK: Aug 27-29 (Warsh keynote Fri Aug 28)
+- No major data releases scheduled Friday Aug 21 — quiet day
+- CME baselines post-minutes (Aug 19): ~33-35% hike / ~65-67% hold
+- Polymarket: ~35% (Aug 14 baseline; post-minutes update pending)
+- Check for: (1) any Polymarket repricing post-minutes; (2) any Fed speaker comments (Warsh statement expected to remain quiet ahead of Jackson Hole); (3) any CME intraday drift
+- August CPI nowcast: next Cleveland Fed update expected before Aug 27 — watch for ~3.22% YoY (per prior nowcast)
+- Key upcoming dates: Jackson Hole Aug 27-29 (Warsh keynote Fri Aug 28); Core PCE July ~Aug 27 (Wed); August CPI ~Sep 10; September 15-16 FOMC (decision Sep 16)
 
 ### August 16, 2026 — WEEKEND / NO DATA DAY
 - Target range: 3.50% – 3.75% (no change)
