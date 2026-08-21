@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 20, 2026
+Last updated: August 21, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,34 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 21, 2026 — FRIDAY / QUIET DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; Aug 20 data published today ~9am ET; sofrrate.com confirmed EFFR 3.63% through Aug 19; assume unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~33–35% (carry-forward from post-FOMC minutes Aug 19; no new data today)
+- Polymarket September hike: ~35% (Aug 14 baseline; post-minutes repricing still pending)
+- Polymarket "rate hike in 2026?": ~48% YES (dovish drift since Aug 12; down from ~56%; consistent across multiple search results)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 21, 2026
+  - Card 2: Updated "rate hike in 2026?" Polymarket from ~56% to ~48% (Aug 21; dovish drift post-Goldman); added Goldman Sachs (Aug 17) "very unlikely" note before TD Securities entry
+  - Card 3 rate path Sep row: Added Goldman Sachs (Aug 17) note; added inline "~48% YES" Polymarket for 2026 market
+  - Card 3 rate path Oct/2026 rows: Updated Polymarket "rate hike in 2026?" from ~56% to ~48% (Aug 21)
+- Sources confirmed: federalreserve.gov H.15; sofrrate.com (EFFR 3.63%); Bloomberg/Yahoo Finance/qz.com (Goldman Sachs Aug 17 call); WebSearch synthesis for Polymarket ~48%
+- Notes: Quiet Friday — no major data releases. Key new development: Goldman Sachs (Aug 17, pre-minutes) called September hike "very unlikely"; Jan Hatzius argues markets too hawkish, expects no 2026 hike. This was partially offset by hawkish FOMC Minutes (Aug 19) which repriced CME from ~31% to ~33-35%. Net: CME held ~33-35%, but Polymarket "rate hike in 2026?" drifted down to ~48%. Next major event: Jackson Hole Aug 27–29 (Warsh keynote Fri Aug 28 — last major Fed communication before Sep 16). Core PCE July ~Aug 27.
+
+### CRITICAL NOTE for NEXT RUN (Aug 22, Sat or later):
+- Jackson Hole begins NEXT THURSDAY: Aug 27–29 (Warsh keynote Fri Aug 28)
+- No weekend data releases expected; CME should be ~33-35% hold (stable from Friday close)
+- Key: Any Warsh comments ahead of Jackson Hole? (expected radio silence this weekend)
+- Key updates needed Mon Aug 25 onward: Any pre-JH analyst commentary; check for EFFR Aug 21 data (published Mon); Cleveland Fed Nowcast update
+- Aug 27: Core PCE July 2026 release — CRITICAL pre-Jackson Hole data print
+- Aug 28: Warsh keynote — MOST IMPORTANT event before September 16 FOMC
+- Polymarket "rate hike in 2026?" at ~48% — watch for further drift or stabilization
 
 ### August 20, 2026 — THURSDAY / POST-FOMC MINUTES DAY
 - Target range: 3.50% – 3.75% (no change)
