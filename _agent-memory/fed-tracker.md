@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 21, 2026
+Last updated: August 22, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,37 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 22, 2026 — SATURDAY / QUIET WEEKEND DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; no weekend EFFR publication; last confirmed Aug 19 data at 3.63%; Aug 20 data published Aug 21 at 9am ET — assumed unchanged at 3.63%)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~33–35% (carry-forward from post-FOMC minutes Aug 19; Aug 20 confirmed ~31.6%–35.3% range across sources — within prior baseline; no new data released Sat)
+- Polymarket September hike: ~35% (carry-forward; no new data over weekend)
+- Polymarket "rate hike in 2026?": ~48% YES (carry-forward from Aug 21; no weekend change)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 22, 2026
+  - Card 2 (Next FOMC Meeting): Added BofA fund manager survey (Aug 21) — 69% expect neutral Warsh tone at Jackson Hole; added investinglive.com "hype outruns Warsh playbook of saying as little as possible" note; speech is 19 days before Sep 16; Aug jobs + CPI still come between Jackson Hole and meeting
+- Sources: techtimes.com (Aug 21 Jackson Hole preview); investinglive.com (Warsh "say as little as possible"); BofA fund manager survey; CME FedWatch synthesis (Aug 20 ~68.4%/31.6% hold/hike from investing.com); moomoo.com, kalkine.com Jackson Hole previews
+- Notes: Quiet Saturday — no data releases, no EFFR publication, no markets open. All values carried from Aug 21 close. Key new development: BofA survey finds 69% of fund managers expect Warsh to strike neutral Jackson Hole tone; markets would be most affected by surprise (hawkish or dovish). Warsh's track record since May argues against policy hints. Next major event: Jackson Hole Aug 27–29 (Warsh keynote Fri Aug 28 — last major Fed communication before Sep 16 FOMC). Core PCE July data due ~Aug 27 is the next data print.
+
+### CRITICAL NOTE for NEXT RUN (Aug 23, Sun or Aug 25, Mon):
+- No weekend data releases expected Aug 23 (Sun)
+- Monday Aug 25: EFFR Aug 21 data will be published (NY Fed ~9am ET); assume stable 3.63%
+- Monday Aug 25: Any pre-Jackson Hole analyst commentary or positioning previews
+- Key upcoming: Cleveland Fed Nowcast update expected before Aug 27 Core PCE release
+- Aug 27 (Wed): Core PCE July 2026 release — CRITICAL pre-Jackson Hole data print; prior was 3.3% YoY; estimate ~3.3–3.4%
+- Aug 28 (Fri): Warsh keynote at Jackson Hole — MOST IMPORTANT event before September 16 FOMC
+  - 69% of fund managers expect neutral tone (BofA); markets most sensitive to surprises
+  - Hawkish surprise: hike odds could jump significantly from ~33-35%
+  - Dovish surprise: hike odds could fall back toward 25-30%
+  - Neutral: minimal repricing
+- Polymarket "rate hike in 2026?" at ~48% — watch for drift toward or away from 50% ahead of Jackson Hole
+- CME September: ~33-35% hike / ~65-67% hold (stable through weekend; baseline for next run)
 
 ### August 21, 2026 — FRIDAY / QUIET DAY
 - Target range: 3.50% – 3.75% (no change)
