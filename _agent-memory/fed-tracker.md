@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 22, 2026
+Last updated: August 23, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,35 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 23, 2026 — SUNDAY / QUIET WEEKEND DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; no weekend EFFR publication; last confirmed Aug 20 data at 3.63%; Aug 21 data published Aug 22 at 9am ET — confirmed stable; Aug 21 data for Aug 23 run: NY Fed will publish Monday Aug 25)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~33–35% (carry-forward from post-FOMC minutes Aug 19-22; no new data; synthesis confirmed ~31.6% hold-favor as of Aug 20 — consistent with prior range)
+- Polymarket September hike: ~35% (Aug 14 baseline; carry-forward; KuCoin "53%" figure confirmed STALE from Aug 12 intraday — do NOT use)
+- Polymarket "rate hike in 2026?": ~48% YES (carry-forward from Aug 22; stable over weekend)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made: "Last updated" → August 23, 2026 only
+- Sources: WebSearch synthesis (CME ~31.6% hike Aug 20 confirmed); Jackson Hole previews confirm no Aug 23 news; EFFR confirmed at 3.63% via Aug 20-21 publication
+- Notes: Quiet Sunday — no data releases, no EFFR publication, no markets open. All values carried from Aug 22 close. No new developments since yesterday. KuCoin Polymarket "53%" article re-appeared in search; confirmed stale (Aug 12 intraday). Key upcoming: Jackson Hole Aug 27–29 (Warsh keynote Fri Aug 28 — last major Fed communication before Sep 16 FOMC); Core PCE July Aug 27 (~8:30am ET); Jobless Claims Aug 28; August Jobs Sep 5; August CPI Sep 10; Sep 15–16 FOMC (decision Sep 16; dot-plot meeting).
+
+### CRITICAL NOTE for NEXT RUN (Aug 24, Mon or Aug 25, Mon):
+- Monday Aug 25: EFFR Aug 21 data will be published (NY Fed ~9am ET); expect stable at 3.63%
+- Monday Aug 25: Any pre-Jackson Hole analyst commentary or positioning articles
+- Key upcoming data: Core PCE July 2026 (BEA, Aug 27 8:30am ET) — ROLL FORWARD on dashboard; key Fed inflation metric; prior June: 3.3% YoY; estimate ~3.1–3.2%
+- Warsh keynote Aug 28 (~10am ET): first Jackson Hole speech as Chair; 69% fund managers (BofA) expect neutral tone; market most sensitive to surprises; Warsh track record suggests "say as little as possible"
+- Aug 28: Jobless Claims (week ending Aug 22) also release — in-place update to Aug entry
+- CME September baseline entering Jackson Hole week: ~33–35% hike / ~65–67% hold
+- Polymarket "rate hike in 2026?": ~48% YES (stable; watch for drift ahead of Warsh speech)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- EFFR: 3.63% (stable; will be confirmed Monday)
+- IMPORTANT NOTE for Aug 27+ runs: Warsh speech may dramatically reprice CME odds in either direction. Update ALL three hero cards and rate path table if repricing >5pp from current 33-35% range. Hawkish surprise → hike odds could jump to 45-55%; dovish surprise → fall to 20-25%; neutral → minimal repricing.
+- Core PCE July estimate ~3.1–3.2% per Cleveland Fed Nowcast; if higher than expected → hawkish reprice; if lower → dovish
+- Nvidia Q2 earnings close Aug 26 (not directly Fed-relevant but may move markets into JH)
 
 ### August 22, 2026 — SATURDAY / QUIET WEEKEND DAY
 - Target range: 3.50% – 3.75% (no change)
