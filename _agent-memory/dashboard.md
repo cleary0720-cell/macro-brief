@@ -1,5 +1,5 @@
 # Dashboard Agent Memory
-Last updated: 2026-08-16
+Last updated: 2026-08-23
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -8,120 +8,77 @@ Command: git add index.html archive.html about.html sitemap.xml && git commit -m
 ## Reliable data sources
 - Fed Funds Rate: WebSearch "FOMC [month] 2026 decision federal funds rate" → stocktitan.net, cnbc.com
 - CPI: WebSearch "BLS CPI [month] 2026 year over year" → bls.gov snippets via cnbc.com, usinflationcalculator.com
-- Core CPI / Shelter / Energy: Same CPI search — bls.gov PDF linked + cnbc breakdown chart
+- Core CPI / Shelter / Energy: Same CPI search — confirmed: Core CPI 2.5%, Shelter 3.2%, Energy +14.7% for July 2026
 - Core PCE: WebSearch "BEA core PCE [month] 2026 personal income outlays" → bea.gov snippets, cnbc.com
-- ISM PMI: WebSearch "ISM Manufacturing PMI [month] 2026" → prnewswire.com carries official ISM press releases verbatim; emsnow.com and investinglive.com also reliable
-- Jobless Claims: WebSearch "initial jobless claims 4 week average [date] 2026" → verifiedinvesting.com, tradingeconomics.com, seekingalpha.com
+- ISM PMI: WebSearch "ISM Manufacturing PMI [month] 2026" → prnewswire.com carries official ISM press releases verbatim
+- Jobless Claims: WebSearch "initial jobless claims week [date] 2026" → verifiedinvesting.com, qz.com, neilsethi.substack.com
   - NOTE: DOL releases on Thursday. Weekly + 4-week avg both appear in search snippets.
-- Unemployment/Jobs: WebSearch "BLS employment situation [month] 2026" → cnbc.com, foxbusiness.com, resumehog.com (bizarrely good for BLS summaries)
-  - NOTE: Always check for prior-month revisions — they can be large (146k combined in July release!)
-  - NOTE: Unemployment rate and payrolls can diverge (rate fell to 4.1% even as payrolls -23k July)
+- Unemployment/Jobs: WebSearch "BLS employment situation [month] 2026" → cnbc.com, foxbusiness.com
 - GDP: WebSearch "BEA GDP Q[n] 2026 [estimate]" → advisorperspectives.com, indexbox.io
-- 10-yr Treasury / Yield Curve: WebSearch "treasury yields [date] 2026" → cnbc.com most reliable for post-data-release moves; briefs.co, nwaonline.com for coverage
-  - IMPORTANT: Fetch yields AFTER the week's biggest data release — yields move on the day of the release
-  - Confirmed Aug 7: 2Y=4.20%, 10Y=4.65%, 30Y=5.21% (all sources consistent)
-  - For full curve, estimate non-reported maturities based on parallel shift of confirmed maturities
+- 10-yr Treasury / Yield Curve: WebSearch "treasury yields [date] 2026" → cnbc.com most reliable
+  - Confirmed Aug 22: 2Y=4.19%, 10Y=4.74%, 30Y=5.25%
+  - For full curve: estimate intermediate maturities from parallel shift off confirmed anchors
 - Retail Sales: WebSearch "retail sales [month] 2026 census bureau year over year" → qz.com, etftrends.com
 - M2: WebSearch "M2 money supply [month] 2026 federal reserve H.6" → fxmacrodata.com, tradingeconomics.com
-- FOMC odds: WebSearch "CME FedWatch [meeting date] 2026 FOMC probability" → CNBC most reliable for post-event repricing; growbeansprout.com for steady-state tracking
-  - CRITICAL: Check EVERY run — odds can move 30+ percentage points in HOURS on a major data release
-  - After July jobs miss, September hike fell from 72% → 40% within hours
+- FOMC odds: WebSearch "CME FedWatch [meeting date] 2026 FOMC probability" → CNBC most timely; kucoin.com/news also carries post-event repricing
+  - CRITICAL: Check EVERY run — odds moved 16 points (48→32 hike) in one week after FOMC minutes
 
 ## Known issues
 - bls.gov, federalreserve.gov, fred.stlouisfed.org, treasury.gov ALL return HTTP 403 on direct WebFetch
 - Use WebSearch only — all economic data is well-covered in search result snippets
-- When payrolls are negative, unemployment rate can STILL fall if participation drops — always report both and note the mechanism
-- Prior month revisions often buried in search results — actively search for them ("BLS July 2026 revision May June")
-- ISM PMI: Official at prnewswire.com and emsnow.com — also investinglive.com has good context
-- sitemap.xml: always regenerate and include in commit even if unchanged
-- FOMC odds: After major data (jobs, CPI, FOMC decision), always re-search with the post-release date
+- IMPORTANT: August 16 run had CPI component data discrepancy — sparkline note said Core CPI 3.2%/Energy 16.8% but actual July 2026 BLS data confirmed: Core CPI 2.5%, Shelter 3.2%, Energy +14.7%. Always verify components against BLS search results, not previous memory entries.
+- Jobs date: Sep 5 jobs report (not Sep 4 as previously noted — verify each run)
+- FOMC minutes can cause large repricing: Aug 19 minutes showed "several" members wanted to hike but market dovishly repriced 16 points to 68% hold / 32% hike
+- Bessent Treasury buyback announcement (Aug 20) caused intra-week yield volatility — yields spiked then settled slightly higher
 
 ## Run log
 
+### 2026-08-23
+- Fed Rate: 3.50–3.75% (3.63%) — HELD; UNCHANGED
+- CPI (July 2026): 3.4% — UNCHANGED; Core CPI: 2.5%; Shelter: 3.2%; Energy: +14.7% (corrected from prior memory error)
+- Core PCE (June 2026): 3.3% YoY — UNCHANGED (July data due Aug 27)
+- ISM PMI (July 2026): 55.6 — UNCHANGED
+- Jobless Claims 4-wk avg (week ending Aug 15): 204k — IN-PLACE UPDATE (was 199k; weekly 206k, released Aug 21)
+  - Continuing claims: 1,799,000 (up 18k)
+- Unemployment (July 2026): 4.1% — UNCHANGED
+- GDP Q2 2026: +1.5% — UNCHANGED
+- 10-yr Treasury (Aug 22): 4.74% — IN-PLACE UPDATE (was 4.70%; bear-steepening from minutes + Bessent buyback)
+  - Full curve: 1M=3.76%, 3M=3.82%, 6M=3.91%, 1Y=3.99%, 2Y=4.19%, 5Y=4.39%, 7Y=4.52%, 10Y=4.74%, 20Y=5.20%, 30Y=5.25%
+  - 2s10s: +55 bps; 3m10y: +92 bps; NORMAL curve (green)
+- Retail Sales (July 2026): +5.0% YoY — UNCHANGED
+- M2 (June 2026): 5.5% YoY — UNCHANGED (July H.6 expected late August)
+- FOMC odds (September 16-17, as of Aug 20-22): CUT 0% / HOLD 68% / HIKE 32%
+  - FOMC minutes (Aug 19) showed "several" wanted to hike but market dovishly repriced from 52/48 to 68/32
+  - Triggered by softening labor market backdrop (claims rising, payrolls -23k) outweighing hawkish minutes tone
+- Sentiment: 46/100 CAUTIOUS (up from 45 — dovish FOMC repricing partially offset by rising yields and claims)
+- Edition: Vol. I, No. 17 · August 23, 2026
+- Sparklines rolled/updated:
+  - treasury: IN-PLACE (Aug entry: 4.70 → 4.74)
+  - jobless-claims: IN-PLACE (Aug entry: 199 → 204)
+  - All others: UNCHANGED
+- Key events this week: FOMC Minutes (Aug 19, hawkish but dovish repricing), Warsh Jackson Hole keynote (Aug 28), Core PCE (Aug 27)
+- Key headline: FOMC minutes showed broader hawkish sentiment than vote implied; market priced 68% hold as labor data softened; 10Y drifted to 4.74%; Core PCE release Wednesday Aug 27 is decisive for September FOMC
+
 ### 2026-08-16
-- Fed Rate: 3.50–3.75% (3.63%) — HELD; no meeting since Jul 29; UNCHANGED
-- CPI (July 2026): 3.4% YoY (BLS, released Aug 12) — ROLLED FORWARD (was June 3.5%)
-  - Core CPI: 3.2% (unchanged from June); Shelter: 4.5%; Energy: +16.8% (rebounded from 15.7%)
-  - Energy +1.3% MoM on Iran tensions; CPI beat consensus of 3.2%
-- Core PCE (June 2026): 3.3% YoY — UNCHANGED (July data not yet released)
+- Fed Rate: 3.50–3.75% (3.63%) — HELD; UNCHANGED
+- CPI (July 2026): 3.4% YoY — ROLLED FORWARD; Core CPI: 2.5%; Shelter: 3.2%; Energy: +14.7%
+  - NOTE: Memory entry for this run incorrectly listed Core CPI 3.2%/Energy 16.8% — BLS confirms 2.5%/14.7%
+- Core PCE (June 2026): 3.3% — UNCHANGED
 - ISM PMI (July 2026): 55.6 — UNCHANGED
 - Jobless Claims 4-wk avg (week ending Aug 8): ~199k — IN-PLACE update
-  - Weekly: ~199k; released Aug 13 (partial confirmation only)
 - Unemployment (July 2026): 4.1% — UNCHANGED
 - GDP Q2 2026: +1.5% — UNCHANGED
 - 10-yr Treasury (Aug 14): 4.70% — UPDATED IN-PLACE (Aug entry: 4.65% → 4.70%)
-  - Bear-steepen post-CPI: 2Y=4.18% (+3 bps), 10Y=4.70% (+5 bps), 30Y=5.26% (+5 bps)
-- Retail Sales (July 2026): +5.0% YoY ($724.1B, Census released Aug 14) — ROLLED FORWARD (was June 6.7%)
-  - Ex-gas/autos core retail: +4.8% YoY; gasoline receipts -3.2%
-- M2 (June 2026): 5.5% YoY — UNCHANGED
-- Yield curve (Aug 14): 1M=3.76%, 3M=3.80%, 6M=3.89%, 1Y=3.97%, 2Y=4.18%, 5Y=4.37%, 7Y=4.50%, 10Y=4.70%, 20Y=5.18%, 30Y=5.26%
-  - Curve: NORMAL (green); 2s10s +52 bps; 3m10y +90 bps
-- FOMC odds (September 16-17, post-CPI repricing as of Aug 12-14): CUT 0% / HOLD 52% / HIKE 48%
-  - CPI beat (3.4% vs 3.2% consensus) pushed hike odds from 40% → 48%; partially offset by retail miss
-- Sentiment: 44/100 CAUTIOUS (down from 46 — stagflation signal resurfaces)
-- Edition: Vol. I, No. 16 · August 16, 2026
-- Sparklines rolled/updated:
-  - cpi: ROLLED FORWARD (dropped Jul '25 2.7; added Jul '26 3.4; oldest now Aug '25)
-  - retail: ROLLED FORWARD (dropped Aug '25 4.2; added Aug '26 5.0; oldest now Sep '25)
-  - treasury: UPDATED IN-PLACE (Aug entry: 4.65 → 4.70)
-  - all others: UNCHANGED
-- Key headline: CPI 3.4% YoY beat consensus; retail sales +5.0% miss vs prior +6.7%; FOMC hike odds at 48%; 10Y at 4.70%; stagflation risk rising
+- Retail Sales (July 2026): +5.0% YoY — ROLLED FORWARD
+- M2 (June 2026): 5.5% — UNCHANGED
+- FOMC odds (September 16-17): CUT 0% / HOLD 52% / HIKE 48%
+- Sentiment: 45/100 CAUTIOUS (corrected from memory — was listed as 44 in memory but HTML said 45)
+- Edition: Vol. I, No. 16
 
 ### 2026-08-09
-- Fed Rate: 3.50–3.75% (3.63%) — HELD, 8th consecutive hold; unchanged
-- CPI (June 2026): 3.5% YoY — UNCHANGED (July CPI due Aug 12 — critical for September FOMC)
-- Core CPI (June 2026): 2.6%; Shelter: 3.3%; Energy: +15.7% — ALL UNCHANGED
-- Core PCE (June 2026): 3.3% — UNCHANGED
-- ISM PMI (July 2026): 55.6 — ROLLED FORWARD (was June 53.3; four-year high; 7th consecutive expansion month)
-  - Production 58.5 (5-year high); Employment 52.8 (crossed 50 for first time in 33 months)
-  - Prices Index 71.1 (third consecutive monthly decline)
-- Jobless Claims 4-wk avg (week ending Aug 1): 198,750 (~199k) — ROLLED FORWARD to new August entry
-  - Weekly: 199k; released Aug 6. Prior 4-wk avg 203,250. First time below 200k in years.
-- Unemployment (July 2026): 4.1% — ROLLED FORWARD (was June 4.2%)
-  - NFP: -23,000 (first negative payroll print in years; consensus was +83,000)
-  - Prior month revisions: May+June revised down combined 146,000
-  - Participation: 61.4% (down from 61.5%); long-term unemployed 1.8M
-- GDP Q2 2026 advance: +1.5% — UNCHANGED
-- 10-yr Treasury (Aug 7): 4.65% — ROLLED FORWARD to August entry (was July 4.74%; -9 bps on jobs miss)
-  - 2Y: 4.20% (confirmed); 30Y: 5.21% (confirmed); bull flattener, all maturities -7 to -9 bps
-- Retail Sales (June 2026): +6.7% YoY — UNCHANGED (July data due ~Aug 15)
-- M2 (June 2026): 5.5% YoY — UNCHANGED
-- Yield curve (Aug 7): 1M=3.73%, 3M=3.73%, 6M=3.89%, 1Y=3.96%, 2Y=4.20%, 5Y=4.37%, 7Y=4.43%, 10Y=4.65%, 20Y=5.13%, 30Y=5.21%
-  - Curve: NORMAL; 2s10s +45 bps; 3m10y +92 bps; recession prob 5%
-- FOMC odds (September 16-17, as of Aug 8-9): CUT 0% / HOLD 60% / HIKE 40%
-  - Fell from HOLD 27% / HIKE 72% (Aug 2) to HOLD 60% / HIKE 40% on Aug 7-8 after jobs miss
-  - Source: CNBC Aug 7 article confirmed 60% hold / 40% hike
-- Sentiment: 46/100 CAUTIOUS (up from 43)
-- Edition: Vol. I, No. 15 · August 9, 2026
-- Sparklines rolled/updated:
-  - unemployment: ROLLED FORWARD (dropped Jul '25 4.2; added Jul '26 4.1; oldest now Aug '25)
-  - ism-pmi: ROLLED FORWARD (dropped Jul '25 48.0; added Jul '26 55.6; oldest now Aug '25)
-  - jobless-claims: ROLLED FORWARD (dropped Aug '25 224; added Aug '26 199; oldest now Sep '25)
-  - treasury: ROLLED FORWARD (dropped Aug '25 4.15; added Aug '26 4.65; oldest now Sep '25)
-- Key headline: First payroll loss in years (-23k); ISM PMI four-year high (55.6); bifurcated economy; September hike odds collapsed from 72% → 40%
+- Fed Rate: 3.50–3.75% — HELD; ISM PMI July: 55.6 — ROLLED FORWARD; Unemployment July: 4.1% — ROLLED FORWARD
+- Treasury (Aug 7): 4.65%; FOMC odds: CUT 0% / HOLD 60% / HIKE 40%; Sentiment: 46/100; Edition: Vol. I, No. 15
 
 ### 2026-08-02
-- Fed Rate: 3.50–3.75% (3.63%) — HELD July 29, 9-3 vote; Hammack, Kashkari, Logan dissented
-- CPI (June 2026): 3.5% YoY; Core PCE (June 2026): 3.3% — ROLLED FORWARD; GDP Q2 2026: +1.5% — ROLLED FORWARD
-- ISM PMI (June 2026): 53.3; Jobless Claims 4-wk: ~203k; Unemployment 4.2%; 10Y 4.74%; Retail +6.7%; M2 5.5%
-- FOMC odds: CUT 1% / HOLD 27% / HIKE 72%; Sentiment: 43/100; Edition: Vol. I, No. 14
-
-### 2026-07-26
-- 10-yr Treasury 4.69% (IN-PLACE); Jobless Claims 4-wk 208k (IN-PLACE); all else unchanged
-- FOMC odds (July 29): CUT 0% / HOLD 62% / HIKE 38%; Sentiment: 40/100; Edition: Vol. I, No. 13
-
-### 2026-07-19
-- CPI (June 2026): 3.5% — ROLLED FORWARD; Retail (June): +6.7% — ROLLED FORWARD
-- FOMC odds (July 29): CUT 0% / HOLD 90% / HIKE 10%; Sentiment: 42/100; Edition: Vol. I, No. 12
-
-### 2026-07-12
-- CPI May 4.2%; ISM PMI June 53.3; Unemployment 4.2%; GDP Q1 +2.1%; 10Y 4.55%; Retail May +6.9%; M2 5.6%
-- FOMC odds (July 29): CUT 0% / HOLD 75% / HIKE 25%; Sentiment: 35/100; Edition: Vol. I, No. 11
-
-### 2026-07-05
-- ISM PMI June: 53.3; Jobless Claims 4-wk: 222k; 10Y 4.49%; FOMC odds CUT 24% / HOLD 76%
-- Sentiment 37/100; Edition: Vol. I, No. 10
-
-### 2026-06-28
-- Fed Rate HELD June 17; CPI 4.2%; Core PCE 3.4%; ISM PMI 54.0; Unemployment 4.3%
-- 10Y 4.37%; Retail +6.9%; M2 5.6%; FOMC odds CUT 31% / HOLD 69%; Sentiment 39/100
+- GDP Q2 2026: +1.5% — ROLLED FORWARD; CPI (June): 3.5% — ROLLED FORWARD; FOMC odds: CUT 1% / HOLD 27% / HIKE 72%
+- Sentiment: 43/100; Edition: Vol. I, No. 14

@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-08-16
+Last updated: 2026-08-23
 
 ## Repository
 - Owner: cleary0720-cell
@@ -82,61 +82,67 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - sitemap.xml includes glossary.html (monthly, 0.5) and economic-calendar.html (weekly, 0.6)
 - rss.xml: all author/editor fields use macrobriefnews@gmail.com (not personal email)
 
-## Current macro context (August 16, 2026)
+## Current macro context (August 23, 2026)
 - Fed Funds: 3.50-3.75%, HELD July 29 (9-3 vote); dissenters: Hammack, Kashkari, Logan (all wanted 25bps hike)
-  - 8th consecutive hold; next meeting September 16-17 (critical dot-plot meeting)
+  - FOMC Minutes released Aug 19: "several" members (beyond 3 dissenters) wanted to hike; market dovishly repriced
+  - September 16-17 FOMC odds (Aug 22): CUT 0% / HOLD 68% / HIKE 32%
 - July Jobs (released Aug 7): -23,000 NFP; Unemployment 4.1%; participation 61.4%
   - Prior months revised down 146,000 combined (May+June)
-- CPI July (released Aug 12): 3.4% YoY (beat consensus 3.2%; up from June's 3.5% revised, some see as a slight fall)
-  - Core CPI July: 3.2% (unchanged from June); Shelter: 4.5%; Energy: +16.8% (Iran tensions flared)
-- Core PCE June: 3.3% YoY (July data due ~Aug 27)
+- Jobless Claims (week ending Aug 15, released Aug 21): 206k weekly; 4-week avg 204k (up from 199k)
+  - Continuing claims: 1,799,000 (up 18k)
+- CPI July (released Aug 12): 3.4% YoY
+  - Core CPI July: 2.5% (down from 2.6%); Shelter: 3.2%; Energy: +14.7% YoY (fell 1.5% MoM)
+  - NOTE: These are confirmed BLS values; previous run memory erroneously listed Core 3.2%/Energy 16.8%
+- Core PCE June: 3.3% YoY (July data due Aug 27 — CRITICAL for September FOMC)
 - GDP Q2 2026 advance: +1.5%; Q1 2026 final: +2.1%
 - ISM PMI July: 55.6 (four-year high; 7th consecutive expansion)
-- Jobless claims 4-wk avg: ~199k (week ending Aug 8, released Aug 13)
-- Retail Sales July (released Aug 14): +5.0% YoY ($724.1B); down from June 6.7%; ex-gas/autos +4.8%
-- M2 June: 5.5% YoY
-- Treasury yields (Aug 14, post-CPI): 1M=3.76%, 3M=3.80%, 6M=3.89%, 1Y=3.97%, 2Y=4.18%, 5Y=4.37%, 7Y=4.50%, 10Y=4.70%, 20Y=5.18%, 30Y=5.26%
-  - 2s10s: +52 bps; 3m10y: +90 bps; NORMAL curve
-  - Bear-steepen post-CPI: 2Y +3 bps, 10Y +5 bps, 30Y +5 bps
-- FOMC September 16-17 (per CME FedWatch, as of Aug 12-14 post-CPI): CUT 0% / HOLD 52% / HIKE 48%
-  - CPI beat pushed hike from 40% → 48%; partially offset by retail sales miss
-  - Key binary: payroll miss + inflation uptick = stagflation signal; September call is genuinely live
-- Sentiment: 44/100 CAUTIOUS (down from 46)
-- Edition: Vol. I, No. 16
+- Retail Sales July (released Aug 14): +5.0% YoY; down from June 6.7%; ex-gas/autos +4.8%
+- M2 June: 5.5% YoY (July H.6 expected late August)
+- Treasury yields (Aug 22): 1M=3.76%, 3M=3.82%, 6M=3.91%, 1Y=3.99%, 2Y=4.19%, 5Y=4.39%, 7Y=4.52%, 10Y=4.74%, 20Y=5.20%, 30Y=5.25%
+  - 2s10s: +55 bps; 3m10y: +92 bps; NORMAL curve (green)
+  - Yield backed up despite dovish FOMC repricing: FOMC minutes hawkish tone + Bessent buyback announcement drove intra-week volatility
+- Macro Sentiment: 46/100 CAUTIOUS
+- Edition: Vol. I, No. 17
+
+## Jackson Hole 2026 (Aug 27-29)
+- Theme: "Financial Innovation: Implications for Payments and Policy"
+- Warsh's keynote: Friday August 28, ~10am ET (first major speech as Fed Chair)
+- 69% of fund managers (BofA survey) expect neutral tone — but every word will be parsed for September signals
+- Warsh said he may focus on long-term structural questions rather than near-term guidance
 
 ## Data source strategy (confirmed August 2026)
 All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
-- CPI, unemployment, jobs, jobless claims: WebSearch → covered by cnbc.com, foxbusiness.com, verifiedinvesting.com
+- CPI, unemployment, jobs, jobless claims: WebSearch → covered by cnbc.com, qz.com, verifiedinvesting.com, neilsethi.substack.com
 - GDP, PCE: WebSearch → advisorperspectives.com/dshort, indexbox.io
 - Retail Sales: WebSearch → qz.com, etftrends.com
 - Fed Rate / FOMC: WebSearch → stocktitan.net, cnbc.com
-- Treasury yields: WebSearch "[Date] treasury yields" → cnbc.com, briefs.co for post-data-release moves
+- Treasury yields: WebSearch "[Date] treasury yields" → cnbc.com, tradingeconomics.com for post-data-release moves
   - Always fetch AFTER the week's biggest data release; yields move same day as the release
-  - 2Y and 10Y usually confirmed; estimate others from parallel shift
+  - 2Y and 10Y usually confirmed; 30Y sometimes confirmed; estimate others from parallel shift
 - M2: WebSearch → fxmacrodata.com, tradingeconomics.com
 - ISM PMI: WebSearch → prnewswire.com, emsnow.com, investinglive.com
-- FOMC odds: WebSearch "CME FedWatch [meeting date] FOMC probability" → CNBC most timely post-data; growbeansprout.com for between-release tracking
+- FOMC odds: WebSearch "CME FedWatch [meeting date] FOMC probability" → CNBC most timely post-data; kucoin.com/news/flash for quick updates; growbeansprout.com for between-release tracking
 
 ## Sparkline roll-forward rules
 - Monthly indicators (all except GDP): keep 12 entries, drop oldest, add newest when new data released
   - CPI: label by DATA month
   - Retail Sales: label by RELEASE month (one month ahead of data)
-  - 10Y Treasury + Jobless Claims: ROLL FORWARD when NEW calendar month's data first arrives
+  - 10Y Treasury + Jobless Claims: ROLL FORWARD when NEW calendar month's data first arrives; UPDATE IN-PLACE when same calendar month
   - M2: roll when H.6 released (~3 weeks after month end)
 - GDP: quarterly, always 8 entries, roll only on new BEA quarter release
 - Year suffix in label: add "'YY" when entry is from prior calendar year (e.g., "Aug '25")
-- Current oldest entries after Aug 16 run:
+- Current oldest entries after Aug 23 run:
   - cpi: "Aug '25" | retail: "Sep '25" | m2: "Aug '25" | core-pce: "Jul '25"
   - unemployment: "Aug '25" | fed-rate: "Aug '25"
   - jobless-claims: "Sep '25" | treasury: "Sep '25"
   - ism-pmi: "Aug '25"
   - gdp: "Q3 '24" (8 entries; next roll drops Q3'24 when Q3'26 advance est arrives ~Oct)
 
-## Upcoming releases (as of August 16, 2026)
-- Aug 19 (Wed): FOMC Minutes from July 28-29 meeting — watch for dissenter reasoning (Hammack, Kashkari, Logan)
-- Aug 27 (Wed): Core PCE July 2026 (BEA) — ROLL FORWARD; key Fed inflation metric; was 3.3% in June
-- Aug 28 (Thu): Jobless Claims (week ending Aug 22) — POSSIBLE IN-PLACE update if stays ~199k
-- Sep 5 (Fri): August Jobs Report (BLS) — ROLL FORWARD; will first payroll loss persist?
-- Sep 10 (Wed): CPI August 2026 (BLS) — IN-PLACE (same month); actually ROLL FORWARD to Aug entry
+## Upcoming releases (as of August 23, 2026)
+- Aug 27 (Wed): Core PCE July 2026 (BEA, 8:30am ET) — ROLL FORWARD; key Fed inflation metric; was 3.3% in June; expected ~3.1-3.2%
+- Aug 28 (Thu): Warsh Jackson Hole keynote (~10am ET) — first major speech as Fed Chair
+- Aug 28 (Thu): Jobless Claims (week ending Aug 22) — likely IN-PLACE update to Aug entry
+- Sep 5 (Fri): August Jobs Report (BLS) — ROLL FORWARD; will second payroll loss arrive?
+- Sep 10 (Wed): CPI August 2026 (BLS) — ROLL FORWARD to Aug entry
 - Sep 12 (Fri): Retail Sales August 2026 (Census) — ROLL FORWARD
-- Sep 16-17: FOMC September 2026 — 48% hike probability per CME; dot-plot meeting; CRITICAL
+- Sep 16-17: FOMC September 2026 — 68% hold / 32% hike per CME; dot-plot meeting; CRITICAL
