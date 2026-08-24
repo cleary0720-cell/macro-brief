@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 23, 2026
+Last updated: August 24, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,43 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 24, 2026 — MONDAY / JACKSON HOLE WEEK OPENS
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; Aug 21 data published today ~9am ET per NY Fed; confirmed unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~31–32% (Aug 24; hold leads ~68–69%; Aug 20 confirmed 68.4%/31.6%; Polymarket dashboard also showed 69%/31% — both converging)
+- Polymarket September hike: ~31% (Aug 24; Polymarket dashboard confirmed — down from ~35% Aug 14 baseline; repriced post-minutes and post-data-week)
+- Polymarket "rate hike in 2026?": ~48% YES (carry-forward from Aug 21; no confirmed change today)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- Treasury yields (Aug 24): 10Y fell to 4.71% (from 4.74% Aug 22) as investors repositioned into Jackson Hole week; modest dovish tone
+- Bond buyback: US Treasury buyback program to at least double to $32B+/quarter starting September (bond market stabilization announcement)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 24, 2026
+  - Card 1: CME updated to ~31–32% (Aug 24; hold leads ~68–69%)
+  - Card 2: CME updated to ~31–32%; Polymarket to ~31% (dashboard confirmed); added Treasury yields 10Y 4.71% + bond buyback note; removed "post-minutes repricing pending" language
+  - Card 3 main: CME updated to ~31–32%; Polymarket to ~31%
+  - Rate path Sep row: CME updated to ~31–32%; Polymarket to ~31%
+- Sources: WebSearch synthesis — Polymarket dashboard (69%/31% Sep FOMC); CNBC Aug 24 "Treasury yields fall as investors brace for Warsh's Jackson Hole keynote amid bond fears" (10Y to 4.71%); ALFRED/NY Fed EFFR 3.63% for Aug 20-21; CME Aug 20 confirmed 68.4%/31.6% via investing.com
+- Notes: Quiet Monday at the start of Jackson Hole week (Aug 27–29). No major data releases. Key new development: Treasury 10Y yields fell to 4.71% as investors repositioned ahead of Warsh's keynote. Polymarket September hike now confirmed at ~31% (dashboard), converging with CME ~31–32%. The KuCoin "53%" Polymarket figure is confirmed stale (intraday Aug 12). Bond buyback program to double is a new fiscal/market backstop development. Jackson Hole is the dominant narrative this week — Warsh keynote Fri Aug 28 is the last major Fed communication before Sep 16 FOMC.
+
+### CRITICAL NOTE for NEXT RUN (Aug 25, Tue or Aug 27, Wed):
+- Aug 25 (Tue): No major data releases; pre-Jackson Hole positioning; EFFR Aug 22 data NOT available (Aug 22 = Saturday — no EFFR publication; next business day is Aug 25, but data published Monday Aug 24 was for Aug 21; Aug 25 data will be published Aug 26)
+- Aug 27 (Wed 8:30am ET): Core PCE July 2026 (BEA) — CRITICAL pre-Jackson Hole data print; prior June: 3.3% YoY; estimate ~3.1–3.2% per Cleveland Fed Nowcast; if higher → hawkish reprice at CME; if lower/in-line → minimal repricing; ROLL FORWARD in dashboard memory
+- Aug 28 (Thu ~10am ET): Warsh keynote at Jackson Hole — MOST IMPORTANT event before September 16 FOMC
+  - 69% of fund managers expect neutral tone (BofA survey); markets most sensitive to surprises
+  - Hawkish surprise: hike odds could jump from ~31–32% toward 45–50%+
+  - Dovish surprise: hike odds could fall toward 20–25%
+  - Neutral: minimal repricing; add note about tone/key quotes
+- Aug 28 (Thu): Jobless Claims (week ending Aug 22) — IN-PLACE update to Aug entry; prior: 206k
+- CME September baseline entering Jackson Hole: ~31–32% hike / ~68–69% hold
+- Polymarket "rate hike in 2026?": ~48% YES (stable)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- EFFR: 3.63% (stable; will be 3.63% through Jackson Hole barring any shock)
+- IMPORTANT: If Warsh speech causes >5pp CME swing from ~31–32% baseline, update ALL three hero cards, rate path table, AND Card 1 note to reflect new odds; add Warsh direct quotes if available
 
 ### August 23, 2026 — SUNDAY / QUIET WEEKEND DAY
 - Target range: 3.50% – 3.75% (no change)
