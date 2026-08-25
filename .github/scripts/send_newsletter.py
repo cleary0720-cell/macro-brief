@@ -32,9 +32,10 @@ category_m = re.search(r'class="article-category"[^>]*>([^<]+)<', raw_html)
 paras = re.findall(r'<p>(?!.*class=)(.+?)</p>', raw_html, re.DOTALL)
 
 # Escape all user-derived content before injecting into email HTML
-headline = html.escape(headline_m.group(1).strip() if headline_m else commit_msg.replace("Add article: ", ""))
-subhead  = html.escape(subhead_m.group(1).strip() if subhead_m else "")
-category = html.escape(category_m.group(1).strip() if category_m else "Macro")
+headline_raw = html.unescape(headline_m.group(1).strip() if headline_m else commit_msg.replace("Add article: ", ""))
+headline = html.escape(headline_raw)
+subhead  = html.escape(html.unescape(subhead_m.group(1).strip() if subhead_m else ""))
+category = html.escape(html.unescape(category_m.group(1).strip() if category_m else "Macro"))
 date_str = datetime.now().strftime("%B %d, %Y")
 
 BODY_HTML = "".join([
@@ -152,7 +153,7 @@ with smtplib.SMTP("smtp.gmail.com", 587) as server:
     server.login(GMAIL_USER, GMAIL_PASS)
     for email in subscribers:
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = headline
+        msg["Subject"] = headline_raw
         msg["From"]    = f"The Macro Brief <{GMAIL_USER}>"
         msg["To"]      = email
         msg["List-Unsubscribe"] = f"<mailto:{GMAIL_USER}?subject=unsubscribe>"
