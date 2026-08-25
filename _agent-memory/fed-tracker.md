@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 24, 2026
+Last updated: August 25, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,40 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 25, 2026 — TUESDAY / JACKSON HOLE EVE (PRE-SYMPOSIUM)
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (stable; Aug 22 = Saturday — no EFFR publication; Aug 25 EFFR data publishes Aug 26; last confirmed: 3.63%)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~30% (Aug 25; hold leads ~70%; slight dovish drift from ~31–32% yesterday)
+- Polymarket September hike: ~31% (Aug 25; stable, carried from Aug 24)
+- Polymarket "rate hike in 2026?": ~47% YES (Aug 25; continued gradual dovish drift, down from ~48% Aug 24)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 25, 2026
+  - CME odds updated from ~31–32% to ~30% across all three hero cards and rate path table
+  - Polymarket "rate hike in 2026?" updated from ~48% to ~47%
+  - Polymarket Sep hike date reference updated to Aug 25
+- Sources: WebSearch synthesis — CME Sep hike ~30% / hold ~70% (Aug 25; consistent across multiple search snippets); Goldman Sachs Aug 17 view confirmed validated by subsequent data; Polymarket "rate hike in 2026?" ~47% YES (Yahoo Finance/search snippet)
+- Notes: Quiet Tuesday before Jackson Hole (Aug 27–29). No major data releases; no EFFR publication for Aug 22 (Saturday). CME drifted marginally dovish to ~30% hike as Goldman Sachs Aug 17 hawkish-pushback view continues to be validated. Jackson Hole symposium starts Thursday Aug 27; Warsh keynote Fri Aug 28 is the KEY event. Core PCE July data expected Aug 27. CME baseline entering Jackson Hole: ~30% hike / ~70% hold.
+
+### CRITICAL NOTE for NEXT RUN (Aug 26, Wed or Aug 27, Thu):
+- Aug 26 (Wed): EFFR Aug 25 data published (~9am ET); expect stable at 3.63%
+- Aug 27 (Thu ~8:30am ET): Core PCE July 2026 (BEA) — CRITICAL pre-Jackson Hole data print; prior June: 3.3% YoY; estimate ~3.1–3.2% per Cleveland Fed Nowcast; if higher → hawkish reprice; if lower/in-line → minimal repricing; Jackson Hole symposium begins
+- Aug 28 (Fri ~10am ET): Warsh keynote at Jackson Hole — MOST IMPORTANT event before September 16 FOMC
+  - 69% of fund managers expect neutral tone (BofA survey); markets most sensitive to surprises
+  - Hawkish surprise: hike odds could jump from ~30% toward 40–50%+
+  - Dovish surprise: hike odds could fall toward 20–25%
+  - Neutral: minimal repricing; add note about tone/key quotes
+- Aug 28 (Thu): Jobless Claims (week ending Aug 22) — update Aug entry; prior: 209k
+- CME September baseline entering Jackson Hole: ~30% hike / ~70% hold
+- Polymarket "rate hike in 2026?": ~47% YES
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- EFFR: 3.63% (stable; will be 3.63% through Jackson Hole barring shock)
+- IMPORTANT: If Warsh speech causes >5pp CME swing from ~30% baseline, update ALL three hero cards, rate path table, AND Card 1 note to reflect new odds; add Warsh direct quotes if available
 
 ### August 24, 2026 — MONDAY / JACKSON HOLE WEEK OPENS
 - Target range: 3.50% – 3.75% (no change)
