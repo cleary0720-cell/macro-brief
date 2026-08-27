@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 26, 2026
+Last updated: August 27, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,64 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 27, 2026 — THURSDAY / JACKSON HOLE DAY 1 + CORE PCE DAY + JOBLESS CLAIMS
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Aug 25 data; published Aug 26 ~9am ET per NY Fed; stable unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- Core PCE July 2026 (BEA, released Aug 26, 2026): 3.3% YoY / 0.2% MoM — IN LINE with consensus; same as June; no disinflation progress on core
+  - Headline PCE July 2026: 3.7% YoY — ABOVE forecast (stayed elevated; expected to cool)
+  - CNBC (Aug 26): "Core PCE: In line but not enough to lower Fed rate hike expectations"
+  - invezz.com: "US PCE in July higher than expected at 3.7%, but core PCE matches forecast"
+  - NET EFFECT: Neutral-to-slightly-hawkish; PCE was the driver of Aug 26 repricing from ~30% → ~38-40%
+  - NOTE: BEA released this on August 26 (not Aug 27 as previous memory had predicted); Aug 26 run noted it only as "TOMORROW" and attributed repricing to pre-JH positioning; BOTH factors likely contributed
+- Jobless Claims (week ending Aug 22, released Aug 27): initial 203,000 (down 3k from 206k prior); 4-week avg 205,500 (up 1,250)
+  - Source: DOL release via WebSearch synthesis
+  - Labor market remains resilient; 203k still above sub-200k streak from early August
+- CME September hike: ~40% (Aug 27; hold leads ~60%; stable post-in-line Core PCE July; market in wait-and-see mode ahead of Warsh keynote tomorrow)
+  - Source: CNBC Aug 26 "fed funds futures pricing 40% probability"; biggo.com "September Rate Hike Odds Top 40%"; consistent with prior memory baseline
+- Polymarket September hike: ~34% (Aug 27; slight uptick from ~31-34% range; post-PCE)
+  - Source: WebSearch synthesis synthesis; KuCoin "53%" figure confirmed stale (intraday Aug 12) — do NOT use
+- Polymarket "rate hike in 2026?": ~47% YES (Aug 27; stable; carry-forward from Aug 26)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- Jackson Hole: OPENED TODAY (Aug 27); full agenda released 8pm ET; Warsh keynote TOMORROW Fri Aug 28 ~10am ET
+  - Theme: "Financial Innovation: Implications for Payments and Policy"
+  - Goldman Sachs warns of "amplified FX volatility" around Warsh's speech
+  - No Q&A session after Warsh's remarks; speech posted to KC Fed website + YouTube simultaneously
+  - Other speakers: ECB's Schnabel, Chile's Costa, NZ's Breman
+  - No market-moving Fed remarks from opening day sessions reported
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 27, 2026
+  - Card 1: Removed "Core PCE July due TOMORROW" placeholder; added actual Core PCE July results (3.3% YoY, 0.2% MoM, in-line) + Headline PCE 3.7% (above forecast) + Jackson Hole NOW OPEN + Jobless Claims 203k
+  - Card 2: CME updated from ~38-40% (Aug 26) to ~40% (Aug 27); Polymarket from ~31-34% to ~34%; "Rate hike 2026?" date updated to Aug 27; "Next key catalysts" updated: removed "TOMORROW Aug 27 Core PCE" + "TOMORROW Jackson Hole", replaced with "NOW OPEN" + Warsh TOMORROW
+  - Card 3: CME updated to ~40% (Aug 27); Polymarket to ~34% (Aug 27); Post-minutes date updated to Aug 27
+  - Rate path Sep row: CME/Polymarket updated to Aug 27 figures; "Core PCE July due TOMORROW" replaced with actual results + Jobless Claims + "NOW OPEN"; "Jackson Hole TOMORROW" → "Warsh keynote TOMORROW"
+  - Oct/2026 rows: Polymarket "rate hike in 2026?" date updated from Aug 26 to Aug 27
+- Sources: CNBC Aug 26 (core PCE 3.3% article); invezz.com (headline PCE 3.7%); biggo.com (September hike odds top 40%); DOL via WebSearch (203k jobless claims); regardsofwallstreet.com/jackson-hole (schedule); EFFR NY Fed Aug 25 at 3.63%
+- Notes: TODAY is the first big day — Core PCE came in at 3.3% (in line for core; headline above at 3.7%) and Jobless Claims improved to 203k. PCE print is net neutral: no disinflation progress but no acceleration; confirms core stuck at 3.3% for second consecutive month. Market is now entirely focused on Warsh's Jackson Hole keynote TOMORROW (Fri Aug 28 ~10am ET). CME held at ~40% into the speech. BofA survey (Aug 21): 69% of fund managers expect neutral tone — surprises in either direction would be most impactful.
+
+### CRITICAL NOTE for NEXT RUN (Aug 28, Fri — WARSH KEYNOTE DAY):
+- **Aug 28 ~10am ET: Warsh keynote at Jackson Hole** — MOST IMPORTANT event before September 16 FOMC
+  - LAST major Fed communication before Sep 16 decision
+  - No Q&A session; speech posted to Kansas City Fed website simultaneously
+  - Search for: "Warsh Jackson Hole speech" + "Fed rate hike September 2026"
+  - TONE SCENARIOS:
+    - Hawkish (confirms hike bias, inflation not sufficiently controlled): CME could jump from ~40% toward 50%+ → update ALL three hero cards, rate path table, add Warsh direct quotes
+    - Dovish (data-dependent, in no rush): CME could fall from ~40% toward 25–30% → update ALL three cards, rate path table
+    - Neutral ("structural questions, not near-term guidance"): minimal repricing; add key quotes/tone description
+  - BofA survey: 69% expect neutral tone; market most sensitive to hawkish surprise
+  - CME baseline entering speech: ~40% hike / ~60% hold
+  - Polymarket baseline: ~34% hike / ~66% hold
+- **Aug 28 (Thu — yes, today): Jobless Claims already covered above (203k week ending Aug 22)**
+  - No additional claims data today
+- EFFR Aug 26 data will be published today Aug 28 ~9am ET (expect stable at 3.63%)
+- CME entering Warsh speech: ~40% hike / ~60% hold
+- Polymarket "rate hike in 2026?": ~47% YES (stable)
+- Polymarket "zero cuts in 2026?": ~84% (stable)
+- IMPORTANT: If Warsh speech causes >5pp CME swing from ~40% baseline, update ALL three hero cards AND rate path table with new odds + Warsh direct quotes; add "Warsh Jackson Hole speech (Aug 28)" entry to Card 1
 
 ### August 26, 2026 — WEDNESDAY / JACKSON HOLE EVE (SYMPOSIUM OPENS TOMORROW)
 - Target range: 3.50% – 3.75% (no change)
