@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 27, 2026
+Last updated: August 28, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,57 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 28, 2026 — FRIDAY / WARSH JACKSON HOLE KEYNOTE DAY (PRE-SPEECH 9am ET RUN)
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Aug 26 data confirmed via FRED/NY Fed; stable unchanged; published Aug 27 ~9am ET)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CRITICAL EVENT TODAY: Warsh Jackson Hole keynote at 10am ET — LAST major Fed communication before Sep 16 FOMC
+  - This 9am ET run is PRE-SPEECH; page updated with pre-speech data only
+  - CME entering speech: ~36% hike / ~64% hold (slight dovish drift from ~40% Aug 27)
+  - Polymarket entering speech: ~31% hike / ~68% hold (slight dovish drift from ~34% Aug 27)
+  - Sources: CME FedWatch search snippet: "35.90% probability of a rate hike as of Aug 27-28"; Polymarket dashboard: ~31% hike
+  - Speech posted simultaneously to Kansas City Fed website + YouTube at 10am ET; no Q&A session
+  - 69% of fund managers (BofA survey) expect neutral tone; markets most sensitive to hawkish surprise
+  - CME baseline entering speech: ~36% hike; if Warsh hawkish → could jump toward 50%+; dovish → could fall toward 25-30%
+- Polymarket "rate hike in 2026?": ~47% YES (Aug 28; stable)
+- Polymarket "zero cuts in 2026?": ~84% (stable; unchanged)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 28, 2026
+  - Card 1: CME updated from ~40% to ~36% (Aug 28); "TOMORROW Fri Aug 28" → "TODAY Fri Aug 28"; "Jackson Hole NOW OPEN (Aug 27-29)" → "NOW OPEN (Day 2 of 3, Aug 27-29)"; added "(pre-speech update; markets await Warsh remarks)"
+  - Card 2: CME updated from ~40% to ~36% (Aug 28); Polymarket from ~34% to ~31% (Aug 28); "Rate hike in 2026?" date updated Aug 27→Aug 28; "TOMORROW" → "TODAY" in Next Key Catalysts; added "(pre-speech update)"
+  - Card 3: CME updated from ~40% to ~36% (Aug 28); Polymarket from ~34% to ~31% (Aug 28)
+  - Rate path Sep row: CME from ~40% to ~36%; Polymarket from ~34% to ~31%; "TOMORROW" → "TODAY (Day 2 of 3)"; added pre-speech note
+  - Oct/2026 rows: Polymarket "rate hike in 2026?" date updated from Aug 27 to Aug 28
+- Sources: CME FedWatch search snippet ~35.90% (Aug 27-28); Polymarket dashboard ~31% Sep hike (Aug 28); FRED/NY Fed EFFR Aug 26 at 3.63% confirmed
+- Notes: TODAY is the most important Fed event since the July 29 FOMC decision. Warsh's 10am ET keynote at Jackson Hole is the LAST major Fed communication before September 16 FOMC decision. Page was updated at 9am ET (PRE-SPEECH). CME drifted slightly dovish from ~40% (Aug 27) to ~36% (Aug 28) ahead of the speech, while Polymarket moved from ~34% to ~31%. Markets are repositioning and appear to be pricing less hike risk going into a speech that most expect to be neutral/philosophical. TOMORROW (Aug 29) is the last day of the symposium; run should cover Warsh speech reaction.
+- Known site blocks today: centraljersey.com, chase.com, intellectia.ai, indexbox.io, qz.com all blocked by egress proxy
+
+### CRITICAL NOTE for NEXT RUN (Aug 29, Sat — POST-WARSH SPEECH):
+- **Warsh keynote at Jackson Hole was TODAY (Aug 28) at 10am ET** — MOST IMPORTANT event before Sep 16 FOMC
+  - Search for: "Warsh Jackson Hole speech reaction" + "CME September rate hike" + "Fed rate probability August 28"
+  - TONE SCENARIOS:
+    - Hawkish (confirms hike bias, inflation not sufficiently controlled): CME could jump from ~36% toward 50%+ → update ALL three hero cards, rate path table, add Warsh direct quotes
+    - Dovish (data-dependent, in no rush): CME could fall from ~36% toward 20-25% → update ALL three cards, rate path table
+    - Neutral ("structural questions, not near-term guidance"): minimal repricing; add key quotes/tone description
+  - BofA survey: 69% expected neutral tone; market most sensitive to hawkish surprise
+  - CME pre-speech baseline: ~36% hike / ~64% hold
+  - Polymarket pre-speech: ~31% hike / ~69% hold
+- EFFR Aug 27 data will be published today Aug 29 ~9am ET (expect stable at 3.63%)
+- Jackson Hole symposium Day 3 (Aug 29): other speakers; Warsh speech already delivered
+- CME pre-speech: ~36% hike / ~64% hold → check for post-speech repricing
+- Polymarket pre-speech: ~31% hike / ~69% hold
+- Polymarket "rate hike in 2026?": ~47% YES (stable)
+- IMPORTANT: If Warsh speech causes >5pp CME swing from ~36% baseline, update ALL three hero cards AND rate path table with new odds + Warsh direct quotes; add "Warsh Jackson Hole speech (Aug 28)" entry prominently in Card 1
+- Use goldsilver.com, cnbc.com, thestreet.com, interactivecrypto.com, ig.com/uk for speech coverage
+- Next Saturday is quiet day; most important new info will be post-speech CME and Polymarket repricing
+- UPCOMING AFTER JACKSON HOLE:
+  - August Jobs Report: ~Friday, September 5, 2026
+  - August CPI: ~Wednesday, September 10, 2026
+  - September 15-16 FOMC: decision September 16 at 2pm ET
 
 ### August 27, 2026 — THURSDAY / JACKSON HOLE DAY 1 + CORE PCE DAY + JOBLESS CLAIMS
 - Target range: 3.50% – 3.75% (no change)
