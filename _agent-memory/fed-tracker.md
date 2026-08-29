@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 28, 2026
+Last updated: August 29, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -43,6 +43,53 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets (article titles + descriptions) via WebSearch even if the full article is paywalled. Good for confirming Treasury moves and rate repricing on data days.
 
 ## Run log
+
+### August 29, 2026 — SATURDAY / POST-WARSH JACKSON HOLE SPEECH
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Aug 27 data; published Aug 29 ~9am ET; stable unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- KEY EVENT: Warsh Jackson Hole keynote delivered Fri Aug 28 at 10am ET — HAWKISH
+  - Key quotes: "While this summer's readings were better than expected, they do not tell me that underlying trends have meaningfully improved." / "I stand here today committed to a discipline, not a decision." / Fed "has more work to do."
+  - Tone: Hawkish — warned inflation not durably improved; dismissed forward guidance; called for "quieter" central bank
+  - 2-year Treasury yield: +6.6bps to 4.29% on the day
+  - CME post-speech: ~57% hike / ~43% hold (Aug 29); pre-speech baseline was ~36%/~64%
+  - Polymarket post-speech: ~53% hike (Aug 28; from ~31% pre-speech)
+  - Repricing: approximately +20pp on CME in single session
+- CME September hike: ~57% (post-Warsh speech, Aug 29)
+- Polymarket September hike: ~53% (post-Warsh speech, Aug 28)
+- "Rate hike in 2026?" Polymarket: ~47% YES (Aug 28; likely rising post-speech)
+- "Zero cuts in 2026?" Polymarket: ~84% (Aug 5–6; stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → August 29, 2026
+  - Card 1: Added Warsh speech summary + key quotes; updated Jackson Hole status to "Day 3, final day today"; CME updated to ~57%, Polymarket to ~53%
+  - Card 2: CME updated from ~36% to ~57%; Polymarket from ~31% to ~53%; added post-speech reaction; updated Jackson Hole section to "concluded"; BofA survey note updated to past tense (market surprised by hawkish delivery)
+  - Card 3: CME updated from ~36% to ~57%; Polymarket from ~31% to ~53%
+  - Rate path Sep row: CME from ~36% to ~57%; Polymarket from ~31% to ~53%; "NOW OPEN" → "DELIVERED — HAWKISH"
+  - Rate path Oct row: updated to note post-Warsh repricing
+- Sources: Reuters/Investing.com (CME ~55.7% post-speech); cryptobriefing.com + KuCoin (Polymarket ~53%); CNBC, Bloomberg, Forbes (Warsh speech quotes/reaction); FRED/NY Fed EFFR 3.63% Aug 27
+- Notes: The Warsh Jackson Hole speech was the most important single-day market event since the July 29 FOMC. Market entered the speech dovishly (CME ~36%) and repriced sharply hawkish (~57%). This is a ~+20pp move consistent with a meaningfully hawkish signal. Next critical data: August Jobs Report (~Sep 5) and August CPI (~Sep 10) before the Sep 16 FOMC decision.
+
+### CRITICAL NOTE for NEXT RUN (Sep 5, Friday — AUGUST JOBS REPORT):
+- **August Jobs Report expected around Friday, September 5, 2026**
+  - CME entering jobs day: ~57% hike / ~43% hold (post-Warsh baseline)
+  - Polymarket entering jobs day: ~53% hike / ~47% hold (post-Warsh baseline)
+  - Scenario: Strong jobs (>100k NFP, unemployment ≤4.1%) → hawkish; further CME move toward 65-70%
+  - Scenario: Weak jobs (<0 NFP, repeat of July shock) → dovish; CME could fall back toward 40-45%
+  - Key signals: NFP number vs. consensus, unemployment rate, wage growth (MoM/YoY), prior month revisions
+- **August CPI expected around Wednesday, September 10, 2026**
+  - Cleveland Fed Nowcast (Aug 11): August headline ~3.22% YoY (continued decline); core PCE ~3.36% (slight reacceleration — watch)
+- EFFR Aug 28-29 data will be published Tue-Wed Sep 1-2 (Mon Sep 1 is Labor Day; NY Fed won't publish)
+- Jackson Hole Day 3 (Aug 29): other speakers; Warsh speech already delivered — no major new Fed communications expected today
+- CME post-Warsh: ~57% hike / ~43% hold → update if jobs repricing occurs
+
+### UPCOMING EVENTS:
+  - Labor Day: Monday September 1, 2026 (no EFFR publication)
+  - August Jobs Report: ~Friday, September 5, 2026
+  - August CPI: ~Wednesday, September 10, 2026
+  - September 15–16 FOMC: decision September 16 at 2pm ET = 18:00 UTC
 
 ### August 28, 2026 — FRIDAY / WARSH JACKSON HOLE KEYNOTE DAY (PRE-SPEECH 9am ET RUN)
 - Target range: 3.50% – 3.75% (no change)
