@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: August 31, 2026
+Last updated: September 1, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -47,6 +47,39 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Kalshi September hike odds post-Warsh: ~47% (Aug 28; +17pp surge) — lower than CME (~59%) but both directionally hawkish.
 
 ## Run log
+
+### September 1, 2026 — TUESDAY / QUIET (NO DATA RELEASES)
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Aug 29 data published Sep 1 ~9am ET; stable; unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- CME September hike: ~66% / hold ~34% (Sep 1; up from ~60%/~40% on Aug 31; Forbes article confirmed 66% at ~11:40am ET Aug 31 close, drifted to ~66% entering Sep 1)
+- Kalshi September hike: ~48% (Aug 31; no Sep 1 update confirmed; stable)
+- Polymarket September hike: ~53% (Aug 28; no Sep 1 update confirmed; stable)
+- "Rate hike in 2026?" Polymarket: ~60-68% (Aug 28-29; stable post-Warsh)
+- "Zero cuts in 2026?" Polymarket: ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → September 1, 2026
+  - Card 1: added Sep 1 update note (quiet day, EFFR stable at 3.63%, CME drifted to ~66%)
+  - Card 1 end note: CME updated from "~60% / ~40% (Aug 31)" to "~66% / ~34% (Sep 1)"
+  - Card 2: CME updated from "~60% (Aug 31; hike leads)" to "~66% (Sep 1; hike leads)"
+  - Card 3 policy stance: "~60% probability (CME FedWatch, Aug 31; hike leads ~60%/~40%)" → "~66% (Sep 1; ~66%/~34%)"
+  - Card 3 rate path Sep row: CME updated from "~60% (Aug 31; hike leads ~60%/~40%)" to "~66% (Sep 1; hike leads ~66%/~34%)"
+- Sources: Forbes article (Aug 31 11:40am ET) confirms 66% CME; KuCoin/SearchAI corroborate; EFFR 3.63% stable per sofrrate.com/FRED
+- Notes: Quiet Tuesday. No major data releases. Sep 1 is NOT Labor Day (that's Sep 7). EFFR for Aug 29 published today; stable at 3.63%. CME drifted from ~60% (Aug 31) to ~66% (confirmed from Forbes Aug 31 intraday + search AI for Sep 1 baseline). Barclays anticipating two 25bps hikes in 2026 (Sep + Dec). Goldman Sachs "very unlikely" call was from Aug 17 — pre-Jackson Hole and pre-hawkish minutes; now stale. Next critical events: ISM Manufacturing Aug (Sep 2, ~10am ET), August Jobs Report (Sep 5, BLS), August CPI (Sep 10), September 15-16 FOMC decision.
+- CRITICAL NOTE for NEXT RUN (Sep 2, Wed):
+  - ISM Manufacturing August 2026: Sep 2 (~10am ET) — prior July: 55.6 (4-yr high)
+    - Strong (>55): adds hawkish pressure; CME could drift to 68-72%
+    - Weak (<50, contraction): dovish repricing; CME could fall to 55-60%
+  - EFFR for Aug 30 (Monday) published Sep 2 (~9am ET); expect stable at 3.63% 
+  - CME baselines entering Sep 2: ~66% hike / ~34% hold
+  - Polymarket: September ~53%; "rate hike in 2026?" ~60-68%
+  - Kalshi: September ~48% (stale — update if Sep 2 data available)
+  - IMPORTANT: ISM Sep 2 is the first economic data release since Aug 27 (Jobless Claims/Core PCE)
+  - No new FOMC history row until Sep 16 decision
+  - MEANS-FOR-YOU: only update if Fed Funds Rate changes (unchanged since Dec 2025)
 
 ### August 31, 2026 — MONDAY / QUIET WEEKEND CLOSE (POST-JACKSON HOLE)
 - Target range: 3.50% – 3.75% (no change)
