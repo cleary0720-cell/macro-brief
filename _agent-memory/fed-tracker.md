@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 1, 2026
+Last updated: September 2, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -47,6 +47,51 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Kalshi September hike odds post-Warsh: ~47% (Aug 28; +17pp surge) — lower than CME (~59%) but both directionally hawkish.
 
 ## Run log
+
+### September 2, 2026 — WEDNESDAY / ISM MANUFACTURING AUGUST RELEASE
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Aug 30 data published Sep 2 ~9am ET; stable; unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- KEY DATA: ISM Manufacturing August 2026 (released ~10am ET Sep 2): **54.6%** — down 1pp from July's 55.6%; 8th consecutive expansion month; 15th straight month above 50
+  - New Orders: 53.7% (down 3pp from July's 56.7%)
+  - Prices Paid: 71.1% (unchanged; 23rd straight month of raw material price increases; hawkish)
+  - ISM notes: "Manufacturing expanded for the eighth consecutive month"
+  - PMI at 54.6% = ~2.4% annualized GDP growth implied
+- CME September hike: ~65–68% (stable post-ISM; mild softening from 66–68% pre-data; hike still leads)
+- Polymarket September hike: ~56% (up from ~53% pre-Warsh baseline)
+- Kalshi September hike: ~48% (Sep 2; coin-flip zone)
+- "Rate hike in 2026?" Polymarket: ~60–68% (stable post-Warsh; no Sep 2 update confirmed)
+- "Zero cuts in 2026?" Polymarket: ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → September 2, 2026
+  - Card 1: Added Sep 2 paragraph with ISM 54.6% data, EFFR stable at 3.63%; changed "Sep 1 (today)" to "Sep 1" 
+  - Card 2: CME updated from "~66% (Sep 1)" to "~65–68% (Sep 2; stable post-ISM 54.6%)"; Polymarket updated from "~53%" to "~56% (Sep 2)"; Kalshi updated to "(Sep 2; coin-flip zone)"
+  - Card 3: CME updated from "~66% (Sep 1)" to "~65–68% (Sep 2; post-ISM 54.6%)"; Polymarket updated from "~53%" to "~56% (Sep 2)"
+  - Rate Path Sep row: CME updated; Polymarket updated to ~56%; ISM Aug 54.6% data added
+  - Rate Path Kalshi: Updated to "(Sep 2; coin-flip zone)"
+- Sources: prnewswire.com confirms ISM August 54.6%; vantagemarkets.com/market-news confirms same-day release; TechTimes Sep 1 "68% odds" article; Forbes Aug 31 "66%" article; AI search summaries for Sep 2 CME ~65-68%; Polymarket search shows ~56% September hike
+- Notes: Mild data day. ISM Manufacturing Aug 54.6% (vs 55.6% July) — still solidly expansionary, modest softening. Prices Paid 71.1% unchanged (hawkish). CME barely moved (~65-68% before and after). The ISM print was "in line to slightly soft" — not enough to materially reprice CME from hike-leads territory. 10Y Treasury reportedly near 4.79% (highest since Jan 2025; from search results) but couldn't confirm exact figure. Key upcoming: AUGUST JOBS REPORT (Sep 5, BLS) — most critical pre-FOMC data. August CPI (Sep 10). Then Sep 15-16 FOMC decision.
+
+## CRITICAL NOTE for NEXT RUN (Sep 3, Thu):
+- EFFR for Sep 1 published Sep 3 (~9am ET); expect stable at 3.63%
+- ISM Services PMI August 2026: likely Sep 3-4 (verify exact date); prior July: 54.1
+- CME baselines entering Sep 3: ~65–68% hike / ~32–35% hold
+- Polymarket: September ~56%; "rate hike in 2026?" ~60–68%
+- Kalshi: ~48%
+- KEY UPCOMING EVENTS:
+  - Sep 3 (Thu): ISM Services PMI August 2026 (verify exact date); Jobless Claims week ending Aug 29 (released Sep 4 Fri?)
+  - Sep 5 (Fri): AUGUST JOBS REPORT (BLS) — MOST CONSEQUENTIAL PRINT OF 2026
+    - A strong rebound (>100k NFP) → cements September hike; CME could jump to 70-75%
+    - A second contraction (<0 NFP) → near-certain September hold; CME could fall to 40-50%
+    - In-line (50-100k NFP): CME holds 60-68%
+  - Sep 10 (Wed): CPI August 2026
+  - Sep 15-16: FOMC September 2026 (decision Sep 16 2pm ET = 18:00 UTC; dot-plot meeting)
+- No new FOMC history row until Sep 16 decision
+- MEANS-FOR-YOU: only update if Fed Funds Rate changes (unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (correct; no change needed)
 
 ### September 1, 2026 — TUESDAY / QUIET (NO DATA RELEASES)
 - Target range: 3.50% – 3.75% (no change)
