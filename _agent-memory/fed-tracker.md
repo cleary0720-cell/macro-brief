@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 2, 2026
+Last updated: September 3, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -47,6 +47,44 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Kalshi September hike odds post-Warsh: ~47% (Aug 28; +17pp surge) — lower than CME (~59%) but both directionally hawkish.
 
 ## Run log
+
+### September 3, 2026 — THURSDAY / JOBLESS CLAIMS + ISM SERVICES PMI AUGUST
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Sep 2 data published Sep 3 ~9am ET; stable; unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- KEY DATA: Jobless Claims (week ending Aug 29, released Sep 3): **206,000** (up 2k from 203k prior; slightly above 205k consensus; labor market remains historically tight; 4-week avg ~205,500; within year's 189k-230k range)
+- KEY DATA: ISM Services PMI August 2026 (released Sep 3 ~10am ET): **consensus ~54.3** vs July 54.1 (26th consecutive expansion month expected; actual not yet indexable at run time; check next run for confirmed figure)
+- CME September hike: ~65–68% (stable post-claims; no significant repricing; hike still leads)
+- Polymarket September hike: ~56% (Sep 2; no confirmed Sep 3 update)
+- Kalshi September hike: ~48% (Sep 2; no confirmed Sep 3 update)
+- "Rate hike in 2026?" Polymarket: ~60–68% (Aug 28–29; stable)
+- "Zero cuts in 2026?" Polymarket: ~84% (stable)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → September 3, 2026
+  - Card 1: Removed "(today)" from Sep 2 entry; added Sep 3 paragraph with claims 206k, ISM Services released today, EFFR 3.63% stable, CME stable ~65-68%
+  - Card 2: CME updated from "(Sep 2; hike leads; stable post-ISM 54.6%)" to "(Sep 3; stable; hike leads; claims 206k Sep 3)"
+  - Card 3 Policy Stance: CME updated from "(CME FedWatch, Sep 2; hike leads; stable post-ISM 54.6%)" to "(CME FedWatch, Sep 3; hike leads; stable; claims 206k Sep 3)"
+  - Card 3 Rate Path Sep row: CME date updated to Sep 3; Polymarket simplified to "(Sep 2)"; added Jobless Claims wk Aug 29 entry
+- Sources: Reuters/investing.com (206k claims; "rise marginally amid stable labor market"); RTTNews "U.S. Weekly Jobless Claims Inch Up To 206,000"; FXStreet confirms 206k; ISM Services consensus from multiple preview sources; EFFR via NY Fed/FRED
+- Notes: Mild Thursday. Claims at 206k (up 2k; slight miss vs 205k consensus; still tight). ISM Services PMI August 2026 released today — consensus 54.3; actual not indexable at run time. CME unchanged at ~65-68% hike. Next critical data: AUGUST JOBS REPORT (Sep 5, BLS) — most consequential pre-FOMC data. August CPI (Sep 10). Then Sep 15-16 FOMC decision.
+
+## CRITICAL NOTE for NEXT RUN (Sep 4, Fri or Sep 5, Fri):
+- Sep 4 (Fri): Likely quiet; confirm ISM Services actual result from Sep 3 (look for prnewswire.com/ismworld.org)
+- Sep 5 (Fri): AUGUST JOBS REPORT (BLS) — MOST CONSEQUENTIAL PRINT OF 2026
+  - A strong rebound (>100k NFP) → cements September hike; CME could jump to 70-75%
+  - A second contraction (<0 NFP) → near-certain September hold; CME could fall to 40-50%
+  - In-line (50-100k NFP): CME holds ~65-68%
+  - Prior July: -23,000 NFP (massive miss); consensus for Aug: +80-100k rebound expected
+- CME baselines entering Sep 4-5: ~65-68% hike / ~32-35% hold
+- Polymarket: September ~56%; "rate hike in 2026?" ~60-68%
+- Kalshi: ~48%
+- ALSO CONFIRM: ISM Services PMI August actual reading (released Sep 3 ~10am ET; consensus 54.3)
+- No new FOMC history row until Sep 16 decision
+- MEANS-FOR-YOU: only update if Fed Funds Rate changes (unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (correct; no change needed)
 
 ### September 2, 2026 — WEDNESDAY / ISM MANUFACTURING AUGUST RELEASE
 - Target range: 3.50% – 3.75% (no change)
