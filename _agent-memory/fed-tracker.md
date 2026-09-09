@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 8, 2026
+Last updated: September 9, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -52,6 +52,53 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Kalshi September hike odds post-Warsh: ~47% (Aug 28; +17pp surge) — lower than CME (~59%) but both directionally hawkish.
 
 ## Run log
+
+### September 9, 2026 — WEDNESDAY / QUIET PRE-CPI DAY
+- Target range: 3.50% – 3.75% (no change)
+- Effective rate: 3.63% (Sep 8 data published Sep 9 ~9am ET; stable; unchanged)
+- Next meeting: September 15–16, 2026 (decision Sep 16 at 2pm ET)
+- KEY DATA: None — quiet day ahead of August CPI (Sep 10, BLS). No major data releases.
+- EFFR Sep 8: 3.63% (confirmed via sofrrate.com; stable; unchanged)
+- CME September hike: ~57–59% (modest pullback from Sep 8's ~65%; cryptonews.com/Yahoo Finance showed ~56%; AI synthesis cited 58.7% as of Sep 7; settled range ~57–59%)
+- Polymarket September hike: ~50–52% (Sep 8–9; stable; Benzinga)
+- Kalshi "hike before 2027": ~73% (Sep 8; Benzinga; stable from prior day)
+- "Rate hike in 2026?" Polymarket: ~60–68% (stable post-Warsh; no update confirmed)
+- New FOMC row added: NO (next is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → September 9, 2026
+  - Card 1: Changed "Sep 8, 2026 (today):" → "Sep 8, 2026:" and added Sep 9 paragraph (quiet pre-CPI, EFFR 3.63% stable, CME ~57–59%)
+  - Card 2: Updated main CME from "~65%" to "~57–59%"; Polymarket date updated to "Sep 8–9"; removed "(today)" from Sep 8; added Sep 9 entry
+  - Card 3: Updated CME from "~65%" to "~57–59% (Sep 8–9)"; Polymarket date to "Sep 8–9"
+  - Rate Path Sep row: Updated CME from "~65%" to "~57–59% (Sep 8–9)"; removed "(today)" from Sep 8; added Sep 9 note
+- Sources: cryptonews.com ("FOMC September 2026 Odds for a Rate Hike Surpass 50%"); Yahoo Finance ("FOMC September 2026 Odds for a Rate Hike Surpass 50%"); sofrrate.com (EFFR 3.63%); AI synthesis from WebSearch (58.7% as of Sep 7)
+- Notes: QUIET PRE-CPI DAY. No data releases. CME drifted down from Sep 8's ~65% to ~57–59% as markets settled further ahead of the critical August CPI release tomorrow (Sep 10). This continued modest pullback from the post-jobs ~70–75% peak is consistent with pre-CPI uncertainty. TOMORROW (Sep 10): August CPI (BLS) — THE DECISIVE FINAL INPUT BEFORE SEP 16 FOMC. Prior: 3.4% YoY; Core 2.5%. Cleveland Fed Nowcast: headline ~3.22% YoY. Impact scenarios:
+  - Soft CPI (below 3.0%, core below 2.4%): CME could drop to 40–50%; hold becomes favorite
+  - In-line CPI (3.0–3.3%, core 2.4–2.6%): CME holds ~55–65%; hike still leads
+  - Hot CPI (above 3.3%, core above 2.7%): CME could jump to 75–85%; hike near-certain
+
+## CRITICAL NOTE for NEXT RUN (Sep 10, Wed — AUGUST CPI DAY):
+- **Sep 10 (Wed): CPI AUGUST 2026 (BLS) — MOST DECISIVE FINAL INPUT BEFORE SEP 16 FOMC**
+  - Release time: 8:30am ET
+  - Prior: 3.4% YoY (July); Core CPI 2.5% YoY
+  - Cleveland Fed Nowcast (Aug 11): headline ~3.22% YoY (continued decline from 3.4% July)
+  - If soft CPI (below 3.0%, core below 2.4%): CME could drop to 40–50%; hold becomes favorite
+  - If in-line CPI (3.0–3.3%, core 2.4–2.6%): CME holds ~55–65%; hike still leads
+  - If hot CPI (above 3.3%, core above 2.7%): CME could jump to 75–85%; hike near-certain
+- CME baselines entering Sep 10: ~57–59% hike / ~41–43% hold
+- Polymarket: September ~50–52%; "rate hike in 2026?" ~60–68%
+- Kalshi: "before 2027" ~73%; September-specific ~60–65%
+- EFFR: Sep 9 data published Sep 10 ~9am ET (expected 3.63% stable)
+- IMPORTANT: CPI will cause LARGE CME repricing same-day. Search specifically for "CME FedWatch September 16 2026 probability August CPI" after 8:30am ET on Sep 10.
+- KEY UPCOMING EVENTS:
+  - **Sep 10 (Wed): CPI August 2026 (BLS, 8:30am ET) — THE DECISIVE CATALYST**
+  - Sep 11 (Thu): Jobless Claims (week ending Sep 6); PPI August 2026
+  - Sep 12 (Fri): Retail Sales August 2026 (Census)
+  - Sep 15–16 (Mon–Tue): FOMC September 2026 — decision Sep 16 at 2pm ET = 18:00 UTC (dot-plot meeting; a hike would push to 3.75–4.00%)
+- No new FOMC history row until Sep 16 decision
+- MEANS-FOR-YOU: only update if Fed Funds Rate changes (unchanged since Dec 2025)
+- JS countdown: 2026-09-16T18:00:00Z (correct; no change needed)
 
 ### September 8, 2026 — TUESDAY / FIRST TRADING DAY POST-LABOR DAY
 - Target range: 3.50% – 3.75% (no change)
