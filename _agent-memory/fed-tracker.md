@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 14, 2026
+Last updated: September 15, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -53,6 +53,59 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - tech-insider.org "Polymarket No Change Odds at 18%" interpretation is unclear — may not mean 18% hold; other sources consistently show Polymarket at 60-65% hike for Sep 16.
 
 ## Run log
+
+### September 15, 2026 — MONDAY / FOMC DAY 1
+- Target range: 3.50% – 3.75% (no change; hike decision tomorrow Sep 16)
+- Effective rate: 3.63% (Sep 12 data published today ~9am ET; stable; unchanged)
+- Next meeting: September 15–16, 2026 (today = Day 1; decision Sep 16 Tue at 2pm ET = 18:00 UTC)
+- FOMC Day 1 in progress — no public statement today; decision announcement tomorrow
+- No data releases today.
+- CME September hike: ~85–87% (stable from ~85.5% prior close; slightly firmer as markets enter decision day)
+- Polymarket September hike: ~85–89% (sharp convergence toward CME; up from ~78–82% Sep 14)
+- Kalshi September hike: ~81–85% (up from Sep 12 EOD ~81%; "hike before 2027" market at ~89%)
+- KEY DEVELOPMENT: Goldman Sachs reversed prior "very unlikely" September hike call — now forecasts 25bps hike this week. J.P. Morgan also forecasting September AND December hikes. Markets pricing ~87% CME probability.
+- New FOMC row added: NO (decision is September 16, 2026)
+- MEANS-FOR-YOU: not updated (rate unchanged; hike not yet announced)
+- JS countdown: 2026-09-16T18:00:00Z (unchanged; correct — decision Sep 16 2pm ET = 18:00 UTC)
+- Changes made:
+  - "Last updated" → September 15, 2026
+  - Card 1: Removed "(today)" from Sep 14 entry; replaced "Tomorrow..." forward note with new Sep 15 entry (FOMC Day 1, EFFR 3.63%, CME ~85-87%, Polymarket ~85-89%, Kalshi ~81-85%, GS/JPM now forecast hike)
+  - Card 2: Updated top-level CME/Polymarket/Kalshi to Sep 15 figures; GS/JPM reversal noted; removed "(today)" from Sep 14; added Sep 15 entry
+  - Card 3 Rate Path Sep row: Removed "(today)" from Sep 14; removed "next: Sep 15..." note; added Sep 15 entry with today's figures
+  - NO new FOMC history row (decision Sep 16)
+  - NO changes to MEANS-FOR-YOU (rate unchanged)
+  - NO changes to JS countdown (already set to 2026-09-16T18:00:00Z)
+- Sources: WebSearch "Goldman Sachs JPMorgan September Fed hike forecast" → Yahoo Finance, QZ, tradersunion.com confirm GS/JPM shifted to hike; predictionmarketspicks.com, macroodds.com, kalshi.com for prediction market figures; sofrrate.com confirmed EFFR 3.63%
+
+## CRITICAL NOTE for NEXT RUN (Sep 16 Tue — FOMC DECISION DAY):
+- **Sep 16 (Tue): FOMC DECISION at 2pm ET = 18:00 UTC — THE EVENT**
+  - ALSO: Retail Sales August 2026 (Census) at 8:30am ET — note Retail Sales result BEFORE updating the FOMC decision
+  - If HIKE (+25bps): target range → 3.75% – 4.00%; effective rate ~3.88%; add FOMC history row; update MEANS-FOR-YOU; update JS countdown to Oct 28; change badge class to "hike" and label to "Rate Hike"
+  - If HOLD: target range stays 3.50% – 3.75%; add history row with vote count; update JS countdown to Oct 28; keep "hold" badge
+  - **CURRENT ODDS (entering Sep 15): CME ~85–87% hike; Polymarket ~85–89% hike; Kalshi ~81–85% hike**
+  - 3 prior dissenters (Hammack, Kashkari, Logan) wanted hike at July meeting — expected to vote for hike
+  - Goldman Sachs AND J.P. Morgan now both forecast 25bps hike; JPM also forecasts December hike
+  - Press conference at 2:30pm ET; SEP (dot plot) released — watch for revised dot plot and inflation forecasts
+  - Vote breakdown: search "FOMC September 16 2026 vote statement" immediately after 2pm ET
+  - MEANS-FOR-YOU: update ONLY if rate changes (hike → update four consumer boxes with new rate environment; mortgages ~7.5-8%, savings 4.5-5.5%, credit cards ~21%, auto loans 8-9.5%)
+  - If HIKE: JS countdown → next meeting (Oct 27-28, 2026 decision Oct 28): `new Date('2026-10-28T18:00:00Z')`
+  - If HOLD: JS countdown → same Oct 28 target
+  - Card 2 meeting header: if HIKE → change to "Oct 27–28, 2026" and "Next FOMC decision: October 28, 2026 at 2:00pm ET."
+  - EFFR for Sep 15 published Sep 16 ~9am ET (expected 3.63% still)
+- FOMC history row prep (have ready if HIKE):
+  - date-cell: Sep 16, 2026
+  - decision: decision-hike span ("Hike +25bps")
+  - range-cell: 3.75% – 4.00%
+  - vote-cell: TBD (expect 9-3 or 10-2; Hammack/Kashkari/Logan likely vote for hike; GS expects "driven more by market pricing than inflation fundamentals")
+  - Notes td: SEP (dot-plot) meeting; [statement language from press release]; inflation/dot plot forecasts revised; Retail Sales Aug released same day; first hike since December 2018 (or check exact history); Goldman Sachs forecast 25bps; JPM forecasts Sep+Dec hikes
+- If HOLD history row:
+  - date-cell: Sep 16, 2026
+  - decision: decision-hold span ("Hold")
+  - range-cell: 3.50% – 3.75%
+  - vote-cell: TBD (would be major surprise; market ~87% hike)
+  - Notes td: SEP meeting; dot plot released; market priced ~87% hike entering decision; Retail Sales Aug also released today; Goldman Sachs and JPMorgan had reversed to hike call
+- J.P. Morgan outlook: forecasts hikes in BOTH September AND December 2026; raised estimate of long-run policy rate to 3.25%
+- Goldman Sachs: still expects two Fed rate cuts in 2027 (later than previously forecast); sees Sep hike as "driven more by market pricing than inflation fundamentals"
 
 ### September 14, 2026 — SUNDAY / PRE-FOMC EVE
 - Target range: 3.50% – 3.75% (no change)
