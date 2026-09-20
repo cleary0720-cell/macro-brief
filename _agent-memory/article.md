@@ -24,15 +24,16 @@
 21. Jackson Hole 2026 / Warsh Hawkish Keynote + Flat Core PCE — "The Warsh Doctrine: Jackson Hole Sets Up the Fed's Most Consequential September in a Decade" (2026-08-warsh-jackson-hole.html) — Monetary Policy
 22. August 2026 Jobs Report / September FOMC Hike — "The Reversal: August's 162,000-Job Surge Rewrites the Labor Market Narrative" (2026-09-august-jobs-reversal.html) — Labor Markets
 23. August 2026 CPI / Core CPI-PCE Divergence / FOMC Setup — "The Divergence: Why Core CPI at a Five-Year Low Won't Stop the Fed From Hiking" (2026-09-cpi-august-divergence.html) — Inflation
+24. September FOMC 2026 / 12-0 Unanimous Hike / Dot Plot / October Odds — "Higher Ground: The Fed's September Hike Was Unanimous. October Is Not." (2026-09-fomc-september-hike.html) — Monetary Policy
 
 ## Last run
-- Date: September 13, 2026
-- Article: "The Divergence: Why Core CPI at a Five-Year Low Won't Stop the Fed From Hiking"
-- Category: Inflation (archive data-category="Prices")
-- Issue: Vol. I, No. 23
-- Filename: articles/2026-09-cpi-august-divergence.html
-- Thumbnail: fallback cp 2026-05-inflation-relapse-thumb.jpg → 2026-09-cpi-august-divergence-thumb.jpg (pexels-proxy consistently blocked in CCR)
-- Push: git push origin HEAD:main — SUCCESS (commit f2f6783)
+- Date: September 20, 2026
+- Article: "Higher Ground: The Fed's September Hike Was Unanimous. October Is Not."
+- Category: Monetary Policy (archive data-category="Policy")
+- Issue: Vol. I, No. 25 will be next
+- Filename: articles/2026-09-fomc-september-hike.html
+- Thumbnail: fallback cp 2026-05-debt-interest-crisis-thumb.jpg → 2026-09-fomc-september-hike-thumb.jpg (pexels-proxy consistently blocked in CCR)
+- Push: git push origin HEAD:main — SUCCESS (commit eef1fae)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -60,47 +61,44 @@ The 4 fixed filter buckets in archive.html — do NOT add new ones:
   Inflation / Energy & Commodities → data-category="Prices"
 
 ## Issue numbering
-Next article will be Vol. I, No. 24
+Next article will be Vol. I, No. 25
 
-## Key data as of September 13, 2026
-- CPI August 2026 (released Sep 11):
-  - Headline: 3.4% YoY (UNCHANGED from July); +0.4% monthly
-  - Core CPI: 2.4% YoY (down from 2.5%; LOWEST SINCE MARCH 2021); +0.3% monthly
-  - Shelter: 3.0% YoY (down from 3.2%)
-  - Energy: +16.3% YoY (up from +14.7%); Gasoline +27.4% YoY; Fuel oil +52% YoY
-  - Core Services: 3.0% YoY; Core Goods: 0.7% YoY
-  - Market reaction: 10Y +18bps to 4.96%; 2Y +26bps to 4.63%; bear flattening
-  - FOMC hike odds post-CPI: 85-89% hike (CME FedWatch)
-- Core PCE July 2026 (released Aug 26): 3.3% YoY (flat 2 months); Headline PCE 3.7%
-  - CPI-PCE divergence: Core PCE 90bps ABOVE Core CPI — unusual (PCE normally below CPI)
-- August Jobs: +162,000 NFP (vs +53k expected); Unemployment 4.1%; Wages +3.1% YoY
-- Treasury yields (Sep 11, post-CPI): 2Y=4.63%, 10Y=4.96%, 30Y=5.36%
-- Fed Funds rate: 3.50-3.75% (HELD Jul 29)
-- Jackson Hole (Aug 28): Warsh hawkish — "more work to do"
-- September FOMC: Sep 16-17, 2026; dot-plot meeting
+## Key data as of September 20, 2026
+- Fed Funds: 3.75–4.00% (HIKED 25bps Sep 16, UNANIMOUS 12-0 vote, Chair Warsh)
+  - First hike in 3+ years; dot plot 2026 median 4.10%; 16/18 see additional hike
+  - October 27–28 FOMC: CME FedWatch 57% hike / 43% hold (Sep 20)
+- August Retail Sales (released Sep 17): +1.2% MoM, +6.0% YoY, $773.9B — major beat
+- August Jobs (Sep 5): +162,000 NFP; unemployment 4.1%
+- Jobless Claims (week ending Sep 13, released Sep 18): 196K (3-month low); 4-wk avg ~203K
+- CPI August (Sep 11): 3.4% YoY; Core CPI: 2.4% (lowest since March 2021)
+- Core PCE July (Aug 26): 3.3% YoY — flat 2nd consecutive month
+- ISM Manufacturing August: 54.6% (8th consecutive expansion)
+- Treasury yields (Sep 18): 2Y=4.74%, 10Y=4.94%, 30Y=5.35%
+- Market reaction to hike: S&P 500 -0.5%, Dow -1.2%, 10Y spiked to 5.00-5.02% on Sep 16
 
-## Upcoming releases (as of September 13, 2026)
-- Sep 16 (Tue): Retail Sales August 2026 (Census, 8:30am ET) — rescheduled; previous +5.0% YoY, monthly -0.6%
-- Sep 17 (Wed): FOMC September 2026 decision at 2pm ET — 15% hold / 85% hike; dot-plot meeting
-  - A hike would push target to 3.75-4.00% (highest since 2024)
-- Sep 26 (Fri, approx): Core PCE August 2026 (BEA) — first post-FOMC inflation read
-  - Key: will it follow Core CPI lower (2.4%) or stay at 3.3%?
-- Oct 2 (Fri, approx): September 2026 Jobs Report (BLS) — first post-FOMC labor data
+## Upcoming releases (as of September 20, 2026)
+- Sep 26 (Fri): Core PCE August 2026 (BEA) — MOST CRITICAL: go/no-go for Oct 28 hike
+  - Expect 3.0-3.2% (if declining with CPI) or flat 3.3% (if stalled)
+- Oct 01 (Thu): ISM Manufacturing PMI September 2026 — first post-hike factory read
+- Oct 02 (Fri): September 2026 Jobs Report (BLS) — labor resilience check post-hike
+- Oct 10 (approx): CPI September 2026 (BLS) — additional inflation read
+- Oct 28 (Wed): FOMC Rate Decision October 2026 — 57% hike / 43% hold
 
 ## Topic suggestions for future runs (not yet covered)
-- September FOMC reaction (Sep 17/21) — rate decision, dot plot, press conference — HIGHEST PRIORITY
-- Fiscal Policy — 2026 budget deficit trajectory (still uncovered through all 23 articles)
-- Housing Market — affordability update (last covered May 2026 — 4 months ago)
-- Financial Markets — equity market reaction to September FOMC
-- Economic Output — GDP Q3 2026 preliminary (due ~late Oct 2026)
-- Core PCE August reaction (Sep 26/27) — will PCE finally follow CPI lower?
-- September Jobs Report reaction (Oct 2/4) — will August's +162k hold?
+- August Core PCE reaction (Sep 26/27) — will PCE finally follow CPI lower? (HIGHEST PRIORITY next week)
+- October FOMC reaction (Oct 28/Nov 1) — second hike or pause?
+- September Jobs Report reaction (Oct 2/4) — will labor resilience hold?
+- Fiscal Policy — 2026 budget deficit trajectory (still uncovered in all 24 articles)
+- Housing Market — affordability update (last covered May 2026 — nearly 5 months ago)
+- Financial Markets — equity market reaction to September/October FOMC cycle
+- GDP Q3 2026 preliminary (due ~late Oct 2026) — first read on Q3 growth
 
 ## Data source strategy (confirmed September 2026)
 Government sites return 403 on WebFetch — use WebSearch for all economic data.
 - CPI / PCE: cnbc.com, usinflationcalculator.com, nchstats.com, etftrends.com
-- Jobs reports: cnbc.com, qz.com, foxbusiness.com, finance.yahoo.com
-- FOMC odds: growbeansprout.com, forbes.com (CME FedWatch), centralbank.watch
+- Jobs reports: cnbc.com, roberthalf.com, finance.yahoo.com
+- FOMC odds: cnbc.com, tradingkey.com, polymarket (tech-insider.org covers)
 - Treasury yields: cnbc.com, forbes.com/advisor/investing/treasury-rates
 - ISM PMI: prnewswire.com, industrytoday.com
+- Retail Sales: qz.com, usnews.com, cnbc.com
 - Always search with exact date for current reads
