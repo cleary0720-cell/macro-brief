@@ -40,18 +40,13 @@ git add [files] && git commit -m "message" && git push origin HEAD:main
 Do NOT use mcp__github__create_or_update_file for pushing — it fails on large or binary files.
 
 ## Thumbnail
-download_thumb.py consistently returns 403 (Tunnel connection failed) in CCR — use the cp fallback IMMEDIATELY (do not attempt pexels-proxy).
-Fallback mapping:
-- Monetary Policy / Banking / Fixed Income / Debt → 2026-05-debt-interest-crisis-thumb.jpg
-- Inflation → 2026-05-inflation-relapse-thumb.jpg
-- Trade Policy / Tariffs → 2026-05-tariff-trade-deficit-thumb.jpg
-- Labor Markets → 2026-05-labor-market-cooling-thumb.jpg
-- Consumer Economy / Retail → 2026-05-consumer-spending-thumb.jpg
-- Housing Market → 2026-05-housing-lock-in-thumb.jpg
-- Money Supply / Fiscal Policy → 2026-05-money-supply-thumb.jpg
-- Energy / Commodities / Oil → oil-thumb.jpg
-- Global Economy / Technology / Financial Markets → 2026-05-debt-interest-crisis-thumb.jpg (default)
-- Any other category → 2026-05-debt-interest-crisis-thumb.jpg (default)
+ALWAYS run download_thumb.py first on every run. Never skip it based on a past failure.
+Known issue (verified Sep 23, 2026): the routine sandbox's egress proxy blocks *.workers.dev, so the script
+currently fails with "Tunnel connection failed: 403". That is an environment network setting, not a script bug,
+and it may be fixed at any time.
+If it fails: cp the category placeholder from Step 4 of the prompt (Energy -> 2025-04-oil-prices-thumb.jpg).
+The fix-thumbnails GitHub Action replaces duplicate thumbnails with a unique photo searched from the hero alt text,
+so make the hero alt a literal 4-8 word photo description and keep the caption about the article, not the photo.
 
 ## Archive filter buckets (confirmed working)
 The 4 fixed filter buckets in archive.html — do NOT add new ones:

@@ -14,7 +14,7 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 ## Cloudflare Workers
 - Pexels image proxy: pexels-proxy.cleary0720.workers.dev?query=KEYWORD&category=CATEGORY
 - Newsletter subscription proxy: beehiiv-proxy.cleary0720.workers.dev
-- Call these via Bash/python3 urllib — they are reachable from CCR
+- NOT reachable from CCR as of Sep 23, 2026: the sandbox egress proxy blocks *.workers.dev ("Tunnel connection failed: 403"). They work from GitHub Actions and local machines.
 
 ## CCR network restrictions
 - api.pexels.com and images.pexels.com are BLOCKED in CCR — use pexels-proxy worker instead
