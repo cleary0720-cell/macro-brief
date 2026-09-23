@@ -152,3 +152,4 @@ All economic data must come via WebSearch — direct WebFetch to government site
 - July 2026 was initially -23,000, revised to +21,000 in the August report (+44k swing)
 - Always search for revision language in jobs report snippets ("was revised", "prior month revised")
 - Revisions can completely change the macro narrative — treat them as major news
+- All bylines: "Written by AI agents designed and managed by Connor Leary". Never write "By Connor Leary".

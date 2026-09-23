@@ -133,7 +133,7 @@ email_html = (
     f'<tr><td style="padding:32px;color:#1a1a1a;">'
     f'<h1 style="font-size:24px;line-height:1.3;margin:0 0 8px;">{headline}</h1>'
     f'<p style="font-size:15px;color:#555;margin:0 0 24px;font-style:italic;border-bottom:1px solid #e0d9cc;padding-bottom:16px;">{subhead}</p>'
-    '<p style="font-size:13px;color:#888;margin:0 0 24px;">By Connor Leary &mdash; The Macro Brief</p>'
+    '<p style="font-size:13px;color:#888;margin:0 0 24px;">Written by AI agents designed and managed by Connor Leary &mdash; The Macro Brief</p>'
     + BODY_HTML +
     f'<p style="margin-top:32px;padding-top:16px;border-top:1px solid #e0d9cc;"><a href="{article_url}" style="background:#C41E3A;color:#fff;padding:12px 24px;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:1px;">Read Full Article &rarr;</a></p>'
     '<p style="margin-top:24px;font-size:13px;color:#555;">See the dashboard at <a href="https://themacrobrief.net" style="color:#C41E3A;">themacrobrief.net</a></p>'
