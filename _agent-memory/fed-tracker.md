@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 24, 2026
+Last updated: September 25, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -35,8 +35,31 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Bloomberg.com returns readable search snippets via WebSearch even if full article is paywalled.
 - Sep 20 (Sat): centralbank.watch showed 95% hike probability — stale/hallucinated vs CME 55-59.7%; ignore on weekends.
 - CME REPRICING WARNING: After a major hawkish catalyst (Fed speech + strong data), probabilities can jump 10-20pp intraday. Search for same-day CNBC/FXStreet for current figure; don't rely on prior-day confirmed figure.
+- CORE PCE DATE CORRECTION: Memory previously listed Core PCE August as "Sep 26 (Fri)" — WRONG. Confirmed actual date: **September 30, 2026** (Tuesday). stockmarkethours.org confirmed "August 2026 PCE Release: September 30". All instances in fed-tracker.html corrected from Sep 26 → Sep 30 on Sep 25 run.
 
 ## Run log
+
+### September 25, 2026 — FRIDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (confirmed stable; IORB 3.90%)
+  - Sep 24 EFFR: 3.88% (expected stable; published Sep 25 ~9am ET by NY Fed; seventh business day at new range)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **CME FedWatch October 28 hike: ~77–78% / hold ~22–23% (stable; no catalyst today)**
+  - Last confirmed: ~77.5% as of Sep 24 (after Williams London speech Sep 24)
+  - Sep 25 search: no new catalysts confirmed; stability expected
+- CME FedWatch December 9 second 2026 hike: ~64%+ (unchanged)
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- **Core PCE August: NOT released Sep 25 — actual confirmed date is September 30, 2026**
+  - Previous memory had this wrong as "Sep 26 (Fri)"; corrected in all instances in fed-tracker.html
+- Changes made:
+  - "Last updated" → September 25, 2026
+  - All "Core PCE August (Sep 26)" → "Core PCE August (Sep 30)" (replace_all fix; ~5 instances)
+  - Appended Sep 25 entry to Card 1 hero-note
+  - Appended Sep 25 entry to Card 2 hero-note
+  - Updated Card 3 Oct line: ~78% → ~77–78% (stable Sep 25); added "Core PCE August (Sep 30)" as next catalyst
+- Sources: WebSearch confirmed EFFR 3.88% (Sep 24), CME ~73.5-77.5% (Sep 24 range across sources; memory says ~77.5% after Williams), Core PCE Sep 30 (stockmarkethours.org, fedratecalc.com, financecalendar.com)
 
 ### September 24, 2026 — THURSDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -53,44 +76,22 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - New FOMC row added: NO (no new meeting; next is Oct 27–28)
 - MEANS-FOR-YOU: not updated (rate unchanged)
 - JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
-- Changes made:
-  - "Last updated" → September 24, 2026
-  - Appended Sep 24 entry to Card 1 hero-note (EFFR 3.88%, Barr hawkish, PMI beat, Oct ~78%)
-  - Appended Sep 24 entry to Card 2 hero-note (same)
-  - Updated Card 3 Oct line: ~60% → ~78% (Barr + PMI); added Williams note
-  - Updated Card 3 Dec line: ~64% → ~64%+ (moved higher)
-- Treasury yields Sep 23-24:
-  - 10Y: ~5.12% (19-year high)
-  - 30Y: ~5.39% (22-year high; highest since June 2007)
-  - 2Y: ~4.90% (+13bps on Sep 23 alone)
-- Sources: WebSearch for EFFR (3.88% confirmed Sep 22), CME FedWatch (~77.5% Sep 24 per synthesized search), CNBC Sep 23 article, FXStreet Barr speech, investinglive.com PMI, ActionForex Williams speech
-
-### September 23, 2026 — WEDNESDAY
-- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
-- Effective rate: 3.88% (confirmed stable; IORB 3.90%)
-  - Sep 22 EFFR: 3.88% (confirmed; fifth full business day at new range; published Sep 23 ~9am ET by NY Fed)
-- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
-- CME FedWatch October 28 hike: ~60% / hold ~40% (stable; no repricing Sep 23; last confirmed 59.7% as of Sep 20)
-- CME FedWatch December 9 second 2026 hike: ~64% (stable; unchanged)
-- New FOMC row added: NO (no new meeting; next is Oct 27–28)
-- MEANS-FOR-YOU: not updated (rate unchanged)
-- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **Oct 28 probability is ~78% (sharp jump as of Sep 24 — Barr speech + PMI beat)**
-- **Core PCE August (Sep 26, Fri) is the NEXT critical catalyst** — most important go/no-go for Oct 28 hike
+- **Oct 28 probability is ~77–78% (stable as of Sep 25)**
+- **Core PCE August (Sep 30, Tuesday) is the NEXT critical catalyst** — most important go/no-go for Oct 28 hike
   - Prior Core PCE July: 3.3% YoY; if Aug comes in higher → further repricing hawkish; if lower → partial hold repricing
 - **If Core PCE misses dovishly (below 3.1%), Oct hike probability could drop back toward 60-65%**
 - **If Core PCE matches or beats (3.3%+), October hike ~85%+**
 - **Next major data:**
-  - **Sep 26 (Fri):** Core PCE August 2026 (BEA) — MOST CRITICAL: go/no-go for Oct 28 hike; prior 3.3% YoY
+  - **Sep 30 (Tue):** Core PCE August 2026 (BEA) — MOST CRITICAL: go/no-go for Oct 28 hike; prior 3.3% YoY; CONFIRMED SEP 30 (not Sep 26)
   - **Oct 01 (Thu):** ISM Manufacturing PMI September 2026 — first post-hike factory read
   - **Oct 02 (Fri):** September 2026 Jobs Report (BLS) — labor market resilience check post-hike
-  - **Oct 10 (Fri approx):** CPI September 2026 (BLS) — additional inflation read
+  - **Oct 10 (approx):** CPI September 2026 (BLS) — additional inflation read
   - **Oct 27–28:** Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)
   - **Dec 8–9:** Final 2026 FOMC meeting (decision Dec 9)
-- Market probabilities as of Sep 24:
-  - October 28 hike: ~78% / hold ~22% (CME FedWatch; SHARP JUMP from ~60%)
+- Market probabilities as of Sep 25:
+  - October 28 hike: ~77–78% / hold ~22–23% (CME FedWatch; stable Sep 25; no catalyst)
   - December 9 second hike: ~64%+ (moved higher; exact figure unconfirmed)
 - EFFR confirmed stable at 3.88% since Sep 17 (IORB 3.90%); expect same through at least Oct 28
 - Key Warsh quotes (confirmed Sep 16):
@@ -106,5 +107,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Sep 19: 3.88% (CONFIRMED; published Sep 21 by NY Fed)
   - Sep 21: 3.88% (CONFIRMED; published Sep 22 by NY Fed; 4th business day)
   - Sep 22: 3.88% (CONFIRMED; published Sep 23 by NY Fed; 5th business day)
-  - Sep 23: 3.88% (EXPECTED; published Sep 24 by NY Fed; 6th business day)
+  - Sep 23: 3.88% (CONFIRMED; published Sep 24 by NY Fed; 6th business day)
+  - Sep 24: 3.88% (EXPECTED stable; published Sep 25 by NY Fed; 7th business day)
   - Sep 20: No data (weekend)
