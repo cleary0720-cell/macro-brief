@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 25, 2026
+Last updated: September 26, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -36,8 +36,28 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sep 20 (Sat): centralbank.watch showed 95% hike probability — stale/hallucinated vs CME 55-59.7%; ignore on weekends.
 - CME REPRICING WARNING: After a major hawkish catalyst (Fed speech + strong data), probabilities can jump 10-20pp intraday. Search for same-day CNBC/FXStreet for current figure; don't rely on prior-day confirmed figure.
 - CORE PCE DATE CORRECTION: Memory previously listed Core PCE August as "Sep 26 (Fri)" — WRONG. Confirmed actual date: **September 30, 2026** (Tuesday). stockmarkethours.org confirmed "August 2026 PCE Release: September 30". All instances in fed-tracker.html corrected from Sep 26 → Sep 30 on Sep 25 run.
+- Sep 26 (Sat) search returned 75.8% Oct 28 hike for Sep 25 date — vs memory's confirmed ~77-78%. Within weekend synthesis noise. Used ~76-78% range in Sep 26 update.
 
 ## Run log
+
+### September 26, 2026 — SATURDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (Sep 24 EFFR confirmed stable; Sep 25 EFFR will publish Mon Sep 28 by NY Fed)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **CME FedWatch October 28 hike: ~76–78% / hold ~22–24% (stable; weekend; no new catalyst)**
+  - Sep 25 confirmed ~77-78% (memory)
+  - Sep 26 search returned ~75.8% as of Sep 25 — within weekend noise range
+  - No new catalysts Sat Sep 26; weekend hallucination warning applied; used ~76–78% range
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Core PCE August: NOT released Sep 26 — confirmed Sep 30 (Tuesday)
+- Changes made:
+  - "Last updated" → September 26, 2026
+  - Appended Sep 26 entry to Card 1 hero-note (Saturday note; no EFFR; no data; CME stable ~76-78%)
+  - Appended Sep 26 entry to Card 2 hero-note (same)
+  - Updated Card 3 Oct line: ~77–78% → ~76–78%; stable Sep 25 → stable Sep 25–26 (Sat; no new catalyst)
+- Sources: WebSearch confirmed Core PCE Sep 30 (financecalendar.com, bea.gov snippet); CME ~75.8% (Sep 25 date; weekend search); no new Fed news Sep 25-26
 
 ### September 25, 2026 — FRIDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -78,22 +98,23 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **Oct 28 probability is ~77–78% (stable as of Sep 25)**
+- **Oct 28 probability is ~76–78% (stable as of Sep 26 Sat)**
 - **Core PCE August (Sep 30, Tuesday) is the NEXT critical catalyst** — most important go/no-go for Oct 28 hike
   - Prior Core PCE July: 3.3% YoY; if Aug comes in higher → further repricing hawkish; if lower → partial hold repricing
 - **If Core PCE misses dovishly (below 3.1%), Oct hike probability could drop back toward 60-65%**
 - **If Core PCE matches or beats (3.3%+), October hike ~85%+**
 - **Next major data:**
-  - **Sep 30 (Tue):** Core PCE August 2026 (BEA) — MOST CRITICAL: go/no-go for Oct 28 hike; prior 3.3% YoY; CONFIRMED SEP 30 (not Sep 26)
+  - **Sep 30 (Tue):** Core PCE August 2026 (BEA, 8:30am ET) — MOST CRITICAL: go/no-go for Oct 28 hike; prior 3.3% YoY; CONFIRMED SEP 30
   - **Oct 01 (Thu):** ISM Manufacturing PMI September 2026 — first post-hike factory read
   - **Oct 02 (Fri):** September 2026 Jobs Report (BLS) — labor market resilience check post-hike
   - **Oct 10 (approx):** CPI September 2026 (BLS) — additional inflation read
   - **Oct 27–28:** Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)
   - **Dec 8–9:** Final 2026 FOMC meeting (decision Dec 9)
-- Market probabilities as of Sep 25:
-  - October 28 hike: ~77–78% / hold ~22–23% (CME FedWatch; stable Sep 25; no catalyst)
+- Market probabilities as of Sep 26 (Sat):
+  - October 28 hike: ~76–78% / hold ~22–24% (CME FedWatch; stable from Sep 25; no catalyst)
   - December 9 second hike: ~64%+ (moved higher; exact figure unconfirmed)
 - EFFR confirmed stable at 3.88% since Sep 17 (IORB 3.90%); expect same through at least Oct 28
+- Sep 25 EFFR (published Mon Sep 28 by NY Fed) expected to confirm 3.88%
 - Key Warsh quotes (confirmed Sep 16):
   - "Inflation has been too high for too long"
   - "I'm not in the forward guidance business" (re: dot plot)
@@ -108,5 +129,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Sep 21: 3.88% (CONFIRMED; published Sep 22 by NY Fed; 4th business day)
   - Sep 22: 3.88% (CONFIRMED; published Sep 23 by NY Fed; 5th business day)
   - Sep 23: 3.88% (CONFIRMED; published Sep 24 by NY Fed; 6th business day)
-  - Sep 24: 3.88% (EXPECTED stable; published Sep 25 by NY Fed; 7th business day)
-  - Sep 20: No data (weekend)
+  - Sep 24: 3.88% (CONFIRMED; published Sep 25 by NY Fed; 7th business day)
+  - Sep 25: 3.88% (EXPECTED stable; published Sep 28 Mon by NY Fed; 8th business day)
+  - Sep 26–27: No data (weekend)
