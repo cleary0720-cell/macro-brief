@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-09-20
+Last updated: 2026-09-27
 
 ## Repository
 - Owner: cleary0720-cell
@@ -82,33 +82,36 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - sitemap.xml includes glossary.html (monthly, 0.5) and economic-calendar.html (weekly, 0.6)
 - rss.xml: all author/editor fields use macrobriefnews@gmail.com (not personal email)
 
-## Current macro context (September 20, 2026)
+## Current macro context (September 27, 2026)
 - **Fed Funds: 3.75–4.00%** — HIKED 25 bps September 16, 2026 (UNANIMOUS 12-0 vote, Chair Warsh)
   - First hike in ~3 years; dot plot raised 2026 median to 4.10%; 16/18 participants see additional hike
-  - Next meeting: October 27–28, 2026; CME FedWatch: 57% hike / 43% hold
+  - Next meeting: October 27–28, 2026; CME FedWatch: **76% hike / 24% hold** (jumped from 57% as of Sep 25)
+  - Driver: Vice Chair Barr Sep 23: "further policy adjustments are likely to be needed"
+  - Driver: S&P Global Sep PMI (Sep 23) — input costs at highest since October 2022
 - August Jobs Report (released Sep 5): +162,000 NFP; Unemployment 4.1% — labor market resilient
-- Jobless Claims (week ending Sep 13, released Sep 18): 196K weekly (3-MONTH LOW); 4-wk avg ~203K
-  - 4-wk avg broke below 205K floor; signals labor resilience post-hike
+- Jobless Claims (week ending Sep 19, released Sep 25): 197K weekly (near 57-yr lows); 4-wk avg 202,250
 - ISM Manufacturing PMI August (released Sep 2): 54.6% (8th consecutive expansion)
 - CPI August (released Sep 11): 3.4% YoY; Core CPI August: 2.4% (lowest since March 2021)
-- Core PCE July (released Aug 26): 3.3% YoY — FLAT for 2nd consecutive month (CRITICAL for Oct 28)
+- Core PCE July (released Aug 26): 3.3% YoY — FLAT for 2nd consecutive month
   - Headline PCE July: 3.7% YoY
+  - **August PCE DELAYED: BEA moved release from Sep 26 to Sep 30 — markets in holding pattern**
 - GDP Q2 2026 final: +1.5%; Q1 2026 final: +2.1%
 - **Retail Sales August (released Sep 17): +6.0% YoY, +1.2% MoM, $773.9B — MAJOR BEAT, broad-based**
-  - Released same day as FOMC decision; eliminated last argument for pause; reinforced October hike case
-- M2 July: 5.4% YoY (H.6 released Aug 25, down from June's 5.5%)
-- Treasury yields (Sep 18, post-FOMC): 1M=3.88%, 3M=4.14%, 6M=4.30%, 1Y=4.45%, 2Y=4.74%, 5Y=4.86%, 7Y=4.89%, 10Y=4.94%, 20Y=5.39%, 30Y=5.35%
-  - 10Y spiked to 5.00-5.02% on hike day, settled at 4.94% ("buy the news" reaction)
-  - 2s10s: +20 bps; 3m10y: +80 bps; NORMAL curve (green, #1B5E20)
-- Macro Sentiment: 45/100 CAUTIOUS (down from 47)
-- Edition: Vol. I, No. 21
+- **M2 August: 5.7% YoY** (H.6 released Sep 22, $23.3T total — RE-ACCELERATING from July 5.4%)
+- Treasury yields (Sep 25–26): 1M=4.04%, 3M=4.19%, 6M=4.33%, 1Y=4.49%, 2Y=4.85%, 5Y=4.99%, 7Y=5.05%, 10Y=5.11%, 20Y=5.45%, 30Y=5.40%
+  - **10Y surged to 5.11%** (up 17 bps from Sep 18 post-FOMC close of 4.94%; driven by Barr + PMI)
+  - 2s10s: +26 bps; 3m10y: +92 bps; NORMAL curve (green, #1B5E20)
+- 30-yr Mortgage Rate: 7.03% (Freddie Mac PMMS Sep 24) — highest of 2026
+- NY Fed recession probability: 13.9% (data through August 2026)
+- Macro Sentiment: 43/100 CAUTIOUS (down from 45)
+- Edition: Vol. I, No. 22
 
-## Upcoming releases (as of September 20, 2026)
-- **Sep 26 (Fri):** Core PCE August 2026 (BEA) — MOST CRITICAL: go/no-go for Oct 28 hike; expect 3.0-3.2% if declining or flat/higher if stalled
-- **Oct 01 (Thu):** ISM Manufacturing PMI September 2026 — first post-hike factory read
-- **Oct 02 (Fri):** September 2026 Jobs Report (BLS) — labor market resilience check post-hike
-- **Oct 10 (Sat, approx):** CPI September 2026 (BLS) — additional inflation read
-- **Oct 28 (Wed):** FOMC Rate Decision October 2026 — 57% hike (to 4.00-4.25%) / 43% hold
+## Upcoming releases (as of September 27, 2026)
+- **Sep 30 (Wed):** Core PCE August 2026 (BEA) — MOST CRITICAL: delayed from Sep 26; 76% hike probability hinges on this; if ≥3.4% expect odds to spike above 85%
+- **Oct 01 (Wed):** ISM Manufacturing PMI September 2026 — ROLL FORWARD ism-pmi sparkline (drop "Sep '25", add "Sep" at new value)
+- **Oct 02 (Fri):** September 2026 Jobs Report (BLS) — labor market post-hike; ROLL FORWARD unemployment sparkline (drop "Sep '25", add "Sep")
+- **Oct 14 (Wed):** CPI September 2026 (BLS) — last major inflation read before Oct 28 FOMC
+- **Oct 28 (Wed):** FOMC Rate Decision October 2026 — 76% hike (to 4.00-4.25%) / 24% hold
 
 ## Data source strategy (confirmed September 2026)
 All economic data must come via WebSearch — direct WebFetch to government sites returns 403.
@@ -135,17 +138,17 @@ All economic data must come via WebSearch — direct WebFetch to government site
   - ISM PMI: roll when monthly ISM release arrives (first business day of following month)
 - GDP: quarterly, always 8 entries, roll only on new BEA quarter release
 - Year suffix in label: add "'YY" when entry is from prior calendar year (e.g., "Aug '25")
-- Current oldest entries after Sep 20 run:
-  - cpi: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep CPI released ~Oct 10)
-  - retail: "Oct" (ROLLED this run — dropped "Sep '25", added "Sep" at 6.0; covers Oct '25 through Sep '26)
-  - core-pce: "Aug '25" (covers Aug '25 through Jul '26; next roll when Aug PCE released Sep 26)
-  - fed-rate: "Oct" (ROLLED this run — covers Oct '25 through Sep '26 at 3.88%)
-  - jobless-claims: "Oct '25" (covers Oct '25 through Sep '26; Sep updated in-place 206→203)
-  - treasury: "Oct '25" (covers Oct '25 through Sep '26; Sep updated in-place 4.96→4.94)
-  - ism-pmi: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep ISM released Oct 1)
-  - m2: "Aug '25" (covers Aug '25 through Jul '26; next roll when Aug H.6 released ~Sep 22)
-  - unemployment: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep jobs rpt Oct 2)
-  - gdp: "Q1 '25" (8 entries through Q2 '26; next roll drops Q1'25 when Q3'26 advance est arrives ~late Oct)
+- Current oldest entries after Sep 27 run:
+  - cpi: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep CPI released Oct 14)
+  - retail: "Oct" (covers Oct '25 through Sep '26; next roll when Oct retail released ~mid-Nov)
+  - core-pce: "Aug '25" (covers Aug '25 through Jul '26; next roll when Aug PCE released Sep 30 — IMMINENT)
+  - fed-rate: "Oct" (covers Oct '25 through Sep '26 at 3.88%; next roll if Nov hike occurs)
+  - jobless-claims: "Oct '25" (covers Oct '25 through Sep '26; Sep updated in-place 203→202; next roll when Oct data arrives)
+  - treasury: "Oct '25" (covers Oct '25 through Sep '26; Sep updated in-place 4.94→5.11; next roll when Oct data arrives)
+  - ism-pmi: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep ISM released Oct 1 — IMMINENT)
+  - m2: "Sep '25" (covers Sep '25 through Aug '26 — ROLLED this run, dropped "Aug '25", added "Aug" at 5.7%; next roll when Sep H.6 released ~Oct 22)
+  - unemployment: "Sep '25" (covers Sep '25 through Aug '26; next roll when Sep jobs rpt Oct 2 — IMMINENT)
+  - gdp: "Q3 '24" (8 entries through Q2 '26; next roll drops Q3'24 when Q3'26 advance est arrives ~late Oct)
 
 ## REVISION TRAP WARNING
 - BLS jobs reports frequently revise prior months significantly
