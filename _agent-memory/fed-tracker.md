@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 26, 2026
+Last updated: September 27, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,8 +37,29 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME REPRICING WARNING: After a major hawkish catalyst (Fed speech + strong data), probabilities can jump 10-20pp intraday. Search for same-day CNBC/FXStreet for current figure; don't rely on prior-day confirmed figure.
 - CORE PCE DATE CORRECTION: Memory previously listed Core PCE August as "Sep 26 (Fri)" — WRONG. Confirmed actual date: **September 30, 2026** (Tuesday). stockmarkethours.org confirmed "August 2026 PCE Release: September 30". All instances in fed-tracker.html corrected from Sep 26 → Sep 30 on Sep 25 run.
 - Sep 26 (Sat) search returned 75.8% Oct 28 hike for Sep 25 date — vs memory's confirmed ~77-78%. Within weekend synthesis noise. Used ~76-78% range in Sep 26 update.
+- Sep 27 (Sun) search returned 75.8% Oct 28 hike (same figure as Sep 25) — weekend hallucination warning applied; used ~76–78% range from confirmed memory.
 
 ## Run log
+
+### September 27, 2026 — SUNDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR stable; Sep 25 EFFR publishes Mon Sep 28 by NY Fed; no weekend data)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **CME FedWatch October 28 hike: ~76–78% / hold ~22–24% (stable; weekend; no new catalyst)**
+  - Sep 25 confirmed ~77-78% (memory)
+  - Sep 26 search returned ~75.8% as of Sep 25 date — within weekend noise range
+  - Sep 27 search returned ~75.8% (same stale figure; weekend hallucination warning applied)
+  - No new catalysts Sat-Sun Sep 26-27; used ~76–78% range
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Core PCE August: NOT released Sep 27 — confirmed Sep 30 (Tuesday) — NEXT CRITICAL CATALYST
+- Changes made:
+  - "Last updated" → September 27, 2026
+  - Appended Sep 27 entry to Card 1 hero-note (Sunday; no EFFR; no data; CME stable ~76-78%)
+  - Appended Sep 27 entry to Card 2 hero-note (same)
+  - Updated Card 3 Oct line: "stable Sep 25–26 (Sat; no new catalyst)" → "stable Sep 25–27 (weekend; no new catalyst)"
+- Sources: WebSearch CME ~75.8% (Sep 25 date; weekend); no new Fed news Sep 26-27
 
 ### September 26, 2026 — SATURDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -98,7 +119,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **Oct 28 probability is ~76–78% (stable as of Sep 26 Sat)**
+- **Oct 28 probability is ~76–78% (stable as of Sep 27 Sun)**
 - **Core PCE August (Sep 30, Tuesday) is the NEXT critical catalyst** — most important go/no-go for Oct 28 hike
   - Prior Core PCE July: 3.3% YoY; if Aug comes in higher → further repricing hawkish; if lower → partial hold repricing
 - **If Core PCE misses dovishly (below 3.1%), Oct hike probability could drop back toward 60-65%**
@@ -110,8 +131,8 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - **Oct 10 (approx):** CPI September 2026 (BLS) — additional inflation read
   - **Oct 27–28:** Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)
   - **Dec 8–9:** Final 2026 FOMC meeting (decision Dec 9)
-- Market probabilities as of Sep 26 (Sat):
-  - October 28 hike: ~76–78% / hold ~22–24% (CME FedWatch; stable from Sep 25; no catalyst)
+- Market probabilities as of Sep 27 (Sun):
+  - October 28 hike: ~76–78% / hold ~22–24% (CME FedWatch; stable from Sep 25; no weekend catalyst)
   - December 9 second hike: ~64%+ (moved higher; exact figure unconfirmed)
 - EFFR confirmed stable at 3.88% since Sep 17 (IORB 3.90%); expect same through at least Oct 28
 - Sep 25 EFFR (published Mon Sep 28 by NY Fed) expected to confirm 3.88%
