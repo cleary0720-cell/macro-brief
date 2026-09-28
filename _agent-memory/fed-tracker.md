@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 27, 2026
+Last updated: September 28, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -40,6 +40,26 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sep 27 (Sun) search returned 75.8% Oct 28 hike (same figure as Sep 25) — weekend hallucination warning applied; used ~76–78% range from confirmed memory.
 
 ## Run log
+
+### September 28, 2026 — MONDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR Sep 25 confirmed 3.88%; published today Sep 28 by NY Fed; ninth business day at new range; IORB 3.90%)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **CME FedWatch October 28 hike: ~65–73% / hold ~27–35% (pullback from ~77–78% Friday; pre-PCE week positioning)**
+  - CME synthesized: ~72.3–73% (search result)
+  - Kalshi/Polymarket: ~65% (Avalon Capital weekly playbook Sep 28; also Kalshi/Polymarket search)
+  - Genuine discrepancy — honest range is ~65–73%; reported as such
+  - No new hawkish/dovish catalysts since Williams speech (Sep 24)
+  - Pre-data-week Monday pullback is plausible
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → September 28, 2026
+  - Appended Sep 28 entry to Card 1 hero-note (EFFR 3.88% confirmed; CME ~65-73%)
+  - Appended Sep 28 entry to Card 2 hero-note (same)
+  - Updated Card 3 Oct line: ~76-78% → ~65-73% (pullback; pre-PCE; CME ~73%/Kalshi ~65%)
+- Sources: Avalon Capital Research Substack (64.2%; Sep 28 weekly playbook); CME synthesized 72.3%; EFFR confirmed 3.88%; Core PCE Sep 30 confirmed
 
 ### September 27, 2026 — SUNDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -119,7 +139,9 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **Oct 28 probability is ~76–78% (stable as of Sep 27 Sun)**
+- **Oct 28 probability is ~65–73% (pulled back from ~77–78% on Sep 25; as of Sep 28 Mon)**
+  - CME ~73%; Kalshi/Polymarket ~65%; genuine Monday pre-data-week pullback
+  - No specific dovish catalyst identified; positional/pre-data unwinding
 - **Core PCE August (Sep 30, Tuesday) is the NEXT critical catalyst** — most important go/no-go for Oct 28 hike
   - Prior Core PCE July: 3.3% YoY; if Aug comes in higher → further repricing hawkish; if lower → partial hold repricing
 - **If Core PCE misses dovishly (below 3.1%), Oct hike probability could drop back toward 60-65%**
@@ -131,8 +153,8 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - **Oct 10 (approx):** CPI September 2026 (BLS) — additional inflation read
   - **Oct 27–28:** Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)
   - **Dec 8–9:** Final 2026 FOMC meeting (decision Dec 9)
-- Market probabilities as of Sep 27 (Sun):
-  - October 28 hike: ~76–78% / hold ~22–24% (CME FedWatch; stable from Sep 25; no weekend catalyst)
+- Market probabilities as of Sep 28 (Mon):
+  - October 28 hike: ~65–73% / hold ~27–35% (CME ~73%; Kalshi/Polymarket ~65%; pullback from ~77–78% Sep 25)
   - December 9 second hike: ~64%+ (moved higher; exact figure unconfirmed)
 - EFFR confirmed stable at 3.88% since Sep 17 (IORB 3.90%); expect same through at least Oct 28
 - Sep 25 EFFR (published Mon Sep 28 by NY Fed) expected to confirm 3.88%
@@ -151,5 +173,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Sep 22: 3.88% (CONFIRMED; published Sep 23 by NY Fed; 5th business day)
   - Sep 23: 3.88% (CONFIRMED; published Sep 24 by NY Fed; 6th business day)
   - Sep 24: 3.88% (CONFIRMED; published Sep 25 by NY Fed; 7th business day)
-  - Sep 25: 3.88% (EXPECTED stable; published Sep 28 Mon by NY Fed; 8th business day)
+  - Sep 25: 3.88% (CONFIRMED; published Sep 28 Mon by NY Fed; ninth business day)
   - Sep 26–27: No data (weekend)
+  - Sep 28: 3.88% (EXPECTED stable; published Sep 29 Tue by NY Fed; tenth business day)
