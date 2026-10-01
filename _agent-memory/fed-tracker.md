@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: September 30, 2026
+Last updated: October 1, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -7,7 +7,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: federalreserve.gov press release pages; CNBC, NPR, Fox Business cover decisions same day
 - Effective rate: EFFR via NY Fed / FRED — search "effective federal funds rate EFFR [date]"; sofrrate.com/policy-rates; IORB rate from Fed implementation notes gives ceiling/anchor
-- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together
+- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together; defirate.com/prediction-markets/fed-decision-odds/ also useful
 - Vote breakdown: federalreserve.gov FOMC statement pages; search "FOMC [date] vote statement"
 - PCE data: fxstreet.com, cnbc.com, actionforex.com carry BEA PCE releases same day; first search for fxstreet headline which gives exact YoY figure in title
 - GDP third estimates: bea.gov search results; cnbc.com carries with context
@@ -29,8 +29,31 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME REPRICING WARNING: After a major hawkish/dovish catalyst, probabilities can jump 10-20pp intraday. Search for same-day CNBC/FXStreet for current figure.
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g. 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
+- CARD 1 vs CARD 2 ENDING TEXT: Card 1 (Current Target Range) and Card 2 (Next FOMC Meeting) hero-notes end with DIFFERENT text. Card 1 ends with "...hike remains base case despite downside surprise). Next catalysts: <strong>Oct 1 (Thu): ISM Manufacturing PMI September 2026; Oct 2 (Fri): September Jobs Report (BLS).</strong></div>" while Card 2 ends with "...Hike remains base case. Next: <strong>Oct 1 ISM Manufacturing PMI; Oct 2 September Jobs Report (BLS).</strong></div>" — always use Python line-specific replacement, not simple Edit tool, when both need updating.
 
 ## Run log
+
+### October 1, 2026 — THURSDAY (ISM PMI day; Goldman Sachs capitulates on October hike)
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR Sep 30 published Oct 1 by NY Fed; twelfth business day at new range; IORB 3.90%; stable)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **MAJOR DOVISH REPRICING post-PCE miss:**
+  - Goldman Sachs (Sep 30 post-PCE): moved October hike forecast to December
+  - CME FedWatch October 28: ~39–47% hike / ~52–61% hold (**HOLD IS NOW THE MARKET BASE CASE**)
+  - Kalshi: ~33–35% hike / ~65% hold
+  - Polymarket: ~42% hike / ~57% hold
+  - Down from ~68–72% CME / ~69% Kalshi/PM immediately post-PCE Sep 30
+  - Down from ~78% CME peak on Sep 24 (Barr speech + hot PMI)
+- **ISM Manufacturing PMI September 2026:** Due today at 10am ET (forecast ~54.8%; prior August: 54.6%; NOT YET RELEASED at update time 9am ET)
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 1, 2026
+  - Card 1 hero-note: Appended Oct 1 entry (EFFR 3.88%, Goldman Sachs capitulation, CME/Kalshi/PM probability collapse, ISM PMI note)
+  - Card 2 hero-note: Appended Oct 1 entry (same)
+  - Card 3 rate path Oct line: Updated to reflect ~39–47% hike / HOLD base case; added Goldman Sachs capitulation note
+- Sources: predictionnews.com + defirate.com + kalshi.com (Kalshi ~33–35% hike); polymarket.com + kucoin.com (Polymarket ~42% hike); CME synthesis ~39–47%; investinglive.com + panews.io (Goldman Sachs moved to December); NY Fed / FRED (EFFR 3.88%)
 
 ### September 30, 2026 — WEDNESDAY (Core PCE Day — BIG MISS)
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -44,33 +67,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Q2 2026 GDP Third Estimate (BEA, same release):**
   - **+2.2% annualized** (revised up from +1.5% advance estimate)
   - Q1 2026 also revised to +2.5% (from +2.1% previously)
-- **Post-PCE October 28 hike odds:**
+- **Post-PCE October 28 hike odds (Sep 30 close):**
   - CME: ~68–72% (slight dovish drift from ~72% pre-PCE; GDP revision partially offset)
   - Kalshi: ~69%
   - Polymarket: ~69%
-  - **Despite the MISS, hike remains base case at ~69%** — Warsh's hawkish signaling + strong GDP + labor market resilience sustaining expectations
-- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+  - **Hike still base case on Sep 30 — but Goldman Sachs capitulated same day**
+- New FOMC row added: NO
 - MEANS-FOR-YOU: not updated (rate unchanged)
-- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
-- Changes made:
-  - "Last updated" → September 30, 2026
-  - Appended Sep 30 entry to Card 1 hero-note (Core PCE 3.0% miss; GDP +2.2%; EFFR 3.88%; CME ~68-72%/Kalshi/PM ~69%)
-  - Appended Sep 30 entry to Card 2 hero-note (same)
-  - Updated Card 3 Oct line: ~69-73% → ~68-72% (post-PCE; slight dovish drift; hike still base case)
-- Sources: fxstreet.com + cnbc.com (Core PCE 3.0% YoY confirmed); bea.gov (GDP third estimate +2.2%); predictionnews.com (Kalshi ~69.5%, PM ~68.5%); WebSearch synthesis (CME ~68-72%)
 
 ### September 29, 2026 — TUESDAY (pre-PCE day)
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
 - Effective rate: 3.88% (EFFR Sep 28 published Sep 29 by NY Fed; tenth business day at new range; IORB 3.90%; stable)
 - Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
-- **CME FedWatch October 28 hike: ~69-73% / hold ~27-31% (stable; pre-PCE holding pattern)**
-  - CME: ~72.3% (as of Sep 28; stable into Sep 29; per search)
-  - Kalshi: ~69% (as of Sep 29; per search)
-  - Polymarket: ~65% (per search)
-  - No new Fed speeches Sep 29; no major data releases
-  - Market in holding pattern ahead of Core PCE August tomorrow (Sep 30)
-- New FOMC row added: NO (no new meeting; next is Oct 27–28)
-- MEANS-FOR-YOU: not updated (rate unchanged)
+- CME October 28 hike: ~69-73% / hold ~27-31% (stable; pre-PCE holding pattern)
+  - CME: ~72.3%; Kalshi: ~69%; Polymarket: ~65%
+- New FOMC row added: NO
 
 ### September 28, 2026 — MONDAY
 - Target range: 3.75% – 4.00% (unchanged)
@@ -79,11 +90,13 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - New FOMC row added: NO
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **TOMORROW (Oct 1, Thu) — ISM Manufacturing PMI September 2026 at ~10am ET**
-  - Roll forward ism-pmi sparkline on dashboard: drop "Sep '25", add "Sep" at new value
+- **TODAY (Oct 1, Thu) — ISM Manufacturing PMI September 2026 at ~10am ET**
+  - NOT RELEASED at 9am update time; search for result in next run
+  - Forecast ~54.8%; prior August 54.6%
 - **OCT 2 (Fri) — September 2026 Jobs Report (BLS) at 8:30am ET**
-  - Roll forward unemployment sparkline: drop "Sep '25", add "Sep" at new value
-- **OCT 10 (approx) — CPI September 2026 (BLS)** — key inflation read pre-Oct 28 FOMC
+  - Roll forward unemployment sparkline on dashboard: drop "Sep '25", add "Sep" at new value
+  - This is the KEY pre-FOMC data point: strong jobs = hawkish repricing from ~40%; weak jobs = could push hold odds to 70%+
+- **OCT 14 (approx) — CPI September 2026 (BLS)** — key inflation read pre-Oct 28 FOMC
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 
@@ -101,9 +114,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - EFFR CONFIRMED VALUES:
   - Sep 16: 3.63% (hike day; old rate; hike effective Sep 17)
   - Sep 17: 3.88% (CONFIRMED; first full day at new range)
-  - Sep 18–Sep 29: 3.88% (all confirmed stable; IORB 3.90%)
-  - Sep 30: 3.88% (EXPECTED stable; published Oct 1 by NY Fed; twelfth business day)
-- October 28 probability (as of Sep 30, post-PCE):
-  - CME: ~68–72% / Kalshi: ~69% / Polymarket: ~69%
-  - Slight dovish drift on PCE miss; hike still base case; GDP revision positive offset
+  - Sep 18–Sep 30: 3.88% (all confirmed stable; IORB 3.90%)
+  - Oct 1: 3.88% (EXPECTED stable; published Oct 2 by NY Fed; thirteenth business day)
+- October 28 probability (as of Oct 1, post-Goldman-Sachs-capitulation):
+  - CME: ~39–47% hike / ~52–61% hold (**HOLD IS NOW THE BASE CASE**)
+  - Kalshi: ~33–35% hike / ~65% hold
+  - Polymarket: ~42% hike / ~57% hold
+  - October 2 Jobs Report will be the decisive catalyst for direction
 - Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; no change needed)
