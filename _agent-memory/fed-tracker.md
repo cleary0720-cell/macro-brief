@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 1, 2026
+Last updated: October 2, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -32,6 +32,34 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CARD 1 vs CARD 2 ENDING TEXT: Card 1 (Current Target Range) and Card 2 (Next FOMC Meeting) hero-notes end with DIFFERENT text. Card 1 ends with "...hike remains base case despite downside surprise). Next catalysts: <strong>Oct 1 (Thu): ISM Manufacturing PMI September 2026; Oct 2 (Fri): September Jobs Report (BLS).</strong></div>" while Card 2 ends with "...Hike remains base case. Next: <strong>Oct 1 ISM Manufacturing PMI; Oct 2 September Jobs Report (BLS).</strong></div>" — always use Python line-specific replacement, not simple Edit tool, when both need updating.
 
 ## Run log
+
+### October 2, 2026 — FRIDAY (September Jobs Report — major miss; probability collapse)
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR Oct 1 published Oct 2 by NY Fed; fourteenth business day at new range; IORB 3.90%; stable)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **SEPTEMBER JOBS REPORT — MAJOR MISS:**
+  - NFP: +29,000 (vs ~84-90k expected)
+  - Unemployment: 4.2% (up from 4.1%)
+  - August revised: 162,000 → 133,000; July revised: +21,000 → -10,000; combined -60k
+  - Avg hourly earnings: +0.1% MoM / $37.81
+- **ISM Manufacturing PMI September 2026 (released Oct 1):**
+  - 54.5% (vs 54.8-54.9% expected; prior Aug: 54.6%)
+  - Prices Paid: 77.9 (surging; tariffs + energy)
+  - New Orders: 55.3; Employment: 52.7; 9th consecutive expansion
+- **Post-jobs October 28 FOMC probabilities:**
+  - CME FedWatch: ~34–38% hike / ~62–66% hold
+  - Kalshi: ~15% hike / ~85% hold
+  - Polymarket: ~34% hike / ~66% hold
+  - **HOLD IS NOW THE OVERWHELMING MARKET BASE CASE**
+- New FOMC row added: NO (no new meeting; next is Oct 27–28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 2, 2026
+  - Card 1 hero-note: Appended ISM PMI result + Oct 2 jobs report + post-jobs probability collapse
+  - Card 2 hero-note: Appended same (slightly condensed)
+  - Card 3 rate path Oct line: Updated with ISM result, jobs report, and new probabilities
+- Sources: cryptobriefing.com + predictionmarketspicks.com (Kalshi ~85% hold); coinspeaker.com + tech-insider.org (Polymarket ~66% hold); defirate.com + sedaily.com (CME ~34-38% hike); bls.gov/finance.yahoo.com (September jobs report +29k); cnbc.com/fxstreet.com (ISM 54.5%); NY Fed FRED (EFFR 3.88%)
 
 ### October 1, 2026 — THURSDAY (ISM PMI day; Goldman Sachs capitulates on October hike)
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -90,13 +118,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - New FOMC row added: NO
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **TODAY (Oct 1, Thu) — ISM Manufacturing PMI September 2026 at ~10am ET**
-  - NOT RELEASED at 9am update time; search for result in next run
-  - Forecast ~54.8%; prior August 54.6%
-- **OCT 2 (Fri) — September 2026 Jobs Report (BLS) at 8:30am ET**
-  - Roll forward unemployment sparkline on dashboard: drop "Sep '25", add "Sep" at new value
-  - This is the KEY pre-FOMC data point: strong jobs = hawkish repricing from ~40%; weak jobs = could push hold odds to 70%+
-- **OCT 14 (approx) — CPI September 2026 (BLS)** — key inflation read pre-Oct 28 FOMC
+- **SEPTEMBER JOBS REPORT DELIVERED (Oct 2): +29,000 NFP (major miss); unemployment 4.2%**
+  - Dashboard unemployment sparkline MUST be rolled forward: drop "Sep '25", add "Sep" at 4.2%
+  - August revised to 133k; July revised to -10k; combined -60k revisions
+- **OCT 14 (approx, Wed) — CPI September 2026 (BLS)** — last major inflation read pre-Oct 28 FOMC
+  - If CPI comes in hot, expect hawkish repricing from current ~35% hike odds
+  - If CPI misses, hold probability could push to 90%+
+- **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
+- **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 
@@ -115,10 +144,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Sep 16: 3.63% (hike day; old rate; hike effective Sep 17)
   - Sep 17: 3.88% (CONFIRMED; first full day at new range)
   - Sep 18–Sep 30: 3.88% (all confirmed stable; IORB 3.90%)
-  - Oct 1: 3.88% (EXPECTED stable; published Oct 2 by NY Fed; thirteenth business day)
-- October 28 probability (as of Oct 1, post-Goldman-Sachs-capitulation):
-  - CME: ~39–47% hike / ~52–61% hold (**HOLD IS NOW THE BASE CASE**)
-  - Kalshi: ~33–35% hike / ~65% hold
-  - Polymarket: ~42% hike / ~57% hold
-  - October 2 Jobs Report will be the decisive catalyst for direction
+  - Oct 1: 3.88% (CONFIRMED stable; published Oct 2 by NY Fed; fourteenth business day)
+- October 28 probability (as of Oct 2, post-September-jobs-report):
+  - CME: ~34–38% hike / ~62–66% hold (**HOLD IS NOW THE OVERWHELMING BASE CASE**)
+  - Kalshi: ~15% hike / ~85% hold
+  - Polymarket: ~34% hike / ~66% hold
+  - September jobs report was the decisive dovish catalyst; CPI Sep (Oct 14) next key input
 - Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; no change needed)
