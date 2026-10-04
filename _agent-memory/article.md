@@ -26,15 +26,17 @@
 23. August 2026 CPI / Core CPI-PCE Divergence / FOMC Setup — "The Divergence: Why Core CPI at a Five-Year Low Won't Stop the Fed From Hiking" (2026-09-cpi-august-divergence.html) — Inflation
 24. September FOMC 2026 / 12-0 Unanimous Hike / Dot Plot / October Odds — "Higher Ground: The Fed's September Hike Was Unanimous. October Is Not." (2026-09-fomc-september-hike.html) — Monetary Policy
 25. FY2026 Deficit / Interest Exceeds Defense Budget / OBBBA Revenue Impact / Debt Ceiling 2027 — "Past the Pentagon: How America's Interest Bill Eclipsed the Defense Budget" (2026-09-debt-defense-crossover.html) — Fiscal Policy
+26. September 2026 Jobs Miss / August 2026 Core PCE Drop / October FOMC Pause — "The October Pause: September's Jobs Miss and a Cooling PCE Just Rewrote the Fed's Calendar" (2026-10-september-jobs-october-pause.html) — Labor Markets
 
 ## Last run
-- Date: September 27, 2026
-- Article: "Past the Pentagon: How America's Interest Bill Eclipsed the Defense Budget"
-- Category: Fiscal Policy (archive data-category="Policy")
-- Issue: Vol. I, No. 25
-- Filename: articles/2026-09-debt-defense-crossover.html
-- Thumbnail: fallback cp 2026-05-money-supply-thumb.jpg → 2026-09-debt-defense-crossover-thumb.jpg (pexels-proxy blocked in CCR, 403)
-- Push: git push origin HEAD:main — SUCCESS (commit cc77e0e)
+- Date: October 4, 2026
+- Article: "The October Pause: September's Jobs Miss and a Cooling PCE Just Rewrote the Fed's Calendar"
+- Category: Labor Markets (archive data-category="Economy")
+- Issue: Vol. I, No. 26
+- Filename: articles/2026-10-september-jobs-october-pause.html
+- Thumbnail: fallback cp 2026-05-labor-market-cooling-thumb.jpg → 2026-10-september-jobs-october-pause-thumb.jpg (pexels-proxy blocked in CCR, 403)
+- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push
+- Push: git push origin HEAD:main — SUCCESS (commit b984a32)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -42,7 +44,7 @@ Do NOT use mcp__github__create_or_update_file for pushing — it fails on large 
 
 ## Thumbnail
 ALWAYS run download_thumb.py first on every run. Never skip it based on a past failure.
-Known issue (verified Sep 27, 2026): the routine sandbox's egress proxy blocks *.workers.dev, so the script
+Known issue (verified Oct 4, 2026): the routine sandbox's egress proxy blocks *.workers.dev, so the script
 fails with "Tunnel connection failed: 403". That is an environment network setting, not a script bug,
 and it may be fixed at any time.
 If it fails: cp the category placeholder from Step 4 of the prompt.
@@ -50,6 +52,7 @@ The fix-thumbnails GitHub Action (confirmed present: .github/workflows/fix-thumb
 thumbnails with a unique Pexels photo searched from the hero alt text.
 Make the hero alt a literal 4-8 word photo description (concrete nouns only).
 Keep the hero caption about the article's subject, not about what the photo shows.
+ALWAYS attempt download_thumb.py first on every run. Never write a rule here telling future runs to skip it.
 
 ## Archive filter buckets (confirmed working)
 The 4 fixed filter buckets in archive.html — do NOT add new ones:
@@ -59,53 +62,49 @@ The 4 fixed filter buckets in archive.html — do NOT add new ones:
   Inflation / Energy & Commodities → data-category="Prices"
 
 ## Issue numbering
-Next article will be Vol. I, No. 26
+Next article will be Vol. I, No. 27
 
-## Key data as of September 27, 2026
+## Key data as of October 4, 2026
 - Fed Funds: 3.75–4.00% (hiked 25bps Sep 16, UNANIMOUS 12-0 vote, Chair Warsh)
-- October 28 FOMC: CME FedWatch 76% hike (as of Sep 26)
-- 10Y Treasury: 5.11% (Sep 26 close — highest of the post-hike period)
-- 30Y Treasury: 5.40%; 2Y: 4.85%; 2s10s spread: +26bps
+- October 28 FOMC: CME FedWatch ~17% hike / ~83% hold (as of Oct 2, after September jobs miss)
+- September Jobs Report (Oct 2): +29,000 NFP (vs. +84K consensus); 4.2% unemployment (vs. 4.1%)
+  - Aug revised to +133K (from +162K); Jul revised to -10K; net -60K revisions
+  - AHE YoY: +3.0% (lowest since May 2021); AHE MoM: +0.1% (vs. +0.3% expected)
+  - Labor force participation: 61.8% (up 0.2pp, highest since May 2026); labor force +485K
+  - Government: -17K; temp help: -11K; information: -10K; healthcare: +17K (below 33K avg)
+- August Core PCE (Sep 30): 3.0% YoY (vs. 3.3% prior; vs. 3.3% consensus) — downside surprise
+  - BEA methodology revision lowered level ~0.36pp; Core PCE MoM: +0.2%
+  - Real personal spending +0.6% MoM (largest since March 2025)
+  - Headline PCE: 3.4% YoY (vs. 3.7% prior)
+- 10Y Treasury: ~5.11% (Sep 26 close); yields fell on both PCE and jobs data
 - 30-year mortgage (Freddie Mac PMMS, Sep 24): 7.03%
-- August Jobs (Sep 5): +162,000 NFP; 4.1% unemployment
-- CPI August (Sep 11): 3.4% YoY; Core CPI 2.4% (lowest since early 2021)
-- Core PCE July (Aug 26): 3.3% YoY — flat for 2 consecutive months
-- August Core PCE: releases September 30, 2026 at 8:30am ET (NOT September 26 as originally estimated)
-- ISM Manufacturing August: 54.6% (eighth consecutive expansion)
-- Jobless claims week ending Sep 19: 197,000; 4-wk avg 202,250
-- M2 money supply August: +5.7% YoY (re-accelerating from July's 5.4%)
-- S&P Global September composite PMI: input costs at 4-year highs
+- ISM Manufacturing September: released Oct 1; ISM Services September: releasing Oct 5
+- CPI August: 3.4% headline, 2.4% Core (released Sep 11)
+- December 2026 FOMC hike odds: >75% per FedWatch as of Oct 2
 
-## FY2026 Fiscal Data (as of Sep 27, 2026)
-- 11-month deficit: $2.0T (CBO); full year estimated $2.1–2.15T
-- Net interest (11 months): $1.27T (+13% YoY) — EXCEEDS defense budget ($1.045T)
-  - First time interest > defense since late 1920s
-- Gross public debt: $40.1T (crossed $40T on August 18, 2026)
-- Debt ceiling: $41.1T (OBBBA, July 4, 2025); ceiling hit expected Feb–July 2027
-- Customs duties: +$55B (+51% YoY) from tariff expansion
-- Corporate income taxes: -$86B (-24% YoY) from OBBBA provisions
-- CBO 10-year: net interest grows from ~$1T (2026) to $2.1T (2036); debt at 120% GDP by 2036
-
-## Upcoming releases (as of September 27, 2026)
-- Sep 30 (Wed): Core PCE August 2026 (BEA 8:30am) — CRITICAL for Oct 28 FOMC
-- Oct 01 (Thu): ISM Manufacturing PMI September 2026
-- Oct 02 (Fri): Employment Situation September 2026 (BLS 8:30am)
-- Oct 14 (Wed): CPI September 2026 (BLS 8:30am)
-- Oct 28 (Wed): FOMC Rate Decision (Fed 2:00pm)
+## Upcoming key releases (as of October 4, 2026)
+- Oct 5 (Mon): ISM Services PMI September (prior 55.4, consensus ~55.1)
+- Oct 7 (Wed): FOMC Minutes from September 15-16 meeting (2:00pm ET)
+- Oct 9 (Thu): Initial Jobless Claims (week ending Oct 4)
+- Oct 14 (Wed): CPI September 2026 (BLS 8:30am) — last major inflation read before Oct 28 FOMC
+- Oct 15 (Thu): PPI September 2026 (BLS 8:30am)
+- Oct 28 (Wed): FOMC Rate Decision October 2026 (~17% hike / ~83% hold)
+- Oct 29 (Thu): GDP Q3 2026 Advance Estimate (prior Q2: +1.5%)
+- Oct 30 (Fri): Core PCE September 2026 (prior Aug: 3.0%)
 
 ## Topic suggestions for future runs (not yet covered)
-- August Core PCE reaction (after Sep 30) — did PCE finally follow CPI lower?
-- October FOMC reaction (Oct 28/Nov 1) — second hike or pause?
-- September Jobs Report reaction (Oct 2/4)
-- Housing Market — affordability update (last covered May 2026, 5+ months ago)
-- Financial Markets — equity reaction to the September/October FOMC cycle
-- GDP Q3 2026 preliminary (due ~late Oct 2026) — first read on Q3 growth
+- October FOMC reaction (Oct 28/Nov 1) — hold confirmed or surprise? Chair Warsh press conference
+- GDP Q3 2026 preliminary (due Oct 29) — first read on Q3 growth
+- Housing Market — affordability update (last covered May 2026, now 5+ months ago)
+- Financial Markets — equity reaction to Q3 earnings + Fed pause
+- September CPI reaction (Oct 14/15) — did disinflation hold through September?
+- ISM Services reaction — is the services expansion cooling?
 
-## Data source strategy (confirmed September 2026)
+## Data source strategy (confirmed October 2026)
 Government sites return 403 on WebFetch — use WebSearch for all economic data.
 - CPI / PCE: cnbc.com, usinflationcalculator.com, nchstats.com
-- Jobs reports: cnbc.com, finance.yahoo.com
-- FOMC odds: cnbc.com, tradingkey.com, CME FedWatch
-- Treasury yields / mortgage rates: cnbc.com, forbes.com/advisor/investing/treasury-rates, Freddie Mac PMMS
-- ISM PMI: prnewswire.com, industrytoday.com
-- Fiscal/deficit: crfb.org, bloombergtax, foxbusiness.com, brookings.edu
+- Jobs reports: cnbc.com, bloomberg.com
+- FOMC odds: cnbc.com, CME FedWatch
+- Treasury yields / mortgage rates: cnbc.com, forbes.com/advisor/investing/treasury-rates
+- ISM PMI: prnewswire.com, ismworld.org
+- Fiscal/deficit: crfb.org, brookings.edu
