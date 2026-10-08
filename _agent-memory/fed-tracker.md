@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 7, 2026
+Last updated: October 8, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -7,12 +7,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: federalreserve.gov press release pages; CNBC, NPR, Fox Business cover decisions same day
 - Effective rate: EFFR via NY Fed / FRED — search "effective federal funds rate EFFR [date]"; sofrrate.com/policy-rates; IORB rate from Fed implementation notes gives ceiling/anchor
-- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together; defirate.com/prediction-markets/fed-decision-odds/ also useful; phemex.com carries CME figure in article title (reliable for specific %)
+- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together; defirate.com/prediction-markets/fed-decision-odds/ also useful; phemex.com carries CME figure in article title (reliable for specific %); investing.com Fed rate monitor (CME-based)
 - Vote breakdown: federalreserve.gov FOMC statement pages; search "FOMC [date] vote statement"
 - PCE data: fxstreet.com, cnbc.com, actionforex.com carry BEA PCE releases same day; first search for fxstreet headline which gives exact YoY figure in title
 - GDP third estimates: bea.gov search results; cnbc.com carries with context
 - Post-decision analysis: cnbc.com, seekingalpha.com, foxbusiness.com
 - Extended WebSearch: Use "extended" mode when searching for specific current-day probability figures; synthesized standard results can reference stale data
+- FOMC Minutes reaction: babypips.com market recaps; fxstreet.com; cnbc.com; ING FX Daily (think.ing.com)
+- Fed speeches: bloomberg.com; pbs.org/newshour; americanbanker.com; federalreserve.gov/newsevents/speech/
 
 ## Known issues
 - WEEKEND HALLUCINATION WARNING: WebSearch on weekends returns confused synthesized probability figures. Trust prior-day confirmed memory on weekends with no new data releases.
@@ -34,51 +36,59 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - MONDAY POST-WEEKEND REPRICING: Probabilities confirmed via WebSearch on Monday morning may differ from Friday close figures held in memory. Always search fresh on Monday for actual current market pricing.
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
+- STALE TODAY REFERENCES: When updating the daily entry, also replace "release TODAY" references in yesterday's entry with "released [date]" so they don't become stale.
 
 ## Run log
 
-### October 7, 2026 — WEDNESDAY
+### October 8, 2026 — THURSDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
-- Effective rate: 3.88% (EFFR Oct 6 published Oct 7 by NY Fed; seventeenth business day at new range; IORB 3.90%; stable)
+- Effective rate: 3.88% (EFFR Oct 7 not yet confirmed; Oct 6 confirmed 3.88%; IORB 3.90%; stable)
 - Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
-- **Current October 28 probability (as of Oct 7 pre-minutes, 9am ET):**
-  - CME FedWatch: ~20% hike / ~80% hold (modest drift from ~17%/~83% yesterday)
-  - Kalshi: ~20% hike / ~80% hold
-  - Polymarket: ~18% hike / ~82% hold
-  - Hold remains the overwhelming market base case
-  - **December 9 hike probability: ~84–86% (CME, per Benzinga)** — SIGNIFICANT REPRICING from ~64% (market adopting "skip October, hike December" thesis after weak Sep jobs)
-- **KEY EVENT TODAY: FOMC Minutes (Sep 15–16 meeting) at 2:00pm ET** — first look at deliberations; asymmetric risk event; could reprice December odds further
+- **FOMC Minutes (Sep 15–16) released October 7 at 2pm ET:**
+  - Tone: **HAWKISH** — unanimous hike support confirmed; majority of participants favor another hike before year-end
+  - Dot plot showed more members penciling in two 2026 hikes vs. none
+  - Market reaction: MUTED — 10-yr yield touched 5.36% intraday, pulled back to ~5.28% on strong auction (BTC 2.77, record 97.5% non-dealer takedown)
+  - Minutes drew "little reaction" per multiple reports; market already priced in hawkish stance
+- **Gov. Waller speech (Istanbul, Oct 8):**
+  - "There is some flexibility about when those hikes will occur" — October pause confirmed possible
+  - More hikes expected; notes 85% futures-implied probability of at least one December hike
+  - Elevated oil, AI costs, trade tensions as persistent inflation drivers
+  - Not greatly concerned about rate hike damage to growth
+- **Current October 28 probability (as of Oct 8 post-minutes):**
+  - CME FedWatch: ~82% hold / ~18% hike (marginally firmer vs ~80%/~20% pre-minutes)
+  - Kalshi: ~84% hold / ~16% hike
+  - Polymarket: ~82% hold / ~18% hike
+  - Hold is the overwhelming base case
+- **December 9 hike probability (as of Oct 8):**
+  - CME: ~84–85% (Waller directly cited 85% futures-implied probability)
+  - "Skip October, hike December" remains market consensus
 - New FOMC row added: NO
 - MEANS-FOR-YOU: not updated (rate unchanged)
 - JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
 - Changes made:
-  - "Last updated" → October 7, 2026
-  - Card 1 hero-note: Appended Oct 7 entry (EFFR, probabilities, FOMC Minutes catalyst, December repricing)
-  - Card 2 hero-note: Appended Oct 7 entry (same)
-  - Card 3 rate path Dec line: Updated December 9 odds from ~64% → ~84–86%
-  - Card 3 2026 summary: Updated to reflect October hold ~80%, December ~84–86%
-- Sources: Extended WebSearch via subagent; CME ~20% hike for October 28; December ~84-86% per Benzinga/CME; FXStreet confirmed EFFR 3.88%; FOMC Minutes at 2pm ET confirmed
+  - "Last updated" → October 8, 2026
+  - Card 1 hero-note: Appended Oct 8 entry (minutes hawkish, Waller speech, probabilities)
+  - Card 3 hero-note: Appended Oct 8 entry (same)
+  - Card 1/3 Oct 7 entries: Updated "release TODAY" → "released October 7"
+  - 2026 rate path summary: October 28 hold ~80% → ~82%; December ~84–86% → ~84–85%
+- Sources: Subagent extended WebSearch; babypips.com FOMC minutes recap; Bloomberg Waller speech; investing.com Fed rate monitor (CME); predictionmarketspicks.com
 
 ## CRITICAL NOTE for NEXT RUNS:
 - **EFFR: 3.88% since Sep 17 (confirmed through Oct 6; IORB 3.90%); expect stable through Oct 28**
-- **Oct 7 (Wed) — FOMC Minutes (Sep 15–16 meeting), 2:00pm ET TODAY** — COMPLETED after 9am update
-  - Next run (Oct 8 Thu): Search for FOMC Minutes reaction; did probabilities reprice?
-  - If minutes were hawkish (broader coalition, 50bp debate): December odds could spike above 90%
-  - If dovish: October hold could firm up to 85%+; December could ease below 80%
 - **Oct 14 (Wed) — CPI September 2026 (BLS)** — MOST CRITICAL upcoming release; last major inflation read before Oct 28 FOMC
-  - If CPI comes in hot (≥3.4%), expect hawkish repricing; hike odds could jump back to 40–50%+
-  - If CPI misses, hold probability could push to 90%+
+  - If CPI comes in hot (≥3.4%), expect hawkish repricing; October hike odds could jump from ~18% to 40–50%+
+  - If CPI misses (≤3.0%), hold probability could push to 90%+; December could ease below 75%
 - **Oct 15 (Thu) — Retail Sales September 2026 + PPI September 2026 (BLS)**
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + PCE September 2026 (BEA)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 
-- **Current October 28 probability (as of Oct 7 pre-minutes):**
-  - CME: ~20% hike / ~80% hold
-  - Kalshi: ~20% hike / ~80% hold
-  - Polymarket: ~18% hike / ~82% hold
-  - December 9 hike: ~84–86% (CME) — "skip October, hike December" is market consensus
+- **Current October 28 probability (as of Oct 8 post-minutes):**
+  - CME: ~82% hold / ~18% hike
+  - Kalshi: ~84% hold / ~16% hike
+  - Polymarket: ~82% hold / ~18% hike
   - HOLD IS THE OVERWHELMING MARKET BASE CASE FOR OCTOBER
+  - **December 9 hike: ~84–85% (CME) — confirmed by Waller**
 - **September Jobs Report (Oct 2, CONFIRMED):**
   - NFP: +29,000 (major miss vs ~90k expected)
   - Unemployment: 4.2% (up from 4.1%)
@@ -86,8 +96,12 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Core PCE August 2026 (CONFIRMED Sep 30):**
   - YoY: 3.0% (miss vs 3.3%; BEA annual revision effect)
   - MoM: 0.2% (below 0.3% expected)
-- **Q2 GDP third estimate: +2.2% (revised up from +1.5% advance)**
-- **ISM Manufacturing PMI September 2026 (Oct 1): 54.5% (ninth consecutive expansion; Prices Paid 77.9)**
+- **FOMC Minutes (Sep 15–16, released Oct 7): HAWKISH**
+  - Unanimous hike support; majority favor another hike before year-end
+  - Dot plot: more members penciling in two 2026 hikes vs. none
+  - Market reaction muted; 10-yr yield 5.36% intraday → ~5.28% on strong auction
+- **Gov. Waller (Istanbul, Oct 8): "flexibility on timing"**
+  - October pause possible; more hikes expected; futures imply 85% Dec hike probability
 - **Key Warsh quotes (confirmed Sep 16):**
   - "Inflation has been too high for too long"
   - "I'm not in the forward guidance business" (re: dot plot)
