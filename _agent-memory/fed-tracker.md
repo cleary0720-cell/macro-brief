@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 8, 2026
+Last updated: October 9, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -40,6 +40,26 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 
 ## Run log
 
+### October 9, 2026 — FRIDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR Oct 8 expected 3.88%; IORB 3.90%; stable since Sep 17)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Quiet Friday — no Fed speeches or data releases**
+- **October 28 probability (as of Oct 9):**
+  - CME FedWatch: ~82% hold / ~18% hike (unchanged from Oct 8)
+  - Kalshi: ~84% hold / ~16% hike
+  - Polymarket: ~82% hold / ~18% hike
+- **December 9 hike probability (as of Oct 9):**
+  - CME: ~84–85% — "skip October, hike December" remains market consensus
+- **10-yr Treasury**: ~5.23%, pulling back from 5.36% intraday high on Oct 8 (strong 30-yr auction)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 9, 2026
+  - Card 1 hero-note: Appended Oct 9 entry (quiet Friday, stable probabilities, CPI on Oct 14)
+- Sources: Subagent WebSearch via federalreserve.gov, predictionmarketspicks.com, cnbc.com, benzinga.com
+
 ### October 8, 2026 — THURSDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
 - Effective rate: 3.88% (EFFR Oct 7 not yet confirmed; Oct 6 confirmed 3.88%; IORB 3.90%; stable)
@@ -74,21 +94,23 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sources: Subagent extended WebSearch; babypips.com FOMC minutes recap; Bloomberg Waller speech; investing.com Fed rate monitor (CME); predictionmarketspicks.com
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **EFFR: 3.88% since Sep 17 (confirmed through Oct 6; IORB 3.90%); expect stable through Oct 28**
-- **Oct 14 (Wed) — CPI September 2026 (BLS)** — MOST CRITICAL upcoming release; last major inflation read before Oct 28 FOMC
+- **EFFR: 3.88% since Sep 17 (stable through Oct 8 expected; IORB 3.90%)**
+- **Oct 14 (Tue in 2026) — CPI September 2026 (BLS)** — MOST CRITICAL upcoming release; last major inflation read before Oct 28 FOMC
+  - **Note: Oct 13 is Columbus Day (federal holiday); BLS may shift CPI to Tue Oct 14 or Wed Oct 15 — CONFIRM date via WebSearch**
   - If CPI comes in hot (≥3.4%), expect hawkish repricing; October hike odds could jump from ~18% to 40–50%+
   - If CPI misses (≤3.0%), hold probability could push to 90%+; December could ease below 75%
 - **Oct 15 (Thu) — Retail Sales September 2026 + PPI September 2026 (BLS)**
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + PCE September 2026 (BEA)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
+- **MONDAY WARNING: Probabilities may have repriced over the weekend; always search fresh on Monday**
 
-- **Current October 28 probability (as of Oct 8 post-minutes):**
+- **Current October 28 probability (as of Oct 9):**
   - CME: ~82% hold / ~18% hike
   - Kalshi: ~84% hold / ~16% hike
   - Polymarket: ~82% hold / ~18% hike
   - HOLD IS THE OVERWHELMING MARKET BASE CASE FOR OCTOBER
-  - **December 9 hike: ~84–85% (CME) — confirmed by Waller**
+  - **December 9 hike: ~84–85% (CME)**
 - **September Jobs Report (Oct 2, CONFIRMED):**
   - NFP: +29,000 (major miss vs ~90k expected)
   - Unemployment: 4.2% (up from 4.1%)
