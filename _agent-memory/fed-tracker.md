@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 9, 2026
+Last updated: October 10, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -39,6 +39,25 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - STALE TODAY REFERENCES: When updating the daily entry, also replace "release TODAY" references in yesterday's entry with "released [date]" so they don't become stale.
 
 ## Run log
+
+### October 10, 2026 — SATURDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR: weekend — no NY Fed publication; stable since Sep 17)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Quiet Saturday — no Fed speeches, no data releases**
+- **October 28 probability (as of Oct 10, per CME FedWatch / longbridge.com):**
+  - CME FedWatch: ~81.6% hold / ~18.4% hike (essentially unchanged from Oct 9's ~82%/~18%)
+  - Kalshi: ~84% hold (unchanged per memory)
+- **December 9 hike probability:** ~84–85% (CME, unchanged)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 10, 2026
+  - Card 1 hero-note: Appended Oct 10 entry (quiet Saturday, stable CME ~81.6% hold, CPI Oct 14)
+  - Card 3 hero-note: Appended Oct 10 entry (same summary, briefer)
+- Sources: WebSearch (admiralmarkets.com, longbridge.com CME FedWatch snippet)
+- Note: WEEKEND HALLUCINATION WARNING applied — relied on Friday memory for directional confirmation; longbridge.com confirmed ~81.6% hold as of Oct 10
 
 ### October 9, 2026 — FRIDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -105,10 +124,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 - **MONDAY WARNING: Probabilities may have repriced over the weekend; always search fresh on Monday**
 
-- **Current October 28 probability (as of Oct 9):**
-  - CME: ~82% hold / ~18% hike
-  - Kalshi: ~84% hold / ~16% hike
-  - Polymarket: ~82% hold / ~18% hike
+- **Current October 28 probability (as of Oct 10):**
+  - CME: ~81.6% hold / ~18.4% hike (essentially unchanged from Oct 9)
+  - Kalshi: ~84% hold / ~16% hike (unchanged)
+  - Polymarket: ~82% hold / ~18% hike (unchanged; weekend — no repricing expected)
   - HOLD IS THE OVERWHELMING MARKET BASE CASE FOR OCTOBER
   - **December 9 hike: ~84–85% (CME)**
 - **September Jobs Report (Oct 2, CONFIRMED):**
