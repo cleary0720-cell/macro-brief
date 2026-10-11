@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 10, 2026
+Last updated: October 11, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -15,6 +15,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Extended WebSearch: Use "extended" mode when searching for specific current-day probability figures; synthesized standard results can reference stale data
 - FOMC Minutes reaction: babypips.com market recaps; fxstreet.com; cnbc.com; ING FX Daily (think.ing.com)
 - Fed speeches: bloomberg.com; pbs.org/newshour; americanbanker.com; federalreserve.gov/newsevents/speech/
+- September 2026 CPI preview: admiralmarkets.com, mitrade.com, nowflation.com, jorgai.com
 
 ## Known issues
 - WEEKEND HALLUCINATION WARNING: WebSearch on weekends returns confused synthesized probability figures. Trust prior-day confirmed memory on weekends with no new data releases.
@@ -37,8 +38,29 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
 - STALE TODAY REFERENCES: When updating the daily entry, also replace "release TODAY" references in yesterday's entry with "released [date]" so they don't become stale.
+- CPI RELEASE DAY: Always verify the day-of-week with Python datetime before writing it in card notes. Oct 14, 2026 is WEDNESDAY.
 
 ## Run log
+
+### October 11, 2026 — SUNDAY
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR: weekend — no NY Fed publication; stable since Sep 17)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Quiet Sunday — no Fed speeches, no data releases**
+- **October 28 probability (as of Oct 11, per memory/extended search):**
+  - CME FedWatch: ~81.6% hold / ~18.4% hike (unchanged from Oct 10)
+  - Kalshi: ~84% hold (unchanged per memory)
+  - Polymarket: ~82% hold (unchanged per memory)
+- **December 9 hike probability:** ~84–85% (CME, unchanged)
+- **Sep CPI consensus (Oct 14 release):** Headline ~3.7% YoY (energy-driven); Core ~0.2% MoM
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 11, 2026
+  - Card 1 hero-note: Appended Oct 11 entry (quiet Sunday, stable odds, CPI consensus note)
+  - Card 3 hero-note: Appended Oct 11 entry (same, brief)
+- Sources: WebSearch (extended; admiralmarkets.com, predictionmarketspicks.com CME snippet), memory confirmation for unchanged figures
 
 ### October 10, 2026 — SATURDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -113,21 +135,24 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sources: Subagent extended WebSearch; babypips.com FOMC minutes recap; Bloomberg Waller speech; investing.com Fed rate monitor (CME); predictionmarketspicks.com
 
 ## CRITICAL NOTE for NEXT RUNS:
-- **EFFR: 3.88% since Sep 17 (stable through Oct 8 expected; IORB 3.90%)**
-- **Oct 14 (Tue in 2026) — CPI September 2026 (BLS)** — MOST CRITICAL upcoming release; last major inflation read before Oct 28 FOMC
-  - **Note: Oct 13 is Columbus Day (federal holiday); BLS may shift CPI to Tue Oct 14 or Wed Oct 15 — CONFIRM date via WebSearch**
-  - If CPI comes in hot (≥3.4%), expect hawkish repricing; October hike odds could jump from ~18% to 40–50%+
-  - If CPI misses (≤3.0%), hold probability could push to 90%+; December could ease below 75%
-- **Oct 15 (Thu) — Retail Sales September 2026 + PPI September 2026 (BLS)**
+- **EFFR: 3.88% since Sep 17 (stable through Oct 11 expected; IORB 3.90%)**
+- **Oct 14 (Wed) — CPI September 2026 (BLS)** — MOST CRITICAL upcoming release; last major inflation read before Oct 28 FOMC
+  - Headline consensus: ~3.7% YoY (energy-driven; up from 3.4% August)
+  - Core consensus: ~0.2% MoM (below August's 0.3%)
+  - If CPI comes in hot (core ≥0.3% MoM or headline ≥3.8%), expect hawkish repricing; October hike odds could jump from ~18% to 40–50%+
+  - If CPI misses (core 0.1% or headline ≤3.5%), hold probability could push to 90%+; December could ease below 75%
+  - ADD NEW FOMC row? NO — this is a data release, not a meeting
+  - UPDATE probability section and card notes when released
+- **~Oct 16 (Thu) — Retail Sales September 2026 + PPI September 2026 (BLS)**
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + PCE September 2026 (BEA)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
 - **MONDAY WARNING: Probabilities may have repriced over the weekend; always search fresh on Monday**
 
-- **Current October 28 probability (as of Oct 10):**
-  - CME: ~81.6% hold / ~18.4% hike (essentially unchanged from Oct 9)
+- **Current October 28 probability (as of Oct 11):**
+  - CME: ~81.6% hold / ~18.4% hike (weekend, essentially unchanged from Oct 10)
   - Kalshi: ~84% hold / ~16% hike (unchanged)
-  - Polymarket: ~82% hold / ~18% hike (unchanged; weekend — no repricing expected)
+  - Polymarket: ~82% hold / ~18% hike (unchanged)
   - HOLD IS THE OVERWHELMING MARKET BASE CASE FOR OCTOBER
   - **December 9 hike: ~84–85% (CME)**
 - **September Jobs Report (Oct 2, CONFIRMED):**
@@ -151,3 +176,4 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - 16 of 18 participants see at least one more 2026 hike; Warsh withheld dot
 - **NY Fed Williams (Sep 29, University at Buffalo):** "We have time to gather additional information" — no urgency for October hike; said another hike by year-end "reasonable"
 - Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; no change needed)
+- **CPI RELEASE DATE CONFIRMED: October 14 is WEDNESDAY** (verified via Python datetime)
