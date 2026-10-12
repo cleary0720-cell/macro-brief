@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 11, 2026
+Last updated: October 12, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -41,6 +41,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CPI RELEASE DAY: Always verify the day-of-week with Python datetime before writing it in card notes. Oct 14, 2026 is WEDNESDAY.
 
 ## Run log
+
+### October 12, 2026 — MONDAY (Columbus Day)
+- Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
+- Effective rate: 3.88% (EFFR: Columbus Day — no NY Fed publication; bond markets closed; stable since Sep 17)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Columbus Day — bond markets closed (SIFMA); equities open; no data releases**
+- **October 28 probability (as of Oct 12, extended search):**
+  - CME FedWatch: ~82% hold / ~18% hike (stable; no weekend repricing)
+  - Kalshi: ~82% hold / ~18% hike
+  - Polymarket: ~84% hold / ~16% hike
+  - HOLD remains the overwhelming market base case
+- **December 9 hike probability: ~75–80% (CME; DOWN from ~84–85%)** — softened due to Sept jobs miss (+29K) and broader post-PCE repricing; no single intraday catalyst
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 12, 2026
+  - Card 1 hero-note: Appended Oct 12 entry (Columbus Day, stable odds, Dec 9 softened)
+  - Card 2 hero-note: Appended Oct 12 entry (same summary, brief)
+  - Card 3 hero-note: Appended Oct 12 entry (same summary, brief)
+- Sources: Extended WebSearch (predictionmarketspicks.com, rg.org Polymarket roundup, bloomingbit.io Kalshi); subagent research
 
 ### October 11, 2026 — SUNDAY
 - Target range: 3.75% – 4.00% (hiked Sep 16; unchanged)
@@ -154,7 +175,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Kalshi: ~84% hold / ~16% hike (unchanged)
   - Polymarket: ~82% hold / ~18% hike (unchanged)
   - HOLD IS THE OVERWHELMING MARKET BASE CASE FOR OCTOBER
-  - **December 9 hike: ~84–85% (CME)**
+  - **December 9 hike: ~75–80% (CME; DOWN from ~84–85% as of Oct 12)**
 - **September Jobs Report (Oct 2, CONFIRMED):**
   - NFP: +29,000 (major miss vs ~90k expected)
   - Unemployment: 4.2% (up from 4.1%)
