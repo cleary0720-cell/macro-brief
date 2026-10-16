@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 15, 2026
+Last updated: October 16, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -35,7 +35,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - CPI REPRICING EXAMPLE: Oct 14 Sep CPI (slightly hot core) moved October hike from ~21.6% to ~43.7% (CME)
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 2 ENDING TEXT: After Oct 15 update, Card 1 ends with "...markets watching for policy signals ahead of Oct 28 blackout window.</div>" and Card 2 ends with "...December 9 hike: ~88–90% (CME; maintained on hot core).</div>". These are different strings, so simple replace is safe for next run.
+- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 16 update:
+  - Card 1 ends with "...December 9 hike: ~89% (CME).</div>"
+  - Card 3 ends with "...December 9: ~89% (CME; stable).</div>"
+  - Card 5 ends with "...December 9 hike: ~89% (CME; stable).</div>"
+  - Card 3 and Card 5 end the same — use broader context for unique search/replace.
 - MONDAY POST-WEEKEND REPRICING: Probabilities confirmed via WebSearch on Monday morning may differ from Friday close figures held in memory. Always search fresh on Monday for actual current market pricing.
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
@@ -43,6 +47,49 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
 
 ## Run log
+
+### October 16, 2026 — FRIDAY (Warsh Bangkok; PPI + Retail data day)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **KEY EVENT: Chair Warsh at IMF-World Bank annual meetings, Bangkok — fireside chat with IMF MD Kristalina Georgieva**
+  - Gave NO signal on October rate decision
+  - Quote: "I don't prejudge meetings." / "I don't believe in saying now what I might do at the meetings that we have in the balance of this year"
+  - Mentioned AI productivity path "very bumpy"; praised global "synchronous tightening" with "no free riders"
+  - Market read: neutral/dovish for October
+- **October 28 probability (post-Warsh, Oct 16):**
+  - CME FedWatch: **~16% hike / ~84% hold** (ActionForex confirmed: 16.1% hike / 83.9% hold)
+  - Fell from ~27.7% hike (Oct 15 close) → 16.1% post-speech
+  - Previously ~34% hike (Oct 14-15 post-CPI figure)
+  - HOLD is now the strong base case (5-in-6 odds); hike a tail risk
+- **December 9 probability (Oct 16):**
+  - CME FedWatch: ~89% hike (88.9% per one source)
+  - Polymarket: ~79% hike
+  - Goldman Sachs and UBS both forecast December hike
+  - "Skip October, hike December" is now the consensus
+- **Sep PPI (released Oct 15):** VERY HOT
+  - YoY: 6.3% (vs 5.3% forecast; vs 5.4% prior) — largest 12-month gain since December 2022
+  - Monthly: +1.3% (vs ~+0.3% expected) — largest since March 2022
+  - Core PPI (less food, energy, trade): +5.0% YoY
+  - Energy: +10.8% — drove roughly half of monthly jump
+  - Source: BLS release Oct 15; confirmed via stocktitan.net, ksn.com, en.cibercuba.com
+- **Sep Retail Sales (released Oct 15):** Beat on headline, weak underneath
+  - Monthly: +0.8% MoM (vs +0.3% expected; headline beat)
+  - YoY: +6.3%
+  - Ex-gas stations: +0.2% MoM (energy drove most of gain)
+  - Control group: +0.1% MoM
+  - August revised up: +1.3% (from +1.1%)
+  - Source: Census Bureau advance retail trade; babypips.com, investing.com, td economics
+- **Jobless claims week ending Oct 10:** NOT FOUND in searches. Most recent confirmed: week Oct 3 = 197K (4-wk avg 198K). Not updated.
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 16, 2026
+  - Card 1 hero-note: Appended Oct 15 (PPI 6.3%, Retail +0.8%) + Oct 16 (Warsh no signal; odds collapsed to ~16%/~84%)
+  - Card 3 hero-note: Appended Oct 16 (Warsh no signal; CME ~16% hike / ~84% hold; Dec 9 ~89%)
+  - Card 5 hero-note: Appended Oct 15 PPI+Retail data + Oct 16 Warsh update
+- Sources: actionforex.com (16.1%/83.9% confirmed post-Warsh), cnbc.com (Warsh speech), fxempire.com (Dec odds ~89%), benzinga.com (Warsh reaction), stocktitan.net (PPI), babypips.com (PPI+Retail same day), investing.com (Retail)
 
 ### October 15, 2026 — THURSDAY (Day after Sep CPI)
 - Target range: 3.75% – 4.00% (unchanged)
@@ -138,19 +185,22 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Oct 14 (Wed) — Sep CPI RELEASED:**
   - Headline: 3.7% YoY (above 3.6% consensus); Core: 0.3% MoM / 2.6% YoY (slightly hot)
   - October hike odds jumped to ~43.7% (CME); December 9: ~88-90%
-- **~Oct 16 (Thu) — Retail Sales September 2026 + Initial Jobless Claims**
+- **Oct 15 (Thu) — Sep PPI RELEASED:** 6.3% YoY (vs 5.3% forecast; hot); monthly +1.3%; energy +10.8%
+- **Oct 15 (Thu) — Sep Retail Sales RELEASED:** +0.8% MoM (vs +0.3% expected); ex-gas +0.2%; control +0.1%; Aug revised +1.3%
+- **Oct 16 (Fri) — Warsh IMF Bangkok speech:** No October signal; October odds collapsed from ~34% to ~16%
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
-  - Market now ~43.7% hike / ~56.3% hold (post-CPI; roughly split)
+  - Market: ~16% hike / ~84% hold (HOLD is strong base case; "skip October, hike December" is consensus)
+- **Oct 22 (Wed) — M2 September 2026 (Fed H.6)**
+- **Oct 28 (Wed) — FOMC Rate Decision (2pm ET)**
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + PCE September 2026 (BEA)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
-  - ~88-90% hike probability
+  - ~89% hike probability (CME)
 
-- **Current October 28 probability (as of Oct 15):**
-  - CME: ~34% hike / ~66% hold (eased from post-CPI peak of ~44%)
-  - Polymarket: ~35% hike (kucoin.com Oct 15)
-  - HOLD is again the base case (~2-in-3 odds); but market remains notably split (~1-in-3 hike)
-- **December 9 hike: ~88–90% (CME; maintained on hot core)**
-- **Chair Warsh at IMF Bangkok tonight (11:30pm ET Oct 15)**
+- **Current October 28 probability (as of Oct 16 close):**
+  - CME: ~16% hike / ~84% hold (ActionForex: 16.1% hike / 83.9% hold post-Warsh speech)
+  - HOLD is the strong base case (5-in-6 odds)
+- **December 9 hike: ~89% (CME 88.9%; Polymarket ~79%)**
+- **Chair Warsh at IMF Bangkok (Oct 16, DONE):** No rate signal; "I don't prejudge meetings"
 - **September Jobs Report (Oct 2, CONFIRMED):**
   - NFP: +29,000 (major miss vs ~90k expected)
   - Unemployment: 4.2% (up from 4.1%)
