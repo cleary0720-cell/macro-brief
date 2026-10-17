@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 16, 2026
+Last updated: October 17, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -47,6 +47,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
 
 ## Run log
+
+### October 17, 2026 — SATURDAY (Quiet weekend; FOMC blackout begins)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%) — weekend, no NY Fed EFFR publication
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Quiet Saturday — no data releases, no Fed speeches (FOMC blackout begins)**
+- **FOMC blackout period starts ahead of Oct 27–28 meeting (no official guidance)**
+- **October 28 probability (stable from Friday Oct 16 close):**
+  - CME FedWatch: ~16% hike / ~84% hold (ActionForex confirmed 16.1%/83.9% post-Warsh Oct 16)
+  - Weekend: no material repricing expected
+  - HOLD is the strong base case (5-in-6 odds); "skip October, hike December" is consensus
+- **December 9 probability:** ~89% hike (CME; stable from Oct 16)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 17, 2026
+  - Card 1 hero-note: Appended Oct 17 entry (quiet Saturday, blackout begins, odds stable ~16%/~84%)
+  - Card 3 hero-note: Appended Oct 17 entry (same summary)
+  - Card 5 hero-note: Appended Oct 17 entry (same summary)
+- Sources: ActionForex (Oct 16 confirmed 16.1% hike/83.9% hold post-Warsh); memory from prior run
 
 ### October 16, 2026 — FRIDAY (Warsh Bangkok; PPI + Retail data day)
 - Target range: 3.75% – 4.00% (unchanged)
@@ -196,9 +217,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
   - ~89% hike probability (CME)
 
-- **Current October 28 probability (as of Oct 16 close):**
-  - CME: ~16% hike / ~84% hold (ActionForex: 16.1% hike / 83.9% hold post-Warsh speech)
+- **Current October 28 probability (as of Oct 17 — stable from Oct 16 Friday close):**
+  - CME: ~16% hike / ~84% hold (ActionForex confirmed 16.1%/83.9% post-Warsh Oct 16; weekend = no repricing)
   - HOLD is the strong base case (5-in-6 odds)
+  - FOMC blackout window begins Oct 17-18 — no more Fed speeches ahead of Oct 28 decision
 - **December 9 hike: ~89% (CME 88.9%; Polymarket ~79%)**
 - **Chair Warsh at IMF Bangkok (Oct 16, DONE):** No rate signal; "I don't prejudge meetings"
 - **September Jobs Report (Oct 2, CONFIRMED):**
