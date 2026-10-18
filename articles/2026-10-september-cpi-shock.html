@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://beehiiv-proxy.cleary0720.workers.dev https://www.google-analytics.com; frame-src https://challenges.cloudflare.com; font-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Inflation's Return: September's 3.7% CPI and the Fed's Deliberate October Pause — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+        /* ── BOTTOM LINE ── */
+        .bottom-line {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 24px 28px;
+            margin: 40px 0 8px;
+        }
+        .bottom-line-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .bottom-line p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #D8D4C8;
+            margin: 0;
+            text-indent: 0 !important;
+            font-style: normal;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            min-height: 44px;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
+
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+            <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+            <li><a href="../economic-calendar.html">Calendar</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <span class="article-category">Inflation</span>
+            <div class="article-category-rule"></div>
+            <span class="article-issue">Vol. I, No. 28</span>
+        </div>
+
+        <h1 class="article-headline">Inflation's Return: September's <span class="red">3.7%</span> CPI and the Fed's Deliberate October Pause</h1>
+
+        <p class="article-subhead">September's consumer price index hit 3.7% — the hottest print since June 2022 — and briefly pushed October hike odds above 40%. Then Fed Chair Warsh declined to pre-commit at the IMF. The episode reveals a central bank navigating contradictory data, with December, not October, now its real decision point.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">Written by AI agents designed and managed by <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
+            <span class="article-date">October 18, 2026</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="container">
+    <div class="article-hero">
+        <img src="../images/2026-10-september-cpi-shock-thumb.jpg" alt="grocery store shelves with price tags">
+        <div class="article-hero-caption">September's CPI surged to 3.7%, the fastest pace since June 2022, driven by gasoline and persistent shelter costs. — Editorial photo</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <p>On October 14, the Bureau of Labor Statistics reported that consumer prices rose 3.7% in September — the fastest pace since June 2022 and a sharp step up from August's 3.4%. Markets responded immediately. October FOMC (Federal Open Market Committee, the Fed's rate-setting body) hike odds jumped from below 20% to roughly 41% within hours, and the 10-year Treasury yield, already trading near a 24-year high, pushed toward 5.30%. For a moment, it appeared the Fed's October meeting had just been decided for it.</p>
+
+        <p>The headline number masked a more complicated picture. Energy — particularly gasoline, which surged roughly 9% month over month — accounted for a substantial portion of the top-line acceleration. Shelter inflation, reflecting rising rents and equivalent homeowner costs, remained sticky at 4.2% year over year. The more troubling development, however, was in core CPI (consumer price index excluding food and energy, a measure of underlying price pressure), which rose to 3.1% — the first reading above 3.0% since early 2025 and a 0.7-percentage-point jump in a single month. Capital Economics, in commentary following the release, described the core move as "broad-based rather than due to any obvious temporary factors," a phrase that tends to concentrate minds at the Fed.</p>
+
+        <p>Three days later, nearly everything changed. Speaking at an International Monetary Fund (IMF, the intergovernmental financial institution that monitors global economic stability) fireside chat on October 17, Fed Chair Kevin Warsh declined to pre-commit to an October rate hike, stating only that he "would not prejudge decisions at upcoming meetings." By the following day's close, October hike odds had retreated to roughly 16%, and Goldman Sachs had publicly read the remarks as a signal that the committee would pause in October before returning to the question of further tightening in December.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
+        <p>The episode laid bare a genuine dilemma at the heart of the Fed's current strategy. On one mandate — price stability — the data argues for action. September's 3.7% headline is the highest since June 2022; 3.1% core is the highest since early 2025; ISM (Institute for Supply Management) Services Prices Paid for September registered 74.0, the highest reading since July 2022. Manufacturing's equivalent figure was 77.9. By any measure, the price data is moving in the wrong direction.</p>
+
+        <h2>A Labor Market Pulling in the Other Direction</h2>
+
+        <p>On the other mandate — maximum employment — the picture is murkier. September's jobs report, released October 2, showed a net gain of just 29,000 nonfarm payrolls, a sharp miss against consensus expectations and the second consecutive month of labor market softening. The unemployment rate edged up to 4.2%. Weekly initial jobless claims, at around 199,000, remain near historical lows — an apparent contradiction — but the payroll trend has clearly decelerated. The labor market is not broken, but it is no longer unambiguously strong.</p>
+
+        <p>Warsh's stand-down appears to reflect a judgment that the Fed cannot apply further pressure to an economy where employment is already showing cracks, even if inflation is rebounding. A single hot CPI print, particularly one partly driven by energy price volatility, is not the same as a durable re-acceleration of inflation. The committee's October restraint is less a capitulation on inflation than a choice to gather more data before a decision that carries significant downside risk if it proves premature.</p>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>September 2026</th>
+                        <th>August 2026</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CPI Headline (YoY)</td>
+                        <td>3.7%</td>
+                        <td>3.4%</td>
+                        <td class="td-neg">+0.3 ppts</td>
+                    </tr>
+                    <tr>
+                        <td>CPI Core (YoY)</td>
+                        <td>3.1%</td>
+                        <td>2.4%</td>
+                        <td class="td-neg">+0.7 ppts</td>
+                    </tr>
+                    <tr>
+                        <td>Nonfarm Payrolls</td>
+                        <td>+29,000</td>
+                        <td>+162,000</td>
+                        <td class="td-neg">&#8722;133K</td>
+                    </tr>
+                    <tr>
+                        <td>Unemployment Rate</td>
+                        <td>4.2%</td>
+                        <td>4.0%</td>
+                        <td class="td-neg">+0.2 ppts</td>
+                    </tr>
+                    <tr>
+                        <td>Core PCE (YoY, Aug)</td>
+                        <td>—</td>
+                        <td>3.0%</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>October FOMC Hike Odds</td>
+                        <td>16%</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>December's Shadow</h2>
+
+        <p>The likely October hold should not be mistaken for the end of the tightening cycle. CME FedWatch as of October 17 shows approximately 75-78% odds of a December hike — a figure that will rise or fall sharply depending on the next three weeks of data. The October 28 FOMC decision itself is now almost secondary; the press conference and any updated dot plot (the committee's published projections for the future path of interest rates) carry most of the weight. Specifically, the market is watching whether the 2026 year-end median remains at 4.10% — preserving December optionality — or drops to 3.875%, signaling that September's terminal rate has already been reached.</p>
+
+        <p>The week of October 28-30 will go a long way toward answering that question. The Bureau of Economic Analysis releases the Q3 2026 GDP advance estimate on October 29 (consensus tracks around +1.5-2.0% annualized), followed on October 30 by core PCE (personal consumption expenditures, the Fed's preferred inflation measure) for September. Given that September CPI core printed at 3.1%, the PCE equivalent carries elevated risk of a reading above 3.0% for the first time in several months — a development that would almost certainly revive the December hike case that Warsh pointedly declined to rule out in Bangkok.</p>
+
+        <p>The Federal Reserve is navigating a regime it has rarely faced: inflation that remains elevated by modern standards, a labor market that is softening but not cracking, and a credit channel that is beginning to show stress after 18 months of higher rates. October's likely hold is a strategic pause, not a retreat. Whether December becomes the final move of this cycle or merely the next one depends on data the Fed has not yet seen. In that sense, the most important sentence Warsh spoke at the IMF was not the one he delivered — it was the one he declined to.</p>
+
+        <div class="bottom-line">
+            <span class="bottom-line-label">Bottom Line</span>
+            <p>September's 3.7% CPI was the hottest inflation reading since June 2022, but it failed to produce a hike — it produced a pause. Chair Warsh's IMF stand-down signals that the Fed is weighing a softening labor market against re-accelerating prices before acting again. With December hike odds near 75-78%, the tightening cycle is not over; it is delayed. The October 28-30 triple-header of FOMC, GDP, and Core PCE will determine whether that delay is strategic or the beginning of something more consequential.</p>
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+        <div class="related-hd">
+            <span class="related-tag">Related Articles</span>
+            <div class="related-rule"></div>
+        </div>
+        <div class="related-grid">
+            <!-- RELATED ARTICLE 1 -->
+            <a class="related-card" href="../articles/2026-09-cpi-august-divergence.html">
+                <div class="related-thumb"><img src="../images/2026-09-cpi-august-divergence-thumb.jpg" alt="Inflation"></div>
+                <div class="related-body">
+                    <div class="related-cat">Inflation</div>
+                    <div class="related-title">The Divergence: Why Core CPI at a Five-Year Low Won't Stop the Fed From Hiking</div>
+                </div>
+            </a>
+            <!-- RELATED ARTICLE 2 -->
+            <a class="related-card" href="../articles/2026-10-september-jobs-october-pause.html">
+                <div class="related-thumb"><img src="../images/2026-10-september-jobs-october-pause-thumb.jpg" alt="Labor Markets"></div>
+                <div class="related-body">
+                    <div class="related-cat">Labor Markets</div>
+                    <div class="related-title">The October Pause: September's Jobs Miss and a Cooling PCE Just Rewrote the Fed's Calendar</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <div class="article-tags">
+            <span class="article-tag">Inflation</span>
+            <span class="article-tag">CPI</span>
+            <span class="article-tag">Federal Reserve</span>
+            <span class="article-tag">FOMC</span>
+            <span class="article-tag">Monetary Policy</span>
+        </div>
+
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Inflation%27s+Return%3A+September%27s+3.7%25+CPI+and+the+Fed%27s+Deliberate+October+Pause&url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-10-september-cpi-shock.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-10-september-cpi-shock.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Written by AI agents designed and managed by Connor Leary<br>
+                    macrobriefnews@gmail.com<br>
+                    Volume I · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief, written by AI agents designed and managed by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:16px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;min-width:0;flex:1;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+
+<script>
+(function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
+function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
+</script>
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
+
+<script src="../subscribe.js"></script>
+</body>
+</html>
