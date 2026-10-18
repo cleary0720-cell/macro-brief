@@ -28,16 +28,17 @@
 25. FY2026 Deficit / Interest Exceeds Defense Budget / OBBBA Revenue Impact / Debt Ceiling 2027 — "Past the Pentagon: How America's Interest Bill Eclipsed the Defense Budget" (2026-09-debt-defense-crossover.html) — Fiscal Policy
 26. September 2026 Jobs Miss / August 2026 Core PCE Drop / October FOMC Pause — "The October Pause: September's Jobs Miss and a Cooling PCE Just Rewrote the Fed's Calendar" (2026-10-september-jobs-october-pause.html) — Labor Markets
 27. 10-Year Treasury Yield 24-Year High / ISM Prices / Bond Market Repricing — "The Five-Percent Era: America's 10-Year Treasury Has Climbed to a 24-Year High" (2026-10-treasury-yield-24year-high.html) — Financial Markets
+28. September 2026 CPI Shock / Warsh IMF Stand-Down / October FOMC Hold Setup — "Inflation's Return: September's 3.7% CPI and the Fed's Deliberate October Pause" (2026-10-september-cpi-shock.html) — Inflation
 
 ## Last run
-- Date: October 11, 2026
-- Article: "The Five-Percent Era: America's 10-Year Treasury Has Climbed to a 24-Year High"
-- Category: Financial Markets (archive data-category="Markets &amp; Money")
-- Issue: Vol. I, No. 27
-- Filename: articles/2026-10-treasury-yield-24year-high.html
-- Thumbnail: fallback cp 2026-05-debt-interest-crisis-thumb.jpg → 2026-10-treasury-yield-24year-high-thumb.jpg (pexels-proxy blocked in CCR, 403)
-- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "US Treasury building exterior with American flag")
-- Push: git push origin HEAD:main — SUCCESS (commit 0b33504)
+- Date: October 18, 2026
+- Article: "Inflation's Return: September's 3.7% CPI and the Fed's Deliberate October Pause"
+- Category: Inflation (archive data-category="Prices")
+- Issue: Vol. I, No. 28
+- Filename: articles/2026-10-september-cpi-shock.html
+- Thumbnail: fallback cp 2026-05-inflation-relapse-thumb.jpg → 2026-10-september-cpi-shock-thumb.jpg (pexels-proxy blocked in CCR, 403)
+- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "grocery store shelves with price tags")
+- Push: git push origin HEAD:main — SUCCESS (commit 8a15753)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -45,7 +46,7 @@ Do NOT use mcp__github__create_or_update_file for pushing — it fails on large 
 
 ## Thumbnail
 ALWAYS run download_thumb.py first on every run. Never skip it based on a past failure.
-Known issue (verified Oct 11, 2026): the routine sandbox's egress proxy blocks *.workers.dev, so the script
+Known issue (verified Oct 18, 2026): the routine sandbox's egress proxy blocks *.workers.dev, so the script
 fails with "Tunnel connection failed: 403". That is an environment network setting, not a script bug,
 and it may be fixed at any time.
 If it fails: cp the category placeholder from Step 4 of the prompt.
@@ -64,51 +65,41 @@ The 4 fixed filter buckets in archive.html — do NOT add new ones:
 NOTE: Use HTML entity &amp; in data-category="Markets &amp; Money" in archive.html.
 
 ## Issue numbering
-Next article will be Vol. I, No. 28
+Next article will be Vol. I, No. 29
 
-## Key data as of October 11, 2026
+## Key data as of October 18, 2026
 - Fed Funds: 3.75–4.00% (hiked 25bps Sep 16, UNANIMOUS 12-0 vote, Chair Warsh)
-- October 28 FOMC: CME FedWatch ~17% hike / ~82% hold / ~1% cut (Oct 10)
-- September Jobs Report (Oct 2): +29,000 NFP (major miss); 4.2% unemployment
-- Jobless Claims (week ending Oct 3, released Oct 8): 197K weekly; 4-wk avg 198K (near 57-yr lows)
-- ISM Manufacturing PMI September (released Oct 1): 54.5%; Prices Paid 77.9 (highest since May 2026)
-- ISM Services PMI September (released Oct 5): 54.9%; Prices Paid 74.0 (highest since July 2022)
-- FOMC Minutes (released Oct 7): "almost all" participants saw upside inflation risks, endorsed another hike by year-end
-- 10Y Treasury yield: 5.24% (Oct 9 close); touched above 5.3% intraday Oct 7 (highest since Oct 2002)
-- 30Y Treasury yield: 5.60% (Oct 8-9)
-- 2Y Treasury yield: 4.80% (Oct 9); 2s10s: +44 bps (normal/positive curve)
-- 10Y intraday peak this week: ~5.33-5.36% on Oct 5-7 (confirmed highest since 2002 by multiple sources)
-- August Core PCE (Sep 30): 3.0% YoY
-- 30-year mortgage (Freddie Mac PMMS, Oct 1): 7.28%
-- CPI August: 3.4% headline, 2.4% Core (Sep 11)
-- December 2026 FOMC hike odds: ~75-78% per FedWatch as of Oct 10
-- China Treasury holdings: ~$651B (declining from peak)
-- High-yield default rate: ~2% par-weighted (2026)
-- Corporate bond issuance 2026 (tech/hyperscalers): >$219B
+- October 27–28 FOMC: CME FedWatch ~84% hold / 16% hike / 0% cut (Oct 17, post-Warsh IMF)
+- September CPI (Oct 14): 3.7% headline YoY (highest since Jun 2022); Core CPI 3.1% YoY (first above 3.0% since early 2025); gasoline ~+9% MoM
+- Jobless Claims (week ending Oct 11, released Oct 16): 199K weekly; 4-wk avg 199K
+- September Retail Sales (Oct 15): +6.3% YoY; +0.8% MoM (gasoline-driven); ex-gas +0.2% MoM
+- 10Y Treasury yield: ~5.10% (Oct 17, post-Warsh); 2Y: 4.77%; 30Y: 5.43%
+- 30-year mortgage (Freddie Mac PMMS, Oct 15): 7.40% (highest of 2026)
+- August Core PCE (Sep 30): 3.0% YoY; September Core PCE due Oct 30
+- Q3 2026 GDP Advance Estimate: due Oct 29; consensus ~+1.5-2.0%
+- December 2026 FOMC hike odds: ~75-78% per FedWatch as of Oct 17
 
-## Upcoming key releases (as of October 11, 2026)
-- Oct 14 (Wed): CPI September 2026 (BLS 8:30am) — CRITICAL: last major CPI before Oct 28 FOMC; prev: 3.4% headline, 2.4% Core
-- Oct 15 (Thu): PPI September 2026 (BLS 8:30am); Retail Sales September (Census 8:30am); Initial Jobless Claims
-- Oct 28 (Wed): FOMC Rate Decision — 82% hold / 17% hike / 1% cut
-- Oct 29 (Thu): GDP Q3 2026 Advance Estimate (BEA 8:30am)
-- Oct 30 (Fri): Core PCE September 2026 (BEA 8:30am); prev: 3.0%
+## Upcoming key releases (as of October 18, 2026)
+- Oct 22 (Thu): Initial Jobless Claims (week ending Oct 18); M2 September H.6 (Fed, ~1pm ET)
+- Oct 28 (Wed): FOMC Rate Decision — 84% hold / 16% hike; dot plot update critical
+- Oct 29 (Thu): GDP Q3 2026 Advance Estimate (BEA, 8:30am)
+- Oct 30 (Fri): Core PCE September 2026 (BEA, 8:30am); prev: 3.0%
+- Nov 6 (Fri): October 2026 Employment Situation (jobs report, BLS 8:30am)
 
 ## Topic suggestions for future runs (not yet covered)
-- October FOMC reaction (Oct 28) — hold confirmed or surprise? Chair Warsh press conference + dot plot
-- GDP Q3 2026 (Oct 29) — first read on Q3 growth
-- September CPI reaction (Oct 14) — disinflation hold or ISM prices transmitting?
-- Retail Sales September (Oct 15) — consumer resilience test
-- Core PCE September (Oct 30) — triple-header with FOMC + GDP
-- Housing affordability update (last covered May 2026)
-- Q3 corporate earnings / equity market reaction to yield surge
+- October FOMC reaction (Oct 28) — hold confirmed; press conference + dot plot implications
+- GDP Q3 2026 advance estimate (Oct 29) — first Q3 read
+- Core PCE September (Oct 30) — above/below 3.0% is the December hike trigger
+- October 2026 jobs report (Nov 6) — labor market check post-Sep miss
+- Retail Sales deep-dive (Sep +6.3% YoY) — consumer resilience vs. high rates
+- Housing affordability update (last covered May 2026; mortgage now at 7.40%)
+- Q3 corporate earnings season / equity market reaction
 
 ## Data source strategy (confirmed October 2026)
 Government sites return 403 on WebFetch — use WebSearch for all economic data.
-- CPI / PCE: cnbc.com, usinflationcalculator.com, nchstats.com
+- CPI / PCE: cnbc.com, usinflationcalculator.com, nchstats.com, cbsnews.com
 - Jobs reports: cnbc.com, bloomberg.com
 - FOMC odds: cnbc.com, CME FedWatch
 - Treasury yields: forbes.com/advisor/investing/treasury-rates (carries full daily yield table)
-  Always fetch AFTER the week's biggest data release; yields move same day
 - ISM PMI: prnewswire.com, ftportfolios.com, roic.ai/news, verifiedinvesting.com
 - FOMC odds: stocktitan.net, cnbc.com, growbeansprout.com
-- 10Y yield "highest since 2002": confirmed by Yahoo Finance, Bloomberg (itiger.com), roic.ai/news (Oct 7, 2026)
