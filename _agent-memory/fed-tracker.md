@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 18, 2026
+Last updated: October 19, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -35,11 +35,11 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - CPI REPRICING EXAMPLE: Oct 14 Sep CPI (slightly hot core) moved October hike from ~21.6% to ~43.7% (CME)
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 16 update:
-  - Card 1 ends with "...December 9 hike: ~89% (CME).</div>"
-  - Card 3 ends with "...December 9: ~89% (CME; stable).</div>"
-  - Card 5 ends with "...December 9 hike: ~89% (CME; stable).</div>"
-  - Card 3 and Card 5 end the same — use broader context for unique search/replace.
+- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 19 update:
+  - Card 1 ends with "...Polymarket ~14% hike. December 9 hike: ~89% (CME; stable).</div>"
+  - Card 3 ends with "...CME October 28: <strong>~15% hike / ~84% hold</strong> (stable). December 9: ~89% (CME; stable).</div>"
+  - Card 5 ends with "...Polymarket ~14% hike. December 9 hike: ~89% (CME; stable).</div>"
+  - Card 1 and Card 5 now end the same — use the unique Oct 18 entry text for broader context to distinguish.
 - MONDAY POST-WEEKEND REPRICING: Probabilities confirmed via WebSearch on Monday morning may differ from Friday close figures held in memory. Always search fresh on Monday for actual current market pricing.
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
@@ -47,6 +47,27 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
 
 ## Run log
+
+### October 19, 2026 — MONDAY (Quiet Monday; FOMC blackout day 3)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **Quiet Monday — no data releases, no Fed speeches (FOMC blackout, day 3 of pre-meeting period)**
+- **FOMC blackout continues (Oct 17–28)**
+- **October 28 probability (as of Oct 19):**
+  - CME FedWatch: ~15% hike / ~84% hold (predictionmarketspicks.com tracker: "84% Hold, 15% Hike")
+  - Polymarket: ~14% hike (CryptoNews confirmed "falls to 14%")
+  - HOLD is the strong base case; "skip October, hike December" is consensus
+- **December 9 probability:** ~89% hike (CME; stable)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 19, 2026
+  - Card 1 hero-note: Appended Oct 19 entry (quiet Monday, blackout day 3, odds ~15%/~84%, Polymarket ~14%)
+  - Card 3 hero-note: Appended Oct 19 entry (same summary)
+  - Card 5 hero-note: Appended Oct 19 entry (same summary)
+- Sources: predictionmarketspicks.com (CME 84%/15%); cryptonews.com (Polymarket 14%)
 
 ### October 18, 2026 — SUNDAY (Quiet weekend day 2; FOMC blackout continues)
 - Target range: 3.75% – 4.00% (unchanged)
@@ -237,11 +258,12 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
   - ~89% hike probability (CME)
 
-- **Current October 28 probability (as of Oct 18 — slight tick from Oct 17):**
-  - CME: ~15.5% hike / ~84.5% hold (extended search Oct 18; slightly down from 16.1%/83.9% Oct 16/17)
+- **Current October 28 probability (as of Oct 19):**
+  - CME: ~15% hike / ~84% hold (predictionmarketspicks.com Oct 19; essentially unchanged from 15.5%/84.5% Oct 18)
+  - Polymarket: ~14% hike (CryptoNews confirmed; slightly more dovish than CME)
   - HOLD is the strong base case (5-in-6 odds)
   - FOMC blackout in effect Oct 17–28 — no more Fed speeches ahead of Oct 28 decision
-- **December 9 hike: ~89% (CME 88.9%; Polymarket ~79%)**
+- **December 9 hike: ~89% (CME; Polymarket ~79%; stable)**
 - **Chair Warsh at IMF Bangkok (Oct 16, DONE):** No rate signal; "I don't prejudge meetings"
 - **September Jobs Report (Oct 2, CONFIRMED):**
   - NFP: +29,000 (major miss vs ~90k expected)
