@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 21, 2026
+Last updated: October 22, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -35,10 +35,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - CPI REPRICING EXAMPLE: Oct 14 Sep CPI (slightly hot core) moved October hike from ~21.6% to ~43.7% (CME)
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 21 update:
-  - Card 1 ends with "...FOMC blackout continues (day 5). CME October 28: <strong>~15% hike / ~85% hold</strong> (slight easing; Kalshi ~13% hike). December 9 hike: ~90% (CME; stable).</div>"
-  - Card 3 ends with "...FOMC blackout continues (day 5). CME October 28: <strong>~15% hike / ~85% hold</strong> (slight easing from ~17%). December 9: ~90% (CME; stable).</div>"
-  - Card 5 ends with "...FOMC blackout continues (day 5 of pre-meeting period). CME October 28: <strong>~15% hike / ~85% hold</strong> (slight easing); Kalshi ~13% hike. December 9 hike: ~90% (CME; stable).</div>"
+- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 22 update:
+  - Card 1 ends with "...FOMC blackout continues (day 6). <strong>Jobless claims (wk Oct 18): 194K</strong> (vs 200K est; 4-wk avg 197,750; 3-month low &mdash; strongest labor reading in months). CME October 28: <strong>~15% hike / ~85% hold</strong> (stable; Kalshi ~13% hike). December 9 hike: ~90% (CME; stable).</div>"
+  - Card 3 ends with "...FOMC blackout continues (day 6). <strong>Jobless claims (wk Oct 18): 194K</strong> (beat 200K est; 4-wk avg 197,750). CME October 28: <strong>~15% hike / ~85% hold</strong> (stable). December 9: ~90% (CME; stable).</div>"
+  - Card 5 ends with "...FOMC blackout continues (day 6 of pre-meeting period). <strong>Jobless claims (wk Oct 18): 194K</strong> (vs 200K est; 4-wk avg 197,750; 3-month low). CME October 28: <strong>~15% hike / ~85% hold</strong> (stable); Kalshi ~13% hike. December 9 hike: ~90% (CME; stable).</div>"
   - Cards 1, 3, 5 can be distinguished by unique Oct 19 text: Card 1 says "FOMC blackout continues. Probabilities stable"; Card 3 says "FOMC blackout continues (day 3)."; Card 5 says "FOMC blackout continues (day 3 of pre-meeting period)."
 - MONDAY POST-WEEKEND REPRICING: Probabilities confirmed via WebSearch on Monday morning may differ from Friday close figures held in memory. Always search fresh on Monday for actual current market pricing.
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
@@ -47,6 +47,32 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
 
 ## Run log
+
+### October 22, 2026 — THURSDAY (Jobless Claims day; FOMC blackout day 6)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **FOMC blackout continues (day 6, Oct 17–28)**
+- **Key data release: Initial Jobless Claims (week ending Oct 18)**
+  - 194K (vs 200K estimate; prior week: upwardly revised 200K)
+  - 4-week average: 197,750 (down 1,000)
+  - 3-month low — continuing claims 1.728M (wk ending Oct 10)
+  - Source: Bloomberg, investinglive.com, FXStreet, Finimize, Boston25News
+- **M2 September 2026 (H.6):** Expected ~Oct 22 but not confirmed in searches — may not yet be indexed
+- **October 28 probability (as of Oct 22):**
+  - CME FedWatch: ~15% hike / ~85% hold (stable from Oct 21; FXStreet Oct 22 preview confirmed ~85% hold)
+  - Kalshi: ~13% hike (stable from Oct 21)
+  - HOLD is the strong base case; "skip October, hike December" is consensus
+- **December 9 probability:** ~90% hike (CME; stable)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 22, 2026
+  - Card 1 hero-note: Appended Oct 22 entry (jobless claims 194K, blackout day 6, probs stable)
+  - Card 3 hero-note: Appended Oct 22 entry (same summary)
+  - Card 5 hero-note: Appended Oct 22 entry (same summary)
+- Sources: Bloomberg (194K headline); investinglive.com (194K vs 200K); FXStreet (Oct 22 Fed preview: ~85% hold)
 
 ### October 21, 2026 — WEDNESDAY (Quiet Wednesday; FOMC blackout day 5)
 - Target range: 3.75% – 4.00% (unchanged)
@@ -199,15 +225,15 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Oct 16 (Fri) — Warsh IMF Bangkok speech:** No October signal; October odds collapsed from ~34% to ~16%
 - **Oct 27–28: Next FOMC meeting (decision Oct 28, 2pm ET = 18:00 UTC)**
   - Market: ~17% hike / ~83% hold (HOLD is strong base case; "skip October, hike December" is consensus)
-- **Oct 22 (Thu) — Initial Jobless Claims (week ending Oct 18) + M2 September 2026 (Fed H.6)**
+- **Oct 22 (Thu) — DONE: Initial Jobless Claims (week ending Oct 18): 194K (vs 200K est; 4-wk avg 197,750; 3-month low); M2 September H.6: not confirmed in searches**
 - **Oct 28 (Wed) — FOMC Rate Decision (2pm ET)**
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + PCE September 2026 (BEA)**
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
   - ~89% hike probability (CME)
 
-- **Current October 28 probability (as of Oct 21):**
-  - CME: ~15% hike / ~85% hold (slight easing from ~17%/~83% on Oct 20; one Reuters/FXStreet figure: 14.9%/16.1%)
-  - Kalshi: ~13% hike / ~87% hold (as of Oct 20–21)
+- **Current October 28 probability (as of Oct 22):**
+  - CME: ~15% hike / ~85% hold (stable; FXStreet Oct 22 preview confirmed ~85% hold)
+  - Kalshi: ~13% hike / ~87% hold (stable from Oct 21)
   - HOLD is the strong base case (6-in-7 odds)
   - FOMC blackout in effect Oct 17–28 — no more Fed speeches ahead of Oct 28 decision
 - **December 9 hike: ~90% (CME; slight uptick from ~89%; stable)**
