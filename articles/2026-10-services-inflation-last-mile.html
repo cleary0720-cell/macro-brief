@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sticky Core: Why Services Inflation Became the Fed's Last Remaining Problem — The Macro Brief</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://beehiiv-proxy.cleary0720.workers.dev https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+        /* ── BOTTOM LINE ── */
+        .bottom-line {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 24px 28px;
+            margin: 40px 0 8px;
+        }
+        .bottom-line-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .bottom-line p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #D8D4C8;
+            margin: 0;
+            text-indent: 0 !important;
+            font-style: normal;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            min-height: 44px;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
+
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+    </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+            <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+            <li><a href="../economic-calendar.html">Calendar</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <span class="article-category">Inflation</span>
+            <div class="article-category-rule"></div>
+            <span class="article-issue">Vol. I, No. 29</span>
+        </div>
+
+        <h1 class="article-headline">The Sticky Core: Why <span class="red">Services Inflation</span> Became the Fed's Last Remaining Problem</h1>
+
+        <p class="article-subhead">September's 3.7% headline CPI was mostly an energy story. The detail underneath — shelter reaccelerating, ISM Services Prices at a four-year high, supercore running at 4.5% annualized — is the stickier, more durable problem the Fed hasn't yet solved.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">Written by AI agents designed and managed by <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
+            <span class="article-date">October 25, 2026</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="container">
+    <div class="article-hero">
+        <img src="../images/2026-10-services-inflation-last-mile-thumb.jpg" alt="restaurant workers serving customers at busy dining tables">
+        <div class="article-hero-caption">Service-sector businesses — restaurants, logistics firms, cleaning services — are passing higher costs on to consumers at the fastest pace since mid-2022. — Editorial photo</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <p>September's consumer price index arrived at 3.7% year over year — well above the 3.6% consensus and the highest headline reading in months. The number made headlines. But a single item drove most of the alarm: gasoline surged 9.1% in the month, accounting for more than half of the total monthly increase. Strip out energy, and a different — and in some ways more consequential — inflation story comes into view.</p>
+
+        <p>Core CPI, which excludes food and energy, rose 0.3% in September, nudging the annual pace from 2.4% to 2.6%. That modest beat against the 0.2% consensus expectation is worth examining. It was the third consecutive month of core readings coming in slightly hotter than forecast. Individual misses can be noise; a pattern of them is a signal.</p>
+
+        <p>The concern is not the aggregate core figure itself, which at 2.6% remains well below the 3%-plus levels that defined the 2025 inflation surge. It is the composition. Two components of core inflation — shelter and services broadly — are behaving in ways the Federal Reserve has long identified as the hardest to dislodge.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
+        <h2>Shelter Reawakens</h2>
+
+        <p>Shelter is the largest component of core CPI, comprising roughly one-third of the overall index. It had been a welcome source of disinflation for much of 2026. Not anymore. After a prolonged lull — the index rose just 0.1% in July — shelter accelerated to 0.3% in August and then to 0.4% in September. Owners' equivalent rent (OER), a measure of what homeowners would pay to rent their own homes, rose an estimated 0.35% in September, pushing its year-over-year rate to approximately 3.3%.</p>
+
+        <p>The mechanics behind the acceleration are well understood, if stubbornly slow to resolve. Official BLS shelter measures lag actual market rent conditions by roughly twelve to eighteen months, because they capture what renters are paying under existing leases rather than the prices new tenants are negotiating today. The rental market surged violently in 2022 and 2023; the statistical catch-up has been working its way through the system ever since. The problem for policymakers is that a second set of forces is now sustaining demand in the rental market even as the original surge fades. With the 30-year mortgage rate at 7.32% as of October 22, the lock-in effect (the phenomenon in which existing homeowners are effectively trapped in their properties by below-market mortgage rates they locked in years ago) remains powerful. Fewer homes list for sale; fewer buyers can afford the ones that do. Rental demand stays elevated, and landlords know it.</p>
+
+        <h2>The ISM Upstream Signal</h2>
+
+        <p>Beyond shelter, the service sector as a whole is getting structurally more expensive to operate. The Institute for Supply Management's (ISM) Non-Manufacturing Prices Paid index — a monthly survey of what service businesses are paying for their inputs — rose to 74.0 in September, up 1.4 points from August and the highest reading since July 2022. ISM said fuel costs were cited twice as often as any other factor by survey respondents. That matters because energy costs flow into service prices before they register in the CPI: airlines, ground logistics firms, cleaning services, and food delivery all carry fuel as a major operating expense.</p>
+
+        <div class="pull-quote">"The ISM Services Prices Paid index hit 74.0 in September — its highest since July 2022, when headline CPI was near its 9% peak."</div>
+
+        <p>The comparison to mid-2022 requires context. When ISM Services Prices last ran at this level, headline CPI was approaching its 9% peak and the Fed was still behind the curve. Today's demand conditions are materially different: consumer spending has slowed, credit conditions are tighter, and the Fed is actively restraining growth. But the reading does signal that service-sector disinflation — a steady trend for most of 2024 and 2025 — has stalled. Upstream cost pressures that eventually reach consumers are rising again, driven this time by the same energy shock that inflated the September headline.</p>
+
+        <h2>Supercore's Stubborn Persistence</h2>
+
+        <p>The Fed's preferred internal barometer for stubborn price pressure is what economists call supercore inflation: core services excluding shelter (CPI-CSXS). This measure strips out both the energy volatility that distorts the headline and the lagged rent dynamics that complicate shelter, leaving a clearer view of wage-driven, discretionary services pricing. Supercore rose 0.34% in September. Over the past three months, it has run at approximately a 4.5% annualized pace — more than double the roughly 2% rate that prevailed before the pandemic. PNC's economics team noted it was the third consecutive month of elevated supercore readings.</p>
+
+        <div class="article-callout">
+            Supercore CPI captures prices for services like medical care, financial services, recreation, and personal care — categories that are largely insulated from commodity prices and highly sensitive to labor costs. When wages are rising faster than productivity, these prices tend to stay elevated.
+        </div>
+
+        <p>The persistence of supercore is the structural dimension of the current inflation problem. Goods prices — the original driver of the post-pandemic surge — have largely normalized and are now exerting little inflationary pressure. Energy prices move with geopolitical conditions; they are volatile but mean-reverting. Services, by contrast, are labor-intensive, locally provided, and difficult to offshore. Once service businesses adjust their pricing upward, they rarely reverse it. The same rigidity that makes services inflation slow to arrive makes it slow to depart.</p>
+
+        <h2>What the Fed Is Actually Watching</h2>
+
+        <p>The Federal Reserve meets October 27–28, with futures markets pricing an approximately 83% probability of a hold at the current target range of 3.75%–4.00%. That near-certainty of inaction reflects a deliberate signaling by Chair Kevin Warsh following September's hike — the first rate increase in roughly three years and a unanimous 12-0 vote — as well as a soft September payroll report (+29,000, a significant miss) and a modest easing in Treasury yields heading into the meeting. The Fed is not abandoning its tightening posture; it is pausing to let cumulative policy restraint work through the financial system.</p>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>September 2026</th>
+                        <th>August 2026</th>
+                        <th>Direction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CPI (Headline, YoY)</td>
+                        <td>3.7%</td>
+                        <td>3.1%</td>
+                        <td class="td-neg">&#8593; +0.6 pp</td>
+                    </tr>
+                    <tr>
+                        <td>Core CPI (YoY)</td>
+                        <td>2.6%</td>
+                        <td>2.4%</td>
+                        <td class="td-neg">&#8593; +0.2 pp</td>
+                    </tr>
+                    <tr>
+                        <td>Shelter CPI (MoM)</td>
+                        <td>+0.4%</td>
+                        <td>+0.3%</td>
+                        <td class="td-neg">&#8593; Accelerating</td>
+                    </tr>
+                    <tr>
+                        <td>Owners' Equivalent Rent (YoY)</td>
+                        <td>~3.3%</td>
+                        <td>~3.0%</td>
+                        <td class="td-neg">&#8593; Rising</td>
+                    </tr>
+                    <tr>
+                        <td>Supercore (3-mo. annualized)</td>
+                        <td>~4.5%</td>
+                        <td>~3.5%</td>
+                        <td class="td-neg">&#8593; Re-accelerating</td>
+                    </tr>
+                    <tr>
+                        <td>ISM Services Prices Paid</td>
+                        <td>74.0</td>
+                        <td>72.6</td>
+                        <td class="td-neg">&#8593; 4-yr high</td>
+                    </tr>
+                    <tr>
+                        <td>Fed Funds Rate</td>
+                        <td>3.75–4.00%</td>
+                        <td>3.50–3.75%</td>
+                        <td class="td-neg">&#8593; Hiked Sep 16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>The critical release of the coming week is Thursday's September Core PCE (personal consumption expenditures) deflator, the Fed's preferred inflation gauge, due October 30. Its August reading was 3.0% year over year. Given September's hotter-than-expected core CPI and the continued elevation in services prices, most analysts expect it to move higher. The Fed has made clear, through the dot plot it updated in September, that 16 of 18 participants see at least one additional hike before year-end. A September Core PCE reading that breaks clearly above 3.0% — or even prints at the same elevated level — would harden December hike probability, already priced at roughly 80% in futures markets, into near-certainty.</p>
+
+        <p>The arc of this inflation cycle has not been a single wave but a sequence of overlapping ones. Goods prices surged first, then normalized. Energy added a new layer each time supply disruptions intervened. And now services — the slow-moving, labor-intensive, rent-catching, fuel-absorbing portion of the economy — are the holdout. They are the last component that has not yet returned to anything resembling pre-pandemic norms. That is precisely what makes them the hardest problem the Fed has left to solve.</p>
+
+        <div class="bottom-line">
+            <span class="bottom-line-label">Bottom Line</span>
+            <p>September's 3.7% headline CPI was largely an energy event; gasoline alone accounted for more than half the monthly rise. The underlying services picture is more durable: shelter is reaccelerating, ISM Services Prices are at a four-year high, and supercore is running at roughly 4.5% annualized over three months. The Fed holds in October — the data does not yet compel immediate action — but Thursday's September Core PCE will determine whether December's hike becomes a near-certainty. A reading above 3.0% leaves the Fed little choice.</p>
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+        <div class="related-hd">
+            <span class="related-tag">Related Articles</span>
+            <div class="related-rule"></div>
+        </div>
+        <div class="related-grid">
+            <!-- RELATED ARTICLE 1 -->
+            <a class="related-card" href="../articles/2026-10-september-cpi-shock.html">
+                <div class="related-thumb"><img src="../images/2026-10-september-cpi-shock-thumb.jpg" alt="Inflation"></div>
+                <div class="related-body">
+                    <div class="related-cat">Inflation</div>
+                    <div class="related-title">Inflation's Return: September's 3.7% CPI and the Fed's Deliberate October Pause</div>
+                </div>
+            </a>
+            <!-- RELATED ARTICLE 2 -->
+            <a class="related-card" href="../articles/2026-09-fomc-september-hike.html">
+                <div class="related-thumb"><img src="../images/2026-09-fomc-september-hike-thumb.jpg" alt="Monetary Policy"></div>
+                <div class="related-body">
+                    <div class="related-cat">Monetary Policy</div>
+                    <div class="related-title">Higher Ground: The Fed's September Hike Was Unanimous. October Is Not.</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <div class="article-tags">
+            <span class="article-tag">Inflation</span>
+            <span class="article-tag">Services CPI</span>
+            <span class="article-tag">Federal Reserve</span>
+            <span class="article-tag">Shelter</span>
+            <span class="article-tag">ISM</span>
+            <span class="article-tag">Supercore</span>
+        </div>
+
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=The+Sticky+Core%3A+Why+Services+Inflation+Became+the+Fed%27s+Last+Remaining+Problem&url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-10-services-inflation-last-mile.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-10-services-inflation-last-mile.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Written by AI agents designed and managed by Connor Leary<br>
+                    macrobriefnews@gmail.com<br>
+                    Volume I · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief, written by AI agents designed and managed by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:16px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;min-width:0;flex:1;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
+
+<script src="../subscribe.js"></script>
+</body>
+</html>
