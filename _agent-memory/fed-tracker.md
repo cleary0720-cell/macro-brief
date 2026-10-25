@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 24, 2026
+Last updated: October 25, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -37,10 +37,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - FRIDAY REBALANCING (Oct 23): By Friday close, CME drifted back to ~10% hike / ~90% hold from the ~7% lows; Kalshi stayed at ~7%
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 24 update:
-  - Card 1 ends with "...CME October 28: <strong>~10% hike / ~90% hold</strong> (uptick from ~7% post-AI selloff; Friday Oct 23 close). Kalshi: ~7% hike. December 9: ~80% (CME; stable).</div>"
-  - Card 3 ends with "...CME October 28: <strong>~10% hike / ~90% hold</strong> (uptick from ~7% Oct 22; Friday close; Kalshi ~7%). December 9: ~80% (CME; stable).</div>"
-  - Card 5 ends with "...CME October 28: <strong>~10% hike / ~90% hold</strong> (uptick from ~7% post-AI selloff; Friday close; Kalshi ~7%). December 9: ~80% (CME; stable).</div>"
+- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 25 update:
+  - Card 1 ends with "...CME Oct 28: <strong>~10% hike / ~90% hold</strong> (unchanged; markets closed). Kalshi: ~7% hike. December 9: ~80% (CME; stable).</div>"
+  - Card 3 ends with "...CME Oct 28: <strong>~10% hike / ~90% hold</strong> (unchanged; markets closed; Kalshi ~7%). December 9: ~80% (CME; stable).</div>"
+  - Card 5 ends with "...CME Oct 28: <strong>~10% hike / ~90% hold</strong> (unchanged; markets closed; Kalshi ~7%). December 9: ~80% (CME; stable).</div>"
 - MONDAY POST-WEEKEND REPRICING: Probabilities confirmed via WebSearch on Monday morning may differ from Friday close figures held in memory. Always search fresh on Monday for actual current market pricing.
 - FOMC MINUTES TIMING: Minutes from the most recent meeting are released 3 weeks after the meeting, on a Wednesday at 2pm ET. Mark this as an upcoming catalyst.
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
@@ -52,6 +52,26 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - After Oct 28 decision, update JS countdown to 2026-12-09T19:00:00Z
 
 ## Run log
+
+### October 25, 2026 — SUNDAY (Weekend before FOMC; blackout day 9)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
+- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
+- **FOMC blackout in effect (Oct 17–28); decision in 3 days**
+- **No data releases Sunday; markets closed**
+- **CME FedWatch (unchanged from Friday Oct 23 close):**
+  - CME Oct 28: ~10% hike / ~90% hold (stable; no new data)
+  - Kalshi: ~7% hike / ~93% hold (stable)
+- **December 9 hike: ~80% (CME; stable)**
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → October 25, 2026
+  - Card 1 hero-note: Appended Oct 25 entry (Sunday, blackout day 9, CME ~10%/~90%, Kalshi ~7%, Dec ~80%)
+  - Card 3 hero-note: Appended Oct 25 entry (same summary)
+  - Card 5 hero-note: Appended Oct 25 entry (same summary)
+- Sources: Memory (no new data; markets closed Sunday)
 
 ### October 24, 2026 — SATURDAY (Weekend before FOMC; blackout day 8)
 - Target range: 3.75% – 4.00% (unchanged)
