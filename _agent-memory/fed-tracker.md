@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 27, 2026
+Last updated: October 28, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -39,24 +39,38 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - FRIDAY REBALANCING (Oct 23): By Friday close, CME drifted back to ~10% hike / ~90% hold from the ~7% lows; Kalshi stayed at ~7%
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 27 update:
-  - Card 1 ends with "...CME Oct 28: <strong>~9.4% hike / ~90.6% hold</strong> (essentially unchanged; Kalshi ~7%). December 9: ~79.7% (~80%; stable).</div>"
-  - Card 3 ends with "...CME Oct 28: <strong>~9.4% hike / ~90.6% hold</strong> (essentially unchanged; Kalshi ~7%). December 9: ~79.7% (~80%; stable).</div>"
-  - Card 5 ends with "...CME Oct 28: <strong>~9.4% hike / ~90.6% hold</strong> (essentially unchanged; Kalshi ~7%). December 9: ~79.7% (~80%; stable).</div>"
-  - NOTE: Cards 3 and 5 have IDENTICAL endings — must use Python positional replacement, not text search
-- FOMC DECISION DAY TOMORROW: October 28, 2026 at 2pm ET = 18:00 UTC. HUGE session: decision + press conference.
-  - Add new FOMC history row (hold expected; at least one dissent for hiking per BNY)
-  - Update rate ONLY if changed (market expects hold ~90.6%)
+- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 28 morning update:
+  - All 3 cards end identically with: "...2&ndash;3 hawkish dissents expected (Hammack, Logan; Kashkari possible).</div>"
+  - NOTE: All 3 cards have IDENTICAL endings — must use Python positional replacement (replace_all), not text search
+- FOMC DECISION DAY: October 28, 2026 at 2pm ET = 18:00 UTC — decision today; press conference 2:30pm ET.
+  - NEXT RUN (Oct 29 morning): Add new FOMC history row for Oct 28 decision
+  - Update rate if changed (hold ~90.6% expected; but add history row regardless)
   - Update MEANS-FOR-YOU ONLY if rate changes
-  - Update JS countdown to 2026-12-09T19:00:00Z AFTER decision
-  - Note: At least one dissent in favor of hiking expected (BNY Markets, FXStreet Oct 27)
+  - Update JS countdown to 2026-12-09T19:00:00Z after decision confirmed
+  - Dissents expected: Hammack, Logan (hawks); Kashkari possible = 2-3 dissents
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
 - STALE TODAY REFERENCES: When updating the daily entry, also replace "release TODAY" or "tomorrow" references in prior entries with "released [date]" so they don't become stale.
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
-- After Oct 28 decision, update JS countdown to 2026-12-09T19:00:00Z
-- M2 September H.6: Scheduled for Oct 27 per FRED (FRED "Next Release Date: Oct 27, 2026"). September figure NOT confirmed in WebSearch as of Oct 27 morning — may not yet be indexed. August 2026 M2 was $23,342.8 billion SA (+5.7% YoY). Check again on Oct 28 or after.
+- After Oct 28 decision confirmed, update JS countdown to 2026-12-09T19:00:00Z
+- M2 September H.6: Scheduled for Oct 27 per FRED. September figure NOT confirmed in WebSearch as of Oct 28 morning — check for indexed data; August 2026 M2 was $23,342.8 billion SA (+5.7% YoY).
 
 ## Run log
+
+### October 28, 2026 — WEDNESDAY (FOMC Decision Day — decision at 2pm ET / 18:00 UTC)
+- Target range: 3.75% – 4.00% (unchanged pre-decision)
+- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
+- **RUN TIMING: 9:22am ET — pre-decision; decision at 2pm ET / 18:00 UTC**
+- CME Oct 28 morning: ~9.4% hike / ~90.6% hold (stable; FXStreet Oct 28 morning); ~8.9%/~91.1% per investing.com
+- Kalshi: ~5% hike (down from ~7% yesterday; DeFiRate.com Oct 28)
+- December 9: ~84.3% hike (UP from ~79.7%; FXStreet Oct 28 morning)
+- New FOMC row added: NO (pre-decision; add Oct 29 morning after confirming decision)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-10-28T18:00:00Z (correct — counting down to TODAY's 2pm ET decision)
+- Changes made:
+  - "Last updated" → October 28, 2026
+  - All 3 hero cards: appended Oct 28 DECISION DAY morning note (CME ~9.4%/~90.6%; Kalshi ~5%; Dec ~84.3%; 2-3 hawkish dissents expected)
+  - Fixed stale "tomorrow" references: "decision tomorrow 2pm ET" → "decision today (Oct 28) 2pm ET" (3x); "FOMC meeting starts tomorrow (Oct 27)" → "FOMC meeting started Oct 27" (3x); "Core PCE August releases TOMORROW" → "released Sep 30" (2x); "FOMC Minutes release tomorrow, October 7" → "released October 7" (2x)
+- Sources: FXStreet Oct 28 morning (airdropalert.com synthesis); CNBC live blog Oct 28; DeFiRate.com Kalshi ~5%; investing.com Oct 28 FOMC preview
 
 ### October 27, 2026 — TUESDAY (FOMC Day 1; decision tomorrow Oct 28; blackout day 11)
 - Target range: 3.75% – 4.00% (unchanged)
@@ -93,24 +107,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 
 ## CRITICAL NOTE for NEXT RUNS:
 - **EFFR: 3.88% since Sep 17 (stable; IORB 3.90%)**
-- **Oct 28 (Wed) — FOMC Rate Decision (2pm ET = 18:00 UTC):**
-  - Market: ~9.4% hike / ~90.6% hold (CME); ~7% hike (Kalshi); HOLD near-certain
-  - At least one dissent in favor of hiking expected (BNY Markets)
-  - Add new FOMC history row (format: "Oct 28, 2026"; decision-hold or decision-hike span; range-cell; vote-cell; Notes td)
-  - Update rate if changed; update MEANS-FOR-YOU if rate changes
-  - Update JS countdown to 2026-12-09T19:00:00Z after decision
-  - Card 1 / Card 3 / Card 5 have identical Oct 27 tails — use Python positional replacement for Oct 28 entry
+- **Oct 28 (TODAY) — FOMC Decision at 2pm ET / 18:00 UTC:**
+  - HOLD expected (~90.6% CME as of morning); 2-3 hawkish dissents expected (Hammack, Logan; Kashkari possible)
+  - OCT 29 MORNING — must complete post-decision tasks:
+    1. Add FOMC history row for Oct 28 decision (hold or hike; vote count; dissenter names)
+    2. Update JS countdown from 2026-10-28T18:00:00Z → 2026-12-09T19:00:00Z
+    3. Update December 9 probability (was ~84.3% pre-decision; will move post-statement/presser)
+    4. Update MEANS-FOR-YOU ONLY if rate changed
+    5. Search Warsh press conference statement language for notable quotes
+  - FOMC history row format: date-cell "Oct 28, 2026"; decision-hold or decision-hike span; range-cell; vote-cell with vote-note span for dissenters; Notes td
 - **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + Initial Jobless Claims (week ending Oct 25)**
 - **Oct 30 (Fri) — Core PCE September 2026 (BEA)** — CRITICAL: above 3.0% cements December hike
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
-  - ~79.7% hike probability (CME; ~80%; stable)
-
-- **Current October 28 probability (as of Oct 27 Tuesday):**
-  - CME: ~9.4% hike / ~90.6% hold (essentially unchanged since Oct 26)
-  - Kalshi: ~7% hike / ~93% hold (stable)
-  - HOLD is near-certain; BNY expects at least one dissent in favor of hiking
-  - FOMC blackout in effect Oct 17–28 — no Fed speeches before decision
-- **December 9 hike: ~79.7% / ~80% (FXStreet Oct 26; stable)**
+  - ~84.3% hike probability pre-Oct 28 decision (FXStreet Oct 28 morning; up from ~79.7%)
+- **All 3 hero cards now end identically** (use Python replace_all for Oct 29 entry):
+  "...2&ndash;3 hawkish dissents expected (Hammack, Logan; Kashkari possible).</div>"
 - **Key Warsh quotes (confirmed Sep 16):**
   - "Inflation has been too high for too long"
   - "I'm not in the forward guidance business" (re: dot plot)
@@ -118,4 +129,4 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Sep PPI (Oct 15, CONFIRMED):** 6.3% YoY (vs 5.3% forecast; hot); monthly +1.3%
 - **Sep Retail Sales (Oct 15, CONFIRMED):** +0.8% MoM (vs +0.3% expected); control +0.1%
 - **10Y Treasury (Oct 23):** 5.00% (pre-FOMC calm; down from 5.10% Oct 17)
-- Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; decision TOMORROW)
+- Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; counting down to TODAY 2pm ET decision)
