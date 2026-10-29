@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 28, 2026
+Last updated: October 29, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -105,28 +105,44 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME Oct 28: ~9.4% hike / ~90.6% hold (FXStreet Oct 26; essentially unchanged; Kalshi ~7%). December 9: ~79.7% (FXStreet Oct 26; ~80%; stable).
 - New FOMC row added: NO
 
+### October 29, 2026 — THURSDAY (Post-FOMC decision day)
+- Target range: 3.75% – 4.00% (held; no change)
+- Effective rate: 3.88% (unchanged; IORB 3.90%)
+- **FOMC Oct 28 decision CONFIRMED: HOLD 10–2**
+  - Lisa D. Cook (Fed Board) and Beth M. Hammack (Cleveland) dissented for +25bps hike
+  - Statement: "economic activity expanding at a strong pace" (upgraded from "solid")
+  - "inflation remains elevated"; waiting for "accumulation of more information"
+  - Warsh: politics played "no role" in the hold decision
+- December 9 hike probability: ~82.6% post-decision (Fox Business/CME FedWatch)
+- **Oct 29 data: GDP Q3 2026 Advance Estimate + Initial Jobless Claims (week ending Oct 25)**
+  — Not yet confirmed; check Oct 30 morning
+- New FOMC row added: YES (Oct 28, 2026; Hold 10-2; Cook & Hammack dissents)
+- JS countdown updated: 2026-12-09T19:00:00Z (Dec 9 at 2pm ET)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- All 3 hero notes: appended Oct 28 decision result (Cook+Hammack dissent; "strong pace"; ~82.6% Dec)
+- Sources: CNBC, Fox Business, Yahoo Finance live blog, Federal Reserve press release
+
 ## CRITICAL NOTE for NEXT RUNS:
 - **EFFR: 3.88% since Sep 17 (stable; IORB 3.90%)**
-- **Oct 28 (TODAY) — FOMC Decision at 2pm ET / 18:00 UTC:**
-  - HOLD expected (~90.6% CME as of morning); 2-3 hawkish dissents expected (Hammack, Logan; Kashkari possible)
-  - OCT 29 MORNING — must complete post-decision tasks:
-    1. Add FOMC history row for Oct 28 decision (hold or hike; vote count; dissenter names)
-    2. Update JS countdown from 2026-10-28T18:00:00Z → 2026-12-09T19:00:00Z
-    3. Update December 9 probability (was ~84.3% pre-decision; will move post-statement/presser)
-    4. Update MEANS-FOR-YOU ONLY if rate changed
-    5. Search Warsh press conference statement language for notable quotes
-  - FOMC history row format: date-cell "Oct 28, 2026"; decision-hold or decision-hike span; range-cell; vote-cell with vote-note span for dissenters; Notes td
-- **Oct 29 (Thu) — GDP Q3 2026 Advance Estimate (BEA) + Initial Jobless Claims (week ending Oct 25)**
+- **Oct 28 DECISION CONFIRMED: HOLD 10–2**
+  - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
+  - Statement: "expanding at a strong pace" (upgrade from "solid"); "inflation remains elevated"
+  - Warsh: politics played "no role"
+- **Oct 29 (TODAY) — GDP Q3 2026 Advance Estimate (BEA) + Initial Jobless Claims (week ending Oct 25)**
+  - If released today, update dashboard (gdp sparkline roll, jobless claims update)
+  - Fed Tracker not directly affected unless data causes major CME probability shift
 - **Oct 30 (Fri) — Core PCE September 2026 (BEA)** — CRITICAL: above 3.0% cements December hike
-- **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9)**
-  - ~84.3% hike probability pre-Oct 28 decision (FXStreet Oct 28 morning; up from ~79.7%)
-- **All 3 hero cards now end identically** (use Python replace_all for Oct 29 entry):
-  "...2&ndash;3 hawkish dissents expected (Hammack, Logan; Kashkari possible).</div>"
-- **Key Warsh quotes (confirmed Sep 16):**
-  - "Inflation has been too high for too long"
-  - "I'm not in the forward guidance business" (re: dot plot)
+- **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
+  - ~82.6% hike probability post-Oct 28 decision (CME FedWatch; Fox Business)
+  - JS countdown now set to 2026-12-09T19:00:00Z ✓
+- **All 3 hero cards now end identically** (use Python replace_all for next entry):
+  "...December 9 hike probability: <strong>~82.6%</strong> (CME FedWatch post-decision; Fox Business).</div>"
+- **Key Warsh quotes (confirmed):**
+  - "Inflation has been too high for too long" (Sep 16)
+  - "I'm not in the forward guidance business" (re: dot plot, Sep 16)
+  - Politics played "no role" in Oct 28 hold decision
 - **Sep CPI (Oct 14, CONFIRMED):** Headline 3.7% YoY; Core 0.3% MoM / 2.6% YoY; hot
 - **Sep PPI (Oct 15, CONFIRMED):** 6.3% YoY (vs 5.3% forecast; hot); monthly +1.3%
 - **Sep Retail Sales (Oct 15, CONFIRMED):** +0.8% MoM (vs +0.3% expected); control +0.1%
 - **10Y Treasury (Oct 23):** 5.00% (pre-FOMC calm; down from 5.10% Oct 17)
-- Oct 28 countdown JS: 2026-10-28T18:00:00Z (correct; counting down to TODAY 2pm ET decision)
+- Dec 9 countdown JS: 2026-12-09T19:00:00Z ✓ (updated Oct 29)
