@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 29, 2026
+Last updated: October 30, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -7,10 +7,10 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 ## Reliable data sources
 - Fed Funds Rate & FOMC decisions: federalreserve.gov press release pages; CNBC, NPR, Fox Business cover decisions same day
 - Effective rate: EFFR via NY Fed / FRED — search "effective federal funds rate EFFR [date]"; sofrrate.com/policy-rates; IORB rate from Fed implementation notes gives ceiling/anchor
-- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together; defirate.com/prediction-markets/fed-decision-odds/ also useful; phemex.com carries CME figure in article title (reliable for specific %); investing.com Fed rate monitor (CME-based); tradingpedia.com/[date] for October 2026 CME figures; BeInCrypto for CME FedWatch daily summaries; PANews (panews.io) reliable for post-data-release CME figures with high precision (e.g., cited 43.7% exactly after Oct 14 CPI); stockpil.com reliable for exact CME FedWatch figures (cited 82.8%/17.2% on Oct 20); gobaker.com (Baker Group) reliable for weekly CME FedWatch summaries; finwire.io and futunn.com also carry CME figures
+- Market probabilities: CME FedWatch (search for snippets via WebSearch); Kalshi; Polymarket; predictionmarketspicks.com; predictionnews.com (covers Kalshi/Polymarket post-decision well); benzinga.com carries specific CME/Kalshi/Polymarket figures together; defirate.com/prediction-markets/fed-decision-odds/ also useful; phemex.com carries CME figure in article title (reliable for specific %); investing.com Fed rate monitor (CME-based); tradingpedia.com/[date] for October 2026 CME figures; BeInCrypto for CME FedWatch daily summaries; PANews (panews.io) reliable for post-data-release CME figures with high precision (e.g., cited 43.7% exactly after Oct 14 CPI); stockpil.com reliable for exact CME FedWatch figures (cited 82.8%/17.2% on Oct 20); gobaker.com (Baker Group) reliable for weekly CME FedWatch summaries; finwire.io and futunn.com also carry CME figures; KuCoin news flash articles (kucoin.com/news/flash) reliable for post-decision CME % in article titles
 - Vote breakdown: federalreserve.gov FOMC statement pages; search "FOMC [date] vote statement"
-- PCE data: fxstreet.com, cnbc.com, actionforex.com carry BEA PCE releases same day; first search for fxstreet headline which gives exact YoY figure in title
-- GDP third estimates: bea.gov search results; cnbc.com carries with context
+- PCE data: fxstreet.com, cnbc.com, actionforex.com carry BEA PCE releases same day; first search for fxstreet headline which gives exact YoY figure in title; stocktitan.net carries PCE data with "day after" framing in title
+- GDP third estimates: bea.gov search results; cnbc.com carries with context; seekingalpha.com and advisorperspectives.com reliable for GDP advance estimates (title includes exact %)
 - Post-decision analysis: cnbc.com; seekingalpha.com; foxbusiness.com
 - Extended WebSearch: Use "extended" mode when searching for specific current-day probability figures; synthesized standard results can reference stale data
 - FOMC Minutes reaction: babypips.com market recaps; fxstreet.com; cnbc.com; ING FX Daily (think.ing.com)
@@ -39,88 +39,30 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - FRIDAY REBALANCING (Oct 23): By Friday close, CME drifted back to ~10% hike / ~90% hold from the ~7% lows; Kalshi stayed at ~7%
 - BEA REVISION WARNING: BEA annual revision releases (like Sep 30) can move Core PCE YoY significantly vs forecast — always note revision effect. Sep 30 Core PCE August 2026 came in at 3.0% vs 3.3% expected entirely due to BEA annual revision effect.
 - PCE SYNTHESIS CONFLICT: First search result may synthesize an older/forecast figure (e.g., 3.40%). Cross-check with fxstreet.com headline which carries actual in title format "US core PCE inflation softens to X% in [month] vs. Y% expected". CNBC.com also reliable for exact figure.
-- CARD 1 vs CARD 3 vs CARD 5 ENDING TEXT: After Oct 28 morning update:
-  - All 3 cards end identically with: "...2&ndash;3 hawkish dissents expected (Hammack, Logan; Kashkari possible).</div>"
-  - NOTE: All 3 cards have IDENTICAL endings — must use Python positional replacement (replace_all), not text search
-- FOMC DECISION DAY: October 28, 2026 at 2pm ET = 18:00 UTC — decision today; press conference 2:30pm ET.
-  - NEXT RUN (Oct 29 morning): Add new FOMC history row for Oct 28 decision
-  - Update rate if changed (hold ~90.6% expected; but add history row regardless)
-  - Update MEANS-FOR-YOU ONLY if rate changes
-  - Update JS countdown to 2026-12-09T19:00:00Z after decision confirmed
-  - Dissents expected: Hammack, Logan (hawks); Kashkari possible = 2-3 dissents
 - PARTIAL WRITE BUG: If Python script fails mid-way, the file is NOT written. Subsequent scripts read the unchanged original. Must apply ALL changes in ONE script and write once at the end. Verify with grep after writing.
 - STALE TODAY REFERENCES: When updating the daily entry, also replace "release TODAY" or "tomorrow" references in prior entries with "released [date]" so they don't become stale.
 - CPI RELEASE DAY CONFIRMED: October 14, 2026 is WEDNESDAY (BLS released Sep CPI at 8:30am ET).
-- After Oct 28 decision confirmed, update JS countdown to 2026-12-09T19:00:00Z
-- M2 September H.6: Scheduled for Oct 27 per FRED. September figure NOT confirmed in WebSearch as of Oct 28 morning — check for indexed data; August 2026 M2 was $23,342.8 billion SA (+5.7% YoY).
+- After Oct 28 decision confirmed, update JS countdown to 2026-12-09T19:00:00Z — DONE
+- M2 September H.6: Scheduled for Oct 27 per FRED. September figure NOT confirmed as of Oct 30 — check for indexed data.
+- PCE RELEASE TIMING NOTE: Sep 2026 PCE was released Oct 29 (not Oct 30); schedule may have moved earlier. BEA confirmed at bea.gov/news/2026/personal-income-and-outlays-september-2026.
+- CME 50BP OPTION: Pre-FOMC (Oct 20), CME showed 75.2% 25bp + 15.2% 50bp + 9.6% hold. Post-FOMC, 50bp option dropped off — only 25bp hike (79.6%) vs hold (20.4%) as of Oct 30.
 
 ## Run log
 
-### October 28, 2026 — WEDNESDAY (FOMC Decision Day — decision at 2pm ET / 18:00 UTC)
-- Target range: 3.75% – 4.00% (unchanged pre-decision)
-- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
-- **RUN TIMING: 9:22am ET — pre-decision; decision at 2pm ET / 18:00 UTC**
-- CME Oct 28 morning: ~9.4% hike / ~90.6% hold (stable; FXStreet Oct 28 morning); ~8.9%/~91.1% per investing.com
-- Kalshi: ~5% hike (down from ~7% yesterday; DeFiRate.com Oct 28)
-- December 9: ~84.3% hike (UP from ~79.7%; FXStreet Oct 28 morning)
-- New FOMC row added: NO (pre-decision; add Oct 29 morning after confirming decision)
-- MEANS-FOR-YOU: not updated (rate unchanged)
-- JS countdown: 2026-10-28T18:00:00Z (correct — counting down to TODAY's 2pm ET decision)
-- Changes made:
-  - "Last updated" → October 28, 2026
-  - All 3 hero cards: appended Oct 28 DECISION DAY morning note (CME ~9.4%/~90.6%; Kalshi ~5%; Dec ~84.3%; 2-3 hawkish dissents expected)
-  - Fixed stale "tomorrow" references: "decision tomorrow 2pm ET" → "decision today (Oct 28) 2pm ET" (3x); "FOMC meeting starts tomorrow (Oct 27)" → "FOMC meeting started Oct 27" (3x); "Core PCE August releases TOMORROW" → "released Sep 30" (2x); "FOMC Minutes release tomorrow, October 7" → "released October 7" (2x)
-- Sources: FXStreet Oct 28 morning (airdropalert.com synthesis); CNBC live blog Oct 28; DeFiRate.com Kalshi ~5%; investing.com Oct 28 FOMC preview
-
-### October 27, 2026 — TUESDAY (FOMC Day 1; decision tomorrow Oct 28; blackout day 11)
-- Target range: 3.75% – 4.00% (unchanged)
-- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
-- Next meeting: Decision tomorrow, October 28, 2026 at 2pm ET = 18:00 UTC
-- **FOMC blackout in effect (Oct 17–28); meeting underway (Day 1 of 2)**
-- **No market-moving data releases today (FXStreet "Forex Today Oct 27" noted "mid-tier data")**
-- **M2 September H.6 scheduled for today per FRED — but September figure not confirmed in WebSearch**
-- **BNY Markets Velis (FXStreet Oct 27 12:58 UTC):**
-  - Hold expected at Oct 28 meeting
-  - At least one dissent favoring a hike expected
-  - December seen as cycle peak; Warsh won't preview Dec at press conference
-  - Market implies Fed funds peak just above 4.5% with ~3 more hikes by next year; BNY doubts full pricing delivered
-- **CME Oct 28: ~9.4% hike / ~90.6% hold (FXStreet Oct 26; essentially unchanged from Oct 26)**
-  - One source (pomegra.io) cited 73% December hike / 93% October hold — slightly more dovish framing
-- **Kalshi: ~7% hike / ~93% hold (stable)**
-- **December 9: ~79.7% (FXStreet Oct 26; ~80%; stable)**
-- New FOMC row added: NO (decision tomorrow)
-- MEANS-FOR-YOU: not updated (rate unchanged)
-- JS countdown: 2026-10-28T18:00:00Z (unchanged; correct; decision TOMORROW)
-- Changes made:
-  - "Last updated" → October 27, 2026
-  - Card 1 hero-note: Appended Oct 27 entry (FOMC Day 1, meeting underway, BNY hold call, CME ~9.4%/~90.6%, Kalshi ~7%, Dec ~79.7%)
-  - Card 3 hero-note: Appended Oct 27 entry (same summary)
-  - Card 5 hero-note: Appended Oct 27 entry (same summary)
-- Sources: FXStreet fxstreet.com Oct 27 (BNY preview, Velis); FXStreet Oct 26 (90.6% hold / 79.7% Dec hike)
-
-### October 26, 2026 — MONDAY (Day before FOMC starts; blackout day 10)
-- Target range: 3.75% – 4.00% (unchanged)
-- Effective rate: 3.88% (stable since Sep 17; IORB 3.90%)
-- Next meeting: October 27–28, 2026 (decision October 28 at 2pm ET = 18:00 UTC)
-- CME Oct 28: ~9.4% hike / ~90.6% hold (FXStreet Oct 26; essentially unchanged; Kalshi ~7%). December 9: ~79.7% (FXStreet Oct 26; ~80%; stable).
-- New FOMC row added: NO
-
-### October 29, 2026 — THURSDAY (Post-FOMC decision day)
-- Target range: 3.75% – 4.00% (held; no change)
+### October 30, 2026 — FRIDAY (Post-FOMC; PCE release day)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
 - Effective rate: 3.88% (unchanged; IORB 3.90%)
-- **FOMC Oct 28 decision CONFIRMED: HOLD 10–2**
-  - Lisa D. Cook (Fed Board) and Beth M. Hammack (Cleveland) dissented for +25bps hike
-  - Statement: "economic activity expanding at a strong pace" (upgraded from "solid")
-  - "inflation remains elevated"; waiting for "accumulation of more information"
-  - Warsh: politics played "no role" in the hold decision
-- December 9 hike probability: ~82.6% post-decision (Fox Business/CME FedWatch)
-- **Oct 29 data: GDP Q3 2026 Advance Estimate + Initial Jobless Claims (week ending Oct 25)**
-  — Not yet confirmed; check Oct 30 morning
-- New FOMC row added: YES (Oct 28, 2026; Hold 10-2; Cook & Hammack dissents)
-- JS countdown updated: 2026-12-09T19:00:00Z (Dec 9 at 2pm ET)
-- MEANS-FOR-YOU: not updated (rate unchanged)
-- All 3 hero notes: appended Oct 28 decision result (Cook+Hammack dissent; "strong pace"; ~82.6% Dec)
-- Sources: CNBC, Fox Business, Yahoo Finance live blog, Federal Reserve press release
+- **Sep Core PCE: 3.1% YoY (0.3% MoM)** — in line with 3.1% forecast; up from 3.0% prior (Aug); reinforces December hike outlook (BEA release Oct 29; FXStreet confirms "PCE data reinforces December Fed hike odds")
+- **Sep Headline PCE: 3.6% YoY; +0.5% MoM**
+- **Q3 2026 GDP Advance Estimate: +3.4% annualized** (strong beat; up from +2.2% in Q2; BEA Oct 29; confirmed by SeekingAlpha/AdvisorPerspectives)
+- CME FedWatch Dec 9: **~79.6%** 25bp hike / ~20.4% hold (KuCoin Oct 30; down from ~82.6% post-FOMC Oct 28; 50bp now off the table; FXStreet confirms "PCE data reinforces December Fed hike odds")
+- New FOMC row added: NO (Oct 28 row already added Oct 29 run; next meeting Dec 8-9)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct; Dec 9 at 2pm ET)
+- Changes made:
+  - "Last updated" → October 30, 2026
+  - All 3 hero cards: appended Oct 30 entry (Sep Core PCE 3.1% YoY; Q3 GDP +3.4%; CME Dec 9 ~79.6%)
+- Sources: investing.com (Core PCE 3.1%); stocktitan.net ("Core Inflation Rose to 3.1% a Day After the Fed Held Rates"); Fox Business ("Fed's preferred inflation gauge rose in September"); SeekingAlpha/AdvisorPerspectives ("Q3 GDP Advance Estimate: Real GDP Rises 3.4%"); KuCoin news flash ("79.6% probability of a 25-basis-point rate hike"); FXStreet ("Gold falls to near $4,000 as US PCE data reinforces December Fed hike odds")
 
 ## CRITICAL NOTE for NEXT RUNS:
 - **EFFR: 3.88% since Sep 17 (stable; IORB 3.90%)**
@@ -128,15 +70,15 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
   - Statement: "expanding at a strong pace" (upgrade from "solid"); "inflation remains elevated"
   - Warsh: politics played "no role"
-- **Oct 29 (TODAY) — GDP Q3 2026 Advance Estimate (BEA) + Initial Jobless Claims (week ending Oct 25)**
-  - If released today, update dashboard (gdp sparkline roll, jobless claims update)
-  - Fed Tracker not directly affected unless data causes major CME probability shift
-- **Oct 30 (Fri) — Core PCE September 2026 (BEA)** — CRITICAL: above 3.0% cements December hike
+- **Sep Core PCE (Oct 29 CONFIRMED): 3.1% YoY (0.3% MoM)** — in line with forecast; up from 3.0%; cements Dec hike
+- **Q3 2026 GDP (Oct 29 CONFIRMED): +3.4% annualized** — strong beat; up from +2.2% in Q2
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - ~82.6% hike probability post-Oct 28 decision (CME FedWatch; Fox Business)
-  - JS countdown now set to 2026-12-09T19:00:00Z ✓
+  - ~79.6% hike probability (CME FedWatch post-PCE; Oct 30)
+  - 50bp option off the table (only 25bp hike vs hold priced)
+  - JS countdown: 2026-12-09T19:00:00Z ✓
+- **Next major data:** Oct CPI (~Nov 12), Oct Retail Sales (~Nov 14), Oct PCE (~Nov 25)
 - **All 3 hero cards now end identically** (use Python replace_all for next entry):
-  "...December 9 hike probability: <strong>~82.6%</strong> (CME FedWatch post-decision; Fox Business).</div>"
+  "...CME FedWatch Dec 9: <strong>~79.6%</strong> hike / ~20.4% hold (post-PCE; down slightly from ~82.6%; 50bp now off the table).</div>"
 - **Key Warsh quotes (confirmed):**
   - "Inflation has been too high for too long" (Sep 16)
   - "I'm not in the forward guidance business" (re: dot plot, Sep 16)
@@ -144,5 +86,5 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Sep CPI (Oct 14, CONFIRMED):** Headline 3.7% YoY; Core 0.3% MoM / 2.6% YoY; hot
 - **Sep PPI (Oct 15, CONFIRMED):** 6.3% YoY (vs 5.3% forecast; hot); monthly +1.3%
 - **Sep Retail Sales (Oct 15, CONFIRMED):** +0.8% MoM (vs +0.3% expected); control +0.1%
-- **10Y Treasury (Oct 23):** 5.00% (pre-FOMC calm; down from 5.10% Oct 17)
-- Dec 9 countdown JS: 2026-12-09T19:00:00Z ✓ (updated Oct 29)
+- **10Y Treasury (Oct 29):** Hovering below 5.00% ("strong GDP report, rising inflation data" per CNBC)
+- Dec 9 countdown JS: 2026-12-09T19:00:00Z ✓ (updated Oct 29; correct)
