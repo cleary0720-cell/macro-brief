@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: October 31, 2026
+Last updated: November 1, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -46,6 +46,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - M2 September H.6: Scheduled for Oct 27 per FRED. September figure NOT confirmed as of Oct 30 — check for indexed data.
 - PCE RELEASE TIMING NOTE: Sep 2026 PCE was released Oct 29 (not Oct 30); schedule may have moved earlier. BEA confirmed at bea.gov/news/2026/personal-income-and-outlays-september-2026.
 - CME 50BP OPTION: Pre-FOMC (Oct 20), CME showed 75.2% 25bp + 15.2% 50bp + 9.6% hold. Post-FOMC, 50bp option dropped off — only 25bp hike (79.6%) vs hold (20.4%) as of Oct 30.
+- WEEKEND SEARCH NOTE (Nov 1): Extended WebSearch for CME FedWatch Dec 9 2026 returned mixed results (76%–85% range) — all stale or undated. Applied confirmed Oct 31 baseline of ~79.6%.
 
 ## Run log
 
@@ -76,6 +77,18 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - All 3 hero cards: appended Oct 31 entry (Saturday; no data; probabilities stable)
 - Sources: KuCoin (Oct 30 confirmed ~79.6%); WEEKEND HALLUCINATION WARNING applied — used confirmed Oct 30 baseline
 
+### November 1, 2026 — SUNDAY (Weekend; no data)
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (IORB 3.90%; weekend — no NY Fed EFFR publication)
+- CME FedWatch Dec 9: **~79.6%** hike / ~20.4% hold (stable; WEEKEND HALLUCINATION WARNING applied — used confirmed Oct 31 baseline; extended search returned mixed stale figures 76–85%)
+- New FOMC row added: NO
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 1, 2026
+  - All 3 hero cards: appended Nov 1 entry (Sunday; no data; probabilities stable)
+- Sources: confirmed Oct 31 baseline (weekend hallucination warning applied)
+
 ## CRITICAL NOTE for NEXT RUNS:
 - **EFFR: 3.88% since Sep 17 (stable; IORB 3.90%)**
 - **Oct 28 DECISION CONFIRMED: HOLD 10–2**
@@ -85,10 +98,12 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Sep Core PCE (Oct 29 CONFIRMED): 3.1% YoY (0.3% MoM)** — in line with forecast; up from 3.0%; cements Dec hike
 - **Q3 2026 GDP (Oct 29 CONFIRMED): +3.4% annualized** — strong beat; up from +2.2% in Q2
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - ~79.6% hike probability (CME FedWatch post-PCE; Oct 30)
+  - ~79.6% hike probability (CME FedWatch; Oct 30–Nov 1 stable)
   - 50bp option off the table (only 25bp hike vs hold priced)
   - JS countdown: 2026-12-09T19:00:00Z ✓
-- **Next major data:** Oct CPI (~Nov 12), Oct Retail Sales (~Nov 14), Oct PCE (~Nov 25)
+- **Next major data:** Oct CPI (~Nov 12, Thu), Oct Retail Sales (~Nov 17, Mon), Oct PCE (~Nov 25)
+- **Oct Jobs Report: Due Nov 6 (Thu) — KEY December hike gate**
+- **Nov 3 (Mon): ISM Manufacturing PMI October — dashboard agent handles; check if fed-tracker needs update**
 - **All 3 hero cards now end identically** (use Edit replace_all for next entry):
   "...CME FedWatch Dec 9: <strong>~79.6%</strong> hike / ~20.4% hold (stable; no weekend catalyst). Next major catalyst: <strong>Oct CPI (~Nov 12, Thu).</strong></div>"
 - **Key Warsh quotes (confirmed):**
@@ -98,5 +113,5 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Sep CPI (Oct 14, CONFIRMED):** Headline 3.7% YoY; Core 0.3% MoM / 2.6% YoY; hot
 - **Sep PPI (Oct 15, CONFIRMED):** 6.3% YoY (vs 5.3% forecast; hot); monthly +1.3%
 - **Sep Retail Sales (Oct 15, CONFIRMED):** +0.8% MoM (vs +0.3% expected); control +0.1%
-- **10Y Treasury (Oct 29):** Hovering below 5.00% ("strong GDP report, rising inflation data" per CNBC)
+- **10Y Treasury (Oct 30):** ~4.94% post-FOMC; 2s10s: +38 bps; NORMAL curve
 - Dec 9 countdown JS: 2026-12-09T19:00:00Z ✓ (updated Oct 29; correct)
