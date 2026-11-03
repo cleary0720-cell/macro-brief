@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 2, 2026
+Last updated: November 3, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -98,14 +98,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Sep Core PCE (Oct 29 CONFIRMED): 3.1% YoY (0.3% MoM)** — in line with forecast; up from 3.0%; cements Dec hike
 - **Q3 2026 GDP (Oct 29 CONFIRMED): +3.4% annualized** — strong beat; up from +2.2% in Q2
 - **Dec 8–9: Final 2026 FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - ~71% hike probability (CME FedWatch; Nov 2: 70.9% Motley Fool, 72.9% FXStreet; drifted from 79.6% Oct 30)
+  - ~73% hike probability (CME FedWatch; Nov 3: FXStreet ~73%; firmed from ~71% Nov 2; ISM beat hawkish)
   - 50bp option off the table (only 25bp hike vs hold priced)
   - JS countdown: 2026-12-09T19:00:00Z ✓
+- **ISM Manufacturing PMI October (CONFIRMED Nov 3): 55.5%** — beat 54.5% consensus; up from 54.5% Sep; Production 59.0 (highest since Nov 2021); Prices Paid 75.2 (9th straight above 70); 10th consecutive expansion month
 - **Next major data:** Oct Jobs Report (Nov 6, Thu) — KEY December hike gate; Oct CPI (~Nov 12, Thu); Oct Retail Sales (~Nov 17, Mon); Oct PCE (~Nov 25)
-- **ISM Manufacturing PMI October: Due Nov 2 (Mon) at 10am ET** — first business day of November; dashboard agent handles
 - **All 3 hero cards now end identically** (use Edit replace_all for next entry):
   "...KEY December hike gate.</div>"
-  Full ending: "...stable; no weekend catalyst). Next major catalyst: <strong>Oct CPI (~Nov 12, Thu).</strong> <strong>Nov 2, 2026:</strong> EFFR for Oct 30 published at 3.88% (stable; IORB 3.90%; first business day post-weekend). CME FedWatch Dec 9: <strong>~71%</strong> hike / ~29% hold (Motley Fool/FXStreet Nov 2 citing CME: 70.9&ndash;72.9%; drifted from ~79.6% since Oct 30 with no single catalyst; pre-elections positioning). US midterm elections today; no major economic data released yet. ISM Manufacturing PMI October due 10am ET today (not yet released at update time). Next major catalyst: <strong>Oct Jobs Report (Nov 6, Thu)</strong> &mdash; KEY December hike gate.</div>"
+  Full ending: "...ISM Manufacturing PMI October 2026 (released today, Nov 3, 10am ET): <strong>55.5%</strong> &mdash; beat 54.5% consensus; up 1.0pp from September&rsquo;s 54.5%; 10th consecutive month of expansion; Production 59.0 (highest since November 2021); Prices Paid 75.2 (9th straight above 70; tariffs + energy keeping input costs elevated); New Orders 55.5; Employment 52.4; strong beat reinforces December hike outlook. CME FedWatch Dec 9: <strong>~73%</strong> hike / ~27% hold (FXStreet Nov 3; firmed from ~71% Nov 2; ISM beat adds hawkish pressure). Midterm election results developing; no single-party outcome confirmed yet; no major market repricing on elections so far. Next major catalyst: <strong>Oct Jobs Report (Nov 6, Thu)</strong> &mdash; KEY December hike gate.</div>"
 - **Key Warsh quotes (confirmed):**
   - "Inflation has been too high for too long" (Sep 16)
   - "I'm not in the forward guidance business" (re: dot plot, Sep 16)
@@ -128,3 +128,17 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - "Last updated" → November 2, 2026
   - All 3 hero cards: appended Nov 2 entry (EFFR confirmed 3.88%; CME Dec 9 ~71%; midterm elections; ISM pending)
 - Sources: Motley Fool (70.9% Dec hike, Nov 2 2026); FXStreet (72.9% Dec hike, Nov 2 2026); TradingPedia (~75%, Nov 2 2026); confirmed memory baseline EFFR 3.88%
+
+### November 3, 2026 — TUESDAY (ISM Manufacturing PMI October released)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (NY Fed published Nov 2 EFFR today at ~9am ET; IORB 3.90%; stable since Sep 17)
+- CME FedWatch Dec 9: **~73%** hike / ~27% hold (FXStreet Nov 3; firmed from ~71% Nov 2; ISM beat adds hawkish pressure)
+- **ISM Manufacturing PMI October 2026 (CONFIRMED): 55.5%** — beat 54.5% consensus; up from 54.5% Sep; 10th consecutive expansion; Production 59.0 (highest since Nov 2021); Prices Paid 75.2; reinforces Dec hike outlook
+- Midterm election results still developing; no single-party outcome confirmed; no major market repricing on elections
+- New FOMC row added: NO (next meeting Dec 8-9)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 3, 2026
+  - All 3 hero cards: appended Nov 3 entry (EFFR 3.88%; ISM 55.5% confirmed; CME Dec 9 ~73%; midterm results developing)
+- Sources: PRNewswire/ISM (55.5% Oct ISM Manufacturing, Nov 2/3 2026); FXStreet Nov 3 (73% Dec hike); confirmed memory baseline EFFR 3.88%
