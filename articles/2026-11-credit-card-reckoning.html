@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxed Out: How the Credit Card Debt Crisis Spread Upmarket — The Macro Brief</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FVM036MLN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2FVM036MLN');
+    </script>
+    <style>
+
+        :root {
+            --cream:      #F6F1E7;
+            --cream-dark: #EDE8DB;
+            --ink:        #1A1A1A;
+            --ink-mid:    #444444;
+            --ink-light:  #666666;
+            --rule:       #C8C0AA;
+            --red:        #B22222;
+            --red-bright: #C41E3A;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 15px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        } /* already done */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ── INFO BAR ── */
+        .info-bar {
+            background: var(--ink);
+            color: #BBBBAA;
+            padding: 6px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            border-bottom: 1px solid var(--ink);
+            padding: 10px 0;
+            background: var(--cream);
+        }
+
+        .site-nav .container {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo .red { color: var(--red-bright); }
+
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--rule);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mid);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover { color: var(--red-bright); }
+
+        /* ── ARTICLE HEADER ── */
+        .article-header {
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--ink);
+            margin-bottom: 40px;
+        }
+
+        .article-category-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-category {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            background: var(--red-bright);
+            color: white;
+            padding: 3px 10px;
+        }
+
+        .article-category-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .article-issue {
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            letter-spacing: 0.1em;
+            color: var(--ink-light);
+            white-space: nowrap;
+        }
+
+        .article-headline {
+            font-family: 'Didot', 'Bodoni 72', 'Bodoni MT', 'Big Caslon', Palatino, Georgia, serif;
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .article-headline .red { color: var(--red-bright); }
+
+        .article-subhead {
+            font-size: 17px;
+            color: var(--ink-mid);
+            line-height: 1.55;
+            font-style: italic;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 20px;
+        }
+
+        .article-byline-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-byline {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-mid);
+        }
+
+        .article-byline strong { color: var(--ink); }
+
+        .article-date {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.06em;
+            color: var(--ink-light);
+        }
+
+        /* ── HERO IMAGE ── */
+        .article-hero {
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid var(--ink);
+        }
+
+        .article-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-hero-caption {
+            background: var(--cream-dark);
+            padding: 10px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--ink-light);
+            border-top: 1px solid var(--rule);
+            font-style: italic;
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body {
+            margin-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--ink-mid);
+            margin-bottom: 0;
+            text-align: justify;
+        }
+
+        .article-body p + p {
+            text-indent: 2em;
+        }
+
+        .article-body h2 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--ink);
+            margin: 36px 0 14px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .article-body h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 24px 0 10px;
+            font-style: italic;
+        }
+
+        .pull-quote {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.45;
+            color: var(--red);
+            border-top: 2px solid var(--red-bright);
+            border-bottom: 1px solid var(--rule);
+            padding: 20px 0;
+            margin: 32px 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 16px 0 16px 28px;
+            color: var(--ink-mid);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .article-callout {
+            background: var(--cream-dark);
+            border-left: 3px solid var(--red-bright);
+            padding: 18px 22px;
+            margin: 28px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink-mid);
+            font-style: italic;
+        }
+
+
+        /* ── BOTTOM LINE ── */
+        .bottom-line {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 24px 28px;
+            margin: 40px 0 8px;
+        }
+        .bottom-line-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .bottom-line p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: #D8D4C8;
+            margin: 0;
+            text-indent: 0 !important;
+            font-style: normal;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table-wrap {
+            border: 1px solid var(--ink);
+            margin: 28px 0;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .data-table th {
+            background: var(--ink);
+            color: var(--cream);
+            padding: 10px 14px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 9.5px;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--rule);
+            color: var(--ink-mid);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--cream-dark); }
+
+        .td-pos { color: #1B5E20; font-weight: 700; }
+        .td-neg { color: var(--red-bright); font-weight: 700; }
+
+        /* ── ARTICLE FOOTER ── */
+        .article-footer {
+            border-top: 2px solid var(--ink);
+            padding-top: 28px;
+            margin-bottom: 48px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid var(--ink);
+            padding: 3px 10px;
+            color: var(--ink-mid);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--ink);
+            padding: 10px 18px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+        /* ── SHARE ── */
+        .share-section {
+            border: 1px solid var(--ink);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            background: var(--cream-dark);
+        }
+
+        .share-heading {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .share-btn {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            background: transparent;
+            cursor: pointer;
+            min-height: 44px;
+            transition: background 0.15s, color 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn:hover { background: var(--ink); color: var(--cream); }
+        .share-btn.primary { background: var(--red-bright); border-color: var(--red-bright); color: white; }
+        .share-btn.primary:hover { background: #8B0000; border-color: #8B0000; }
+        .share-btn.copied { background: #1B5E20; border-color: #1B5E20; color: white; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 2px solid var(--ink);
+            padding: 28px 0 36px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo .red { color: var(--red-bright); }
+
+        .footer-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 1.9;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: var(--ink-light);
+            line-height: 2;
+            text-align: right;
+        }
+
+        .footer-links a { color: var(--ink-light); text-decoration: none; }
+        .footer-links a:hover { color: var(--red-bright); }
+
+        .footer-disc {
+            border-top: 1px solid var(--rule);
+            padding-top: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: var(--ink-light);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .article-byline-row { flex-direction: column; align-items: flex-start; }
+            .footer-inner { flex-direction: column; }
+            .footer-links { text-align: left; }
+        }
+
+
+        /* ── READING TIME ── */
+        .read-time {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            background: var(--cream-dark);
+            padding: 3px 10px;
+            border: 1px solid var(--rule);
+        }
+
+        /* ── RELATED ARTICLES ── */
+        .related-section {
+            margin: 48px 0 0;
+            padding-top: 32px;
+            border-top: 2px solid var(--ink);
+        }
+
+        .related-hd {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .related-tag {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: 'Courier New', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .related-rule { flex: 1; height: 1px; background: var(--rule); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--ink);
+            border-left: 1px solid var(--ink);
+        }
+
+        .related-card {
+            border-right: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.15s;
+        }
+
+        .related-card:hover { background: var(--cream-dark); }
+        .related-card:hover .related-title { color: var(--red-bright); }
+
+        .related-thumb {
+            width: 100%;
+            aspect-ratio: 16/7;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-body { padding: 14px 16px 16px; }
+
+        .related-cat {
+            font-family: 'Courier New', monospace;
+            font-size: 8.5px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--red-bright);
+            margin-bottom: 6px;
+        }
+
+        .related-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--ink);
+            transition: color 0.15s;
+        }
+
+        @media (max-width: 560px) {
+            .related-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── MOBILE NAV ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--rule);
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--ink);
+            padding: 4px 10px;
+            margin-left: auto;
+            line-height: 1;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-menu-label {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        @media (max-width: 640px) {
+            .nav-hamburger { display: flex; }
+            .nav-divider { display: none; }
+            .site-nav .container { flex-wrap: wrap; position: relative; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                border-top: 1px solid var(--rule);
+                margin-top: 8px;
+                padding-top: 4px;
+                gap: 0;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid var(--cream-dark, #EDE8DB); }
+            .nav-links a, .nav-links a[style] {
+                display: block !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
+                letter-spacing: 0.14em !important;
+            }
+        }
+
+        .mid-article-cta { background: var(--ink, #0D1B2A); color: var(--cream, #F6F1E7); padding: 28px 32px; margin: 36px 0; border-left: 4px solid #C41E3A; }
+        .mac-eyebrow { font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C41E3A; margin-bottom: 6px; }
+        .mac-hed { font-family: Georgia, serif; font-size: 17px; margin-bottom: 16px; line-height: 1.4; }
+        .mac-form { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mac-input { padding: 9px 14px; font-family: 'Courier New', monospace; font-size: 12px; border: 1px solid #444; background: #2a2a2a; color: #F6F1E7; outline: none; flex: 1; min-width: 180px; }
+        .mac-btn { padding: 9px 20px; background: #C41E3A; color: #fff; border: none; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+        .mac-error { color: #ff6b6b; font-family: 'Courier New', monospace; font-size: 11px; margin-top: 8px; }
+        .mac-success { font-family: 'Courier New', monospace; font-size: 11px; color: #4CAF50; margin-top: 8px; }
+        </style>
+</head>
+<body>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <div class="container">
+        <span>EST. 2024 · VOLUME I</span>
+        <span>THE MACRO BRIEF</span>
+        <span>BY CONNOR LEARY</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="red">The</span> Macro Brief</a>
+        <div class="nav-divider"></div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">&#9776; <span class="nav-menu-label">Menu</span></button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../archive.html">Archive</a></li>
+            <li><a href="../fed-tracker.html">Fed Tracker</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+            <li><a href="../economic-calendar.html">Calendar</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-container">
+    <header class="article-header">
+
+        <div class="article-category-row">
+            <span class="article-category">Consumer Economy</span>
+            <div class="article-category-rule"></div>
+            <span class="article-issue">Vol. I, No. 31</span>
+        </div>
+
+        <h1 class="article-headline">Maxed Out: How the Credit Card Debt Crisis <span class="red">Spread Upmarket</span></h1>
+
+        <p class="article-subhead">Credit card balances approached $1.26 trillion by mid-2026 as the share of seriously delinquent accounts climbed to a 15-year high. What started as a low-income stress story is now something broader — and the Fed's December hike calculus is taking note.</p>
+
+        <div class="article-byline-row">
+            <span class="article-byline">Written by AI agents designed and managed by <strong>Connor Leary</strong> · The Macro Brief</span>
+            <span class="read-time" id="read-time"></span>
+            <span class="article-date">November 08, 2026</span>
+        </div>
+
+    </header>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="container">
+    <div class="article-hero">
+        <img src="../images/2026-11-credit-card-reckoning-thumb.jpg" alt="Person holding credit card at checkout counter">
+        <div class="article-hero-caption">Consumer credit card balances reached $1.26 trillion in mid-2026 — the highest level since the New York Fed began tracking in 1999. — Editorial photo</div>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-container">
+    <div class="article-body">
+
+        <p>For much of the post-pandemic period, analysts watching America's credit card market treated elevated delinquency rates as a known quantity: a strain concentrated among lower-income borrowers who had exhausted their pandemic-era savings, a population facing a problem that the broader economy had largely contained. By early 2026, that framing had become difficult to sustain. Data from the Federal Reserve Bank of New York showed the share of credit card balances that were 90 or more days past due had climbed to 13.1 percent in the first quarter — the highest reading since 2011 — after rising from roughly 7.6 percent in mid-2022. The delinquency wave, in other words, had been building for nearly four years.</p>
+
+        <p>The second quarter brought a marginal improvement: the 90-plus-day delinquency share eased to approximately 12.9 percent, still near its 15-year peak. Total outstanding credit card balances, meanwhile, edged up to $1.26 trillion, roughly $54 billion higher than a year earlier. The New York Fed, which derives its household debt data from Equifax credit files rather than from bank balance sheets, described the pattern as reflecting a "K-shaped" economy — one where financial outcomes diverge sharply by income tier — but cautioned that the stress was broadening.</p>
+
+        <p>The arithmetic behind the delinquency trend is not complicated. Average credit card annual percentage rates (APRs — the yearly cost of carrying a balance) have hovered near 20 percent for much of 2026, following a record high of 21.76 percent in August 2024. With the federal funds rate now at 3.75 to 4.00 percent and December FOMC (Federal Open Market Committee) odds priced at 79 percent for another quarter-point hike, those rates have remained punishing. Meanwhile, nominal wages grew 3.1 percent over the 12 months through September 2026 — but the Consumer Price Index rose 3.7 percent over the same period. Real wages, adjusted for inflation, fell roughly 0.6 percent. Households spending more than they earn, financed at 20 percent, are mathematically exposed.</p>
+
+        <!-- MID-ARTICLE SUBSCRIBE -->
+        <div class="mid-article-cta">
+            <div class="mac-eyebrow">The Macro Brief</div>
+            <div class="mac-hed">Free weekly economic analysis — every Sunday.</div>
+            <form id="nl-form" class="mac-form">
+                <input id="nl-email" type="email" placeholder="your@email.com" required class="mac-input">
+                <button id="nl-btn" type="submit" class="mac-btn">Subscribe Free &#8594;</button>
+            </form>
+            <div id="nl-error" style="display:none;" class="mac-error"></div>
+            <div id="nl-success" style="display:none;" class="mac-success">&#10003; You&#39;re on the list &mdash; check your inbox.</div>
+        </div>
+
+        <h2>The Crack Runs Upward</h2>
+
+        <p>The more consequential signal in 2026's credit data has been where the new delinquencies are appearing. Early in the cycle, the stress was predictable: low-income borrowers, disproportionately in rent-burdened metros, who had used credit cards to bridge a gap that inflation had widened. By February 2026, however, lenders and analysts were flagging an unexpected development — higher-income Americans were starting to miss payments at a rising rate. The income bracket that had long served as the economy's consumption anchor, the K-shaped recovery's (the uneven pattern where higher earners rebound faster than lower earners) supposed beneficiary, had begun to show its own cracks. Shelter costs running above 4 percent annually, energy prices elevated by the Iran-linked oil shock, and credit card balances carried over month after month at double-digit rates had eroded the financial cushion even among households whose nominal incomes appeared solid.</p>
+
+        <div class="pull-quote">"Households spending more than they earn, financed at 20 percent, are mathematically exposed."</div>
+
+        <p>The personal saving rate — the share of after-tax income that households set aside rather than spend — stood at 3.8 percent in September 2026, well below the long-run average of roughly 7 percent. That low figure reflects, in part, the same dynamic visible in the delinquency data: Americans have been drawing down buffers to sustain consumption. Third-quarter GDP grew at a robust 3.4 percent annualized rate, with consumer spending up 3.8 percent; but a rising share of that spending appears to have been financed on plastic rather than income. The question is what happens when the plastic stops working.</p>
+
+        <h2>The Fed's Compounding Problem</h2>
+
+        <p>Credit card delinquencies occupy an uncomfortable position in the Federal Reserve's policy calculus. They are, in one sense, evidence that rate policy is working — that households are being squeezed enough to slow the consumption that helped drive the inflation surge. But they are also a warning signal: a sharp deterioration in credit quality raises charge-off rates (the point at which lenders write off a debt as uncollectable, typically after 180 days) across the banking system, compresses net interest margins at card issuers, and tightens consumer access to credit. The Fed does not target consumer delinquencies, but it watches them. With CME FedWatch odds placing a December 9 quarter-point hike at 79 percent, the committee faces the prospect of raising rates into a household sector that is already under measurable financial strain.</p>
+
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Latest Reading</th>
+                        <th>Prior Period</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Credit Card Balances (NY Fed)</td>
+                        <td>$1.26T (Q2 2026)</td>
+                        <td>$1.25T (Q1 2026)</td>
+                        <td class="td-neg">Rising</td>
+                    </tr>
+                    <tr>
+                        <td>90+ Day Delinquency Share (NY Fed)</td>
+                        <td>12.9% (Q2 2026)</td>
+                        <td>13.1% (Q1 2026)</td>
+                        <td class="td-neg">Near 15-yr high</td>
+                    </tr>
+                    <tr>
+                        <td>Avg. Credit Card APR (Bankrate)</td>
+                        <td>19.63% (Sep 2026)</td>
+                        <td>21.76% peak (Aug 2024)</td>
+                        <td class="td-neg">Elevated</td>
+                    </tr>
+                    <tr>
+                        <td>Real Average Hourly Earnings (BLS)</td>
+                        <td>−0.6% YoY (Sep 2026)</td>
+                        <td>+0.0% (Aug 2026)</td>
+                        <td class="td-neg">Negative</td>
+                    </tr>
+                    <tr>
+                        <td>Personal Saving Rate (BEA)</td>
+                        <td>3.8% (Sep 2026)</td>
+                        <td>4.2% (Aug 2026)</td>
+                        <td class="td-neg">Declining</td>
+                    </tr>
+                    <tr>
+                        <td>Fed Funds Rate (FOMC)</td>
+                        <td>3.75–4.00% (Oct 2026)</td>
+                        <td>3.50–3.75% (Sep 2026)</td>
+                        <td class="td-neg">Hiking cycle</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>What Q3 Data Will Reveal</h2>
+
+        <p>The New York Fed is scheduled to publish its Q3 2026 Household Debt and Credit Report on November 10 — two days from this writing. The report will offer the first comprehensive look at credit card delinquencies, balances, and charge-off flows for the July-through-September quarter, a period that spans the September 16 Federal Reserve rate hike and the broader re-acceleration in headline inflation. If the Q2 stabilization held through Q3, it would suggest that households have absorbed the rate shock without a material deterioration. If the delinquency rate climbed back toward its Q1 peak — or higher — the picture changes: the consumer spending engine that powered Q3's strong GDP print may be running on fumes rather than financial health. That distinction matters enormously for the December 9 FOMC decision, for the 2027 growth outlook, and for the tens of millions of American households whose financial stability depends on how the Fed threads the needle between inflation control and credit-market stability.</p>
+
+        <div class="bottom-line">
+            <span class="bottom-line-label">Bottom Line</span>
+            <p>America's credit card stress has moved beyond its low-income origins. With $1.26 trillion in balances, delinquency rates near a 15-year high, real wages still negative, and the Fed likely to hike again in December, the structural pressure on household balance sheets is not easing. The NY Fed's Q3 2026 report, due November 10, will be the first read on whether the summer's resilience has held — or whether the cracks are deepening ahead of another rate increase.</p>
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+        <div class="related-hd">
+            <span class="related-tag">Related Articles</span>
+            <div class="related-rule"></div>
+        </div>
+        <div class="related-grid">
+            <!-- RELATED ARTICLE 1 -->
+            <a class="related-card" href="../articles/2026-05-consumer-spending.html">
+                <div class="related-thumb"><img src="../images/2026-05-consumer-spending-thumb.jpg" alt="Consumer Economy"></div>
+                <div class="related-body">
+                    <div class="related-cat">Consumer Economy</div>
+                    <div class="related-title">The Debt-Fueled Consumer: America's Spending Resilience Is Running on Borrowed Time</div>
+                </div>
+            </a>
+            <!-- RELATED ARTICLE 2 -->
+            <a class="related-card" href="../articles/2026-08-retail-sales-paradox.html">
+                <div class="related-thumb"><img src="../images/2026-08-retail-sales-paradox-thumb.jpg" alt="Consumer Economy"></div>
+                <div class="related-body">
+                    <div class="related-cat">Consumer Economy</div>
+                    <div class="related-title">Spending on Empty: July's Retail Slump Signals the Consumer Economy's First Real Crack</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+        <div class="article-tags">
+            <span class="article-tag">Consumer Economy</span>
+            <span class="article-tag">Credit Cards</span>
+            <span class="article-tag">Delinquencies</span>
+            <span class="article-tag">Household Debt</span>
+            <span class="article-tag">Federal Reserve</span>
+            <span class="article-tag">NY Fed</span>
+        </div>
+
+        <!-- SHARE -->
+        <div class="share-section">
+            <div class="share-heading">★ &nbsp; Share This Article &nbsp; ★</div>
+            <div class="share-buttons">
+                <button class="share-btn primary" onclick="shareNative()">↑ Share</button>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Maxed+Out%3A+How+the+Credit+Card+Debt+Crisis+Spread+Upmarket&url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-11-credit-card-reckoning.html&via=TheMacroBrief" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthemacrobrief.net%2Farticles%2F2026-11-credit-card-reckoning.html" target="_blank" rel="noopener">LinkedIn</a>
+                <button class="share-btn" id="copy-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+        </div>
+
+        <a href="../archive.html" class="back-link">← Back to Archive</a>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo"><span class="red">The</span> Macro Brief</div>
+                <div class="footer-meta">
+                    Written by AI agents designed and managed by Connor Leary<br>
+                    macrobriefnews@gmail.com<br>
+                    Volume I · 2026 · All rights reserved
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">← Dashboard</a><br>
+                <a href="../archive.html">Article Archive</a><br>
+            </div>
+        </div>
+        <div class="footer-disc">
+            The Macro Brief is an independent economic publication for informational and educational purposes only. Nothing contained herein constitutes financial, investment, legal, or tax advice. Past economic conditions are not indicative of future performance. Readers should consult a qualified financial advisor before making any investment decisions.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareNative() {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'Economic analysis from The Macro Brief, written by AI agents designed and managed by Connor Leary.',
+                url: window.location.href
+            });
+        } else {
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            const btn = document.getElementById('copy-btn');
+            const original = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
+<!-- STICKY SUBSCRIBE BAR -->
+<div id="sticky-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a1a;border-top:3px solid #C41E3A;padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+            <div style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E3A;margin-bottom:2px;">Weekly Macro Analysis</div>
+            <div style="font-family:Georgia,serif;font-size:14px;color:#F6F1E7;">Get the Sunday briefing in your inbox — free.</div>
+        </div>
+        <form id="sticky-form" style="display:flex;gap:8px;align-items:center;flex-shrink:0;" onsubmit="stickySubmit(event)">
+            <input id="sticky-email" type="email" placeholder="your@email.com" required style="padding:9px 14px;font-family:'Courier New',monospace;font-size:16px;border:1px solid #444;background:#2a2a2a;color:#F6F1E7;outline:none;min-width:0;flex:1;">
+            <button type="submit" style="padding:9px 20px;background:#C41E3A;color:#fff;border:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <div id="sticky-success" style="display:none;font-family:'Courier New',monospace;font-size:11px;color:#4CAF50;letter-spacing:0.1em;">✓ You're subscribed!</div>
+        <button onclick="dismissBar()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;padding:4px 8px;flex-shrink:0;line-height:1;" title="Dismiss">&times;</button>
+    </div>
+</div>
+<script>
+(function(){if(localStorage.getItem("tmb-subscribed"))return;var shown=false;window.addEventListener("scroll",function(){if(shown)return;if(window.scrollY>400){document.getElementById("sticky-bar").style.display="block";shown=true;}});})();
+function dismissBar(){document.getElementById("sticky-bar").style.display="none";localStorage.setItem("tmb-subscribed","1");}
+</script>
+
+
+<script>
+(function() {
+    var body = document.querySelector('.article-body');
+    var el = document.getElementById('read-time');
+    if (!body || !el) return;
+    var words = body.innerText.trim().split(/\s+/).length;
+    var mins = Math.max(1, Math.round(words / 238));
+    el.textContent = mins + ' min read';
+})();
+</script>
+
+<script>
+function toggleMobileNav() {
+    var nl = document.querySelector('.nav-links');
+    if (nl) nl.classList.toggle('open');
+}
+</script>
+
+<script src="../subscribe.js"></script>
+</body>
+</html>
