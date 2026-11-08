@@ -31,57 +31,56 @@
 28. September 2026 CPI Shock / Warsh IMF Stand-Down / October FOMC Hold Setup — "Inflation's Return: September's 3.7% CPI and the Fed's Deliberate October Pause" (2026-10-september-cpi-shock.html) — Inflation
 29. Services Inflation / ISM Services Prices / Shelter / Supercore — "The Sticky Core: Why Services Inflation Became the Fed's Last Remaining Problem" (2026-10-services-inflation-last-mile.html) — Inflation
 30. Q3 2026 GDP Advance Estimate / Core PCE Re-acceleration / October FOMC Hold / December Hike — "The Unwelcome Boom: Q3's 3.4% GDP Surge Left the Fed With No Case for Pause" (2026-11-q3-gdp-acceleration.html) — Economic Output
+31. Consumer Credit Card Delinquencies / Household Debt / K-shaped Stress / Higher Income Borrowers — "Maxed Out: How the Credit Card Debt Crisis Spread Upmarket" (2026-11-credit-card-reckoning.html) — Consumer Economy
 
 ## Last run
-- Date: November 1, 2026
-- Article: "The Unwelcome Boom: Q3's 3.4% GDP Surge Left the Fed With No Case for Pause"
-- Category: Economic Output (archive data-category="Economy")
-- Issue: Vol. I, No. 30
-- Filename: articles/2026-11-q3-gdp-acceleration.html
-- Thumbnail: fallback cp 2026-05-debt-interest-crisis-thumb.jpg → 2026-11-q3-gdp-acceleration-thumb.jpg (pexels-proxy blocked in CCR, 403)
-- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "US Capitol building and financial district skyline")
-- Push: git push origin HEAD:main — SUCCESS (commit 36546b8)
+- Date: November 8, 2026
+- Article: "Maxed Out: How the Credit Card Debt Crisis Spread Upmarket"
+- Category: Consumer Economy (archive data-category="Economy")
+- Issue: Vol. I, No. 31
+- Filename: articles/2026-11-credit-card-reckoning.html
+- Thumbnail: fallback cp 2026-05-consumer-spending-thumb.jpg → 2026-11-credit-card-reckoning-thumb.jpg (pexels-proxy blocked in CCR, 403)
+- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "Person holding credit card at checkout counter")
+- Push: git push origin HEAD:main — SUCCESS (commit 40856c8)
 
-## Key facts confirmed this run (November 1, 2026)
-- Q3 GDP advance estimate (BEA, Oct 29): +3.4% annualized; consumer spending +3.8%; business fixed investment +12.7%; gov't contribution ~+0.9 pp; trade drag
-- Q2 GDP final: +2.2% (revised up from +1.5% advance); Q1: +2.5%
-- Core PCE September (BEA, Oct 29): 3.1% YoY (up from 3.0% Aug), +0.3% MoM
-- Headline PCE September: 3.6% YoY, +0.5% MoM
-- Real PCE September: 0.0% MoM (nominal spending up; real flat — price-driven)
-- Personal saving rate: 3.8%
-- October FOMC (Oct 28): HELD 3.75–4.00%, 10-2 vote (Cook & Hammack dissented for hike)
-- Warsh language: "solid" → "expanding at a strong pace"
-- December 9 FOMC: ~75% hike / 25% hold per CME FedWatch (as of Oct 29–31)
-- index.html LATEST-ARTICLE-START had stale link to `articles/2026-10-gdp-q3-acceleration.html` — corrected to `articles/2026-11-q3-gdp-acceleration.html` this run
+## Key facts confirmed this run (November 8, 2026)
+- NY Fed Q2 2026 (released Aug 11): Credit card balances $1.26T (+$54B YoY); 90-day delinquency share ~12.9% (eased from Q1 peak of ~13.1%)
+- NY Fed Q1 2026 peak: 90-day delinquency share 13.1% — highest since 2011
+- NY Fed uses Equifax credit data (broader than Fed Board bank call reports)
+- Fed Board delinquency rate (all banks, 30+ days): 2.69–2.9% (Q1-Q2 2026) — different methodology
+- Average credit card APR: 19.63% (Bankrate, Sep 30, 2026); ~21% (Fed data, May 2026); prior record 21.76% (Aug 2024)
+- Real average hourly earnings: -0.6% YoY (12 months to September 2026); nominal wages +3.1%, CPI +3.7%
+- Personal saving rate: 3.8% (September 2026)
+- High-income Americans starting to miss payments: first noted February 2026
+- NY Fed Q3 2026 Household Debt & Credit Report due: November 10, 2026
+- October jobs: +165K NFP, unemployment 4.1% (Nov 6 release)
+- December FOMC odds: ~79% hike / ~21% hold (CME FedWatch, Nov 6)
 
-## IMPORTANT DATA CORRECTION (Oct 25, 2026 — retained from prior run)
-Prior agent memory (Oct 18) listed WRONG figures for September 2026 CPI:
-- WRONG: Core CPI 3.1% YoY / Shelter 4.2% YoY (these were actually confirmed correct Oct 25 via PNC, CNBC, Kiplinger, Trading Economics, Advisor Perspectives)
-- CORRECT:
-  - Headline CPI: 3.7% YoY / +0.6% MoM ✓
-  - Core CPI: 3.1% YoY / +0.3% MoM ✓ (note: site.md listed 2.6% — discrepancy; use 3.1% per Oct 25 correction)
-  - Shelter: 4.2% YoY ✓
-  - OER (Owners' Equivalent Rent): +0.35% MoM / ~3.3% YoY
-  - Supercore (core services ex-shelter): +0.34% MoM / ~4.5% annualized 3-mo
-  - Gasoline: +9.1% MoM (more than half of monthly headline increase)
-
-## Current macro context (November 1, 2026)
+## Current macro context (November 8, 2026)
 - Fed Funds: 3.75–4.00% — HELD October 28, 2026 (10-2; Cook & Hammack dissented for hike)
-- December 9 FOMC: ~75% hike / 25% hold per CME FedWatch
-- Q3 GDP advance: +3.4% annualized (strongest in over a year)
-- Core PCE September: 3.1% YoY (re-acceleration from 3.0% Aug)
-- September CPI: 3.7% YoY headline; Core CPI 3.1% YoY; Shelter 4.2%
-- 10Y Treasury: 4.94% (Oct 30 post-FOMC); 2Y: 4.56%; 30Y: 5.31%
-- 30-yr Mortgage: ~7.15% (Freddie Mac PMMS Oct 29)
-- M2 September: 5.7% YoY (H.6, Oct 27 — 2nd consecutive month)
-- Jobless Claims (week ending Oct 24): 197K; 4-wk avg 197K
+- December 9 FOMC: ~79% hike / ~21% hold per CME FedWatch
+- Q3 GDP advance: +3.4% annualized
+- Core PCE September: 3.1% YoY (re-acceleration)
+- September CPI: 3.7% YoY headline; Core CPI 3.1%; Shelter 4.2%
+- October jobs: +165K NFP, unemployment 4.1%
+- ISM Manufacturing October: 55.5% (Prices Paid 75.2)
+- 10Y Treasury: 4.86% (Nov 6, post-jobs)
+- 30-yr Mortgage: 7.18% (Freddie Mac PMMS Nov 6)
+- M2 September: 5.7% YoY
 
-## Upcoming (next article topics)
-- October Jobs Report (Nov 6, Friday) — KEY December hike gate; prior Sep: +29K NFP
-- October CPI (Nov 12, Wednesday) — last inflation data before December 9 FOMC
-- October ISM Manufacturing PMI (Nov 3, Monday) — prior 54.5; Prices Paid 77.9
-- October Retail Sales (~Nov 17) — test Q3 consumer momentum
-- October Core PCE (Nov 25) — arrives after Dec 9 decision
+## Upcoming (next article topics — do NOT cover any of these before data arrives)
+- NY Fed Q3 2026 Household Debt Report (Nov 10) — will update credit card delinquency story
+- October CPI (Nov 12) — LAST inflation data before December 9 FOMC
+- October Retail Sales (~Nov 17) — Q4 consumer momentum test
+- October Core PCE (Nov 25) — arrives AFTER Dec 9 decision
+- December 9 FOMC decision (hike expected)
+
+## Potential future article topics (not yet covered)
+- Dollar strength / DXY — Global Economy; DXY ~101 as of late September 2026 after Fed hike
+- Private credit market / direct lending boom — Financial Markets or Banking
+- Housing affordability October 2026 update — Housing Market (last article May 2026, now 7.18% mortgage)
+- S&P earnings season Q3 / corporate margins — Financial Markets
+- State & local government fiscal stress — Fiscal Policy
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -108,15 +107,16 @@ The 4 fixed filter buckets in archive.html — do NOT add new ones:
 NOTE: Use HTML entity &amp; in data-category="Markets &amp; Money" in archive.html.
 
 ## Issue numbering
-Next article will be Vol. I, No. 31
+Next article will be Vol. I, No. 32
 
 ## Data source strategy (confirmed November 2026)
 Government sites return 403 on WebFetch — use WebSearch for all economic data.
-- GDP / PCE: seekingalpha.com, advisorperspectives.com/dshort, investinglive.com, indexbox.io, tradersagency.com
-- CPI / PCE: cnbc.com, pnc.com (research PDFs), advisorperspectives.com/dshort, kiplinger.com, stocktitan.net
-- Core CPI breakdown (shelter, OER, supercore): wolfstreet.com, pnc.com economics PDFs
+- NY Fed household debt: newyorkfed.org press releases, cnbc.com (best coverage)
+- Credit card data: wallethub.com, cardrates.com, bankrate.com (Bankrate most reliable for APR)
+- GDP / PCE: seekingalpha.com, advisorperspectives.com/dshort, investinglive.com
+- CPI / PCE: cnbc.com, pnc.com (research PDFs), advisorperspectives.com/dshort
 - Jobs reports: cnbc.com, bloomberg.com
-- FOMC odds: cnbc.com, CME FedWatch (via stocktitan.net, growbeansprout.com, admiralmarkets.com)
-- Treasury yields: forbes.com/advisor/investing/treasury-rates (carries full daily yield table)
-- ISM PMI: verifiedinvesting.com, prnewswire.com
+- FOMC odds: cnbc.com, CME FedWatch (via stocktitan.net, growbeansprout.com)
+- Treasury yields: forbes.com/advisor/investing/treasury-rates
+- ISM PMI: prnewswire.com, verifiedinvesting.com
 - ALWAYS verify figures via multiple sources — agent memory can contain errors
