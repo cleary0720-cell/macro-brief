@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 8, 2026
+Last updated: November 9, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -137,7 +137,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - All 3 hero card main notes: replaced "not yet confirmed" Nov 6 entry with actual payroll data + Nov 7 Saturday entry
   - Card 3 Rate Path section: added Oct 28 FOMC HOLD (10-2) + Nov 6 actual + Nov 7 entries
 
-## CURRENT STATE (as of November 8, 2026):
+## CURRENT STATE (as of November 9, 2026):
 - **EFFR: 3.88%** (stable since Sep 17; IORB 3.90%)
 - **Oct 28 DECISION CONFIRMED: HOLD 10–2**
   - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
@@ -173,3 +173,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Changes made:
   - "Last updated" → November 8, 2026
   - All 3 hero cards: appended Nov 8 entry (Sunday, no data, CME ~77% stable)
+
+### November 9, 2026 — MONDAY (First business day; no major data)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (Nov 6 data; unchanged; IORB 3.90%)
+- CME FedWatch Dec 9: **~79%** hike / ~21% hold (firmed vs. prior week; USD/CHF and USD/CAD both up on hike bets; multiple Nov 9 sources converge 78–81%: tradingpedia.com, fxstreet.com, Yahoo Finance ~81.2%)
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 9, 2026
+  - All 3 hero cards: appended Nov 9 entry (Monday, no data, CME ~79% firmed)
