@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 9, 2026
+Last updated: November 10, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -184,3 +184,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Changes made:
   - "Last updated" → November 9, 2026
   - All 3 hero cards: appended Nov 9 entry (Monday, no data, CME ~79% firmed)
+### November 10, 2026 — TUESDAY (Pre-CPI; no major data)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (Nov 9 data published today; IORB 3.90%; stable since Sep 17)
+- CME FedWatch Dec 9: **~84%** hike / ~16% hold (TechFlow citing CME: 84.4%; firmed sharply from ~79% Nov 9)
+  - Sources: TechFlow (techflowpost.com) 84.4%; IndexBox: >80%; multiple sources converge 80–84%
+  - Kalshi: ~79% hike / ~21% hold
+- Key news: Fed Governor Chris Waller leaning toward 25bp December hike (confirmed by search)
+- Gold topped $4,100 (Nov 9; FXStreet headline; "Oil rout hits the USD" driving gold despite hike bets)
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 10, 2026
+  - All 3 hero cards main notes: appended Nov 10 entry (CME ~84%; Waller hawkish signal)
+  - Card 3 Rate Path section: added missing Nov 8, Nov 9, and Nov 10 entries (Rate Path was last updated Nov 7)
+- Next major catalyst: **CPI October (Nov 12, Wed)** — last inflation data before December 9 FOMC
+  - Consensus: headline ~3.6-3.8% YoY; core ~0.2-0.3% MoM
+  - Hot print (core ≥0.3%) would push CME above 90%; soft miss could ease to ~75%
