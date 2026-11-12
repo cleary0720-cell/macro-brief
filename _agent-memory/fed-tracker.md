@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 11, 2026
+Last updated: November 12, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -230,8 +230,26 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Noted CPI was released Nov 10 (earlier than expected)
 - Note: November 11 is Veterans Day — federal holiday; bond markets closed; stock markets open; no EFFR published today
 
-## CURRENT STATE (as of November 11, 2026):
-- **EFFR: 3.88%** (last confirmed Nov 9 data; stable since Sep 17; IORB 3.90%)
+### November 12, 2026 — THURSDAY
+- Target range: 3.75% – 4.00% (unchanged)
+- Effective rate: 3.88% (Nov 10 data released today by NY Fed/FRED; stable; IORB 3.90%)
+- **CME FedWatch Dec 9 (Nov 12):**
+  - 25bp hike: **~90.8%** / 50bp hike: **~9.2%** / hold: **0%**
+  - Total hike probability: 100%
+  - Sources: U.Today citing CME Nov 12 (100% total hike odds; 90.8/9.2 split)
+  - Drivers: post-CPI repricing; Waller confirmed 25bp support; Goolsbee [Chicago] "borderline disturbing" CPI comment
+- **Goldman Sachs forecast:** 25bp Dec 9 hike + March 2027 as third hike in cycle
+- New FOMC row added: NO (no meeting since Oct 28)
+- MEANS-FOR-YOU: not updated (rate unchanged)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 12, 2026
+  - Appended Nov 12 entry to committee notes (all notes are in a single card's hero-note div; Nov 12 appended at end)
+- NOTE: EFFR for Nov 10 published today (NY Fed holiday delay from Nov 11 Veterans Day); confirmed at 3.88% per FRED schedule (next release was listed as Nov 12)
+- NOTE: Nov 7 and Nov 8 were CPI released early (Nov 10 not Nov 12 as originally scheduled)
+
+## CURRENT STATE (as of November 12, 2026):
+- **EFFR: 3.88%** (Nov 10 data; stable since Sep 17; IORB 3.90%)
 - **Oct 28 DECISION CONFIRMED: HOLD 10–2**
   - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
 - **Oct CPI (Nov 10, CONFIRMED): +0.4% MoM headline / +0.3% MoM core — BOTH ABOVE CONSENSUS**
@@ -239,11 +257,12 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Last published: 3.7% headline / 2.6% core (September 2026)
 - **Oct Jobs Report (Nov 6, CONFIRMED): +165,000 NFP; Unemployment 4.1%; Sep revised to 60K**
 - **Dec 8–9: Next FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - **CME FedWatch: 88.5% 25bp hike / 11.5% 50bp hike / 0% hold**
+  - **CME FedWatch: ~90.8% 25bp hike / ~9.2% 50bp hike / 0% hold**
   - Total hike probability: 100% (hold off the table)
-  - 50bp option re-emerged post-hot CPI
+  - 50bp option still on table post-hot CPI (Waller said consider 50bp if core runs hot; Oct core was 0.3%)
   - JS countdown: 2026-12-09T19:00:00Z ✓
 - **Next data releases:**
+  - **Nov 13 (Fri):** PPI October 2026 (BLS) — possible; check
   - **Nov 17 (Mon):** Retail Sales, October 2026 (Census)
   - **Nov 25 (Tue):** Oct PCE (~4 weeks after month end) — arrives AFTER Dec 9 decision
   - **Dec 9 (Wed):** FOMC Decision
