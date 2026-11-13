@@ -266,3 +266,48 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - **Nov 17 (Mon):** Retail Sales, October 2026 (Census)
   - **Nov 25 (Tue):** Oct PCE (~4 weeks after month end) — arrives AFTER Dec 9 decision
   - **Dec 9 (Wed):** FOMC Decision
+
+### November 13, 2026 — FRIDAY (October PPI release day)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (last confirmed Nov 10 data; IORB 3.90%; stable since Sep 17)
+- **October PPI (BLS, released Nov 13 — CONFIRMED):**
+  - Monthly: +0.3% (vs. +0.4% consensus — slight miss)
+  - Annual: +6.5% (vs. 6.6% consensus — highest since November 2022)
+  - Goods: +0.5% MoM; Services: +0.2% MoM
+  - Previous September: revised to +1.4%
+  - Slight miss is marginally dovish; 50bp odds may ease modestly post-release
+  - Sources: CNN (Nov 13), FXStreet, Seeking Alpha, punjabkesari.com, securities.io
+- **CME FedWatch Dec 9 (pre-PPI Nov 13 morning):**
+  - ~87% 25bp hike / ~13% 50bp hike / 0% hold
+  - Total hike probability: 100% (hold at 0%)
+  - Sources: FXStreet Nov 13 morning, mlq.ai/stocktwits Nov 13
+  - Post-PPI odds not yet confirmed at run time (run fired at 13:57 UTC, PPI at 13:30 UTC)
+  - PPI slightly below consensus → 50bp odds likely eased marginally vs pre-release
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 13, 2026
+  - All 3 hero-note divs (Cards 1, 2, 3): appended Nov 13 entry (PPI confirmed; CME pre-PPI ~87%/13%)
+  - Card 3 Rate Path section: appended Nov 13 entry
+  - 4 total Nov 13 entries added
+
+## CURRENT STATE (as of November 13, 2026):
+- **EFFR: 3.88%** (Nov 10 data; stable since Sep 17; IORB 3.90%)
+- **Oct 28 DECISION CONFIRMED: HOLD 10–2**
+  - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
+- **Oct CPI (Nov 10, CONFIRMED): +0.4% MoM headline / +0.3% MoM core — BOTH ABOVE CONSENSUS**
+  - Annual YoY rates not published (BLS data gap from 2025 appropriations lapse)
+- **Oct PPI (Nov 13, CONFIRMED): +0.3% MoM / +6.5% YoY (highest since Nov 2022) — slight miss on consensus**
+  - Sep PPI revised to +1.4% MoM
+- **Oct Jobs Report (Nov 6, CONFIRMED): +165,000 NFP; Unemployment 4.1%; Sep revised to 60K**
+- **Dec 8–9: Next FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
+  - **CME FedWatch: ~87% 25bp hike / ~13% 50bp hike / 0% hold (pre-PPI Nov 13)**
+  - Total hike probability: 100% (hold off the table)
+  - PPI slightly below consensus → 50bp odds may ease marginally post-release
+  - JS countdown: 2026-12-09T19:00:00Z ✓
+- **Next data releases:**
+  - **Nov 17 (Mon):** Retail Sales, October 2026 (Census) — ROLL FORWARD retail sparkline in dashboard
+  - **Nov 25 (Tue):** Oct PCE (BEA) — arrives AFTER Dec 9 decision
+  - **Dec 9 (Wed):** FOMC Decision — if hike +25bps: ROLL FORWARD fed-rate sparkline (drop "Oct", add "Dec" at 4.13%)
+  - **Dec 15 (Mon):** PPI November 2026 (BLS)
