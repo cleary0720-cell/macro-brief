@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 12, 2026
+Last updated: November 14, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -292,22 +292,41 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Card 3 Rate Path section: appended Nov 13 entry
   - 4 total Nov 13 entries added
 
-## CURRENT STATE (as of November 13, 2026):
-- **EFFR: 3.88%** (Nov 10 data; stable since Sep 17; IORB 3.90%)
+## CURRENT STATE (as of November 14, 2026):
+- **EFFR: 3.88%** (Nov 10 data; stable since Sep 17; IORB 3.90%; no NY Fed publication on weekends)
 - **Oct 28 DECISION CONFIRMED: HOLD 10–2**
   - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
 - **Oct CPI (Nov 10, CONFIRMED): +0.4% MoM headline / +0.3% MoM core — BOTH ABOVE CONSENSUS**
   - Annual YoY rates not published (BLS data gap from 2025 appropriations lapse)
 - **Oct PPI (Nov 13, CONFIRMED): +0.3% MoM / +6.5% YoY (highest since Nov 2022) — slight miss on consensus**
   - Sep PPI revised to +1.4% MoM
+  - Slight miss eased 50bp bets modestly (from ~13% → ~10%)
 - **Oct Jobs Report (Nov 6, CONFIRMED): +165,000 NFP; Unemployment 4.1%; Sep revised to 60K**
 - **Dec 8–9: Next FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - **CME FedWatch: ~87% 25bp hike / ~13% 50bp hike / 0% hold (pre-PPI Nov 13)**
+  - **CME FedWatch: ~89.7% 25bp hike / ~10.3% 50bp hike / 0% hold (post-PPI confirmed; InvestmentNews Nov 13)**
   - Total hike probability: 100% (hold off the table)
-  - PPI slightly below consensus → 50bp odds may ease marginally post-release
   - JS countdown: 2026-12-09T19:00:00Z ✓
 - **Next data releases:**
   - **Nov 17 (Mon):** Retail Sales, October 2026 (Census) — ROLL FORWARD retail sparkline in dashboard
   - **Nov 25 (Tue):** Oct PCE (BEA) — arrives AFTER Dec 9 decision
   - **Dec 9 (Wed):** FOMC Decision — if hike +25bps: ROLL FORWARD fed-rate sparkline (drop "Oct", add "Dec" at 4.13%)
   - **Dec 15 (Mon):** PPI November 2026 (BLS)
+
+### November 14, 2026 — SATURDAY (Weekend; post-Oct PPI)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (last confirmed Nov 10 data; IORB 3.90%; no NY Fed on weekends)
+- **Oct PPI (Nov 13, CONFIRMED): +0.3% MoM (vs. +0.4% expected — slight miss); +6.5% YoY (highest since Nov 2022)**
+  - Slight miss eased 50bp bets modestly
+- **CME FedWatch Dec 9 (post-PPI Nov 13 — CONFIRMED):**
+  - 25bp hike: **~89.7%** / 50bp hike: **~10.3%** / hold: **0%**
+  - Total hike probability: 100%
+  - Sources: InvestmentNews (Nov 13 post-PPI); down from ~87%/~13% pre-PPI
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 14, 2026
+  - Lines 278, 292, 299 (cards 1, 2, 3 notes): Updated Nov 13 from pre-PPI to post-PPI confirmed (~89.7%/~10.3%) + appended Nov 14 Sat entry
+  - Line 303 (Rate Path section): Updated Nov 13 to post-PPI + appended Nov 14 entry
+  - 4 total Nov 14 entries added
+- Next major catalyst: **Retail Sales October (Nov 17, Mon)**
