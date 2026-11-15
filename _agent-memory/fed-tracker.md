@@ -330,3 +330,20 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Line 303 (Rate Path section): Updated Nov 13 to post-PPI + appended Nov 14 entry
   - 4 total Nov 14 entries added
 - Next major catalyst: **Retail Sales October (Nov 17, Mon)**
+
+### November 15, 2026 — SUNDAY (Weekend; no data)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (last confirmed Nov 10 data; IORB 3.90%; no NY Fed on weekends)
+- **CME FedWatch Dec 9 (Nov 15 — CONFIRMED multiple sources):**
+  - 25bp hike: **~90%** / 50bp hike: **~10%** / hold: **0%**
+  - Total hike probability: 100%
+  - Sources: Investing.com ~91.3% 25bp / ~8.7% 50bp; Bitcoin.com ~88.5% 25bp / ~11.5% 50bp; stable from Nov 13-14 post-PPI baseline
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 15, 2026
+  - Lines 278, 292, 299 (cards 1, 2, 3 notes): appended Nov 15 entry (Sunday, no data, CME ~90% stable)
+  - Line 303 (Rate Path section): appended Nov 15 entry
+  - 4 total Nov 15 entries added
+- Next major catalyst: **Retail Sales October (Nov 17, Mon)**
