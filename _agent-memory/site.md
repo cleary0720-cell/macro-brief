@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-11-08
+Last updated: 2026-11-15
 
 ## Repository
 - Owner: cleary0720-cell
@@ -82,31 +82,33 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - sitemap.xml includes glossary.html (monthly, 0.5) and economic-calendar.html (weekly, 0.6)
 - rss.xml: all author/editor fields use macrobriefnews@gmail.com (not personal email)
 
-## Current macro context (November 8, 2026)
+## Current macro context (November 15, 2026)
 - **Fed Funds: 3.75–4.00%** — HELD October 28–29, 2026 (10-2 vote; Cook & Hammack dissented for hike)
   - Chair Warsh: "assess cumulative tightening effects before additional action"
-  - Next meeting: December 9, 2026; CME FedWatch: **79% hike / 21% hold / 0% cut** (as of Nov 6, post-jobs)
+  - Next meeting: December 9, 2026; CME FedWatch: **~100% hike / 0% hold / 0% cut** (~90% +25bps / ~10% +50bps; as of Nov 13, post-CPI)
   - December 9 is the most consequential meeting of the cycle
 - **October Jobs Report (released Nov 6): +165K NFP, unemployment 4.1%; Sep revised +29K→+45K (+16K)**
-- Jobless Claims (week ending Nov 1, released Nov 6): 189K weekly; 4-wk avg ~195K (lowest since July)
+- Jobless Claims (week ending Nov 7, released Nov 12): 200K weekly; 4-wk avg 195K — ninth consecutive week ≤200K
 - **ISM Manufacturing PMI October: 55.5% (released Nov 3)** — 10th consecutive expansion; Prices Paid 75.2
-- **CPI September (released Oct 14): 3.7% YoY; Core CPI 3.1%; Shelter: 4.2%; Energy: +20.4% YoY**
-  - **October CPI due November 12 — LAST inflation data before December 9 FOMC**
+- **CPI October (released Nov 10): +0.4% MoM; NO YoY figure** — Oct 2025 BLS data gap (appropriations lapse)
+  - Last confirmed YoY: September 3.7%; Core CPI: 3.1% (both September, Oct 14 release)
+  - CPI sparkline NOT rolled forward — no YoY comparator until November 2026 data (due ~Dec 10)
 - **Core PCE September (released Oct 30): 3.1% YoY — up from 3.0% Aug; confirms re-acceleration**
-- **GDP Q3 2026 advance (released Oct 30): +3.4% annualized** — strongest since Q2 2025; well above consensus
+  - **October Core PCE due November 25 — arrives BEFORE December 9 FOMC** (correction from prior run error)
+- **GDP Q3 2026 advance (released Oct 30): +3.4% annualized** — strongest since Q2 2025; second estimate due Nov 25
   - Q2 2026 final revised to +2.2% (from +1.5% advance)
 - **Retail Sales September (released Oct 15): +6.3% YoY — control group +5.8%**; October retail due Nov 17
-- **M2 September: 5.7% YoY** (H.6 released Oct 27; $23,413.9B SA — second consecutive month at 5.7%)
-- Treasury yields (Nov 6, 2026): 1M=4.02%, 3M=4.19%, 6M=4.26%, 1Y=4.33%, 2Y=4.51%, 5Y=4.64%, 7Y=4.74%, 10Y=4.86%, 20Y=5.06%, 30Y=5.26%
-  - 10Y peaked 5.36% (Oct 7); eased to 4.86% (Nov 6); 2s10s: +35 bps; NORMAL curve
-- **30-yr Mortgage Rate: 7.18% (Freddie Mac PMMS Nov 6)** — $400K loan ≈ $2,710/month
-- Macro Sentiment: 52/100 NEUTRAL (up from 48; Oct jobs +165K, unemployment 4.1%, ISM 55.5)
-- Edition: Vol. I, No. 29
+- **M2 September: 5.7% YoY** (H.6 released Oct 27; $23,413.9B SA); October M2 due ~Nov 24–25
+- Treasury yields (Nov 13, 2026): 1M=4.10%, 3M=4.32%, 6M=4.42%, 1Y=4.65%, 2Y=4.88%, 5Y=4.98%, 7Y=5.05%, 10Y=5.15%, 20Y=5.52%, 30Y=5.47%
+  - 10Y surged +29 bps on Oct CPI release (Nov 10); 5.15% as of Nov 13; 2s10s: +27 bps; NORMAL curve
+- **30-yr Mortgage Rate: 7.11% (Freddie Mac PMMS Nov 13)** — $400K loan ≈ $2,690/month
+- Macro Sentiment: 50/100 NEUTRAL (down from 52; data gap uncertainty + 10Y at 5.15% + affordability pressure)
+- Edition: Vol. I, No. 30
 
-## Upcoming releases (as of November 8, 2026)
-- **Nov 12 (Wed):** CPI, October 2026 (BLS) — ROLL FORWARD cpi sparkline; LAST inflation data before December 9
+## Upcoming releases (as of November 15, 2026)
 - **Nov 17 (Mon):** Retail Sales, October 2026 (Census) — ROLL FORWARD retail sparkline
-- **Nov 25 (Tue):** Core PCE, October 2026 (BEA) — ROLL FORWARD core-pce sparkline; arrives AFTER Dec 9 decision
+- **Nov 25 (Tue):** Core PCE + GDP 2nd estimate (BEA) + M2 H.6 (Fed) — ROLL FORWARD core-pce, m2; UPDATE IN-PLACE gdp; Oct Core PCE arrives BEFORE Dec 9
+- **Dec 1 (Mon):** ISM Manufacturing PMI, November 2026 — ROLL FORWARD ism-pmi sparkline
 - **Dec 9 (Wed):** FOMC Decision — if hike +25bps: ROLL FORWARD fed-rate sparkline (drop "Oct", add "Dec" at 4.13%)
 
 ## Data source strategy (confirmed September 2026)
@@ -134,9 +136,11 @@ All economic data must come via WebSearch — direct WebFetch to government site
   - ISM PMI: roll when monthly ISM release arrives (first business day of following month)
 - GDP: quarterly, always 8 entries, roll only on new BEA quarter release
 - Year suffix in label: add "'YY" when entry is from prior calendar year (e.g., "Aug '25")
-- Current oldest entries after Nov 8 run:
-  - cpi: "Oct" (covers Oct '25 through Sep '26; next ROLL FORWARD when Oct CPI released Nov 12 — drop "Oct", add "Oct" at new value)
+- Current oldest entries after Nov 15 run:
+  - cpi: "Oct" (covers Oct '25 through Sep '26; NOT rolled — no Oct 2026 YoY; ROLL FORWARD when Nov CPI released ~Dec 10 — drop "Oct", add "Nov" at new value)
   - retail: "Nov" (covers Nov '25 through Oct '26; next ROLL FORWARD when Oct retail released Nov 17 — drop "Nov", add "Nov" at new value)
+  - treasury: "Dec" (Dec '25 through Nov '26; "Nov" updated in-place to 5.15%; next ROLL FORWARD when Dec '26 data arrives)
+  - jobless-claims: "Dec" (Dec '25 through Nov '26; rolled forward Nov 15 — dropped "Nov '25"/220, added "Nov"/195)
   - core-pce: "Oct '25" (covers Oct '25 through Sep '26; next roll when Oct Core PCE released Nov 25 — drop "Oct '25", add "Oct")
   - fed-rate: "Oct" (covers Oct '25 through Sep '26 at 3.88%; next roll when Dec 9 FOMC acts — drop "Oct", add "Dec" at new mid-rate; if +25bps → 4.13%)
   - jobless-claims: "Nov '25" (covers Nov '25 through Oct '26; updated in-place Nov 8 run: Oct 197→195 (189K weekly / 195K 4-wk avg); next ROLL FORWARD when Nov data arrives — drop "Nov '25", add "Nov")
