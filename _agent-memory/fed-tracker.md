@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 16, 2026
+Last updated: November 17, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -292,8 +292,8 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Card 3 Rate Path section: appended Nov 13 entry
   - 4 total Nov 13 entries added
 
-## CURRENT STATE (as of November 16, 2026):
-- **EFFR: 3.88%** (stable since Sep 17; IORB 3.90%; NY Fed published Nov 13 data on Nov 16)
+## CURRENT STATE (as of November 17, 2026):
+- **EFFR: 3.88%** (stable since Sep 17; IORB 3.90%; last confirmed Nov 13 data via NY Fed)
 - **Oct 28 DECISION CONFIRMED: HOLD 10–2**
   - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
 - **Oct CPI (Nov 10, CONFIRMED): +0.4% MoM headline / +0.3% MoM core — BOTH ABOVE CONSENSUS**
@@ -301,15 +301,21 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **Oct PPI (Nov 13, CONFIRMED): +0.3% MoM / +6.5% YoY (highest since Nov 2022) — slight miss on consensus**
   - Sep PPI revised to +1.4% MoM
 - **Oct Jobs Report (Nov 6, CONFIRMED): +165,000 NFP; Unemployment 4.1%; Sep revised to 60K**
+- **Oct Retail Sales (Census, Nov 17, 8:30am ET — RELEASED THIS MORNING):**
+  - Actual Census figure NOT YET CONFIRMED in search results at run time (released 30 min before run)
+  - Consensus: headline ~+0.2% MoM; ex-auto ~+0.4% MoM (vs. prior 0.8% headline in Sep)
+  - CNBC/NRF private Retail Monitor (released Nov 11): +0.15% MoM / +3.57% YoY
+  - NEXT RUN MUST CONFIRM actual Census % and update page accordingly
 - **Nov 16 Fed speakers: Williams, Goolsbee, Logan, Waller all hawkish; Waller floated 50bp option**
   - USD index above 103.5 (near 19-month high); gold fell below $3,900
 - **Dec 8–9: Next FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
-  - **CME FedWatch: ~93% 25bp hike / ~7% 50bp hike / 0% hold (FXStreet Nov 16)**
-  - Total hike probability: 100% (hold off the table)
+  - **CME FedWatch: ~95.7% 25bp hike / ~4.3% 50bp hike / 0% hold (TechFlow citing CME, Nov 17 morning)**
+  - Total hike probability: 100% (hold off the table; 50bp option fading)
   - JS countdown: 2026-12-09T19:00:00Z ✓
 - **Next data releases:**
-  - **Nov 17 (Mon):** Retail Sales, October 2026 (Census) — consensus ~0.3% (vs prior 0.8%); ROLL FORWARD retail sparkline in dashboard
-  - **Nov 25 (Tue):** Oct PCE (BEA) — arrives AFTER Dec 9 decision
+  - **Nov 17 (Mon) — TODAY:** Oct Retail Sales (Census) — actual figure not yet confirmed; NEXT RUN MUST CONFIRM and ROLL FORWARD retail sparkline in dashboard
+  - **Nov 25 (Tue):** Oct Core PCE (BEA) — arrives BEFORE Dec 9 decision
+  - **Nov 25 (Tue):** GDP Q3 2nd estimate (BEA)
   - **Dec 9 (Wed):** FOMC Decision — if hike +25bps: ROLL FORWARD fed-rate sparkline (drop "Oct", add "Dec" at 4.13%)
   - **Dec 15 (Mon):** PPI November 2026 (BLS)
 
@@ -367,3 +373,28 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Line 303 (Rate Path section): appended Nov 16 entry
   - 4 total Nov 16 entries added
 - Next major catalyst: **Retail Sales October (Nov 17, Mon)** — consensus ~0.3% vs prior 0.8%
+
+### November 17, 2026 — MONDAY (Oct Retail Sales day — Census 8:30am ET)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (last confirmed Nov 13 data; IORB 3.90%; NY Fed published Nov 14 data Mon Nov 17)
+- **Oct Retail Sales (Census, Nov 17 8:30am ET — RELEASED THIS MORNING):**
+  - **RUN TIMING: Run fired ~9am ET = 14:00 UTC — data released 30 min before run (13:30 UTC)**
+  - **Actual Census figure NOT YET CONFIRMED in search results** (not yet indexed at run time)
+  - Consensus: headline ~+0.2% MoM; ex-auto ~+0.4% MoM (vs. prior 0.8% in Sep)
+  - CNBC/NRF private Retail Monitor (Nov 11, private): +0.15% MoM / +3.57% YoY
+  - Page updated with "not yet confirmed at run time" note
+  - **NEXT RUN MUST CONFIRM actual Census % and update page accordingly**
+- **CME FedWatch Dec 9 (Nov 17 morning, pre-/near retail-sales):**
+  - 25bp hike: **~95.7%** / 50bp hike: **~4.3%** / hold: **0%**
+  - Total hike probability: 100%
+  - Sources: TechFlow citing CME (Nov 17 morning); consistent with trend (93%/7% → 95.7%/4.3%)
+  - 50bp option continuing to fade (was ~7% Nov 16, ~4.3% Nov 17)
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 17, 2026
+  - Lines 278, 292, 299 (cards 1, 2, 3 notes): appended Nov 17 entry (retail sales released/unconfirmed, CME ~95.7%/~4.3%)
+  - Line 303 (Rate Path section): appended Nov 17 entry
+  - 4 total Nov 17 entries added; Next catalyst updated to Oct PCE (Nov 25, Tue)
+- Next major catalysts: **Oct Retail Sales actual confirm (Nov 18 run)**, **Oct PCE (Nov 25, Tue)**
