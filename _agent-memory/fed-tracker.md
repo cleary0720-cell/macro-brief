@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 17, 2026
+Last updated: November 18, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -398,3 +398,50 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Line 303 (Rate Path section): appended Nov 17 entry
   - 4 total Nov 17 entries added; Next catalyst updated to Oct PCE (Nov 25, Tue)
 - Next major catalysts: **Oct Retail Sales actual confirm (Nov 18 run)**, **Oct PCE (Nov 25, Tue)**
+
+## CURRENT STATE (as of November 18, 2026):
+- **EFFR: 3.88%** (stable since Sep 17; IORB 3.90%; last confirmed Nov 13 data)
+- **Oct 28 DECISION CONFIRMED: HOLD 10–2**
+  - Dissenters: Lisa D. Cook (Fed Board) + Beth M. Hammack (Cleveland) — both for +25bps hike
+- **Oct CPI (Nov 10, CONFIRMED): +0.4% MoM headline / +0.3% MoM core — BOTH ABOVE CONSENSUS**
+  - Annual YoY rates not published (BLS data gap from 2025 appropriations lapse)
+- **Oct PPI (Nov 13, CONFIRMED): +0.3% MoM / +6.5% YoY (highest since Nov 2022) — slight miss**
+- **Oct Jobs Report (Nov 6, CONFIRMED): +165,000 NFP; Unemployment 4.1%; Sep revised to 60K**
+- **Oct Retail Sales (Nov 17, CONFIRMED): +0.2% headline ($748.2B; +6.8% YoY); ex-autos +0.6%; control group +0.6% (beat +0.4% consensus); nonstore/online +1.2% MoM (+11.8% YoY); motor vehicles -1.6%; furniture -2.3%**
+- **Dec 8–9: Next FOMC meeting (decision Dec 9 at 2pm ET = 19:00 UTC)**
+  - **CME FedWatch: ~96% 25bp hike / ~4% 50bp hike / 0% hold (FXStreet/Chaincatcher Nov 18)**
+  - Total hike probability: 100%
+  - 50bp option continuing to fade
+  - JS countdown: 2026-12-09T19:00:00Z ✓
+- **FOMC Minutes (Oct 27–28): Released TODAY Nov 18 at 2pm ET** — expected to show committee division
+- **Next data releases:**
+  - **Nov 25 (Tue):** Oct Core PCE + GDP Q3 2nd estimate (BEA) — arrives BEFORE Dec 9 decision
+  - **Dec 1 (Mon):** ISM Manufacturing PMI, November 2026
+  - **Dec 9 (Wed):** FOMC Decision
+
+### November 18, 2026 — TUESDAY (FOMC Minutes day)
+- Target range: 3.75% – 4.00% (unchanged; held Oct 28)
+- Effective rate: 3.88% (last confirmed Nov 13 data; IORB 3.90%; stable since Sep 17)
+- **Oct Retail Sales (Census, Nov 17 — CONFIRMED THIS RUN):**
+  - Headline: +0.2% MoM ($748.2B; +6.8% YoY)
+  - Ex-autos: +0.6% MoM; Control group: +0.6% (above +0.4% consensus)
+  - Nonstore/online: +1.2% MoM (+11.8% YoY); Motor vehicles: -1.6%; Furniture: -2.3%
+  - Sources: tribuneindia.com, finchannel.com, riotimesonline.com, factiq.com, unitedstatesrealestateinvestor.com
+- **FOMC Minutes (Oct 27–28 meeting): Released today at 2pm ET**
+  - Not yet published at run time; preview shows expected focus on extent of committee division
+  - Sources: Yahoo Finance, TheStreet, fomcdiff.com, financelcalendar.com
+- **CME FedWatch Dec 9 (Nov 18):**
+  - 25bp hike: **~96%** / 50bp hike: **~4%** / hold: **0%**
+  - Total hike probability: 100%
+  - Sources: FXStreet Nov 18 (95.7%/4.3%); Chaincatcher Nov 18 (96.8%/3.2%)
+  - 50bp option fading (was ~7% Nov 16; ~4.3% Nov 17; ~4% Nov 18)
+- **Fed speakers today (Nov 18):** Barr, Williams, Hammack, Schmid, Goolsbee, Daly (Newsquawk primer)
+- New FOMC row added: NO (next meeting Dec 8-9; Oct 28 row already present)
+- MEANS-FOR-YOU: not updated (rate unchanged at 3.75%-4.00%)
+- JS countdown: 2026-12-09T19:00:00Z (unchanged; correct)
+- Changes made:
+  - "Last updated" → November 18, 2026
+  - Lines 278, 292, 299 (cards 1, 2, 3 notes): updated Nov 17 from "unconfirmed" to confirmed retail sales data + appended Nov 18 entry
+  - Line 303 (Rate Path section): updated Nov 17 to confirmed + appended Nov 18 entry
+  - 4 total updates applied
+- Next major catalysts: **FOMC Minutes today (2pm ET; check Nov 19 for content)**, **Oct PCE (Nov 25, Tue)**
