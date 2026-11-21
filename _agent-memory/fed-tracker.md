@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 20, 2026
+Last updated: November 21, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -41,6 +41,17 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - CME FedWatch repriced on Nov 20: ~90% 25bp / ~10% 50bp (50bp up from ~3.1% on Nov 19)
 
 ## Run log
+### November 21, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds (Nov 21 Sat): ~90% 25bp / ~10% 50bp / 0% hold (stable from Friday close; markets closed weekends)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 21, 2026
+  - Appended Nov 21 weekend entry to committee notes (CME stable at ~90%/~10%)
+- Notes: Saturday — no data, markets closed. CME FedWatch unchanged from Friday. Next major catalyst: Oct PCE (Nov 25, Tue) — will move odds significantly ahead of Dec 9 FOMC.
+
 ### November 20, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
