@@ -1,5 +1,5 @@
 # Site Memory — Shared by all agents
-Last updated: 2026-11-15
+Last updated: 2026-11-22
 
 ## Repository
 - Owner: cleary0720-cell
@@ -82,33 +82,34 @@ Never use urllib, curl, MCP create_or_update_file, or hardcoded tokens.
 - sitemap.xml includes glossary.html (monthly, 0.5) and economic-calendar.html (weekly, 0.6)
 - rss.xml: all author/editor fields use macrobriefnews@gmail.com (not personal email)
 
-## Current macro context (November 15, 2026)
+## Current macro context (November 22, 2026)
 - **Fed Funds: 3.75–4.00%** — HELD October 28–29, 2026 (10-2 vote; Cook & Hammack dissented for hike)
   - Chair Warsh: "assess cumulative tightening effects before additional action"
-  - Next meeting: December 9, 2026; CME FedWatch: **~100% hike / 0% hold / 0% cut** (~90% +25bps / ~10% +50bps; as of Nov 13, post-CPI)
-  - December 9 is the most consequential meeting of the cycle
+  - Next meeting: December 9, 2026; CME FedWatch: **~97% hike / 3% hold / 0% cut** (as of Nov 20; 50bps scenario priced away after 10Y rally)
+  - December 9 is the most consequential meeting of the cycle; Nov 25 Core PCE is the pivotal pre-FOMC print
 - **October Jobs Report (released Nov 6): +165K NFP, unemployment 4.1%; Sep revised +29K→+45K (+16K)**
-- Jobless Claims (week ending Nov 7, released Nov 12): 200K weekly; 4-wk avg 195K — ninth consecutive week ≤200K
+- Jobless Claims (week ending Nov 14, released Nov 19): 203K weekly; 4-wk avg 198K; continuing claims 1,763K (highest since late Aug — monitoring)
 - **ISM Manufacturing PMI October: 55.5% (released Nov 3)** — 10th consecutive expansion; Prices Paid 75.2
 - **CPI October (released Nov 10): +0.4% MoM; NO YoY figure** — Oct 2025 BLS data gap (appropriations lapse)
   - Last confirmed YoY: September 3.7%; Core CPI: 3.1% (both September, Oct 14 release)
   - CPI sparkline NOT rolled forward — no YoY comparator until November 2026 data (due ~Dec 10)
 - **Core PCE September (released Oct 30): 3.1% YoY — up from 3.0% Aug; confirms re-acceleration**
-  - **October Core PCE due November 25 — arrives BEFORE December 9 FOMC** (correction from prior run error)
+  - **October Core PCE due November 25 — arrives BEFORE December 9 FOMC; pivotal print**
 - **GDP Q3 2026 advance (released Oct 30): +3.4% annualized** — strongest since Q2 2025; second estimate due Nov 25
   - Q2 2026 final revised to +2.2% (from +1.5% advance)
-- **Retail Sales September (released Oct 15): +6.3% YoY — control group +5.8%**; October retail due Nov 17
+- **Retail Sales October (released Nov 17): +6.8% YoY — +0.2% MoM to $748.2B** — October beat; consumer holding strong
 - **M2 September: 5.7% YoY** (H.6 released Oct 27; $23,413.9B SA); October M2 due ~Nov 24–25
-- Treasury yields (Nov 13, 2026): 1M=4.10%, 3M=4.32%, 6M=4.42%, 1Y=4.65%, 2Y=4.88%, 5Y=4.98%, 7Y=5.05%, 10Y=5.15%, 20Y=5.52%, 30Y=5.47%
-  - 10Y surged +29 bps on Oct CPI release (Nov 10); 5.15% as of Nov 13; 2s10s: +27 bps; NORMAL curve
-- **30-yr Mortgage Rate: 7.11% (Freddie Mac PMMS Nov 13)** — $400K loan ≈ $2,690/month
-- Macro Sentiment: 50/100 NEUTRAL (down from 52; data gap uncertainty + 10Y at 5.15% + affordability pressure)
-- Edition: Vol. I, No. 30
+- Treasury yields (Nov 20, 2026): 1M=4.19%, 3M=4.32%, 6M=4.38%, 1Y=4.51%, 2Y=4.63%, 5Y=4.71%, 7Y=4.80%, 10Y=4.92%, 20Y=5.34%, 30Y=5.31%
+  - 10Y rallied -23 bps on week (from 5.15% CPI peak to 4.92%); 2s10s: +29 bps; 3m10y: +60 bps; NORMAL curve
+  - Mild kink persists: 20Y (5.34%) > 30Y (5.31%) for second consecutive week
+- **30-yr Mortgage Rate: 7.28% (Freddie Mac PMMS Nov 19)** — survey pre-dates Treasury rally (rates set Tue-Wed); may ease next week
+- Macro Sentiment: 52/100 NEUTRAL+ (up from 50; yield rally + retail beat partially offset by mortgage spike and continuing claims uptick)
+- Edition: Vol. I, No. 31
 
-## Upcoming releases (as of November 15, 2026)
-- **Nov 17 (Mon):** Retail Sales, October 2026 (Census) — ROLL FORWARD retail sparkline
-- **Nov 25 (Tue):** Core PCE + GDP 2nd estimate (BEA) + M2 H.6 (Fed) — ROLL FORWARD core-pce, m2; UPDATE IN-PLACE gdp; Oct Core PCE arrives BEFORE Dec 9
+## Upcoming releases (as of November 22, 2026)
+- **Nov 25 (Tue):** Core PCE + GDP 2nd estimate (BEA) + M2 H.6 (Fed) — ROLL FORWARD core-pce, m2; UPDATE IN-PLACE gdp; PIVOTAL for Dec 9 hike odds
 - **Dec 1 (Mon):** ISM Manufacturing PMI, November 2026 — ROLL FORWARD ism-pmi sparkline
+- **Dec 5 (Fri):** Jobs Report, November 2026 (BLS) — ROLL FORWARD unemployment sparkline
 - **Dec 9 (Wed):** FOMC Decision — if hike +25bps: ROLL FORWARD fed-rate sparkline (drop "Oct", add "Dec" at 4.13%)
 
 ## Data source strategy (confirmed September 2026)
@@ -136,19 +137,17 @@ All economic data must come via WebSearch — direct WebFetch to government site
   - ISM PMI: roll when monthly ISM release arrives (first business day of following month)
 - GDP: quarterly, always 8 entries, roll only on new BEA quarter release
 - Year suffix in label: add "'YY" when entry is from prior calendar year (e.g., "Aug '25")
-- Current oldest entries after Nov 15 run:
-  - cpi: "Oct" (covers Oct '25 through Sep '26; NOT rolled — no Oct 2026 YoY; ROLL FORWARD when Nov CPI released ~Dec 10 — drop "Oct", add "Nov" at new value)
-  - retail: "Nov" (covers Nov '25 through Oct '26; next ROLL FORWARD when Oct retail released Nov 17 — drop "Nov", add "Nov" at new value)
-  - treasury: "Dec" (Dec '25 through Nov '26; "Nov" updated in-place to 5.15%; next ROLL FORWARD when Dec '26 data arrives)
-  - jobless-claims: "Dec" (Dec '25 through Nov '26; rolled forward Nov 15 — dropped "Nov '25"/220, added "Nov"/195)
+- Current oldest entries after Nov 22 run:
+  - cpi: "Oct" (covers Oct '25 through Sep '26; NOT rolled — no Oct 2026 YoY due to BLS data gap; ROLL FORWARD when Nov CPI released ~Dec 10 — drop "Oct", add "Nov" at new value)
+  - retail: "Dec" (covers Dec '25 through Oct '26; ROLLED FORWARD Nov 22 — dropped "Nov '25"/4.2, added "Nov"/6.8; next ROLL FORWARD when Nov retail released ~Dec 15)
+  - treasury: "Dec" (Dec '25 through Nov '26; "Nov" updated in-place Nov 22: 5.15→4.92; next ROLL FORWARD when Dec '26 data arrives)
+  - jobless-claims: "Dec" (Dec '25 through Nov '26; "Nov" updated in-place Nov 22: 195→198 (4-wk avg); next ROLL FORWARD when Dec data arrives)
   - core-pce: "Oct '25" (covers Oct '25 through Sep '26; next roll when Oct Core PCE released Nov 25 — drop "Oct '25", add "Oct")
   - fed-rate: "Oct" (covers Oct '25 through Sep '26 at 3.88%; next roll when Dec 9 FOMC acts — drop "Oct", add "Dec" at new mid-rate; if +25bps → 4.13%)
-  - jobless-claims: "Nov '25" (covers Nov '25 through Oct '26; updated in-place Nov 8 run: Oct 197→195 (189K weekly / 195K 4-wk avg); next ROLL FORWARD when Nov data arrives — drop "Nov '25", add "Nov")
-  - treasury: "Dec" (covers Dec '25 through Nov '26; ROLLED this run Nov 8, dropped "Nov '25"/4.30, added "Nov"/4.86; next ROLL FORWARD when Dec data arrives — drop "Dec", add "Dec" at new value)
-  - ism-pmi: "Nov" (covers Nov '25 through Oct '26; ROLLED this run Nov 8, dropped "Oct '25"/48.7, added "Oct"/55.5; next ROLL FORWARD when Nov ISM released Dec 1 — drop "Nov", add "Nov")
-  - m2: "Oct '25" (covers Oct '25 through Sep '26; next roll when Oct H.6 released ~late Nov — drop "Oct '25", add "Oct")
-  - unemployment: "Nov" (covers Nov '25 through Oct '26; ROLLED this run Nov 8, dropped "Oct '25"/4.2, added "Oct"/4.1; next ROLL FORWARD when Nov jobs rpt released ~Dec 5 — drop "Nov", add "Nov")
-  - gdp: "Q4 '24" (8 entries through Q3 '26; next UPDATE IN-PLACE if second estimate revises Q3'26; ROLL FORWARD when Q4'26 advance arrives ~Jan 29, 2027)
+  - ism-pmi: "Nov" (covers Nov '25 through Oct '26; next ROLL FORWARD when Nov ISM released Dec 1 — drop "Nov", add "Nov")
+  - m2: "Oct '25" (covers Oct '25 through Sep '26; next roll when Oct H.6 released ~Nov 24–25 — drop "Oct '25", add "Oct")
+  - unemployment: "Nov" (covers Nov '25 through Oct '26; next ROLL FORWARD when Nov jobs rpt released ~Dec 5 — drop "Nov", add "Nov")
+  - gdp: "Q4 '24" (8 entries through Q3 '26; next UPDATE IN-PLACE if second estimate revises Q3'26 (due Nov 25); ROLL FORWARD when Q4'26 advance arrives ~Jan 29, 2027)
 
 ## REVISION TRAP WARNING
 - BLS jobs reports frequently revise prior months significantly
