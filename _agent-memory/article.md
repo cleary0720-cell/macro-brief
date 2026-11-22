@@ -4,7 +4,7 @@
 1. Oil Prices / Energy Markets — "The Price of Energy: Inside the Oil Market Forces Threatening to Reignite Inflation" (2025-04-oil-prices.html) — Energy & Commodities
 2. Consumer Spending / Debt — "The Debt-Fueled Consumer: America's Spending Resilience Is Running on Borrowed Time" (2026-05-consumer-spending.html) — Consumer Economy
 3. Federal Debt / Interest Crisis — "The $1 Trillion Bill: America's Debt Interest Crisis Is Reshaping the Federal Budget" (2026-05-debt-interest-crisis.html) — Fiscal Policy
-4. Housing Lock-in / Mortgage Rates — "The Locked Market: How the Mortgage Rate Trap Is Starving America's Housing Supply" (2026-05-housing-lock-in.html) — Housing Market
+4. Housing Lock-in / Mortgage Rates (supply side) — "The Locked Market: How the Mortgage Rate Trap Is Starving America's Housing Supply" (2026-05-housing-lock-in.html) — Housing Market
 5. Inflation Relapse / April CPI Surge — "Inflation Relapse: The April Price Surge That Rewrites the Fed's 2026 Playbook" (2026-05-inflation-relapse.html) — Inflation
 6. Labor Market Cooling — "The Soft Stall: America's Labor Market Is Cooling Without Breaking" (2026-05-labor-market-cooling.html) — Labor Markets
 7. Money Supply / M2 — "Too Much Money: Why the Fed's M2 Surge Is Making the Inflation Fight Harder Than It Looks" (2026-05-money-supply.html) — Money Supply
@@ -33,58 +33,48 @@
 30. Q3 2026 GDP Advance Estimate / Core PCE Re-acceleration / October FOMC Hold / December Hike — "The Unwelcome Boom: Q3's 3.4% GDP Surge Left the Fed With No Case for Pause" (2026-11-q3-gdp-acceleration.html) — Economic Output
 31. Consumer Credit Card Delinquencies / Household Debt / K-shaped Stress / Higher Income Borrowers — "Maxed Out: How the Credit Card Debt Crisis Spread Upmarket" (2026-11-credit-card-reckoning.html) — Consumer Economy
 32. October 2026 CPI / BLS Data Gap / No YoY Rate / December FOMC Hike Sealed — "The Blind Spot: October CPI Had No Annual Rate. December's Hike Is Now Inevitable." (2026-11-october-cpi-blind-spot.html) — Inflation
+33. Housing Affordability / Existing Home Sales 16-Year Low / First-Time Buyers — "The 7% Wall: October Home Sales Just Touched a 16-Year Low" (2026-11-housing-sales-16year-low.html) — Housing Market
 
 ## Last run
-- Date: November 15, 2026
-- Article: "The Blind Spot: October CPI Had No Annual Rate. December's Hike Is Now Inevitable."
-- Category: Inflation (archive data-category="Prices")
-- Issue: Vol. I, No. 32
-- Filename: articles/2026-11-october-cpi-blind-spot.html
-- Thumbnail: fallback cp 2026-05-inflation-relapse-thumb.jpg → 2026-11-october-cpi-blind-spot-thumb.jpg (pexels-proxy blocked in CCR, 403)
-- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "Supermarket shelves with grocery price tags")
-- Push: git push origin HEAD:main — SUCCESS (commit db4546d)
+- Date: November 22, 2026
+- Article: "The 7% Wall: October Home Sales Just Touched a 16-Year Low"
+- Category: Housing Market (archive data-category="Economy")
+- Issue: Vol. I, No. 33
+- Filename: articles/2026-11-housing-sales-16year-low.html
+- Thumbnail: fallback cp 2026-05-housing-lock-in-thumb.jpg → 2026-11-housing-sales-16year-low-thumb.jpg (pexels-proxy blocked in CCR, 403)
+- fix-thumbnails.yml: CONFIRMED PRESENT — action will swap in unique Pexels photo after push (hero alt: "Residential neighborhood street with houses for sale signs")
+- Push: git push origin HEAD:main — SUCCESS (commit bcfaab8)
 
-## Key facts confirmed this run (November 15, 2026)
-- October 2026 CPI (released Nov 10): +0.4% SA MoM (above ~0.3% forecast); core +0.3% SA MoM (above 0.2% forecast)
-- NO YoY figure published — BLS couldn't report because Oct 2025 data not collected during government appropriations lapse (shutdown)
-- BLS used imputation algorithm (carried forward Sep 2025 prices) for Oct 2025; official 12-month comparisons unavailable for Oct 2026
-- Annual CPI comparisons expected to resume with November 2026 CPI report on December 10, 2026
-- October CPI components: Shelter +0.3% (>30% of monthly increase), OER +0.3%, Rent +0.2%; Food +0.5% (beef +0.9%, snacks +1.0%); Energy +0.7% (SA gasoline +1.0%)
-- September 2026 CPI (last confirmed YoY): headline 3.7%, core 3.1%
-- 10Y Treasury jumped ~10 bps on CPI release (Nov 10), neared 5.0%; by Nov 13: 5.15% (per site memory / dashboard agent)
-- December FOMC: ~90-100% hike probability; J.P. Morgan and KPMG both called December hike after the report
-- CME FedWatch: ~90% +25bps, ~10% +50bps for December 9 meeting
-- December 9 hike would bring target range to 4.00-4.25% — highest since 2007
-
-## Current macro context (November 15, 2026)
-- Fed Funds: 3.75-4.00% — HELD October 28, 2026 (10-2 vote; Cook & Hammack dissented for hike)
-- Next meeting: December 9, 2026; ~100% hike priced per CME FedWatch
-- Q3 GDP advance: +3.4% annualized (second estimate due Nov 25)
-- Core PCE September: 3.1% YoY (re-acceleration); October due November 25
-- October CPI: +0.4% MoM SA, core +0.3% MoM SA; NO YoY figure
-- October jobs: +165K NFP, unemployment 4.1%
-- ISM Manufacturing October: 55.5% (Prices Paid 75.2)
-- 10Y Treasury: 5.15% (Nov 13)
-- 30-yr Mortgage: 7.11% (Freddie Mac PMMS Nov 13)
-- M2 September: 5.7% YoY
+## Key facts confirmed this run (November 22, 2026)
+- 30-year fixed mortgage (Freddie Mac PMMS Nov 19): 7.28% — up from 7.11% prior week; 15-yr: 6.45%
+- Existing home sales October 2026 (released Nov 12): 3.75M SAAR — down 5.5% MoM, down 8.8% YoY — lowest since August 2010
+- Existing home median price October 2026: $416,700 — up 0.4% YoY — 40th consecutive YoY gain
+- NAR Housing Affordability Index October 2026: 100.7 (down from 116.5 at start of year — 5 consecutive months declining)
+- First-time buyers: 22% share (Nov 2026 NAR Profile); April 2026 Generational Trends had 21% — lowest since NAR began tracking 1981
+- NAHB Housing Market Index October 2026: 29 — lowest since June 2012
+- Builder incentives: 65% offered some incentive (19th straight month ≥60%); 43% cut prices (avg 6%); ~80-90% of new home closings include rate buydowns
+- Housing starts October 2026 (released Nov 18): 1.309M SAAR (up 9.9% MoM); single-family permits: 772,000 — lowest since January 2023
+- Monthly mortgage payment on median home: ~$2,675 (Redfin estimate); requires ~$111,000/year income
+- December FOMC: ~97% hike probability (CME FedWatch as of Nov 20); 4.00-4.25% target if +25bps
+- New home sales September 2026: 676,000 SAAR (down 0.6% from Aug, down 5.3% YoY)
+- 10Y Treasury: 4.92% (Nov 20) — rallied 23 bps on week from 5.15% CPI peak
 
 ## Upcoming data before December 9 FOMC
-- Nov 17 (Mon): Retail Sales October 2026 — Census Bureau
-- Nov 25 (Tue): Core PCE October 2026 + GDP Q3 2nd estimate — BEA (LAST major inflation read before Dec 9)
-- Dec 1 (Mon): ISM Manufacturing PMI November 2026
-- Dec 4 (Fri): November Jobs Report — BLS
-- Dec 9 (Wed): FOMC Decision — hike expected to 4.00-4.25%
-- Dec 10 (Thu): November CPI — RESTORES annual comparisons for first time since September
+- Nov 25 (Tue): Core PCE October 2026 + GDP Q3 2nd estimate + M2 H.6 (BEA / Fed) — PIVOTAL
+- Dec 1 (Mon): ISM Manufacturing PMI November 2026 — 8 days before FOMC
+- Dec 5 (Fri): Jobs Report November 2026 (BLS) — 4 days before FOMC
+- Dec 9 (Wed): FOMC Decision — 97% hike to 4.00-4.25% expected
+- Dec 10 (Thu): November CPI (BLS) — RESTORES annual YoY comparisons for first time since September
 
 ## Potential future article topics (not yet covered)
-- Dollar strength / DXY — Global Economy; DXY ~101 as of late September 2026 after Fed hike
+- Dollar strength / DXY — Global Economy; needs fresh data check
 - Private credit market / direct lending boom — Financial Markets or Banking
-- Housing affordability October 2026 update — Housing Market (last article May 2026, now 7.11% mortgage)
-- S&P earnings season Q3 / corporate margins — Financial Markets
+- S&P 500 earnings season Q3 / corporate margins — Financial Markets
 - State & local government fiscal stress — Fiscal Policy
 - December FOMC decision itself (Dec 9) — Monetary Policy — WAIT until after Dec 9
-- November CPI (restores YoY) — wait until Dec 10 release
-- October Core PCE — wait until Nov 25 release
+- November CPI (restores YoY) — Inflation — WAIT until Dec 10 release
+- October Core PCE — WAIT until Nov 25 release
+- Housing market update with December FOMC context — Housing Market (would be a 3rd housing article; consider delay)
 
 ## Push method (confirmed working)
 git add [files] && git commit -m "message" && git push origin HEAD:main
@@ -111,16 +101,17 @@ The 4 fixed filter buckets in archive.html — do NOT add new ones:
 NOTE: Use HTML entity &amp; in data-category="Markets &amp; Money" in archive.html.
 
 ## Issue numbering
-Next article will be Vol. I, No. 33
+Next article will be Vol. I, No. 34
 
 ## Data source strategy (confirmed November 2026)
 Government sites return 403 on WebFetch — use WebSearch for all economic data.
-- CPI data: cnbc.com, advisorperspectives.com/dshort, cpiinflationcalculator.com (confirmed reliable for Oct 2026)
-- BLS data gap details: fourweekmba.com, roic.ai, wichitaliberty.org all covered the Oct 2025 shutdown
+- CPI data: cnbc.com, advisorperspectives.com/dshort, cpiinflationcalculator.com
 - GDP / PCE: seekingalpha.com, advisorperspectives.com/dshort
-- CPI / PCE: cnbc.com, pnc.com (research PDFs), advisorperspectives.com/dshort
 - Jobs reports: cnbc.com, bloomberg.com
-- FOMC odds: cnbc.com, CME FedWatch (via stocktitan.net, growbeansprout.com, noradarealestate.com)
+- Housing data: NAR press releases via GlobeNewswire, MortgageNewsDaily, UnitedStatesRealEstateInvestor, Redfin research
+- NAHB: prnewswire.com, NAHB.org snippets
+- Freddie Mac PMMS: freddiemac.com snippets or cnbc.com
+- FOMC odds: cnbc.com, CME FedWatch (via stocktitan.net, growbeansprout.com)
 - Treasury yields: forbes.com/advisor/investing/treasury-rates
 - ISM PMI: prnewswire.com, verifiedinvesting.com
 - ALWAYS verify figures via multiple sources — agent memory can contain errors
