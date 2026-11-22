@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 21, 2026
+Last updated: November 22, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -8,7 +8,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Fed Funds Rate & FOMC decisions: federalreserve.gov press release pages; CNBC, NPR, Fox Business cover decisions same day
 - FOMC Minutes: cnbc.com, unitedstatesrealestateinvestor.com, optionspilot.app same day as release
 - Effective rate: FRED (3.88% confirmed stable; updates next day after FOMC action)
-- Market probabilities: CME FedWatch Tool; fxstreet.com, 247wallst.com, en.sedaily.com (Seoul Economic Daily) all cite CME same day
+- Market probabilities: CME FedWatch Tool; fxstreet.com, 247wallst.com, en.sedaily.com (Seoul Economic Daily) all cite CME same day; BeInCrypto good for daily summaries; Threads posts often cite cmegroup.com directly with 3-way breakdown
 - Vote breakdown: Federal Reserve press releases, stocktitan.net, reuters.com
 - Next meeting schedule: federalreserve.gov/monetarypolicy/fomccalendars.htm (via WebSearch)
 
@@ -26,21 +26,35 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **FOMC History:** No new row added this run (last row: Oct 28, 2026 — Hold 10-2)
 - **MEANS-FOR-YOU:** Not updated (rate unchanged at 3.75%–4.00%)
 
-## FOMC Minutes highlights (Oct 27–28 meeting, released Nov 18, 2026)
-- "Almost all" officials judged further rate hikes likely appropriate
-- A couple floated >25bp (more than 25bp) for December
-- PCE rose to 3.6% YoY through September (boosted by rapid energy price increase)
-- AI-related debt warning: "Most participants observed that AI-related debt had grown rapidly and that much of this growth had taken place through complex and opaque financing structures"
-- Cook & Hammack formally dissented, preferring +25bp at the October meeting
-- NY Fed's Williams: ruled out 50bp — "conditions don't call for dramatic action"
+## CME FedWatch odds evolution
+- Nov 17: ~95.7% 25bp / ~4.3% 50bp / 0% hold (post-retail sales)
+- Nov 18: ~96% 25bp / ~4% 50bp / 0% hold (post-minutes)
+- Nov 19: ~95.7% 25bp / ~4.3% 50bp / 0% hold
+- Nov 20: ~90% 25bp / ~10% 50bp / 0% hold (Waller "shock therapy")
+- Nov 21-22: ~75% 25bp / ~15% 50bp / ~10% hold (Friday tech selloff + Cook)
+  - Hold odds jumped from 0% to ~10% in a single day (BeInCrypto, Nov 21)
+  - 50bp elevated: Threads post cited cmegroup.com: 9.6% hold / 75.2% 25bp / 15.2% 50bp
 
-## Waller "shock therapy" remarks (Nov 18–20, 2026)
-- Gov. Waller (Nov 18 CNBC interview, Nov 20 College Fed Challenge welcoming remarks): signaled Fed should consider 50bp hike at December meeting
-- Key quote: may need to "shock people" with a half-point rate hike
-- Williams (NY Fed) pushed back: "conditions don't call for dramatic action"
-- CME FedWatch repriced on Nov 20: ~90% 25bp / ~10% 50bp (50bp up from ~3.1% on Nov 19)
+## Cook hawkish signal (Nov 21, 2026)
+- Gov. Cook signaled rate hikes could extend beyond December
+- Estimated October PCE at ~3.8%
+- First "hikes beyond December" signal from a sitting dissenter
+- Sources: TradingView, KuCoin, BeInCrypto
 
 ## Run log
+### November 22, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds: ~75% 25bp / ~15% 50bp / ~10% hold (CME, Nov 21 close; hold emerged from ~0%)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 22, 2026
+  - Appended Nov 22 entries to ALL 4 notes sections (lines 278, 292, 299 — the 3 hero cards — and line 303 Rate Path)
+  - Lines 278/292/299: brief entry with Cook signal + hold odds emergence
+  - Line 303: detailed entry with BeInCrypto source + vs. pre-selloff comparison
+- Notes: Sunday — markets closed. Hold odds emerged Friday (tech selloff + Cook). Next major catalyst: Oct PCE (Nov 25, Tue) — pivotal for Dec 9 odds; Cook's 3.8% estimate is the market benchmark.
+
 ### November 21, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
@@ -49,43 +63,44 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - New FOMC row added: NO
 - Changes made:
   - "Last updated" → November 21, 2026
-  - Appended Nov 21 weekend entry to committee notes (CME stable at ~90%/~10%)
-- Notes: Saturday — no data, markets closed. CME FedWatch unchanged from Friday. Next major catalyst: Oct PCE (Nov 25, Tue) — will move odds significantly ahead of Dec 9 FOMC.
+  - Appended Nov 21 weekend entry to Rate Path notes only (line 303)
+- Notes: Saturday — no data, markets closed. CME FedWatch unchanged from Friday.
 
 ### November 20, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
 - Next meeting: December 8–9, 2026
-- Market odds (Nov 20): ~90% 25bp hike / ~10% 50bp hike / 0% hold (Seoul Economic Daily citing CME, Nov 20; Waller shock-therapy signal drove 50bp from ~3.1% to ~10%)
-- New FOMC row added: NO (next meeting Dec 8–9)
-- Changes made:
-  - "Last updated" → November 20, 2026
-  - 3 hero note sections updated: added Nov 20 Waller entry with updated CME odds (~90%/~10%)
-  - Lines ~278, ~292 (hero-note cards 1–2) + line ~303 (Rate Path / committee notes near FOMC-RATE-END)
-- Notes: Waller signaled 50bp possibility; Williams pushed back. 50bp tail risk elevated but 25bp still dominant at ~90%.
-- Next major catalysts:
-  - **Oct PCE (Nov 25, Tue)** — arrives BEFORE Dec 9 FOMC; will move odds significantly
-  - **Oct GDP 2nd estimate (Nov 25, Tue)** — same day
-  - **Oct M2 H.6 (expected ~Nov 24–25)** — roll forward m2 sparkline
-  - **Dec 9 (Wed): FOMC Decision** — if +25bp hike: rate → 4.00%–4.25%; roll fed-rate sparkline (drop "Oct", add "Dec" at 4.13%); add Dec row to FOMC history table; update MEANS-FOR-YOU
+- Market odds (Nov 20): ~90% 25bp hike / ~10% 50bp hike / 0% hold
+- New FOMC row added: NO
 
 ### November 19, 2026
-- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Target range: 3.75%–4.00% (unchanged)
 - Effective rate: 3.88%
 - Next meeting: December 8–9, 2026
-- Market odds (Nov 19): ~95.7% 25bp hike / ~4.3% 50bp hike / 0% hold (Seoul Economic Daily citing CME, Nov 19)
-- New FOMC row added: NO (next meeting Dec 8–9; Oct 28 row already present)
-- Changes made:
-  - "Last updated" → November 19, 2026
-  - 4 notes sections updated: Nov 18 entry updated from "releasing today" to actual minutes content; Nov 19 entry appended to all 4 sections
-  - Locations: lines ~278, ~292, ~299 (hero-note cards 1–3) + line ~303 (Rate Path / committee notes near FOMC-RATE-END)
-- Notes: FOMC Minutes released Nov 18 were hawkish — reinforced December hike; 50bp discussion marginal
+- Market odds (Nov 19): ~95.7% 25bp hike / ~4.3% 50bp hike / 0% hold
+- New FOMC row added: NO
 
 ### November 18, 2026
 - Target range: 3.75%–4.00% (unchanged)
 - Effective rate: 3.88%
 - Next meeting: December 8–9, 2026
-- Market odds (Nov 18): ~96% 25bp hike / ~4% 50bp hike / 0% hold (FXStreet, Nov 18)
+- Market odds (Nov 18): ~96% 25bp hike / ~4% 50bp hike / 0% hold
 - New FOMC row added: NO
 - Notes: FOMC Minutes releasing same day at 2pm ET; Oct Retail Sales confirmed Nov 17
-- CME FedWatch Dec 9: ~96% 25bp / ~4% 50bp (50bp continuing to fade from ~10% on Nov 10 CPI)
+
+## FOMC Minutes highlights (Oct 27–28 meeting, released Nov 18, 2026)
+- "Almost all" officials judged further rate hikes likely appropriate
+- A couple floated >25bp (more than 25bp) for December
+- PCE rose to 3.6% YoY through September (boosted by rapid energy price increase)
+- AI-related debt warning: "Most participants observed that AI-related debt had grown rapidly and that much of this growth had taken place through complex and opaque financing structures"
+- Cook & Hammack formally dissented, preferring +25bp at the October meeting
+- NY Fed's Williams: ruled out 50bp — "conditions don't call for dramatic action"
+
+## Upcoming catalysts
+- **Nov 25 (Tue):** Oct Core PCE (BEA) — PIVOTAL; Cook's ~3.8% estimate is key benchmark
+  - If hot (>3.5%): 50bp risk rises, hold odds fall back
+  - If cool (<3.3%): hold odds may rise further
+- **Nov 25 (Tue):** GDP Q3 2nd estimate + M2 H.6 (Oct) — roll forward m2 sparkline
+- **Dec 1 (Mon):** ISM Manufacturing PMI, November 2026
+- **Dec 5 (Fri):** Jobs Report, November 2026
+- **Dec 9 (Wed):** FOMC Decision — if hike +25bp: rate → 4.00%–4.25%; roll fed-rate sparkline; add Dec row to FOMC history table; update MEANS-FOR-YOU
