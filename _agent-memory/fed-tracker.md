@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 22, 2026
+Last updated: November 23, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -34,6 +34,9 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Nov 21-22: ~75% 25bp / ~15% 50bp / ~10% hold (Friday tech selloff + Cook)
   - Hold odds jumped from 0% to ~10% in a single day (BeInCrypto, Nov 21)
   - 50bp elevated: Threads post cited cmegroup.com: 9.6% hold / 75.2% 25bp / 15.2% 50bp
+  - NOTE: mainstream sources (Gate.com, 247wallst) on Nov 22 showed 93.2% 25bp / 0% 50bp / 6.8% hold — crypto sources diverged
+- Nov 23: ~91.4% 25bp hike / ~8.6% hold / 0% 50bp (Gate.com/CME, Nov 23 open)
+  - 50bp fully unwound (from ~15% Friday); hold slightly lower at 8.6%
 
 ## Cook hawkish signal (Nov 21, 2026)
 - Gov. Cook signaled rate hikes could extend beyond December
@@ -42,6 +45,18 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sources: TradingView, KuCoin, BeInCrypto
 
 ## Run log
+### November 23, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds: ~91.4% 25bp hike / ~8.6% hold / 0% 50bp (Gate.com/CME, Nov 23 open)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 23, 2026
+  - Appended Nov 23 entries to all 4 notes sections (3 hero cards + Rate Path card)
+  - 50bp odds collapsed to 0%; 25bp jumped from ~75% to ~91.4%
+- Notes: Monday market open. 50bp risk fully unwound from Friday crypto-influenced reading. Oct PCE due Tuesday Nov 25 — the pivotal pre-FOMC print.
+
 ### November 22, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
