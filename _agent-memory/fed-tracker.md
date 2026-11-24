@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 23, 2026
+Last updated: November 24, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -8,7 +8,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Fed Funds Rate & FOMC decisions: federalreserve.gov press release pages; CNBC, NPR, Fox Business cover decisions same day
 - FOMC Minutes: cnbc.com, unitedstatesrealestateinvestor.com, optionspilot.app same day as release
 - Effective rate: FRED (3.88% confirmed stable; updates next day after FOMC action)
-- Market probabilities: CME FedWatch Tool; fxstreet.com, 247wallst.com, en.sedaily.com (Seoul Economic Daily) all cite CME same day; BeInCrypto good for daily summaries; Threads posts often cite cmegroup.com directly with 3-way breakdown
+- Market probabilities: CME FedWatch Tool; Tradingpedia.com (good for Nov 24 daily reading); fxstreet.com, 247wallst.com, en.sedaily.com (Seoul Economic Daily) all cite CME same day; BeInCrypto good for daily summaries; Memesita.com; CoinCentral; Gate.com
 - Vote breakdown: Federal Reserve press releases, stocktitan.net, reuters.com
 - Next meeting schedule: federalreserve.gov/monetarypolicy/fomccalendars.htm (via WebSearch)
 
@@ -37,6 +37,14 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - NOTE: mainstream sources (Gate.com, 247wallst) on Nov 22 showed 93.2% 25bp / 0% 50bp / 6.8% hold — crypto sources diverged
 - Nov 23: ~91.4% 25bp hike / ~8.6% hold / 0% 50bp (Gate.com/CME, Nov 23 open)
   - 50bp fully unwound (from ~15% Friday); hold slightly lower at 8.6%
+- Nov 24: ~95% 25bp hike / ~5% 50bp / ~0% hold (Tradingpedia/CME, Nov 24)
+  - Nvidia-led equity rally + Williams "rate hikes over time" signal
+  - Hold odds collapsed from ~8.6% to ~0%; 50bp risk re-emerged from 0% to ~5%
+
+## Williams signal (Nov 24, 2026)
+- NY Fed President Williams stated rate hikes "over time" likely
+- Nvidia-led equity rally (Nasdaq up) boosted risk appetite and hike odds
+- Sources: Tradingpedia, Memesita, CoinCentral
 
 ## Cook hawkish signal (Nov 21, 2026)
 - Gov. Cook signaled rate hikes could extend beyond December
@@ -45,6 +53,18 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Sources: TradingView, KuCoin, BeInCrypto
 
 ## Run log
+### November 24, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds: ~95% 25bp hike / ~5% 50bp / ~0% hold (Tradingpedia/CME, Nov 24)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 24, 2026
+  - Appended Nov 24 entries to all 4 notes sections (3 hero cards + Rate Path card)
+  - 50bp re-emerged (~5%); hold collapsed to ~0% on Nvidia rally + Williams signal
+- Notes: OCT PCE due TOMORROW (Nov 25, Tue) — pivotal pre-FOMC print. If hot (>3.5%), 50bp risk rises. If cool (<3.3%), hold odds may rise. Cook's ~3.8% estimate is the market's key benchmark.
+
 ### November 23, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
@@ -63,12 +83,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next meeting: December 8–9, 2026
 - Market odds: ~75% 25bp / ~15% 50bp / ~10% hold (CME, Nov 21 close; hold emerged from ~0%)
 - New FOMC row added: NO
-- Changes made:
-  - "Last updated" → November 22, 2026
-  - Appended Nov 22 entries to ALL 4 notes sections (lines 278, 292, 299 — the 3 hero cards — and line 303 Rate Path)
-  - Lines 278/292/299: brief entry with Cook signal + hold odds emergence
-  - Line 303: detailed entry with BeInCrypto source + vs. pre-selloff comparison
-- Notes: Sunday — markets closed. Hold odds emerged Friday (tech selloff + Cook). Next major catalyst: Oct PCE (Nov 25, Tue) — pivotal for Dec 9 odds; Cook's 3.8% estimate is the market benchmark.
 
 ### November 21, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
@@ -76,10 +90,6 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - Next meeting: December 8–9, 2026
 - Market odds (Nov 21 Sat): ~90% 25bp / ~10% 50bp / 0% hold (stable from Friday close; markets closed weekends)
 - New FOMC row added: NO
-- Changes made:
-  - "Last updated" → November 21, 2026
-  - Appended Nov 21 weekend entry to Rate Path notes only (line 303)
-- Notes: Saturday — no data, markets closed. CME FedWatch unchanged from Friday.
 
 ### November 20, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
