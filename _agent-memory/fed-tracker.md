@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 25, 2026
+Last updated: November 26, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -50,6 +50,17 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Upward revisions driven by investment and consumer spending
 
 ## Run log
+### November 26, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds: ~97.8% 25bp hike / ~2.2% hold (CME, Nov 25 — Thanksgiving, markets closed)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 26, 2026
+  - Appended Nov 26 Thanksgiving note to all 3 substantive hero cards
+- Notes: Thanksgiving holiday — U.S. markets closed. No new data. Dec 9 odds unchanged at ~97.8% hike. Next catalysts: Dec 1 ISM Mfg PMI, Dec 5 Jobs Report, Dec 9 FOMC Decision.
+
 ### November 25, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
