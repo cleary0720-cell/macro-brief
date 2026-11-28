@@ -1,5 +1,5 @@
 # Fed Tracker Agent Memory
-Last updated: November 27, 2026
+Last updated: November 28, 2026
 
 ## Push method
 git add/commit/push works directly. Pre-authenticated via GitHub App. Never use urllib, MCP base64, or hardcoded tokens.
@@ -29,6 +29,7 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
 - **MEANS-FOR-YOU:** Not updated (rate unchanged at 3.75%–4.00%)
 
 ## CME FedWatch odds evolution
+- Nov 28: ~99% 25bp hike / ~1% hold / 0% 50bp (CME FedWatch, stable from Friday close — Saturday; markets closed)
 - Nov 27: ~99% 25bp hike / ~1% hold / 0% 50bp (CME FedWatch, Nov 27; Black Friday shortened session)
 - Nov 26: ~97.8% 25bp hike / ~2.2% hold (Thanksgiving — markets closed, odds unchanged from Nov 25)
 - Nov 17: ~95.7% 25bp / ~4.3% 50bp / 0% hold (post-retail sales)
@@ -52,6 +53,17 @@ git add/commit/push works directly. Pre-authenticated via GitHub App. Never use 
   - Upward revisions driven by investment and consumer spending
 
 ## Run log
+### November 28, 2026
+- Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
+- Effective rate: 3.88%
+- Next meeting: December 8–9, 2026
+- Market odds: ~99% 25bp hike / ~1% hold / 0% 50bp (CME FedWatch, stable from Friday close)
+- New FOMC row added: NO
+- Changes made:
+  - "Last updated" → November 28, 2026
+  - Appended Nov 28 Saturday note to all 3 hero cards
+- Notes: Saturday — U.S. markets closed (weekend). No new data. Dec 9 odds unchanged at ~99% hike from Friday's (Black Friday) close. 11 days to decision. Next catalysts: Dec 1 ISM Mfg PMI, Dec 5 Jobs Report, Dec 9 FOMC Decision.
+
 ### November 27, 2026
 - Target range: 3.75%–4.00% (unchanged — HOLD at Oct meeting)
 - Effective rate: 3.88%
